@@ -1,0 +1,34 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex">
+<title>Update tonight's lineup · Broadway Tonight</title><style>
+:root{--bg:#07060a;--bg2:#12101a;--card:#1a1624;--card2:#221c30;--text:#f7f2ea;--muted:#9a91a8;--neon:#ff2d95;--neon2:#ffd60a;--lime:#b8ff3c;--line:rgba(255,255,255,.08);--safe-b:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.4 system-ui,-apple-system,sans-serif;padding:20px 16px calc(110px + var(--safe-b))}
+.brand{color:var(--neon);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:12px;text-shadow:0 0 10px var(--neon)}
+h1{font-size:30px;margin:6px 0 2px;line-height:1.1}.sub{color:var(--muted);margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:12px}
+.slot{color:var(--neon2);font-weight:700;font-size:13px;margin-bottom:8px}label{display:block;color:var(--muted);font-size:13px;margin:8px 0 4px}
+input{width:100%;font-size:18px;padding:14px;border-radius:12px;border:1px solid var(--line);background:var(--card2);color:var(--text);min-height:52px}
+input:focus{outline:2px solid var(--neon);border-color:transparent}h2{font-size:17px;margin:22px 0 8px}
+.bar{position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + var(--safe-b));background:linear-gradient(transparent,var(--bg) 30%)}
+button{width:100%;min-height:58px;border:0;border-radius:16px;background:var(--neon);color:#fff;font-size:20px;font-weight:800;box-shadow:0 0 22px rgba(255,45,149,.5)}
+button:disabled{opacity:.6}#toast{position:fixed;left:16px;right:16px;bottom:calc(86px + var(--safe-b));background:var(--lime);color:#000;font-weight:700;padding:14px;border-radius:12px;text-align:center;display:none}
+#toast.err{background:#ff5a5a;color:#fff}</style></head><body>
+<div class="brand">Broadway Tonight</div><h1 id="name">Loading…</h1><p class="sub" id="sub">Update tonight's lineup</p>
+<form id="f"><div id="sets"></div><h2>Your contact (optional)</h2><div class="card">
+<label for="email">Email</label><input id="email" type="email" inputmode="email" autocomplete="email" placeholder="you@bar.com">
+<label for="phone">Phone</label><input id="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(615) 555-0100"></div>
+<div class="bar"><button id="save" type="submit" disabled>Save</button></div></form><div id="toast"></div>
+<script>
+const tok=location.pathname.split('/').filter(Boolean).pop(),api='/api/owner/'+encodeURIComponent(tok),$=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const toast=(m,e)=>{const t=$('toast');t.textContent=m;t.className=e?'err':'';t.style.display='block';clearTimeout(t._h);t._h=setTimeout(()=>t.style.display='none',3500)};
+const fmtDate=d=>new Date(d+'T12:00:00').toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric'});
+let data;fetch(api).then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>{data=d;$('name').textContent=d.bar.name;document.title=d.bar.name+' · Update lineup';
+ $('sub').textContent="Update tonight's lineup · "+fmtDate(d.date);
+ $('sets').innerHTML=d.sets.length?d.sets.map((s,i)=>`<div class="card"><div class="slot">Set ${i+1}</div><label for="b${i}">Band name</label><input id="b${i}" value="${esc(s.band)}" autocomplete="off" placeholder="Band name"><label for="t${i}">Start time</label><input id="t${i}" type="time" value="${esc(s.set_start)}"></div>`).join(''):'<div class="card">No sets scheduled tonight.</div>';
+ if(d.contact){$('email').value=d.contact.email||'';$('phone').value=d.contact.phone||''}$('save').disabled=false;
+}).catch(()=>{$('name').textContent='Link not found';$('sub').textContent='This link is invalid or expired. Reply to our email and we\'ll send a new one.'});
+$('f').onsubmit=async e=>{e.preventDefault();const b=$('save');b.disabled=true;b.textContent='Saving…';
+ const body={contact:{email:$('email').value,phone:$('phone').value},sets:data.sets.map((s,i)=>({id:s.id,band:$('b'+i).value,set_start:$('t'+i).value}))};
+ try{const r=await fetch(api,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const j=await r.json();if(!r.ok)throw new Error(j.error);toast('Saved — guests will see this tonight')}
+ catch(err){toast('Could not save: '+(err.message||'try again'),1)}b.disabled=false;b.textContent='Save'};
+</script></body></html>

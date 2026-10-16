@@ -1,0 +1,17 @@
+{
+  "name": "broadway-mvp",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "seed": "node scripts/seed.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.21.0"
+  },
+  "engines": {
+    "node": "20.x"
+  }
+}

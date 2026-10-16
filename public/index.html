@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Broadway Tonight">
+<meta name="theme-color" content="#07060a">
+<meta name="description" content="Lower Broadway live — who's on stage now, who's hot, rate the set.">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<title>Broadway Tonight</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07060a;--bg2:#12101a;--card:#1a1624;--card2:#221c30;
+  --text:#f7f2ea;--muted:#9a91a8;--neon:#ff2d95;--neon2:#ffd60a;--lime:#b8ff3c;
+  --line:rgba(255,255,255,.08);--safe-b:env(safe-area-inset-bottom,0px);
+  --nav-h:64px;--tap:48px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0;height:100%}
+body{
+  font-family:"DM Sans",system-ui,sans-serif;
+  background:
+    radial-gradient(900px 480px at 8% -8%, rgba(255,45,149,.22), transparent 55%),
+    radial-gradient(700px 420px at 100% 0%, rgba(255,214,10,.12), transparent 50%),
+    var(--bg);
+  color:var(--text);min-height:100dvh;max-width:430px;margin:0 auto;
+  padding-bottom:calc(var(--nav-h) + var(--safe-b) + 72px);overflow-x:hidden;
+}
+header{
+  padding:16px 16px 12px;border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:5;background:rgba(7,6,10,.92);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+}
+.kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--neon);font-weight:700;margin-bottom:4px}
+h1{margin:0;font-family:"Bebas Neue",Impact,sans-serif;font-size:36px;line-height:0.95;letter-spacing:.02em}
+.sub{margin-top:6px;color:var(--muted);font-size:13px;line-height:1.35}
+h2{font-family:"Bebas Neue",Impact,sans-serif;font-size:24px;letter-spacing:.04em;margin:18px 16px 8px}
+.card{
+  background:linear-gradient(180deg,var(--card2),var(--card));
+  margin:8px 12px;padding:14px;border-radius:16px;border:1px solid var(--line);
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+.spon{
+  border:1px solid rgba(255,214,10,.55);
+  background:linear-gradient(135deg, rgba(255,214,10,.14), transparent 45%),linear-gradient(180deg,#2a2210,#1a1620);
+  box-shadow:0 0 0 1px rgba(255,214,10,.15), 0 12px 40px rgba(255,214,10,.08);
+  min-height:var(--tap);
+}
+.badge{display:inline-block;background:var(--neon2);color:#140f00;font-weight:800;font-size:11px;padding:6px 10px;border-radius:999px;letter-spacing:.12em;text-transform:uppercase}
+.live-badge{display:inline-block;background:var(--neon);color:#fff;font-weight:800;font-size:10px;padding:4px 8px;border-radius:999px;letter-spacing:.1em;text-transform:uppercase;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,45,149,.55)}50%{box-shadow:0 0 0 8px rgba(255,45,149,0)}}
+.spon .name{font-family:"Bebas Neue",Impact,sans-serif;font-size:28px;margin-top:8px;letter-spacing:.02em}
+.tabs{display:flex;gap:8px;margin:0 12px 6px}
+.tabs button{
+  flex:1;min-height:var(--tap);padding:12px 8px;background:rgba(255,255,255,.04);
+  color:var(--muted);border:1px solid var(--line);border-radius:999px;font-size:14px;font-weight:700;touch-action:manipulation;
+}
+.tabs button:active{transform:scale(.97)}
+.tabs .on{color:#140f00;background:var(--neon);border-color:transparent;box-shadow:0 0 24px rgba(255,45,149,.35)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.rank{width:32px;height:32px;border-radius:10px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,45,149,.15);color:var(--neon);font-weight:800;font-size:14px;margin-right:10px}
+.rank.top{background:var(--neon2);color:#140f00}
+.muted{color:var(--muted);font-size:13px;line-height:1.3}
+.score{font-family:"Bebas Neue",Impact,sans-serif;font-size:34px;color:var(--lime);letter-spacing:.02em;text-shadow:0 0 18px rgba(184,255,60,.25);line-height:1;flex-shrink:0}
+.bar-title{font-weight:700;font-size:16px;line-height:1.25}
+.set-band{font-weight:700;font-size:17px;line-height:1.25}
+.vibe-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.vibe-chip{
+  font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+  padding:5px 9px;border-radius:999px;
+  background:rgba(255,45,149,.12);color:var(--neon);
+  border:1px solid rgba(255,45,149,.3);
+}
+.pulse-chip{background:rgba(184,255,60,.1);color:var(--lime);border-color:rgba(184,255,60,.35)}
+.stars{margin-top:12px;display:flex;align-items:center;justify-content:space-between;gap:4px;width:100%}
+.stars button{
+  flex:1;min-height:var(--tap);min-width:44px;font-size:32px;line-height:1;
+  background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:12px;
+  color:rgba(255,255,255,.25);padding:8px 0;touch-action:manipulation;cursor:pointer;
+}
+.stars button:active:not(:disabled){color:var(--neon2);transform:scale(.96);background:rgba(255,214,10,.12)}
+.stars button:disabled{opacity:.4;cursor:default}
+.stars button.lit{color:var(--neon2);border-color:rgba(255,214,10,.35);background:rgba(255,214,10,.1);text-shadow:0 0 12px rgba(255,214,10,.45)}
+.rated-tag{display:block;margin-top:8px;font-size:12px;color:var(--muted);font-weight:600}
+.check{display:flex;align-items:center;gap:12px;margin:0 12px 10px;padding:14px;min-height:var(--tap);background:rgba(255,45,149,.08);border:1px dashed rgba(255,45,149,.35);border-radius:14px;font-size:14px;font-weight:600}
+.check input{accent-color:var(--neon);width:22px;height:22px;flex-shrink:0}
+.time-pill{font-size:12px;font-weight:700;color:var(--neon2);background:rgba(255,214,10,.1);border:1px solid rgba(255,214,10,.25);padding:6px 10px;border-radius:999px;white-space:nowrap}
+#toast{
+  position:fixed;bottom:calc(var(--nav-h) + var(--safe-b) + 12px);
+  left:max(12px, calc(50% - 215px + 12px));right:max(12px, calc(50% - 215px + 12px));
+  max-width:406px;margin:0 auto;background:var(--neon);color:#fff;padding:14px 16px;border-radius:14px;
+  display:none;font-weight:700;text-align:center;box-shadow:0 12px 40px rgba(255,45,149,.4);z-index:40;
+}
+.venue-head{font-family:"Bebas Neue",Impact,sans-serif;font-size:20px;letter-spacing:.04em;margin:16px 16px 6px;color:var(--text);display:flex;align-items:center;gap:8px}
+.venue-head::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--neon);box-shadow:0 0 10px var(--neon)}
+.panel{display:none}.panel.on{display:block}
+.bottom-nav{
+  position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:100%;max-width:430px;
+  height:calc(var(--nav-h) + var(--safe-b));padding:0 8px var(--safe-b);
+  display:flex;align-items:stretch;justify-content:space-around;
+  background:rgba(7,6,10,.94);border-top:1px solid var(--line);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);z-index:25;
+}
+.bottom-nav button{flex:1;border:0;background:transparent;color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:var(--nav-h);touch-action:manipulation;padding:8px 4px}
+.bottom-nav button .ico{font-size:20px;line-height:1}
+.bottom-nav button.on{color:var(--neon)}
+.bottom-nav button:active{opacity:.75}
+.sheet-bg{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:50;display:none;align-items:flex-end;justify-content:center}
+.sheet-bg.on{display:flex}
+.sheet{
+  width:100%;max-width:430px;background:linear-gradient(180deg,#221c30,#12101a);
+  border-radius:20px 20px 0 0;border:1px solid var(--line);border-bottom:0;
+  padding:18px 16px calc(18px + var(--safe-b));box-shadow:0 -20px 60px rgba(0,0,0,.5);
+}
+.sheet h3{margin:0 0 4px;font-family:"Bebas Neue",Impact,sans-serif;font-size:26px;letter-spacing:.04em}
+.sheet .hint{color:var(--muted);font-size:13px;margin-bottom:14px}
+.vibe-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.vibe-grid button{
+  min-height:var(--tap);border-radius:14px;border:1px solid var(--line);
+  background:rgba(255,255,255,.05);color:var(--text);font-weight:700;font-size:15px;
+  text-transform:capitalize;touch-action:manipulation;
+}
+.vibe-grid button:active{background:rgba(255,45,149,.2);border-color:var(--neon);color:var(--neon);transform:scale(.97)}
+.sheet .skip{width:100%;margin-top:12px;min-height:44px;border:0;background:transparent;color:var(--muted);font-weight:600;font-size:14px}
+.card.tap{cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.card.tap:active{transform:scale(.985);border-color:var(--neon)}
+.chev{color:var(--neon);font-size:22px;margin-left:8px}
+.back{border:0;background:transparent;color:var(--neon);font-weight:700;font-size:16px;min-height:44px;padding:0 4px;margin:4px 0 8px}
+.big-score{font-family:"Bebas Neue",Impact,sans-serif;font-size:64px;line-height:1;color:var(--lime)}
+/* competitive add-ons */
+.ticker{
+  margin:10px 12px 0;padding:10px 14px;border-radius:12px;
+  background:rgba(184,255,60,.08);border:1px solid rgba(184,255,60,.25);
+  color:var(--lime);font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px;
+}
+.ticker .dot{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime);flex-shrink:0}
+.now-strip{display:flex;gap:10px;overflow-x:auto;padding:4px 12px 8px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.now-strip::-webkit-scrollbar{display:none}
+.now-card{
+  flex:0 0 78%;scroll-snap-align:start;min-height:88px;
+  background:linear-gradient(135deg,rgba(255,45,149,.18),rgba(26,22,36,.95));
+  border:1px solid rgba(255,45,149,.4);border-radius:16px;padding:12px 14px;
+  box-shadow:0 8px 28px rgba(255,45,149,.15);touch-action:manipulation;
+}
+.now-card .band{font-weight:800;font-size:17px;margin-top:6px;line-height:1.2}
+.now-card .bar{color:var(--muted);font-size:13px;margin-top:4px}
+.street-dot{
+  width:14px;height:14px;border-radius:50%;flex-shrink:0;border:2px solid #07060a;
+  box-shadow:0 0 0 1px rgba(255,255,255,.15);
+}
+.street-dot.hot{background:var(--lime);box-shadow:0 0 12px rgba(184,255,60,.55)}
+.street-dot.mid{background:var(--neon2)}
+.street-dot.cold{background:#555}
+.street-rail{position:relative;padding-left:4px}
+.street-rail::before{
+  content:"";position:absolute;left:18px;top:18px;bottom:18px;width:2px;
+  background:linear-gradient(180deg,var(--neon),rgba(255,45,149,.15));
+}
+.street-item{display:flex;gap:12px;align-items:flex-start;margin:0 12px 10px;position:relative}
+.street-item .card{margin:0;flex:1}
+.search-wrap{margin:0 12px 10px}
+.search-wrap input{
+  width:100%;min-height:var(--tap);border-radius:14px;border:1px solid var(--line);
+  background:rgba(255,255,255,.05);color:var(--text);padding:12px 14px;font-size:16px;font-family:inherit;
+}
+.search-wrap input::placeholder{color:var(--muted)}
+.btn-row{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.btn{
+  flex:1;min-height:44px;min-width:120px;border-radius:12px;border:1px solid var(--line);
+  background:rgba(255,255,255,.06);color:var(--text);font-weight:700;font-size:14px;
+  touch-action:manipulation;padding:10px 12px;
+}
+.btn.primary{background:var(--neon);border-color:transparent;color:#fff;box-shadow:0 0 20px rgba(255,45,149,.35)}
+.btn:active{transform:scale(.97)}
+.plan-bar{
+  position:fixed;left:50%;transform:translateX(-50%);bottom:calc(var(--nav-h) + var(--safe-b));
+  width:100%;max-width:430px;z-index:24;display:none;
+  background:rgba(18,16,26,.96);border-top:1px solid rgba(255,214,10,.35);
+  padding:10px 12px;backdrop-filter:blur(12px);
+}
+.plan-bar.on{display:block}
+.plan-bar .title{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--neon2);font-weight:800;margin-bottom:6px}
+.plan-chips{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.plan-chip{
+  display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;
+  background:rgba(255,214,10,.12);border:1px solid rgba(255,214,10,.35);font-size:12px;font-weight:700;
+}
+.plan-chip button{border:0;background:transparent;color:var(--muted);font-size:16px;line-height:1;padding:0 0 0 2px}
+.install-hint{
+  margin:8px 12px;padding:12px 14px;border-radius:14px;display:none;
+  background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.2);
+  font-size:13px;color:var(--muted);
+}
+.install-hint.on{display:block}
+.install-hint strong{color:var(--text)}
+.late-hint{margin-top:8px;font-size:12px;color:var(--neon2);font-weight:600}
+.section-sub{margin:-4px 16px 8px;color:var(--muted);font-size:12px}
+.hot-score-mini{font-family:"Bebas Neue",Impact,sans-serif;font-size:22px;color:var(--lime)}
+</style>
+</head>
+<body>
+<header>
+  <div class="kicker">Nashville · Lower Broadway</div>
+  <h1>BROADWAY<br>TONIGHT</h1>
+  <div class="sub">Who’s on. Who’s hot. Rate the set in one tap.</div>
+</header>
+
+<div id="panel-home" class="panel on">
+  <div id="ticker" class="ticker" hidden><span class="dot"></span><span id="tickerText"></span></div>
+  <div id="installHint" class="install-hint">
+    <strong>Add to Home Screen</strong> for one-tap access — Share → Add to Home Screen on iPhone, or the browser menu on Android.
+    <button type="button" class="btn" style="margin-top:8px;width:100%" onclick="this.parentElement.classList.remove('on');localStorage.setItem('bt_install_dismiss','1')">Got it</button>
+  </div>
+  <h2>NOW PLAYING</h2>
+  <div class="section-sub" id="nowSub">Live across the strip · CT</div>
+  <div id="nowStrip" class="now-strip"></div>
+  <div id="featured"></div>
+  <h2 id="hot-anchor">HOT RIGHT NOW</h2>
+  <div class="tabs">
+    <button data-t="tonight" class="on">Tonight</button>
+    <button data-t="week">Week</button>
+    <button data-t="streak">Streak</button>
+  </div>
+  <div id="board"></div>
+  <h2>WALK THE STRIP</h2>
+  <div class="section-sub">River → 5th · hot score dots</div>
+  <div id="street" class="street-rail"></div>
+</div>
+
+<div id="panel-lineup" class="panel">
+  <h2>TONIGHT’S LINEUP</h2>
+  <div class="search-wrap">
+    <input type="search" id="bandSearch" placeholder="Search a band…" autocomplete="off" enterkeyhint="search">
+  </div>
+  <div id="searchResults"></div>
+  <label class="check"><input type="checkbox" id="ci"> I’m here — count my check-in</label>
+  <div id="lineup"></div>
+</div>
+
+<div id="panel-bar" class="panel">
+  <button type="button" class="back" id="backBtn">‹ Back</button>
+  <div id="barDetail"></div>
+</div>
+
+<div id="toast"></div>
+
+<div class="plan-bar" id="planBar">
+  <div class="title">Tonight plan · max 3</div>
+  <div class="plan-chips" id="planChips"></div>
+</div>
+
+<div class="sheet-bg" id="vibeSheet" role="dialog" aria-modal="true" aria-labelledby="vibeTitle">
+  <div class="sheet">
+    <h3 id="vibeTitle">Pick a vibe</h3>
+    <div class="hint" id="vibeHint">How’s the room right now?</div>
+    <div class="vibe-grid" id="vibeGrid"></div>
+    <button type="button" class="skip" id="vibeSkip">Skip vibe</button>
+  </div>
+</div>
+
+<nav class="bottom-nav" aria-label="Main">
+  <button type="button" data-panel="home" class="on" id="nav-home"><span class="ico">🔥</span>Hot Now</button>
+  <button type="button" data-panel="home" data-scroll="street" id="nav-street"><span class="ico">🗺</span>Strip</button>
+  <button type="button" data-panel="lineup" id="nav-lineup"><span class="ico">♪</span>Lineup</button>
+</nav>
+
+<script>
+const $=s=>document.querySelector(s);let tab='tonight';
+const VIBES=['loud','chill','packed','dancing','tipsy'];
+let pending=null;
+const PLAN_KEY='bt_tonight_plan';
+const j=u=>fetch(u).then(r=>r.json());
+const toast=m=>{const t=$('#toast');t.textContent=m;t.style.display='block';setTimeout(()=>t.style.display='none',2500)};
+const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function showPanel(name){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  $('#panel-'+name).classList.add('on');
+}
+
+function vibeHtml(list, amplify){
+  if(!list||!list.length)return '';
+  const chips=list.map(v=>{
+    const label=typeof v==='string'?v:(v.vibe+(amplify&&v.n?` · ${v.n}`:''));
+    const cls=amplify?'vibe-chip pulse-chip':'vibe-chip';
+    return `<span class="${cls}">${esc(label)}</span>`;
+  });
+  return `<div class="vibe-row">${chips.join('')}</div>`;
+}
+
+function getPlan(){try{return JSON.parse(localStorage.getItem(PLAN_KEY)||'[]')}catch(e){return []}}
+function setPlan(arr){localStorage.setItem(PLAN_KEY,JSON.stringify(arr.slice(0,3)));renderPlan();}
+function inPlan(id){return getPlan().some(x=>x.id===id)}
+function jsStr(s){return String(s||'').replace(/\\/g,'\\\\').replace(/'/g,"\\'");}
+function togglePlan(id,name){
+  let p=getPlan();
+  if(p.some(x=>x.id===id)){p=p.filter(x=>x.id!==id);toast('Removed from Tonight Plan');}
+  else{
+    if(p.length>=3){toast('Tonight Plan is full (3 max)');return;}
+    p.push({id,name});toast('Added to Tonight Plan');
+  }
+  setPlan(p);
+  if(curBar===id)renderBar(id);
+}
+function renderPlan(){
+  const p=getPlan();const bar=$('#planBar');
+  if(!p.length){bar.classList.remove('on');document.body.style.paddingBottom=`calc(var(--nav-h) + var(--safe-b) + 16px)`;return;}
+  bar.classList.add('on');
+  document.body.style.paddingBottom=`calc(var(--nav-h) + var(--safe-b) + 88px)`;
+  $('#planChips').innerHTML=p.map(x=>`
+    <span class="plan-chip"><a href="/bar/${encodeURIComponent(x.id)}" onclick="event.preventDefault();openBar('${x.id}')" style="color:inherit;text-decoration:none">${esc(x.name)}</a>
+    <button type="button" aria-label="Remove" onclick="togglePlan('${x.id}','${jsStr(x.name)}')">×</button></span>`).join('');
+}
+
+async function pulse(){
+  const d=await j('/api/pulse');
+  const el=$('#ticker');
+  if(d.label){$('#tickerText').textContent=d.label;el.hidden=false;}
+}
+
+async function nowPlaying(){
+  const d=await j('/api/now');
+  $('#nowSub').textContent=`${d.ctTime} CT · ${d.nowPlaying.length} stages live`;
+  if(!d.nowPlaying.length){
+    $('#nowStrip').innerHTML=`<div class="card muted" style="margin:0 0 0 0;flex:1">No sets timed as live right now — check Lineup.</div>`;
+    return;
+  }
+  $('#nowStrip').innerHTML=d.nowPlaying.map(x=>`
+    <div class="now-card" role="link" tabindex="0" onclick="openBar('${x.barId}')">
+      <span class="live-badge">Live</span>
+      <div class="band">${esc(x.band)}</div>
+      <div class="bar">${esc(x.bar)} · ${esc(x.set_start)}–${esc(x.set_end)}</div>
+    </div>`).join('');
+}
+
+async function street(){
+  const d=await j('/api/street');
+  $('#street').innerHTML=d.bars.map(x=>{
+    const dot=x.score==null?'cold':x.score>=4?'hot':'mid';
+    const pulse=x.pulse?`<div class="vibe-row" style="margin-top:6px"><span class="vibe-chip pulse-chip">${esc(x.pulse)}</span>${x.ratingsLast6h?`<span class="vibe-chip">${x.ratingsLast6h} in 6h</span>`:''}</div>`:(x.ratingsLast6h?`<div class="muted" style="margin-top:6px">${x.ratingsLast6h} ratings · 6h</div>`:'');
+    const now=x.nowPlaying?`<div class="muted" style="margin-top:4px"><span class="live-badge" style="font-size:9px;padding:2px 6px">Live</span> ${esc(x.nowPlaying.band)}</div>`:'';
+    const late=x.lastCall?`<div class="late-hint">${esc(x.lastCall.label)}</div>`:'';
+    return `<div class="street-item">
+      <span class="street-dot ${dot}" title="Hot score"></span>
+      <div class="card tap" role="link" tabindex="0" onclick="openBar('${x.barId}')">
+        <div class="row">
+          <div style="min-width:0">
+            <div class="bar-title">${esc(x.name)}</div>
+            <div class="muted">${esc(x.address)}</div>
+            ${now}${pulse}${late}
+          </div>
+          <div class="hot-score-mini">${x.score!=null?x.score.toFixed(2):'—'}<span class="chev">›</span></div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+async function featured(){
+  const f=await j('/api/featured');
+  $('#featured').innerHTML=f.map(x=>`
+    <div class="card spon tap" id="spon-card" role="link" tabindex="0" onclick="openBar('${x.bar_id}')">
+      <span class="badge">Sponsored</span>
+      <div class="name">${esc(x.name)}</div>
+      <div class="muted" style="margin-top:6px">${esc(x.address)} · paid placement, not a rating</div>
+    </div>`).join('');
+}
+
+async function board(){
+  const d=await j('/api/leaderboards/'+tab);
+  $('#board').innerHTML=d.map((x,i)=>`
+    <div class="card tap" role="link" tabindex="0" onclick="openBar('${x.barId}')">
+      <div class="row">
+        <div style="display:flex;align-items:flex-start;min-width:0">
+          <span class="rank ${i<3?'top':''}">${i+1}</span>
+          <div style="min-width:0">
+            <div class="bar-title">${esc(x.name)}</div>
+            <div class="muted">${
+              tab==='streak' ? `${x.streak} night streak · week ${x.weekScore}` :
+              tab==='week' ? `${x.n} ratings this week` :
+              x.visible ? `${x.n} ratings · ${x.checkins} check-ins (+${x.boost})` :
+              'Not enough ratings yet'
+            }</div>
+          </div>
+        </div>
+        <div class="score">${
+          tab==='streak' ? x.streak+'🔥' :
+          x.score==null ? '—' :
+          x.score.toFixed(2)
+        }<span class="chev">›</span></div>
+      </div>
+      ${vibeHtml(x.vibes)}
+    </div>`).join('');
+}
+
+async function lineup(){
+  const d=await j('/api/lineup?date=today');
+  let last='';
+  $('#lineup').innerHTML=d.sets.map(s=>{
+    const h=s.bar!==last ? `<div class="venue-head">${esc(s.bar)}</div>` : '';
+    last=s.bar;
+    return h+setCard({...s,bar_id:s.bar_id});
+  }).join('');
+}
+
+function setCard(s){return `
+      <div class="card">
+        <div class="row">
+          <div class="set-band">${esc(s.band)}</div>
+          <span class="time-pill">${esc(s.set_start)}–${esc(s.set_end)}</span>
+        </div>
+        <div class="stars" role="group" aria-label="Rate ${esc(s.band)}">
+          ${[1,2,3,4,5].map(n=>`<button type="button" aria-label="${n} star" class="${s.ratedByMe?'lit':''}" ${s.ratedByMe?'disabled':''}
+            onclick="beginRate('${s.bar_id}','${s.band_id}','${s.id}',${n},'${String(s.band).replace(/'/g,'')}')">★</button>`).join('')}
+        </div>
+        ${s.ratedByMe?'<span class="rated-tag">rated ✓</span>':''}
+      </div>`;}
+
+let curBar=null;let streetCache=null;
+async function renderBar(id){
+  const r=await fetch('/api/bars/'+encodeURIComponent(id));
+  if(!r.ok){$('#barDetail').innerHTML='<div class="card">Bar not found.</div>';return;}
+  const b=await r.json();const t=b.tonight;
+  if(!streetCache)streetCache=await j('/api/street');
+  const st=(streetCache.bars||[]).find(x=>x.barId===id);
+  const saved=inPlan(id);
+  const vibeAmplify=Array.isArray(b.vibes)?b.vibes.slice(0,5):[];
+  $('#barDetail').innerHTML=`
+    <div class="card ${b.sponsored?'spon':''}">
+      ${b.sponsored?'<span class="badge">Sponsored</span>':''}
+      <div class="name" style="font-family:'Bebas Neue',Impact,sans-serif;font-size:28px;letter-spacing:.02em;margin-top:4px">${esc(b.name)}</div>
+      <div class="muted" style="margin-top:6px">${esc(b.address||'')}</div>
+      <div class="row" style="margin-top:14px">
+        <div class="muted">Tonight<br>${t&&t.score!=null?`${t.n} ratings · ${t.checkins} check-ins`:'Not enough ratings yet'}</div>
+        <div class="big-score">${t&&t.score!=null?t.score.toFixed(2):'—'}</div>
+      </div>
+      ${vibeHtml(vibeAmplify,true)}
+      ${st&&st.nowPlaying?`<div class="muted" style="margin-top:10px"><span class="live-badge">Live</span> ${esc(st.nowPlaying.band)} · ${esc(st.nowPlaying.set_start)}–${esc(st.nowPlaying.set_end)}</div>`:''}
+      ${st&&st.lastCall?`<div class="late-hint">${esc(st.lastCall.label)}</div>`:''}
+      <div class="btn-row">
+        <button type="button" class="btn primary" onclick="shareBar('${id}')">Share</button>
+        <button type="button" class="btn" onclick="togglePlan('${id}','${jsStr(b.name)}')">${saved?'Remove plan':'＋ Tonight Plan'}</button>
+      </div>
+    </div>
+    <h2>TONIGHT’S SETS</h2>
+    <label class="check"><input type="checkbox" id="ci2" onchange="$('#ci').checked=this.checked" ${$('#ci').checked?'checked':''}> I’m here — count my check-in</label>
+    ${b.sets.length?b.sets.map(s=>setCard({...s,bar_id:id})).join(''):'<div class="card muted">No sets listed tonight.</div>'}`;
+}
+
+async function shareBar(id){
+  const r=await fetch('/api/bars/'+encodeURIComponent(id));
+  if(!r.ok)return toast('Could not share');
+  const b=await r.json();
+  const score=b.tonight&&b.tonight.score!=null?b.tonight.score.toFixed(2):'—';
+  const bands=(b.sets||[]).map(s=>`${s.set_start} ${s.band}`).slice(0,4).join(' · ');
+  const url=location.origin+'/bar/'+encodeURIComponent(id);
+  const text=`${b.name} is ${score} tonight on Broadway Tonight.\n${bands}\n${url}`;
+  try{
+    if(navigator.share){await navigator.share({title:b.name+' · Broadway Tonight',text,url});}
+    else{await navigator.clipboard.writeText(text);toast('Link copied');}
+  }catch(e){
+    if(e&&e.name==='AbortError')return;
+    try{await navigator.clipboard.writeText(url);toast('Link copied');}catch(e2){toast(url);}
+  }
+}
+
+function openBar(id,push=true){
+  if(!id)return;curBar=id;
+  if(push)history.pushState({bar:id},'','/bar/'+encodeURIComponent(id));
+  showPanel('bar');window.scrollTo(0,0);
+  document.querySelectorAll('.bottom-nav button').forEach(x=>x.classList.remove('on'));
+  renderBar(id);
+}
+function goHome(push=true){
+  curBar=null;if(push)history.pushState({},'','/');
+  showPanel('home');$('#nav-home').classList.add('on');window.scrollTo(0,0);
+}
+function route(){const m=location.pathname.match(/^\/bar\/([^/]+)/);if(m)openBar(decodeURIComponent(m[1]),false);else goHome(false);}
+window.addEventListener('popstate',route);
+
+function beginRate(barId,bandId,setId,rating,bandName){
+  pending={barId,bandId,setId,rating};
+  $('#vibeHint').textContent=`${rating}★ for ${bandName||'this set'} — how’s the room?`;
+  $('#vibeGrid').innerHTML=VIBES.map(v=>`<button type="button" onclick="finishRate('${v}')">${v}</button>`).join('');
+  $('#vibeSheet').classList.add('on');
+}
+
+async function finishRate(vibe){
+  if(!pending)return;
+  const p=pending;pending=null;
+  $('#vibeSheet').classList.remove('on');
+  const r=await fetch('/api/ratings',{
+    method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({...p,vibe:vibe||null,checkIn:$('#ci').checked})
+  });
+  const b=await r.json();
+  const tag=vibe?` · ${vibe}`:'';
+  toast(r.ok?`Rated ${p.rating}★${tag} — thanks!`:b.error);
+  lineup();board();pulse();streetCache=null;street();nowPlaying();if(curBar)renderBar(curBar);
+}
+
+let searchTimer=null;
+$('#bandSearch').addEventListener('input',()=>{
+  clearTimeout(searchTimer);
+  searchTimer=setTimeout(runSearch,220);
+});
+async function runSearch(){
+  const q=$('#bandSearch').value.trim();
+  const box=$('#searchResults');
+  if(q.length<2){box.innerHTML='';$('#lineup').style.display='';return;}
+  $('#lineup').style.display='none';
+  const d=await j('/api/search?q='+encodeURIComponent(q));
+  if(!d.matches.length){box.innerHTML=`<div class="card muted">No bands matching “${esc(q)}” tonight.</div>`;return;}
+  box.innerHTML=d.matches.map(m=>`
+    <div class="card tap" role="link" onclick="openBar('${m.barId}')">
+      <div class="row">
+        <div>
+          <div class="set-band">${esc(m.band)} ${m.live?'<span class="live-badge">Live</span>':''}</div>
+          <div class="muted">${esc(m.bar)} · ${esc(m.address)}</div>
+        </div>
+        <span class="time-pill">${esc(m.set_start)}–${esc(m.set_end)}</span>
+      </div>
+    </div>`).join('');
+}
+
+$('#vibeSkip').onclick=()=>finishRate(null);
+$('#vibeSheet').onclick=e=>{if(e.target.id==='vibeSheet')finishRate(null)};
+
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');tab=b.dataset.t;board();
+});
+
+document.querySelectorAll('.bottom-nav button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.bottom-nav button').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');
+  if(location.pathname!=='/'){history.pushState({},'','/');curBar=null;}
+  const panel=b.dataset.panel;
+  showPanel(panel);
+  if(b.dataset.scroll==='street'){
+    showPanel('home');
+    requestAnimationFrame(()=>{
+      const el=$('#street');
+      if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  } else if(b.dataset.scroll==='featured'){
+    showPanel('home');
+    requestAnimationFrame(()=>{
+      const el=$('#spon-card')||$('#featured');
+      if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  } else {
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+});
+
+$('#backBtn').onclick=()=>history.length>1&&history.state&&history.state.bar?history.back():goHome();
+
+function maybeInstall(){
+  if(localStorage.getItem('bt_install_dismiss'))return;
+  const isStandalone=window.matchMedia('(display-mode: standalone)').matches||navigator.standalone;
+  if(!isStandalone)$('#installHint').classList.add('on');
+}
+
+featured();board();lineup();pulse();nowPlaying();street();renderPlan();maybeInstall();route();
+setInterval(()=>{board();pulse();nowPlaying();streetCache=null;street();},60000);
+</script>
+</body>
+</html>
