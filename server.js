@@ -150,6 +150,13 @@ app.post('/api/owner/:token',(req,res)=>{const bar=ownerBar(req.params.token);if
  cache={};res.json({ok:true});});
 app.get('/owner/:token',(q,r)=>r.sendFile(path.join(__dirname,'public','owner.html')));
 app.get('/bar/:id',(q,r)=>r.sendFile(path.join(__dirname,'public','index.html')));
+const ADMIN_KEY=process.env.ADMIN_KEY||'';
+app.use('/api/admin',(q,r,n)=>{const k=String(q.get('x-admin-key')||q.query.key||'');const ok=ADMIN_KEY&&k.length===ADMIN_KEY.length&&crypto.timingSafeEqual(Buffer.from(k),Buffer.from(ADMIN_KEY));if(!ok)return r.status(401).json({error:'unauthorized'});n();});
+app.get('/api/admin/owner-links',(q,r)=>{const base=(process.env.PUBLIC_BASE_URL||'https://broadway-tonight.onrender.com').replace(/\/$/,'');
+ const bars=db.prepare('SELECT id,name FROM bars ORDER BY name').all();
+ r.json(bars.map(b=>{let t=db.prepare('SELECT token FROM owner_tokens WHERE bar_id=?').get(b.id);
+  if(!t){t={token:crypto.randomBytes(24).toString('hex')};db.prepare('INSERT INTO owner_tokens(token,bar_id,created_at) VALUES(?,?,?)').run(t.token,b.id,Date.now());}
+  return {barId:b.id,name:b.name,url:base+'/owner/'+t.token};}));});
 app.get('/api/admin/review',(q,r)=>r.json(db.prepare('SELECT * FROM review_queue ORDER BY id DESC').all()));
 // streak snapshot: check every 5 min; snapshot previous night once after 3 AM CT
 setInterval(()=>{try{const h=+new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',hour:'numeric',hourCycle:'h23'}).format(new Date());
