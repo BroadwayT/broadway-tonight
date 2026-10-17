@@ -6,7 +6,7 @@ const bars=[["tootsies","Tootsie's Orchid Lounge","422 Broadway"],["roberts","Ro
 const bands=["Whiskey Hollow","The Cumberland Strays","Rachel Lynn & Copper Creek","Hank Rider Band","Delta Dawn Revival","Mason Tate","Bluebird Outlaws","The Steel Pedal Kings","Jenna Rae","Broadway Bound","Rusty Spur Trio","Lainey Cole","Tennessee Two-Step","Gravel Road Choir","Sadie Mae & the Tumbleweeds","Cody Ray Wells","The Lost Highway Boys","Kristen Hale","Riverbend","Neon Saints"];
 const ib=db.prepare('INSERT INTO bars VALUES(?,?,?)');bars.forEach(b=>ib.run(...b));
 const ibd=db.prepare('INSERT INTO bands VALUES(?,?)');bands.forEach((b,i)=>ibd.run('band'+i,b));
-const night=S.ctNight(now);const is=db.prepare('INSERT INTO sets VALUES(?,?,?,?,?,?,?)');
+const night=S.ctNight(now);const is=db.prepare('INSERT INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id) VALUES(?,?,?,?,?,?,?)');
 // 4-hour set slots (honky-tonk shifts): 10a-2p,2p-6p,6p-10p,10p-2a CT. Window id = set slot.
 const slots=[["10:00","14:00"],["14:00","18:00"],["18:00","22:00"],["22:00","02:00"]];
 const sets=[];bars.forEach((b,bi)=>slots.forEach((s,si)=>{const id=`${night}-${b[0]}-${si}`,band='band'+((bi*2+si)%bands.length);is.run(id,b[0],band,night,s[0],s[1],`${night}-slot${si}`);sets.push({id,bar:b[0],band,win:`${night}-slot${si}`});}));

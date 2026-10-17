@@ -1,5 +1,5 @@
 const express=require('express'),cookieParser=require('cookie-parser'),crypto=require('crypto'),path=require('path');
-const db=require('./db'),S=require('./scoring');
+const db=require('./db'),S=require('./scoring');const L=require('./lineup');
 try{if(!db.prepare('SELECT COUNT(*) c FROM bars').get().c){console.log('Empty DB, seeding');require('./scripts/seed.js');}}catch(e){console.error('seed failed',e)}
 const app=express();app.use(express.json());app.use(cookieParser());app.set('trust proxy','loopback');
 app.use((req,res,next)=>{let d=req.cookies.device_id;if(!d){d=crypto.randomUUID();res.cookie('device_id',d,{maxAge:365*864e5,httpOnly:true,sameSite:'lax'});}req.deviceId=d;
@@ -142,7 +142,7 @@ app.post('/api/owner/:token',(req,res)=>{const bar=ownerBar(req.params.token);if
    const name=String(x.band||'').trim().slice(0,80);let bandId=s.band_id;
    if(name){const ex=db.prepare('SELECT id FROM bands WHERE lower(name)=lower(?)').get(name);if(ex)bandId=ex.id;else{bandId='b_'+(name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,30)||'band')+'_'+crypto.randomBytes(3).toString('hex');db.prepare('INSERT INTO bands(id,name) VALUES(?,?)').run(bandId,name);}}
    const st=tm(x.set_start),en=tm(x.set_end);if(st===undefined||en===undefined)throw Object.assign(new Error('time must be HH:MM'),{code:400});
-   db.prepare('UPDATE sets SET band_id=?,set_start=COALESCE(?,set_start),set_end=COALESCE(?,set_end) WHERE id=?').run(bandId,st,en,s.id);}
+   db.prepare("UPDATE sets SET band_id=?,set_start=COALESCE(?,set_start),set_end=COALESCE(?,set_end),source='owner' WHERE id=?").run(bandId,st,en,s.id);}
   if(contact&&typeof contact==='object'){const e=String(contact.email||'').trim().slice(0,120)||null,p=String(contact.phone||'').trim().slice(0,40)||null;
    db.prepare('INSERT INTO owner_contacts(bar_id,email,phone,updated_at) VALUES(?,?,?,?) ON CONFLICT(bar_id) DO UPDATE SET email=excluded.email,phone=excluded.phone,updated_at=excluded.updated_at').run(bar.id,e,p,Date.now());}
   db.prepare('UPDATE owner_tokens SET last_used_at=? WHERE token=?').run(Date.now(),req.params.token);})();}
@@ -157,8 +157,11 @@ app.get('/api/admin/owner-links',(q,r)=>{const base=(process.env.PUBLIC_BASE_URL
  r.json(bars.map(b=>{let t=db.prepare('SELECT token FROM owner_tokens WHERE bar_id=?').get(b.id);
   if(!t){t={token:crypto.randomBytes(24).toString('hex')};db.prepare('INSERT INTO owner_tokens(token,bar_id,created_at) VALUES(?,?,?)').run(t.token,b.id,Date.now());}
   return {barId:b.id,name:b.name,url:base+'/owner/'+t.token};}));});
+app.post('/api/admin/refresh-lineup',async(q,r)=>{const d=String(q.query.date||q.body&&q.body.date||S.ctNight());if(!/^\d{4}-\d{2}-\d{2}$/.test(d))return r.status(400).json({error:'date must be YYYY-MM-DD'});
+ try{const x=await L.refresh([d]);cache={};r.json(x);}catch(e){r.status(500).json({error:e.message})}});
+app.get('/api/admin/lineup-status',(q,r)=>r.json(L.status()||{}));
 app.get('/api/admin/review',(q,r)=>r.json(db.prepare('SELECT * FROM review_queue ORDER BY id DESC').all()));
 // streak snapshot: check every 5 min; snapshot previous night once after 3 AM CT
 setInterval(()=>{try{const h=+new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',hour:'numeric',hourCycle:'h23'}).format(new Date());
  if(h===2){const day=S.ctNight();db.prepare('DELETE FROM daily_top5 WHERE day=?').run(day);S.snapshotTonight();}}catch(e){console.error(e)}},5*60e3); // final write in the 2-3 AM CT hour = 3 AM snapshot
-const PORT=process.env.PORT||3847;app.listen(PORT,'0.0.0.0',()=>console.log('Broadway MVP on port '+PORT));
+L.start();const PORT=process.env.PORT||3847;app.listen(PORT,'0.0.0.0',()=>console.log('Broadway MVP on port '+PORT));
