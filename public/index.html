@@ -210,6 +210,14 @@ h2{font-family:"Bebas Neue",Impact,sans-serif;font-size:24px;letter-spacing:.04e
 .bbadge.lg{width:64px;height:64px;border-radius:16px;font-size:28px;margin:0 0 10px}
 .bbadge img{width:100%;height:100%;object-fit:contain;background:#fff}
 .bar-head{display:flex;align-items:center;min-width:0}
+.tip-btn{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:8px 14px;border:0;border-radius:999px;cursor:pointer;
+  font-weight:800;font-size:14px;color:#07060a;background:linear-gradient(135deg,var(--lime),var(--neon2));box-shadow:0 0 16px rgba(184,255,60,.35);text-decoration:none}
+.tip-btn:active{transform:scale(.97)}
+.now-card .tip-btn{margin-top:10px;min-height:36px;font-size:13px}
+.tip-row{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.band-link{color:inherit;text-decoration:none;border-bottom:1px dashed rgba(255,255,255,.25)}
+.tip-opts{display:grid;gap:10px;margin-top:12px}.tip-opts a{justify-content:center;min-height:52px;font-size:17px}
+.ig-link{color:var(--muted);font-size:13px;text-decoration:none}
 </style>
 </head>
 <body>
@@ -263,6 +271,14 @@ h2{font-family:"Bebas Neue",Impact,sans-serif;font-size:24px;letter-spacing:.04e
   <div class="plan-chips" id="planChips"></div>
 </div>
 
+<div class="sheet-bg" id="tipSheet" role="dialog" aria-modal="true" aria-labelledby="tipTitle" onclick="if(event.target===this)this.classList.remove('on')">
+  <div class="sheet">
+    <h3 id="tipTitle">Tip the band</h3>
+    <div class="hint">Opens the band’s payment app. Broadway Tonight never handles money.</div>
+    <div class="tip-opts" id="tipOpts"></div>
+    <button type="button" class="skip" onclick="$('#tipSheet').classList.remove('on')">Close</button>
+  </div>
+</div>
 <div class="sheet-bg" id="vibeSheet" role="dialog" aria-modal="true" aria-labelledby="vibeTitle">
   <div class="sheet">
     <h3 id="vibeTitle">Pick a vibe</h3>
@@ -354,6 +370,7 @@ async function nowPlaying(){
       <span class="live-badge">Live</span>
       <div class="band">${esc(x.band)}</div>
       <div class="bar">${esc(x.bar)} · ${esc(x.set_start)}–${esc(x.set_end)}</div>
+      ${tipBtn(x)}
     </div>`).join('');
 }
 
@@ -430,7 +447,7 @@ async function lineup(){
 function setCard(s){return `
       <div class="card">
         <div class="row">
-          <div class="set-band">${esc(s.band)}</div>
+          <div class="set-band">${bandName(s)}</div>
           <span class="time-pill">${esc(s.set_start)}–${esc(s.set_end)}</span>
         </div>
         <div class="stars" role="group" aria-label="Rate ${esc(s.band)}">
@@ -438,8 +455,34 @@ function setCard(s){return `
             onclick="beginRate('${s.bar_id}','${s.band_id}','${s.id}',${n},'${String(s.band).replace(/'/g,'')}')">★</button>`).join('')}
         </div>
         ${s.ratedByMe?'<span class="rated-tag">rated ✓</span>':''}
+        ${s.tip?`<div class="tip-row">${tipBtn(s)}</div>`:''}
       </div>`;}
 
+
+const TIPMAP={};
+function tipBtn(s){if(!s||!s.tip)return '';const k='t'+Object.keys(TIPMAP).length;TIPMAP[k]={band:s.band,tip:s.tip};
+  return `<button type="button" class="tip-btn" onclick="event.stopPropagation();openTip('${k}')" aria-label="Tip ${esc(s.band)}">💸 Tip the band</button>`;}
+const TIPNAMES={venmo:'Venmo',cashapp:'Cash App',paypal:'PayPal'};
+function openTip(k){const t=TIPMAP[k];if(!t)return;const ks=Object.keys(t.tip);
+  if(ks.length===1){location.href=t.tip[ks[0]];return;}
+  $('#tipTitle').textContent='Tip '+t.band;
+  $('#tipOpts').innerHTML=ks.map(x=>`<a class="tip-btn" href="${esc(t.tip[x])}" rel="noopener">${TIPNAMES[x]}</a>`).join('');
+  $('#tipSheet').classList.add('on');}
+function bandName(s){return s.bandSlug?`<a class="band-link" href="/band/${encodeURIComponent(s.bandSlug)}" onclick="event.stopPropagation();event.preventDefault();openBand('${s.bandSlug}')">${esc(s.band)}</a>`:esc(s.band);}
+let curBand=null;
+function openBand(slug,push=true){curBand=slug;curBar=null;if(push)history.pushState({band:slug},'','/band/'+encodeURIComponent(slug));
+  showPanel('bar');window.scrollTo(0,0);document.querySelectorAll('.bottom-nav button').forEach(x=>x.classList.remove('on'));renderBand(slug);}
+async function renderBand(slug){const r=await fetch('/api/band/'+encodeURIComponent(slug));
+  if(!r.ok){$('#barDetail').innerHTML='<div class="card">Band not found.</div>';return;}
+  const b=await r.json();document.title=b.name+' · Broadway Tonight';
+  const up=b.upcoming.length?b.upcoming.map(x=>`<div class="card tap" role="link" tabindex="0" onclick="openBar('${x.bar_id}')"><div class="row"><div style="min-width:0"><div class="bar-title">${esc(x.bar)}</div><div class="muted">${esc(x.date)} · ${esc(x.address||'')}</div></div><span class="time-pill">${esc(x.set_start)}–${esc(x.set_end)}</span></div></div>`).join(''):'<div class="card muted">No upcoming sets listed.</div>';
+  $('#barDetail').innerHTML=`<div class="card">
+    <div class="muted" style="text-transform:uppercase;letter-spacing:.12em;font-size:11px">Band</div>
+    <div class="name" style="font-family:'Bebas Neue',Impact,sans-serif;font-size:34px;letter-spacing:.02em;margin-top:4px">${esc(b.name)}</div>
+    <div class="muted" style="margin-top:6px">${b.rating?`★ ${b.rating.avg.toFixed(2)} · ${b.rating.n} ratings`:'No ratings yet'}</div>
+    <div class="tip-row">${tipBtn(b)}${b.instagram?`<a class="ig-link" href="${esc(b.instagram)}" target="_blank" rel="noopener">Instagram ↗</a>`:''}</div>
+    ${b.tip?'<div class="muted" style="font-size:12px;margin-top:8px">Tips go straight to the band through their own app. Broadway Tonight never handles money.</div>':''}
+  </div><div class="venue-head">Upcoming sets</div>${up}`;}
 let curBar=null;let streetCache=null;
 async function renderBar(id){
   const r=await fetch('/api/bars/'+encodeURIComponent(id));
@@ -500,7 +543,7 @@ function goHome(push=true){
   curBar=null;if(push)history.pushState({},'','/');
   showPanel('home');$('#nav-home').classList.add('on');window.scrollTo(0,0);
 }
-function route(){const m=location.pathname.match(/^\/bar\/([^/]+)/);if(m)openBar(decodeURIComponent(m[1]),false);else goHome(false);}
+function route(){const bm=location.pathname.match(/^\/band\/([^/]+)/);if(bm)return openBand(decodeURIComponent(bm[1]),false);const m=location.pathname.match(/^\/bar\/([^/]+)/);if(m)openBar(decodeURIComponent(m[1]),false);else goHome(false);}
 window.addEventListener('popstate',route);
 
 function beginRate(barId,bandId,setId,rating,bandName){

@@ -1,7 +1,7 @@
 const express=require('express'),cookieParser=require('cookie-parser'),crypto=require('crypto'),path=require('path');
 const db=require('./db'),S=require('./scoring');
 try{if(!db.prepare('SELECT COUNT(*) c FROM bars').get().c){console.log('Empty DB, seeding');require('./scripts/seed.js');}}catch(e){console.error('seed failed',e)}
-const BARS=require('./bars');console.log('bars added',BARS.upsertBars(db));const L=require('./lineup');const SRC=require('./sources');
+const BARS=require('./bars');console.log('bars added',BARS.upsertBars(db));const L=require('./lineup');const SRC=require('./sources');const TIPS=require('./tips');
 const app=express();app.use(express.json());app.use(cookieParser());app.set('trust proxy','loopback');
 app.use((req,res,next)=>{let d=req.cookies.device_id;if(!d){d=crypto.randomUUID();res.cookie('device_id',d,{maxAge:365*864e5,httpOnly:true,sameSite:'lax'});}req.deviceId=d;
  req.ipHash=crypto.createHash('sha256').update(String(req.ip)).digest('hex');next();}); // raw IP never stored
@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname,'public')));
 app.get('/api/lineup',(req,res)=>{const date=(!req.query.date||req.query.date==='today')?S.ctNight():req.query.date;
  const rows=db.prepare(`SELECT s.*,b.name bar,bd.name band FROM sets s JOIN bars b ON b.id=s.bar_id JOIN bands bd ON bd.id=s.band_id WHERE s.date=? ORDER BY b.name,s.set_start`).all(date);
  const mine=new Set(db.prepare('SELECT set_id FROM ratings WHERE device_id=?').all(req.deviceId).map(r=>r.set_id));
- res.json({date,sets:rows.map(r=>({...r,ratedByMe:mine.has(r.id)}))});});
+ res.json({date,sets:TIPS.decorate(rows.map(r=>({...r,ratedByMe:mine.has(r.id)})))});});
 const VIBES=new Set(['loud','chill','packed','dancing','tipsy']);
 function vibesForBars(barIds,windowH){
  const now=Date.now();const ids=barIds.length?barIds:[''];
@@ -53,7 +53,7 @@ app.get('/api/bars/:id',(req,res)=>{const id=req.params.id;const bar=db.prepare(
  const sets=db.prepare(`SELECT s.*,bd.name band FROM sets s JOIN bands bd ON bd.id=s.band_id WHERE s.bar_id=? AND s.date=? ORDER BY s.set_start`).all(id,date).map(r=>({...r,ratedByMe:mine.has(r.id)}));
  const t=S.tonight().find(x=>x.barId===id);const tonight=t&&!t.visible?{...t,score:null,base:null,label:'Not enough ratings yet'}:t||null;
  const sponsored=!!db.prepare('SELECT 1 FROM sponsors WHERE bar_id=? AND day=?').get(id,date);
- res.json({...bar,date,sponsored,tonight,week:S.week().find(x=>x.barId===id)||null,vibes:(vibesForBars([id],6)[id]||[]),sets});});
+ res.json({...bar,date,sponsored,tonight,week:S.week().find(x=>x.barId===id)||null,vibes:(vibesForBars([id],6)[id]||[]),sets:TIPS.decorate(sets)});});
 
 
 // ---- competitive: now / street / pulse / search ----
@@ -87,7 +87,7 @@ app.get('/api/now',(req,res)=>{
   const live=rows.filter(r=>inSet(hm,r.set_start,r.set_end))
     .sort((a,b)=>(STREET_ORDER[a.bar_id]||99)-(STREET_ORDER[b.bar_id]||99))
     .map(r=>({barId:r.bar_id,bar:r.bar,address:r.address,band:r.band,bandId:r.band_id,setId:r.id,set_start:r.set_start,set_end:r.set_end,streetOrder:STREET_ORDER[r.bar_id]||99}));
-  res.json({date,ctTime:hm,nowPlaying:live});
+  res.json({date,ctTime:hm,nowPlaying:TIPS.decorate(live)});
 });
 app.get('/api/pulse',(req,res)=>{
   const now=Date.now();
@@ -133,7 +133,7 @@ app.get('/api/search',(req,res)=>{
 });
 // ---- owner magic links ----
 const ownerBar=t=>{const r=db.prepare('SELECT bar_id FROM owner_tokens WHERE token=?').get(String(t||''));return r&&db.prepare('SELECT id,name,address FROM bars WHERE id=?').get(r.bar_id);};
-const ownerSets=(bar,date)=>db.prepare('SELECT s.id,s.set_start,s.set_end,s.band_id,b.name band FROM sets s LEFT JOIN bands b ON b.id=s.band_id WHERE s.bar_id=? AND s.date=? ORDER BY s.set_start').all(bar,date);
+const ownerSets=(bar,date)=>db.prepare('SELECT s.id,s.set_start,s.set_end,s.band_id,b.name band,b.venmo,b.cashapp,b.paypal,b.instagram FROM sets s LEFT JOIN bands b ON b.id=s.band_id WHERE s.bar_id=? AND s.date=? ORDER BY s.set_start').all(bar,date);
 app.get('/api/owner/:token',(req,res)=>{const bar=ownerBar(req.params.token);if(!bar)return res.status(404).json({error:'invalid link'});const date=S.ctNight();
  const c=db.prepare('SELECT email,phone FROM owner_contacts WHERE bar_id=?').get(bar.id)||null;res.json({bar,date,contact:c,sets:ownerSets(bar.id,date)});});
 app.post('/api/owner/:token',(req,res)=>{const bar=ownerBar(req.params.token);if(!bar)return res.status(404).json({error:'invalid link'});const date=S.ctNight();
@@ -143,13 +143,21 @@ app.post('/api/owner/:token',(req,res)=>{const bar=ownerBar(req.params.token);if
    const name=String(x.band||'').trim().slice(0,80);let bandId=s.band_id;
    if(name){const ex=db.prepare('SELECT id FROM bands WHERE lower(name)=lower(?)').get(name);if(ex)bandId=ex.id;else{bandId='b_'+(name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,30)||'band')+'_'+crypto.randomBytes(3).toString('hex');db.prepare('INSERT INTO bands(id,name) VALUES(?,?)').run(bandId,name);}}
    const st=tm(x.set_start),en=tm(x.set_end);if(st===undefined||en===undefined)throw Object.assign(new Error('time must be HH:MM'),{code:400});
-   db.prepare("UPDATE sets SET band_id=?,set_start=COALESCE(?,set_start),set_end=COALESCE(?,set_end),source='owner' WHERE id=?").run(bandId,st,en,s.id);}
+   db.prepare("UPDATE sets SET band_id=?,set_start=COALESCE(?,set_start),set_end=COALESCE(?,set_end),source='owner' WHERE id=?").run(bandId,st,en,s.id);
+   if(x.tips&&typeof x.tips==='object'&&bandId!=='tba'){const cur=db.prepare('SELECT venmo,cashapp,paypal,instagram FROM bands WHERE id=?').get(bandId)||{};const h={};
+    for(const k of ['venmo','cashapp','paypal','instagram']){if(x.tips[k]==null||String(x.tips[k]).trim()==='')continue;let v;try{v=TIPS.cleanHandle(k,x.tips[k])}catch(e){throw Object.assign(e,{code:400})}
+     if(cur[k]&&cur[k].toLowerCase()!==v.toLowerCase())throw Object.assign(new Error(`${name||'This band'} already has a ${k} handle on file. To change it, reply to our email and we'll verify with the band.`),{code:409});h[k]=v;}
+    if(Object.keys(h).length)TIPS.setHandles(bandId,h);}}
   if(contact&&typeof contact==='object'){const e=String(contact.email||'').trim().slice(0,120)||null,p=String(contact.phone||'').trim().slice(0,40)||null;
    db.prepare('INSERT INTO owner_contacts(bar_id,email,phone,updated_at) VALUES(?,?,?,?) ON CONFLICT(bar_id) DO UPDATE SET email=excluded.email,phone=excluded.phone,updated_at=excluded.updated_at').run(bar.id,e,p,Date.now());}
   db.prepare('UPDATE owner_tokens SET last_used_at=? WHERE token=?').run(Date.now(),req.params.token);})();}
  catch(e){return res.status(e.code||500).json({error:e.message});}
  cache={};res.json({ok:true});});
 app.get('/owner/:token',(q,r)=>r.sendFile(path.join(__dirname,'public','owner.html')));
+app.get('/band/:slug',(q,r)=>r.sendFile(path.join(__dirname,'public','index.html')));
+app.get('/api/band/:slug',(q,r)=>{const p=TIPS.bandPage(q.params.slug);if(!p)return r.status(404).json({error:'unknown band'});r.json(p);});
+const tipcard=async(q,r)=>{try{if(!TIPS.bandBySlug(q.params.slug))return r.status(404).json({error:'unknown band'});r.type('application/pdf');r.set('Content-Disposition',`inline; filename="tipcard-${q.params.slug}${q.query.layout==='small'?'-4up':''}.pdf"`);await TIPS.tipCardPdf(q.params.slug,q.query.layout==='small'?'small':'letter',r);}catch(e){if(!r.headersSent)r.status(e.code||500).json({error:e.message});}};
+app.get('/band/:slug/tipcard.pdf',tipcard);
 app.get('/bar/:id',(q,r)=>r.sendFile(path.join(__dirname,'public','index.html')));
 const ADMIN_KEY=process.env.ADMIN_KEY||'';
 app.use('/api/admin',(q,r,n)=>{const k=String(q.get('x-admin-key')||q.query.key||'');const ok=ADMIN_KEY&&k.length===ADMIN_KEY.length&&crypto.timingSafeEqual(Buffer.from(k),Buffer.from(ADMIN_KEY));if(!ok)return r.status(401).json({error:'unauthorized'});n();});
@@ -168,6 +176,9 @@ app.get('/api/logos',(q,r)=>{r.set('Cache-Control','public, max-age=300');r.json
 app.post('/api/admin/bars/:id/logo',(q,r)=>{const b=db.prepare('SELECT id FROM bars WHERE id=?').get(q.params.id);if(!b)return r.status(404).json({error:'no such bar'});
  const u=String((q.body&&q.body.logo_url)||'').trim();if(u&&!/^https:\/\/[^\s"'<>]+$/i.test(u))return r.status(400).json({error:'logo_url must be an https URL (or empty to clear)'});
  db.prepare('UPDATE bars SET logo_url=? WHERE id=?').run(u||null,b.id);r.json({ok:true,id:b.id,logo_url:u||null});});
+app.get('/api/admin/band/:slug/tipcard.pdf',tipcard);
+app.post('/api/admin/bands/:key/handles',(q,r)=>{const k=q.params.key;const b=TIPS.bandBySlug(k)||db.prepare('SELECT * FROM bands WHERE id=?').get(k);if(!b||b.id==='tba')return r.status(404).json({error:'unknown band'});
+ try{r.json({ok:true,band:TIPS.setHandles(b.id,q.body||{})});}catch(e){r.status(400).json({error:e.message});}});
 app.get('/api/admin/lineup-status',(q,r)=>r.json(L.status()||{}));
 app.get('/api/admin/review',(q,r)=>r.json(db.prepare('SELECT * FROM review_queue ORDER BY id DESC').all()));
 // streak snapshot: check every 5 min; snapshot previous night once after 3 AM CT
