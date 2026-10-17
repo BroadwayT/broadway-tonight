@@ -15,4 +15,5 @@ Hi {{CONTACT_NAME}}, we show every set on Broadway Tonight so guests can rate th
 - In each invite, replace a "reply with your lineup" ask with: "Tap your private link to update tonight's bands: {{OWNER_LINK}}. No login. Bookmark it; the same link works every day."
 - Every bar gets 4 time slots per night automatically (10a, 2p, 6p, 10p CT), so the link always has today's sets to edit. Owner edits are never overwritten by automatic listings.
 - **Bars to prioritize for owner links** (no public advance lineup we can use): Tootsie's, Honky Tonk Central, Acme Feed & Seed, Layla's, Wildhorse Saloon.
+- Site now lists 33 bars (2026-10-17). Automatic listings that work from our host: Acme, Ole Red, Redneck Riviera, Margaritaville (their own sites). Blocked from our host by bot checks: Nashville Music Calendar, Luke's 32 Bridge, Casa Rosa, Bell Bottoms Up. Everyone else depends on owner links.
 - Automatic listings from Nashville Music Calendar are currently blocked from our host (bot check). Template 3 (lineup feed partnership) also applies to Nashville Music Calendar: ask them for a feed or permission.
