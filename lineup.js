@@ -26,7 +26,7 @@ const dec=s=>String(s||'').replace(/&#8217;|&rsquo;/g,'\u2019').replace(/&amp;/g
 async function fetchVenue(slug){const url=`https://nashvillemusiccalendar.com/venue/${slug}/`;
  const r=await fetch(url,{headers:{'User-Agent':UA,'Accept':'text/html'}});if(!r.ok)throw new Error(slug+' HTTP '+r.status);
  const h=await r.text();const out=[];for(const m of h.matchAll(/<script[^>]*application\/ld\+json[^>]*>([\s\S]*?)<\/script>/g)){try{walk(JSON.parse(m[1]),out)}catch(e){}}
- const seen=new Set();return {url,events:out.filter(e=>{const k=e.url||e.name+e.startDate;if(seen.has(k))return false;seen.add(k);return true;})};}
+ const seen=new Set();return {url,bytes:h.length,challenge:/One moment, please/.test(h),events:out.filter(e=>{const k=e.url||e.name+e.startDate;if(seen.has(k))return false;seen.add(k);return true;})};}
 function bandIdFor(name){const ex=db.prepare('SELECT id FROM bands WHERE lower(name)=lower(?)').get(name);if(ex)return ex.id;
  const id='nmc_'+(name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,40)||'band');db.prepare('INSERT OR IGNORE INTO bands(id,name) VALUES(?,?)').run(id,name);return id;}
 const hhmm=iso=>String(iso).slice(11,16);
@@ -53,7 +53,7 @@ async function refresh(dates){if(running)return running;running=(async()=>{const
     // grid slots previously filled from the source but no longer listed go back to TBA
     for(let si=0;si<4;si++)if(!used[si])db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,source='grid',source_url=NULL WHERE id=? AND source='nmc'").run(TBA_ID,SLOTS[si][0],SLOTS[si][1],`${d}-${b.id}-${si}`);
     per[d]=n;})();}
-  res.bars[b.id]={listed:per,source:v.url};}
+  res.bars[b.id]={listed:per,source:v.url,pageBytes:v.bytes,challenge:v.challenge,eventsOnPage:v.events.length};}
  last=res;console.log('[lineup] refresh',JSON.stringify({dates,errors:res.errors}));return res;})();
  try{return await running}finally{running=null}}
 function start(){const tick=()=>{try{const n=S.ctNight();ensureDay(n);ensureDay(nextNight(n));clearSampleBands(n);}catch(e){console.error('[lineup] grid',e)}};
