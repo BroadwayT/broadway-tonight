@@ -1,6 +1,6 @@
 // Daily set grid + real-listing ingest from Nashville Music Calendar venue pages (schema.org JSON-LD).
 // Low rate (one request every 3s, identified User-Agent), venue pages only (allowed by robots.txt), credited as source.
-const db=require('./db'),S=require('./scoring');
+const db=require('./db'),S=require('./scoring'),SRC=require('./sources');
 const SLOTS=[["10:00","14:00"],["14:00","18:00"],["18:00","22:00"],["22:00","02:00"]];
 const TBA_ID='tba',TBA_NAME='Live music (TBA)';
 const SOURCE_NAME='Nashville Music Calendar';
@@ -35,25 +35,20 @@ const nightOf=iso=>S.ctNight(Date.parse(iso));
 let running=null,last=null;
 async function refresh(dates){if(running)return running;running=(async()=>{const res={at:new Date().toISOString(),dates,bars:{},errors:[]};
  for(const d of dates){ensureDay(d);clearSampleBands(d);}
- const bars=db.prepare('SELECT id,name FROM bars').all();let first=true;
- for(const b of bars){const slug=VENUES[b.id];if(!slug){res.bars[b.id]={listed:0,note:'no venue page on source'};continue;}
-  if(!first)await new Promise(r=>setTimeout(r,3000));first=false;
-  let v;try{v=await fetchVenue(slug)}catch(e){res.errors.push(e.message);res.bars[b.id]={listed:0,note:'fetch failed'};continue;}
-  const per={};
-  for(const d of dates){const evs=v.events.filter(e=>nightOf(e.startDate)===d).sort((a,b)=>Date.parse(a.startDate)-Date.parse(b.startDate));
+ const bars=db.prepare('SELECT id,name FROM bars').all();
+ for(const b of bars){const per={},used0={};let src=null,diags=[];
+  for(const d of dates){let r;try{r=await SRC.barEvents(b.id,d)}catch(e){res.errors.push(b.id+': '+e.message);continue;}
+   diags=r.diags;if(r.source)src=r.source;const evs=r.events.slice().sort((x,y)=>(x.start<'03:00'?'24'+x.start:x.start).localeCompare(y.start<'03:00'?'24'+y.start:y.start));
    db.transaction(()=>{
-    // drop previous extra (non-grid) source sets without ratings; grid sets are reset to TBA if not owner-edited
     db.prepare("DELETE FROM sets WHERE bar_id=? AND date=? AND source='nmc' AND id GLOB '*-x*' AND id NOT IN (SELECT DISTINCT set_id FROM ratings WHERE set_id IS NOT NULL)").run(b.id,d);
     const used={};let n=0;
-    for(const e of evs){const name=dec((e.performer&&(e.performer.name||(Array.isArray(e.performer)&&e.performer[0]&&e.performer[0].name)))||String(e.name).replace(/\s+at\s+.*$/,''));if(!name)continue;
-     const st=hhmm(e.startDate),en=e.endDate?hhmm(e.endDate):null,si=slotFor(+st.slice(0,2));const k=used[si]=(used[si]||0)+1;
-     const gid=`${d}-${b.id}-${si}`,g=db.prepare('SELECT * FROM sets WHERE id=?').get(gid);
-     if(k===1&&g&&g.source!=='owner'){db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=COALESCE(?,set_end),source='nmc',source_url=? WHERE id=?").run(bandIdFor(name),st,en,e.url||v.url,gid);n++;}
-     else if(k>1&&g&&g.source!=='owner'){db.prepare("INSERT OR REPLACE INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url) VALUES(?,?,?,?,?,?,?,?,?)").run(`${gid}-x${k}`,b.id,bandIdFor(name),d,st,en||st,`${d}-slot${si}`,'nmc',e.url||v.url);n++;}}
-    // grid slots previously filled from the source but no longer listed go back to TBA
+    for(const e of evs){const name=e.name.slice(0,80),st=e.start,en=e.end,si=slotFor(+st.slice(0,2));const k=used[si]=(used[si]||0)+1;
+     const gid=`${d}-${b.id}-${si}`,g=db.prepare('SELECT * FROM sets WHERE id=?').get(gid);if(!g||g.source==='owner')continue;
+     if(k===1){db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,source='nmc',source_url=? WHERE id=?").run(bandIdFor(name),st,en,e.url,gid);n++;}
+     else{db.prepare("INSERT OR REPLACE INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url) VALUES(?,?,?,?,?,?,?,?,?)").run(`${gid}-x${k}`,b.id,bandIdFor(name),d,st,en,`${d}-slot${si}`,'nmc',e.url);n++;}}
     for(let si=0;si<4;si++)if(!used[si])db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,source='grid',source_url=NULL WHERE id=? AND source='nmc'").run(TBA_ID,SLOTS[si][0],SLOTS[si][1],`${d}-${b.id}-${si}`);
     per[d]=n;})();}
-  res.bars[b.id]={listed:per,source:v.url,pageBytes:v.bytes,challenge:v.challenge,eventsOnPage:v.events.length};}
+  res.bars[b.id]={listed:per,source:src&&src.url,sourceType:src&&src.type,tried:diags};}
  last=res;console.log('[lineup] refresh',JSON.stringify({dates,errors:res.errors}));return res;})();
  try{return await running}finally{running=null}}
 function start(){const tick=()=>{try{const n=S.ctNight();ensureDay(n);ensureDay(nextNight(n));clearSampleBands(n);}catch(e){console.error('[lineup] grid',e)}};

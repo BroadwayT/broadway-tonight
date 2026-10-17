@@ -1,6 +1,7 @@
 const express=require('express'),cookieParser=require('cookie-parser'),crypto=require('crypto'),path=require('path');
-const db=require('./db'),S=require('./scoring');const L=require('./lineup');
+const db=require('./db'),S=require('./scoring');
 try{if(!db.prepare('SELECT COUNT(*) c FROM bars').get().c){console.log('Empty DB, seeding');require('./scripts/seed.js');}}catch(e){console.error('seed failed',e)}
+const BARS=require('./bars');console.log('bars added',BARS.upsertBars(db));const L=require('./lineup');const SRC=require('./sources');
 const app=express();app.use(express.json());app.use(cookieParser());app.set('trust proxy','loopback');
 app.use((req,res,next)=>{let d=req.cookies.device_id;if(!d){d=crypto.randomUUID();res.cookie('device_id',d,{maxAge:365*864e5,httpOnly:true,sameSite:'lax'});}req.deviceId=d;
  req.ipHash=crypto.createHash('sha256').update(String(req.ip)).digest('hex');next();}); // raw IP never stored
@@ -56,7 +57,7 @@ app.get('/api/bars/:id',(req,res)=>{const id=req.params.id;const bar=db.prepare(
 
 
 // ---- competitive: now / street / pulse / search ----
-const STREET_ORDER={acme:1,wildhorse:2,luke32:3,aldeans:4,honkytonkcentral:5,bootbarn:6,roberts:7,layla:8,tootsies:9,legends:10};
+const STREET_ORDER=BARS.STREET_ORDER;
 function ctHM(t=Date.now()){
   const p=new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date(t));
   const h=p.find(x=>x.type==='hour').value.padStart(2,'0'),m=p.find(x=>x.type==='minute').value.padStart(2,'0');
@@ -159,6 +160,9 @@ app.get('/api/admin/owner-links',(q,r)=>{const base=(process.env.PUBLIC_BASE_URL
   return {barId:b.id,name:b.name,url:base+'/owner/'+t.token};}));});
 app.post('/api/admin/refresh-lineup',async(q,r)=>{const d=String(q.query.date||q.body&&q.body.date||S.ctNight());if(!/^\d{4}-\d{2}-\d{2}$/.test(d))return r.status(400).json({error:'date must be YYYY-MM-DD'});
  try{const x=await L.refresh([d]);cache={};r.json(x);}catch(e){r.status(500).json({error:e.message})}});
+app.get('/api/admin/sources-check',async(q,r)=>{const d=String(q.query.date||S.ctNight());const out={date:d,checkedFrom:'server',bars:{}};
+ for(const [bar,list] of Object.entries(SRC.SOURCES)){out.bars[bar]=[];for(const s of list){const x=await SRC.fetchSource(s,d);out.bars[bar].push({...x.diag,sample:x.events.slice(0,3).map(e=>e.start+' '+e.name)});await new Promise(r=>setTimeout(r,1000));}}
+ r.json(out);});
 app.get('/api/admin/lineup-status',(q,r)=>r.json(L.status()||{}));
 app.get('/api/admin/review',(q,r)=>r.json(db.prepare('SELECT * FROM review_queue ORDER BY id DESC').all()));
 // streak snapshot: check every 5 min; snapshot previous night once after 3 AM CT
