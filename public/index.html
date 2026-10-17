@@ -202,6 +202,14 @@ h2{font-family:"Bebas Neue",Impact,sans-serif;font-size:24px;letter-spacing:.04e
 .late-hint{margin-top:8px;font-size:12px;color:var(--neon2);font-weight:600}
 .section-sub{margin:-4px 16px 8px;color:var(--muted);font-size:12px}
 .hot-score-mini{font-family:"Bebas Neue",Impact,sans-serif;font-size:22px;color:var(--lime)}
+.bbadge{flex:0 0 auto;display:inline-grid;place-items:center;width:42px;height:42px;border-radius:12px;margin-right:12px;
+  font-family:"Bebas Neue",Impact,sans-serif;font-size:19px;letter-spacing:.04em;color:#fff;line-height:1;
+  background:linear-gradient(135deg,hsl(var(--h) 95% 55%),hsl(calc(var(--h) + 40) 90% 35%));
+  box-shadow:0 0 0 1px hsl(var(--h) 100% 70% / .55),0 0 14px hsl(var(--h) 100% 60% / .35);text-shadow:0 1px 2px rgba(0,0,0,.45);overflow:hidden}
+.bbadge[data-l]{font-size:15px}.bbadge.lg[data-l]{font-size:22px}
+.bbadge.lg{width:64px;height:64px;border-radius:16px;font-size:28px;margin:0 0 10px}
+.bbadge img{width:100%;height:100%;object-fit:contain;background:#fff}
+.bar-head{display:flex;align-items:center;min-width:0}
 </style>
 </head>
 <body>
@@ -280,6 +288,14 @@ const PLAN_KEY='bt_tonight_plan';
 const j=u=>fetch(u).then(r=>r.json());
 const toast=m=>{const t=$('#toast');t.textContent=m;t.style.display='block';setTimeout(()=>t.style.display='none',2500)};
 const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let LOGOS={};j('/api/logos').then(x=>{LOGOS=x||{};if(Object.keys(LOGOS).length){board();street();featured();if(typeof curBar!=='undefined'&&curBar)renderBar(curBar);}}).catch(()=>{});
+const SHORT={wildhorse:'C10',kidrock:'KR',luke32:'32',aldeans:'JA',kanebrown:'KB',thisbar:'TB',jbjs:'JBJ',bootbarn:'STG',boogiebar:'HW',postys:'PM',chiefs:'EC',goodnight:'JR',margaritaville:'MV',honkytonkcentral:'HTC',ajs:'AJ',tootsies:'T',rippys:'R'};
+function shortName(n,id){if(id&&SHORT[id])return SHORT[id];let s=String(n||'').replace(/\u2019/g,"'");const m=s.match(/^([A-Z][\w.]*(?: [A-Z][\w.]*)+)'s? (.+)$/);if(m)s=m[2];
+  const w=s.replace(/^The /i,'').split(/[\s\-]+/).filter(x=>x&&!/^(&|\+|of|in|and|on|at|the|bar|grill|n'?)$/i.test(x)&&/[A-Za-z0-9]/.test(x));
+  return (w.length>1?w[0][0]+w[1][0]:(w[0]||'?').slice(0,2)).toUpperCase();}
+function hue(n){let h=0;for(const c of String(n))h=(h*31+c.charCodeAt(0))>>>0;return h%360;}
+function badge(id,name,lg){const u=LOGOS[id];const cls='bbadge'+(lg?' lg':'');
+  return u?`<span class="${cls}" style="--h:${hue(name)}"><img src="${esc(u)}" alt="${esc(name)} logo" loading="lazy"></span>`:`<span class="${cls}" style="--h:${hue(name)}" aria-hidden="true"${shortName(name,id).length>2?' data-l="3"':''}>${esc(shortName(name,id))}</span>`;}
 
 function showPanel(name){
   document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
@@ -352,11 +368,11 @@ async function street(){
       <span class="street-dot ${dot}" title="Hot score"></span>
       <div class="card tap" role="link" tabindex="0" onclick="openBar('${x.barId}')">
         <div class="row">
-          <div style="min-width:0">
+          <div class="bar-head">${badge(x.barId,x.name)}<div style="min-width:0">
             <div class="bar-title">${esc(x.name)}</div>
             <div class="muted">${esc(x.address)}</div>
             ${now}${pulse}${late}
-          </div>
+          </div></div>
           <div class="hot-score-mini">${x.score!=null?x.score.toFixed(2):'—'}<span class="chev">›</span></div>
         </div>
       </div>
@@ -369,7 +385,7 @@ async function featured(){
   $('#featured').innerHTML=f.map(x=>`
     <div class="card spon tap" id="spon-card" role="link" tabindex="0" onclick="openBar('${x.bar_id}')">
       <span class="badge">Sponsored</span>
-      <div class="name">${esc(x.name)}</div>
+      <div class="bar-head" style="margin-top:8px">${badge(x.bar_id,x.name)}<div class="name" style="margin-top:0">${esc(x.name)}</div></div>
       <div class="muted" style="margin-top:6px">${esc(x.address)} · paid placement, not a rating</div>
     </div>`).join('');
 }
@@ -381,7 +397,7 @@ async function board(){
       <div class="row">
         <div style="display:flex;align-items:flex-start;min-width:0">
           <span class="rank ${i<3?'top':''}">${i+1}</span>
-          <div style="min-width:0">
+          ${badge(x.barId,x.name)}<div style="min-width:0">
             <div class="bar-title">${esc(x.name)}</div>
             <div class="muted">${
               tab==='streak' ? `${x.streak} night streak · week ${x.weekScore}` :
@@ -436,6 +452,7 @@ async function renderBar(id){
   $('#barDetail').innerHTML=`
     <div class="card ${b.sponsored?'spon':''}">
       ${b.sponsored?'<span class="badge">Sponsored</span>':''}
+      <div style="margin-top:6px">${badge(id,b.name,true)}</div>
       <div class="name" style="font-family:'Bebas Neue',Impact,sans-serif;font-size:28px;letter-spacing:.02em;margin-top:4px">${esc(b.name)}</div>
       <div class="muted" style="margin-top:6px">${esc(b.address||'')}</div>
       <div class="row" style="margin-top:14px">

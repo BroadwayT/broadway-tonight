@@ -163,6 +163,11 @@ app.post('/api/admin/refresh-lineup',async(q,r)=>{const d=String(q.query.date||q
 app.get('/api/admin/sources-check',async(q,r)=>{const d=String(q.query.date||S.ctNight());const out={date:d,checkedFrom:'server',bars:{}};
  for(const [bar,list] of Object.entries(SRC.SOURCES)){out.bars[bar]=[];for(const s of list){const x=await SRC.fetchSource(s,d);out.bars[bar].push({...x.diag,sample:x.events.slice(0,3).map(e=>e.start+' '+e.name)});await new Promise(r=>setTimeout(r,1000));}}
  r.json(out);});
+try{db.exec('ALTER TABLE bars ADD COLUMN logo_url TEXT')}catch(e){}
+app.get('/api/logos',(q,r)=>{r.set('Cache-Control','public, max-age=300');r.json(Object.fromEntries(db.prepare("SELECT id,logo_url FROM bars WHERE logo_url IS NOT NULL AND logo_url<>''").all().map(x=>[x.id,x.logo_url])));});
+app.post('/api/admin/bars/:id/logo',(q,r)=>{const b=db.prepare('SELECT id FROM bars WHERE id=?').get(q.params.id);if(!b)return r.status(404).json({error:'no such bar'});
+ const u=String((q.body&&q.body.logo_url)||'').trim();if(u&&!/^https:\/\/[^\s"'<>]+$/i.test(u))return r.status(400).json({error:'logo_url must be an https URL (or empty to clear)'});
+ db.prepare('UPDATE bars SET logo_url=? WHERE id=?').run(u||null,b.id);r.json({ok:true,id:b.id,logo_url:u||null});});
 app.get('/api/admin/lineup-status',(q,r)=>r.json(L.status()||{}));
 app.get('/api/admin/review',(q,r)=>r.json(db.prepare('SELECT * FROM review_queue ORDER BY id DESC').all()));
 // streak snapshot: check every 5 min; snapshot previous night once after 3 AM CT
