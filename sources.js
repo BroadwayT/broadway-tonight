@@ -1,6 +1,6 @@
 // Lineup sources: each bar's OWN public schedule page (preferred), Nashville Music Calendar as fallback.
 // robots.txt checked per host; identified UA; no challenge/captcha bypass (a challenge page = "blocked").
-const UA='BroadwayTonight/0.3 (+https://broadway-tonight.onrender.com; lineup listings, low rate)';
+const UA='BroadwayTonight/0.3 (+https://broadwaytonightnash.com; lineup listings, low rate)';
 const MON=['January','February','March','April','May','June','July','August','September','October','November','December'];
 const SOURCES={
  acme:[{type:'sqsphtml',url:'https://www.acmefeedandseed.com/calendar'}],

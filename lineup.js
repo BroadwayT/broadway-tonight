@@ -8,7 +8,7 @@ const SOURCE_NAME='Nashville Music Calendar';
 const VENUES={tootsies:'tootsies-orchid-lounge',roberts:'roberts-western-world',legends:'legends-corner',layla:null,
  acme:'acme-feed-seed',wildhorse:null,bootbarn:'the-stage-on-broadway',honkytonkcentral:'honky-tonk-central',
  luke32:'lukes-32-bridge-food-drink',aldeans:'jason-aldeans-kitchen-rooftop-bar'};
-const UA='BroadwayTonight/0.2 (+https://broadway-tonight.onrender.com; lineup listings, low rate)';
+const UA='BroadwayTonight/0.2 (+https://broadwaytonightnash.com; lineup listings, low rate)';
 try{db.exec('ALTER TABLE sets ADD COLUMN source TEXT')}catch(e){}
 try{db.exec('ALTER TABLE sets ADD COLUMN source_url TEXT')}catch(e){}
 db.prepare('INSERT OR IGNORE INTO bands(id,name) VALUES(?,?)').run(TBA_ID,TBA_NAME);
