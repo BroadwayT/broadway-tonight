@@ -37,6 +37,7 @@ async function refresh(dates){if(running)return running;running=(async()=>{const
  for(const d of dates){ensureDay(d);clearSampleBands(d);
   // placeholder listings like "TBD-Stage" are not real acts
   db.prepare("DELETE FROM sets WHERE date=? AND id GLOB '*-x*' AND band_id IN (SELECT id FROM bands WHERE name LIKE 'TBD%' OR name LIKE 'TBA%') AND band_id<>? AND id NOT IN (SELECT DISTINCT set_id FROM ratings WHERE set_id IS NOT NULL)").run(d,TBA_ID);
+  db.prepare("DELETE FROM sets WHERE date=? AND id GLOB '*-x*' AND id NOT IN (SELECT DISTINCT set_id FROM ratings WHERE set_id IS NOT NULL) AND EXISTS (SELECT 1 FROM sets t WHERE t.bar_id=sets.bar_id AND t.date=sets.date AND t.band_id=sets.band_id AND t.set_start=sets.set_start AND t.id<sets.id)").run(d);
   db.prepare("UPDATE sets SET band_id=?,source='grid',source_url=NULL WHERE date=? AND band_id IN (SELECT id FROM bands WHERE name LIKE 'TBD%' OR name LIKE 'TBA%') AND band_id<>?").run(TBA_ID,d,TBA_ID);}
  const bars=db.prepare('SELECT id,name FROM bars').all();
  for(const b of bars){const per={},used0={};let src=null,diags=[];
@@ -50,6 +51,7 @@ async function refresh(dates){if(running)return running;running=(async()=>{const
     const used={};let n=0;
     for(const e of evs){const name=e.name.slice(0,80),st=e.start,en=e.end,si=slotFor(+st.slice(0,2));const k=used[si]=(used[si]||0)+1;
      const gid=`${d}-${b.id}-${si}`,g=db.prepare('SELECT * FROM sets WHERE id=?').get(gid);if(!g||g.source==='owner')continue;
+     if(keep){const dup=db.prepare('SELECT id FROM sets WHERE bar_id=? AND date=? AND band_id=? AND set_start=?').get(b.id,d,bandIdFor(name),st);if(dup){used[si]--;if(!used[si])delete used[si];continue;}}
      if(k===1){db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,source='nmc',source_url=? WHERE id=?").run(bandIdFor(name),st,en,e.url,gid);n++;}
      else{db.prepare("INSERT OR REPLACE INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url) VALUES(?,?,?,?,?,?,?,?,?)").run(`${gid}-x${k}`,b.id,bandIdFor(name),d,st,en,`${d}-slot${si}`,'nmc',e.url);n++;}}
     if(!keep)for(let si=0;si<4;si++)if(!used[si])db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,source='grid',source_url=NULL WHERE id=? AND source='nmc'").run(TBA_ID,SLOTS[si][0],SLOTS[si][1],`${d}-${b.id}-${si}`);
