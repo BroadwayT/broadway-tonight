@@ -34,19 +34,25 @@ const nightOf=iso=>S.ctNight(Date.parse(iso));
 // Pull listings for one or more nights; owner-edited sets are never overwritten.
 let running=null,last=null;
 async function refresh(dates){if(running)return running;running=(async()=>{const res={at:new Date().toISOString(),dates,bars:{},errors:[]};
- for(const d of dates){ensureDay(d);clearSampleBands(d);}
+ for(const d of dates){ensureDay(d);clearSampleBands(d);
+  // placeholder listings like "TBD-Stage" are not real acts
+  db.prepare("DELETE FROM sets WHERE date=? AND id GLOB '*-x*' AND band_id IN (SELECT id FROM bands WHERE name LIKE 'TBD%' OR name LIKE 'TBA%') AND band_id<>? AND id NOT IN (SELECT DISTINCT set_id FROM ratings WHERE set_id IS NOT NULL)").run(d,TBA_ID);
+  db.prepare("UPDATE sets SET band_id=?,source='grid',source_url=NULL WHERE date=? AND band_id IN (SELECT id FROM bands WHERE name LIKE 'TBD%' OR name LIKE 'TBA%') AND band_id<>?").run(TBA_ID,d,TBA_ID);}
  const bars=db.prepare('SELECT id,name FROM bars').all();
  for(const b of bars){const per={},used0={};let src=null,diags=[];
   for(const d of dates){let r;try{r=await SRC.barEvents(b.id,d)}catch(e){res.errors.push(b.id+': '+e.message);continue;}
    diags=r.diags;if(r.source)src=r.source;const evs=r.events.slice().sort((x,y)=>(x.start<'03:00'?'24'+x.start:x.start).localeCompare(y.start<'03:00'?'24'+y.start:y.start));
+   // Tonight: sources drop sets that already started/finished (e.g. NMC venue pages), so never downgrade tonight's
+   // already-listed acts to TBA or delete them; only add/replace. Future nights get a full resync.
+   const keep=(d===S.ctNight());if(keep&&!evs.length){per[d]=0;continue;}
    db.transaction(()=>{
-    db.prepare("DELETE FROM sets WHERE bar_id=? AND date=? AND source='nmc' AND id GLOB '*-x*' AND id NOT IN (SELECT DISTINCT set_id FROM ratings WHERE set_id IS NOT NULL)").run(b.id,d);
+    if(!keep)db.prepare("DELETE FROM sets WHERE bar_id=? AND date=? AND source='nmc' AND id GLOB '*-x*' AND id NOT IN (SELECT DISTINCT set_id FROM ratings WHERE set_id IS NOT NULL)").run(b.id,d);
     const used={};let n=0;
     for(const e of evs){const name=e.name.slice(0,80),st=e.start,en=e.end,si=slotFor(+st.slice(0,2));const k=used[si]=(used[si]||0)+1;
      const gid=`${d}-${b.id}-${si}`,g=db.prepare('SELECT * FROM sets WHERE id=?').get(gid);if(!g||g.source==='owner')continue;
      if(k===1){db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,source='nmc',source_url=? WHERE id=?").run(bandIdFor(name),st,en,e.url,gid);n++;}
      else{db.prepare("INSERT OR REPLACE INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url) VALUES(?,?,?,?,?,?,?,?,?)").run(`${gid}-x${k}`,b.id,bandIdFor(name),d,st,en,`${d}-slot${si}`,'nmc',e.url);n++;}}
-    for(let si=0;si<4;si++)if(!used[si])db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,source='grid',source_url=NULL WHERE id=? AND source='nmc'").run(TBA_ID,SLOTS[si][0],SLOTS[si][1],`${d}-${b.id}-${si}`);
+    if(!keep)for(let si=0;si<4;si++)if(!used[si])db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,source='grid',source_url=NULL WHERE id=? AND source='nmc'").run(TBA_ID,SLOTS[si][0],SLOTS[si][1],`${d}-${b.id}-${si}`);
     per[d]=n;})();}
   res.bars[b.id]={listed:per,source:src&&src.url,sourceType:src&&src.type,tried:diags};}
  last=res;console.log('[lineup] refresh',JSON.stringify({dates,errors:res.errors}));return res;})();
@@ -54,5 +60,5 @@ async function refresh(dates){if(running)return running;running=(async()=>{const
 function start(){const tick=()=>{try{const n=S.ctNight();ensureDay(n);ensureDay(nextNight(n));clearSampleBands(n);}catch(e){console.error('[lineup] grid',e)}};
  tick();setInterval(tick,5*60e3); // night flip at 3 AM CT: grid for the new night appears within 5 min (and a day ahead)
  const run=()=>{const n=S.ctNight();refresh([n,nextNight(n)]).catch(e=>console.error('[lineup] refresh',e));};
- setTimeout(run,15e3);setInterval(run,3*H);}
+ setTimeout(run,15e3);setInterval(run,H);} // hourly while awake; also runs ~15s after every boot/wake
 module.exports={ensureDay,refresh,start,clearSampleBands,nextNight,status:()=>last,VENUES,SOURCE_NAME};

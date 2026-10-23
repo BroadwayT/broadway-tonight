@@ -14,6 +14,36 @@ const SOURCES={
  legends:[{type:'nmc',url:'https://nashvillemusiccalendar.com/venue/legends-corner/'}],
  bootbarn:[{type:'nmc',url:'https://nashvillemusiccalendar.com/venue/the-stage-on-broadway/'}],
  aldeans:[{type:'nmc',url:'https://nashvillemusiccalendar.com/venue/jason-aldeans-kitchen-rooftop-bar/'}],
+ // Same TC Restaurant Group schedule layout as Bell Bottoms Up (MM/DD/YYYY | "Act, Stage" | time)
+ thisbar:[{type:'bellb',url:'https://mwthisbar.com/music/'}],
+ postys:[{type:'bellb',url:'https://postysbar.com/music/'}],
+ // Bars whose own websites embed the Strumn schedule widget (public JSON API behind it)
+ kanebrown:[{type:'strumn',url:'https://kanebrownsonbroadway.com/live-music/',venueIds:'198'}],
+ tinroof:[{type:'strumn',url:'https://tinroofbroadway.com/live-music-events/',venueIds:'185'}],
+ whiskeyrow:[{type:'strumn',url:'https://dierkswhiskeyrow.com/nashville-tn/live-music/',venueIds:'75,105,78'}],
+ goodnight:[{type:'strumn',url:'https://goodnightnashville.com/',city:'Nashville',venueName:/goodnight nashville/i}],
+ // Hank Williams Jr.'s Boogie Bar embeds a JamJuice schedule
+ boogiebar:[{type:'jamjuice',url:'https://www.hanksnash.com/live-music',org:'69c2cfb8c12fc93411dfbda9'}],
+};
+// JSON-API sources (the bar's own site embeds these widgets). Return [{start,end,name,stage,url}] for night d (CT, 3 AM rollover).
+const API={
+ async strumn(src,d,diag){const [y,mo,da]=d.split('-');const nx=new Date(Date.parse(d+'T12:00:00Z')+864e5).toISOString().slice(0,10).split('-');
+  const base={widget:'true',dateFrom:`${mo}/${da}/${y}`,dateTo:`${nx[1]}/${nx[2]}/${nx[0]}`};if(src.venueIds)base.venueId=src.venueIds;if(src.city)base.city=src.city;
+  const out=[];for(let page=1;page<=10;page++){const u='https://api.strumn.com/api/v1/public/events?'+new URLSearchParams({...base,page});
+   const r=await fetch(u,{headers:{'User-Agent':UA,'Accept':'application/json'},signal:AbortSignal.timeout(20000)});diag.http=r.status;if(!r.ok)throw new Error('strumn http '+r.status);
+   const j=await r.json();for(const e of j.data||[]){if(src.venueName&&!src.venueName.test(e.venueName||''))continue;
+    const sd=String(e.startDate||'');const st=sd.slice(11,16),day=sd.slice(0,10);if(!st)continue;
+    const night=(st<'03:00')?new Date(Date.parse(day+'T12:00:00Z')-864e5).toISOString().slice(0,10):day;if(night!==d)continue;
+    const names=(e.artists||[]).map(a=>a.name).filter(Boolean);if(!names.length||e.is_non_artist_event)continue;
+    out.push({start:st,end:String(e.endDate||'').slice(11,16)||null,name:names.join(' / '),stage:(e.venueName||'').replace(/^Whiskey Row /,''),raw:e.name});}
+   const m=j.meta||{};if(!m.last_page||page>=m.last_page)break;await new Promise(r=>setTimeout(r,500));}
+  return out;},
+ async jamjuice(src,d,diag){const u=`https://jamjuice.com/api/embed/organizations/${src.org}/bookings`;
+  const r=await fetch(u,{headers:{'User-Agent':UA,'Accept':'application/json'},signal:AbortSignal.timeout(20000)});diag.http=r.status;if(!r.ok)throw new Error('jamjuice http '+r.status);
+  const j=await r.json();const out=[];
+  for(const e of (Array.isArray(j)?j:[])){if(!e.performer||!e.performer.name||!e.startDateTime)continue;const a=ctParts(Date.parse(e.startDateTime));
+   if(nightOfMs(Date.parse(e.startDateTime))!==d)continue;out.push({start:a.time,end:e.endDateTime?ctParts(Date.parse(e.endDateTime)).time:null,name:e.performer.name,stage:e.jobSite&&e.jobSite.name||''});}
+  return out;},
 };
 const robotsCache={};
 async function robotsOk(u){const p=new URL(u),k=p.origin;let rules=robotsCache[k];
@@ -60,13 +90,16 @@ const P={
 };
 async function fetchSource(src,d){const diag={type:src.type,url:src.url};
  if(!(await robotsOk(src.url))){diag.status='robots-disallow';return {diag,events:[]};}
+ if(API[src.type]){let ev=[];try{ev=await API[src.type](src,d,diag)}catch(e){diag.status='error: '+e.message;return {diag,events:[]};}
+  ev=ev.filter(e=>e.start&&e.name&&e.name.length<=80&&!NONMUSIC.test(e.raw||e.name)&&!/^(tbd|tba)\b/i.test(e.name)).map(e=>({...e,end:e.end||plus3(e.start),url:e.url||src.url}));
+  const seen=new Set();ev=ev.filter(e=>{const k=e.start+e.name.toLowerCase();if(seen.has(k))return false;seen.add(k);return true;});diag.status='ok';diag.events=ev.length;return {diag,events:ev};}
  let r,h;try{r=await fetch(src.url,{headers:{'User-Agent':UA,'Accept':src.type==='squarespace'?'application/json':'text/html'},redirect:'follow',signal:AbortSignal.timeout(25000)});h=await r.text();}
  catch(e){diag.status='error: '+e.message;return {diag,events:[]};}
  diag.http=r.status;diag.bytes=h.length;
  if(/One moment, please|cf-chl|Just a moment\.\.\.|captcha-delivery|Attention Required/i.test(h)&&h.length<60000){diag.status='blocked (bot challenge)';return {diag,events:[]};}
  if(!r.ok){diag.status='http '+r.status;return {diag,events:[]};}
  let ev=[];try{ev=P[src.type](h,d)}catch(e){diag.status='parse error: '+e.message;return {diag,events:[]};}
- ev=ev.filter(e=>e.start&&e.name&&e.name.length<=80&&!NONMUSIC.test(e.raw||e.name)).map(e=>({...e,end:e.end||plus3(e.start),url:e.url||src.url}));
+ ev=ev.filter(e=>e.start&&e.name&&e.name.length<=80&&!NONMUSIC.test(e.raw||e.name)&&!/^(tbd|tba)\b/i.test(e.name)).map(e=>({...e,end:e.end||plus3(e.start),url:e.url||src.url}));
  const seen=new Set();ev=ev.filter(e=>{const k=e.start+e.name.toLowerCase();if(seen.has(k))return false;seen.add(k);return true;});
  diag.status='ok';diag.events=ev.length;return {diag,events:ev};}
 async function barEvents(barId,d){const list=SOURCES[barId]||[];const diags=[];
