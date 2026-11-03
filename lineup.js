@@ -33,11 +33,32 @@ const hhmm=iso=>String(iso).slice(11,16);
 const nightOf=iso=>S.ctNight(Date.parse(iso));
 // Manual sets (manual-sets.json): artist/Jules-provided dates the scrapers miss. Kept as source='manual', never overwritten.
 let MANUAL=[];try{MANUAL=(require('./manual-sets.json').sets||[]).filter(m=>m&&/^\d{4}-\d{2}-\d{2}$/.test(m.date)&&m.bar&&m.band&&/^\d\d:\d\d$/.test(m.start));}catch(e){console.error('[lineup] manual-sets',e.message)}
+// Night-relative minutes (sets starting before 6 AM belong to the previous night) and "same set" test (starts within 90 min).
+const nMin=t=>{const [h,m]=String(t).split(':').map(Number);return (h<6?h+24:h)*60+(m||0);};
+const near=(a,b)=>Math.abs(nMin(a)-nMin(b))<=90;
+const normName=s=>String(s||'').toLowerCase().replace(/&/g,' and ').replace(/[^a-z0-9]+/g,' ').replace(/\b(the|and)\b/g,' ').replace(/\s+/g,' ').trim();
+// Band ids for a manual act: exact (case-insensitive) name plus any band whose normalized name matches.
+function bandIdsFor(name,bid){const n=normName(name),ids=new Set([bid]);if(n)for(const b of db.prepare('SELECT id,name FROM bands').all())if(normName(b.name)===n)ids.add(b.id);return [...ids];}
+// True if a manual set already covers this scraped listing (same bar/night/artist, start within 90 min): the artist's own times win.
+function manualCovers(bar,date,name,start){if(!MANUAL.length)return false;const n=normName(name);
+ return MANUAL.some(m=>m.bar===bar&&m.date===date&&normName(m.band)===n&&near(m.start,start));}
+const rated=id=>!!db.prepare('SELECT 1 FROM ratings WHERE set_id=? LIMIT 1').get(id);
 function applyManual(fromDate){let n=0;for(const d of new Set(MANUAL.map(m=>m.date)))if(d>=fromDate)ensureDay(d);const bars=new Set(db.prepare('SELECT id FROM bars').all().map(b=>b.id));
  db.transaction(()=>{for(const m of MANUAL){if(m.date<fromDate||!bars.has(m.bar))continue;const bid=bandIdFor(m.band),si=slotFor(+m.start.slice(0,2)),end=m.end||null;
   const mid=`${m.date}-${m.bar}-${si}-m-${bid}-${m.start.replace(':','')}`;
+  // Scraped (non-manual, non-owner) rows for the same artist at this bar/night starting within 90 min: merge into one row with the manual times.
+  const ids=bandIdsFor(m.band,bid);
+  const dupes=db.prepare(`SELECT id,set_start,set_end FROM sets WHERE bar_id=? AND date=? AND band_id IN (${ids.map(()=>'?').join(',')}) AND id<>? AND COALESCE(source,'') NOT IN ('manual','owner')`).all(m.bar,m.date,...ids,mid).filter(r=>near(r.set_start,m.start));
+  if(dupes.length){const hasMid=!!db.prepare('SELECT 1 FROM sets WHERE id=?').get(mid);
+   const keep=(dupes.find(r=>rated(r.id))||{}).id||(hasMid?mid:dupes[0].id);
+   const ke=db.prepare('SELECT set_end FROM sets WHERE id=?').get(keep).set_end;
+   db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,source='manual',source_url=NULL WHERE id=?").run(bid,m.start,end||ke,keep);
+   for(const id of [...dupes.map(r=>r.id),mid])if(id!==keep&&!rated(id)){const gm=id.match(new RegExp(`^${m.date}-${m.bar}-([0-3])$`));
+    if(gm){const sl=SLOTS[+gm[1]];db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,source='grid',source_url=NULL WHERE id=?").run(TBA_ID,sl[0],sl[1],id);} // grid slot rows go back to TBA, never deleted
+    else db.prepare('DELETE FROM sets WHERE id=?').run(id);}
+   continue;}
   const other=db.prepare("SELECT id FROM sets WHERE bar_id=? AND date=? AND band_id=? AND set_start=? AND id<>?").get(m.bar,m.date,bid,m.start,mid);
-  if(other){db.prepare('DELETE FROM sets WHERE id=? AND id NOT IN (SELECT DISTINCT set_id FROM ratings WHERE set_id IS NOT NULL)').run(mid);if(end)db.prepare('UPDATE sets SET set_end=? WHERE id=?').run(end,other.id);continue;}
+  if(other){db.prepare('DELETE FROM sets WHERE id=? AND id NOT IN (SELECT DISTINCT set_id FROM ratings WHERE set_id IS NOT NULL)').run(mid);if(end)db.prepare('UPDATE sets SET set_end=? WHERE id=? AND COALESCE(set_end,\'\')<>?').run(end,other.id,end);continue;}
   const g=db.prepare('SELECT band_id,source,set_end FROM sets WHERE id=?').get(`${m.date}-${m.bar}-${si}`);
   if(g&&g.band_id===TBA_ID&&g.source!=='owner'){n+=db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,source='manual',source_url=NULL WHERE id=?").run(bid,m.start,end||g.set_end,`${m.date}-${m.bar}-${si}`).changes;continue;}
   n+=db.prepare("INSERT OR IGNORE INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url) VALUES(?,?,?,?,?,?,?,'manual',NULL)").run(mid,m.bar,bid,m.date,m.start,end,`${m.date}-slot${si}`).changes;}})();return n;}
@@ -60,12 +81,13 @@ async function refresh(dates){if(running)return running;running=(async()=>{const
     if(!keep)db.prepare("DELETE FROM sets WHERE bar_id=? AND date=? AND source='nmc' AND id GLOB '*-x*' AND id NOT IN (SELECT DISTINCT set_id FROM ratings WHERE set_id IS NOT NULL)").run(b.id,d);
     const used={};let n=0;
     for(const e of evs){const name=e.name.slice(0,80),st=e.start,en=e.end,si=slotFor(+st.slice(0,2));const k=used[si]=(used[si]||0)+1;
+     if(manualCovers(b.id,d,name,st))continue;
      const gid=`${d}-${b.id}-${si}`,g=db.prepare('SELECT * FROM sets WHERE id=?').get(gid);if(!g||g.source==='owner')continue;
      if(keep){const bid=bandIdFor(name);if(db.prepare('SELECT id FROM sets WHERE bar_id=? AND date=? AND band_id=? AND set_start=?').get(b.id,d,bid,st))continue;
       if(g.band_id===TBA_ID)db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,source='nmc',source_url=? WHERE id=?").run(bid,st,en,e.url,gid);
       else db.prepare("INSERT OR IGNORE INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url) VALUES(?,?,?,?,?,?,?,?,?)").run(`${gid}-x-${bid}-${st.replace(':','')}`,b.id,bid,d,st,en,`${d}-slot${si}`,'nmc',e.url);
       n++;continue;}
-     if(k===1){db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,source='nmc',source_url=? WHERE id=?").run(bandIdFor(name),st,en,e.url,gid);n++;}
+     if(k===1&&g.source!=='manual'){db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,source='nmc',source_url=? WHERE id=?").run(bandIdFor(name),st,en,e.url,gid);n++;}
      else{db.prepare("INSERT OR REPLACE INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url) VALUES(?,?,?,?,?,?,?,?,?)").run(`${gid}-x${k}`,b.id,bandIdFor(name),d,st,en,`${d}-slot${si}`,'nmc',e.url);n++;}}
     if(!keep)for(let si=0;si<4;si++)if(!used[si])db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,source='grid',source_url=NULL WHERE id=? AND source='nmc'").run(TBA_ID,SLOTS[si][0],SLOTS[si][1],`${d}-${b.id}-${si}`);
     per[d]=n;})();}

@@ -11,6 +11,15 @@
    "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
   },
   {
+   "date": "2026-11-03",
+   "bar": "bootbarn",
+   "band": "Kristine Kabbes and the Skallywags",
+   "start": "19:00",
+   "end": "22:00",
+   "stage": "Rooftop",
+   "source": "Artist-provided weekly schedule (Kristine Kabbes, November 2026, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
    "date": "2026-11-04",
    "bar": "bootbarn",
    "band": "Mac Watts",
@@ -27,6 +36,14 @@
    "source": "Artist-provided schedule (Mac Watts's November 2026 flyer from @macwattsmusic, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
   },
   {
+   "date": "2026-11-04",
+   "bar": "legends",
+   "band": "Kristine Kabbes and the Skallywags",
+   "start": "19:00",
+   "end": "22:00",
+   "source": "Artist-provided weekly schedule (Kristine Kabbes, November 2026, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
    "date": "2026-11-05",
    "bar": "thisbar",
    "band": "Joe Barron",
@@ -34,6 +51,23 @@
    "end": "22:00",
    "stage": "Club Stage",
    "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
+  },
+  {
+   "date": "2026-11-06",
+   "bar": "goodnight",
+   "band": "The Huffer Brothers",
+   "start": "18:00",
+   "end": "22:00",
+   "source": "Artist-provided schedule (The Huffer Brothers' November 2026 flyer, sent by Jules Nov 3 2026); 'close' recorded as 2 AM"
+  },
+  {
+   "date": "2026-11-06",
+   "bar": "bootbarn",
+   "band": "Kristine Kabbes and the Skallywags",
+   "start": "19:00",
+   "end": "22:00",
+   "stage": "Rooftop",
+   "source": "Artist-provided weekly schedule (Kristine Kabbes, November 2026, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
   },
   {
    "date": "2026-11-07",
@@ -45,12 +79,29 @@
   },
   {
    "date": "2026-11-07",
+   "bar": "bootbarn",
+   "band": "Kristine Kabbes and the Skallywags",
+   "start": "15:00",
+   "end": "18:00",
+   "stage": "First floor",
+   "source": "Artist-provided weekly schedule (Kristine Kabbes, November 2026, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-07",
    "bar": "luke32",
    "band": "Joe Barron",
    "start": "18:00",
    "end": "22:00",
    "stage": "Bank Floor Stage",
    "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
+  },
+  {
+   "date": "2026-11-07",
+   "bar": "olered",
+   "band": "The Huffer Brothers",
+   "start": "22:00",
+   "end": "02:00",
+   "source": "Artist-provided schedule (The Huffer Brothers' November 2026 flyer, sent by Jules Nov 3 2026); 'close' recorded as 2 AM"
   },
   {
    "date": "2026-11-08",
@@ -71,6 +122,15 @@
    "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
   },
   {
+   "date": "2026-11-10",
+   "bar": "bootbarn",
+   "band": "Kristine Kabbes and the Skallywags",
+   "start": "19:00",
+   "end": "22:00",
+   "stage": "Rooftop",
+   "source": "Artist-provided weekly schedule (Kristine Kabbes, November 2026, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
    "date": "2026-11-11",
    "bar": "bootbarn",
    "band": "Mac Watts",
@@ -85,6 +145,39 @@
    "start": "18:30",
    "end": "21:30",
    "source": "Artist-provided schedule (Mac Watts's November 2026 flyer from @macwattsmusic, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-11",
+   "bar": "legends",
+   "band": "Kristine Kabbes and the Skallywags",
+   "start": "19:00",
+   "end": "22:00",
+   "source": "Artist-provided weekly schedule (Kristine Kabbes, November 2026, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "goodnight",
+   "band": "The Huffer Brothers",
+   "start": "18:00",
+   "end": "22:00",
+   "source": "Artist-provided schedule (The Huffer Brothers' November 2026 flyer, sent by Jules Nov 3 2026); 'close' recorded as 2 AM"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "bootbarn",
+   "band": "Kristine Kabbes and the Skallywags",
+   "start": "19:00",
+   "end": "22:00",
+   "stage": "Rooftop",
+   "source": "Artist-provided weekly schedule (Kristine Kabbes, November 2026, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "olered",
+   "band": "The Huffer Brothers",
+   "start": "22:00",
+   "end": "02:00",
+   "source": "Artist-provided schedule (The Huffer Brothers' November 2026 flyer, sent by Jules Nov 3 2026); 'close' recorded as 2 AM"
   },
   {
    "date": "2026-11-13",
@@ -105,12 +198,37 @@
   },
   {
    "date": "2026-11-14",
+   "bar": "bootbarn",
+   "band": "Kristine Kabbes and the Skallywags",
+   "start": "15:00",
+   "end": "18:00",
+   "stage": "First floor",
+   "source": "Artist-provided weekly schedule (Kristine Kabbes, November 2026, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-14",
    "bar": "luke32",
    "band": "Joe Barron",
    "start": "18:00",
    "end": "22:00",
    "stage": "Rooftop Stage",
    "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
+  },
+  {
+   "date": "2026-11-14",
+   "bar": "tinroof",
+   "band": "The Huffer Brothers",
+   "start": "18:00",
+   "end": "22:00",
+   "source": "Artist-provided schedule (The Huffer Brothers' November 2026 flyer, sent by Jules Nov 3 2026); 'close' recorded as 2 AM"
+  },
+  {
+   "date": "2026-11-14",
+   "bar": "goodnight",
+   "band": "The Huffer Brothers",
+   "start": "22:00",
+   "end": "02:00",
+   "source": "Artist-provided schedule (The Huffer Brothers' November 2026 flyer, sent by Jules Nov 3 2026); 'close' recorded as 2 AM"
   },
   {
    "date": "2026-11-15",
@@ -120,6 +238,15 @@
    "end": "22:00",
    "stage": "Rooftop Stage",
    "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
+  },
+  {
+   "date": "2026-11-17",
+   "bar": "bootbarn",
+   "band": "Kristine Kabbes and the Skallywags",
+   "start": "19:00",
+   "end": "22:00",
+   "stage": "Rooftop",
+   "source": "Artist-provided weekly schedule (Kristine Kabbes, November 2026, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
   },
   {
    "date": "2026-11-18",
@@ -138,6 +265,22 @@
    "source": "Artist-provided schedule (Mac Watts's November 2026 flyer from @macwattsmusic, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
   },
   {
+   "date": "2026-11-18",
+   "bar": "legends",
+   "band": "Kristine Kabbes and the Skallywags",
+   "start": "19:00",
+   "end": "22:00",
+   "source": "Artist-provided weekly schedule (Kristine Kabbes, November 2026, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "goodnight",
+   "band": "The Huffer Brothers",
+   "start": "18:00",
+   "end": "22:00",
+   "source": "Artist-provided schedule (The Huffer Brothers' November 2026 flyer, sent by Jules Nov 3 2026); 'close' recorded as 2 AM"
+  },
+  {
    "date": "2026-11-20",
    "bar": "postys",
    "band": "Joe Barron",
@@ -145,6 +288,15 @@
    "end": "22:00",
    "stage": "",
    "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "bootbarn",
+   "band": "Kristine Kabbes and the Skallywags",
+   "start": "19:00",
+   "end": "22:00",
+   "stage": "Rooftop",
+   "source": "Artist-provided weekly schedule (Kristine Kabbes, November 2026, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
   },
   {
    "date": "2026-11-21",
@@ -156,12 +308,37 @@
   },
   {
    "date": "2026-11-21",
+   "bar": "tinroof",
+   "band": "The Huffer Brothers",
+   "start": "14:00",
+   "end": "18:00",
+   "source": "Artist-provided schedule (The Huffer Brothers' November 2026 flyer, sent by Jules Nov 3 2026); 'close' recorded as 2 AM"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "bootbarn",
+   "band": "Kristine Kabbes and the Skallywags",
+   "start": "15:00",
+   "end": "18:00",
+   "stage": "First floor",
+   "source": "Artist-provided weekly schedule (Kristine Kabbes, November 2026, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-21",
    "bar": "luke32",
    "band": "Joe Barron",
    "start": "22:00",
    "end": "02:00",
    "stage": "Bank Floor Stage",
    "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "olered",
+   "band": "The Huffer Brothers",
+   "start": "22:00",
+   "end": "02:00",
+   "source": "Artist-provided schedule (The Huffer Brothers' November 2026 flyer, sent by Jules Nov 3 2026); 'close' recorded as 2 AM"
   },
   {
    "date": "2026-11-22",
@@ -183,12 +360,37 @@
   },
   {
    "date": "2026-11-24",
+   "bar": "bootbarn",
+   "band": "Kristine Kabbes and the Skallywags",
+   "start": "19:00",
+   "end": "22:00",
+   "stage": "Rooftop",
+   "source": "Artist-provided weekly schedule (Kristine Kabbes, November 2026, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-24",
    "bar": "luke32",
    "band": "Joe Barron",
    "start": "22:00",
    "end": "02:00",
    "stage": "Bank Floor Stage",
    "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "legends",
+   "band": "Kristine Kabbes and the Skallywags",
+   "start": "19:00",
+   "end": "22:00",
+   "source": "Artist-provided weekly schedule (Kristine Kabbes, November 2026, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "goodnight",
+   "band": "The Huffer Brothers",
+   "start": "18:00",
+   "end": "22:00",
+   "source": "Artist-provided schedule (The Huffer Brothers' November 2026 flyer, sent by Jules Nov 3 2026); 'close' recorded as 2 AM"
   },
   {
    "date": "2026-11-27",
@@ -200,6 +402,24 @@
    "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
   },
   {
+   "date": "2026-11-27",
+   "bar": "bootbarn",
+   "band": "Kristine Kabbes and the Skallywags",
+   "start": "19:00",
+   "end": "22:00",
+   "stage": "Rooftop",
+   "source": "Artist-provided weekly schedule (Kristine Kabbes, November 2026, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "bootbarn",
+   "band": "Kristine Kabbes and the Skallywags",
+   "start": "15:00",
+   "end": "18:00",
+   "stage": "First floor",
+   "source": "Artist-provided weekly schedule (Kristine Kabbes, November 2026, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
    "date": "2026-11-28",
    "bar": "luke32",
    "band": "Joe Barron",
@@ -207,6 +427,14 @@
    "end": "02:00",
    "stage": "Bank Floor Stage",
    "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "olered",
+   "band": "The Huffer Brothers",
+   "start": "22:00",
+   "end": "02:00",
+   "source": "Artist-provided schedule (The Huffer Brothers' November 2026 flyer, sent by Jules Nov 3 2026); 'close' recorded as 2 AM"
   },
   {
    "date": "2026-11-29",
