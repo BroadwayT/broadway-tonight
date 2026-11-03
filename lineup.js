@@ -31,6 +31,16 @@ function bandIdFor(name){const ex=db.prepare('SELECT id FROM bands WHERE lower(n
  const id='nmc_'+(name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,40)||'band');db.prepare('INSERT OR IGNORE INTO bands(id,name) VALUES(?,?)').run(id,name);return id;}
 const hhmm=iso=>String(iso).slice(11,16);
 const nightOf=iso=>S.ctNight(Date.parse(iso));
+// Manual sets (manual-sets.json): artist/Jules-provided dates the scrapers miss. Kept as source='manual', never overwritten.
+let MANUAL=[];try{MANUAL=(require('./manual-sets.json').sets||[]).filter(m=>m&&/^\d{4}-\d{2}-\d{2}$/.test(m.date)&&m.bar&&m.band&&/^\d\d:\d\d$/.test(m.start));}catch(e){console.error('[lineup] manual-sets',e.message)}
+function applyManual(fromDate){let n=0;for(const d of new Set(MANUAL.map(m=>m.date)))if(d>=fromDate)ensureDay(d);const bars=new Set(db.prepare('SELECT id FROM bars').all().map(b=>b.id));
+ db.transaction(()=>{for(const m of MANUAL){if(m.date<fromDate||!bars.has(m.bar))continue;const bid=bandIdFor(m.band),si=slotFor(+m.start.slice(0,2)),end=m.end||null;
+  const mid=`${m.date}-${m.bar}-${si}-m-${bid}-${m.start.replace(':','')}`;
+  const other=db.prepare("SELECT id FROM sets WHERE bar_id=? AND date=? AND band_id=? AND set_start=? AND id<>?").get(m.bar,m.date,bid,m.start,mid);
+  if(other){db.prepare('DELETE FROM sets WHERE id=? AND id NOT IN (SELECT DISTINCT set_id FROM ratings WHERE set_id IS NOT NULL)').run(mid);if(end)db.prepare('UPDATE sets SET set_end=? WHERE id=?').run(end,other.id);continue;}
+  const g=db.prepare('SELECT band_id,source,set_end FROM sets WHERE id=?').get(`${m.date}-${m.bar}-${si}`);
+  if(g&&g.band_id===TBA_ID&&g.source!=='owner'){n+=db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,source='manual',source_url=NULL WHERE id=?").run(bid,m.start,end||g.set_end,`${m.date}-${m.bar}-${si}`).changes;continue;}
+  n+=db.prepare("INSERT OR IGNORE INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url) VALUES(?,?,?,?,?,?,?,'manual',NULL)").run(mid,m.bar,bid,m.date,m.start,end,`${m.date}-slot${si}`).changes;}})();return n;}
 // Pull listings for one or more nights; owner-edited sets are never overwritten.
 let running=null,last=null;
 async function refresh(dates){if(running)return running;running=(async()=>{const res={at:new Date().toISOString(),dates,bars:{},errors:[]};
@@ -60,10 +70,11 @@ async function refresh(dates){if(running)return running;running=(async()=>{const
     if(!keep)for(let si=0;si<4;si++)if(!used[si])db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,source='grid',source_url=NULL WHERE id=? AND source='nmc'").run(TBA_ID,SLOTS[si][0],SLOTS[si][1],`${d}-${b.id}-${si}`);
     per[d]=n;})();}
   res.bars[b.id]={listed:per,source:src&&src.url,sourceType:src&&src.type,tried:diags};}
+ try{applyManual(S.ctNight())}catch(e){res.errors.push('manual: '+e.message)}
  last=res;console.log('[lineup] refresh',JSON.stringify({dates,errors:res.errors}));return res;})();
  try{return await running}finally{running=null}}
-function start(){const tick=()=>{try{const n=S.ctNight();ensureDay(n);ensureDay(nextNight(n));clearSampleBands(n);}catch(e){console.error('[lineup] grid',e)}};
+function start(){const tick=()=>{try{const n=S.ctNight();ensureDay(n);ensureDay(nextNight(n));clearSampleBands(n);applyManual(n);}catch(e){console.error('[lineup] grid',e)}};
  tick();setInterval(tick,5*60e3); // night flip at 3 AM CT: grid for the new night appears within 5 min (and a day ahead)
  const run=()=>{const n=S.ctNight();refresh([n,nextNight(n)]).catch(e=>console.error('[lineup] refresh',e));};
  setTimeout(run,15e3);setInterval(run,H);} // hourly while awake; also runs ~15s after every boot/wake
-module.exports={ensureDay,refresh,start,clearSampleBands,nextNight,status:()=>last,VENUES,SOURCE_NAME};
+module.exports={applyManual,ensureDay,refresh,start,clearSampleBands,nextNight,status:()=>last,VENUES,SOURCE_NAME};
