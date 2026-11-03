@@ -1,0 +1,149 @@
+{
+ "_note": "Manual sets (artist- or Jules-provided). Applied by lineup.js on every grid tick and after every refresh; never overwritten by scrapers. Date = the night (CT), times 24h CT; a set ending after midnight still belongs to its start night. If a scraped set with the same bar/band/start exists, the scraped row is kept and only its end time is corrected.",
+ "sets": [
+  {
+   "date": "2026-11-03",
+   "bar": "casarosa",
+   "band": "Joe Barron",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "Main Floor Stage",
+   "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
+  },
+  {
+   "date": "2026-11-05",
+   "bar": "thisbar",
+   "band": "Joe Barron",
+   "start": "17:45",
+   "end": "22:00",
+   "stage": "Club Stage",
+   "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
+  },
+  {
+   "date": "2026-11-07",
+   "bar": "luke32",
+   "band": "Joe Barron",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "Bank Floor Stage",
+   "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
+  },
+  {
+   "date": "2026-11-08",
+   "bar": "thisbar",
+   "band": "Joe Barron",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "Rooftop Stage",
+   "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
+  },
+  {
+   "date": "2026-11-10",
+   "bar": "casarosa",
+   "band": "Joe Barron",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "Main Floor Stage",
+   "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "postys",
+   "band": "Joe Barron",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": "",
+   "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
+  },
+  {
+   "date": "2026-11-14",
+   "bar": "luke32",
+   "band": "Joe Barron",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "Rooftop Stage",
+   "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "thisbar",
+   "band": "Joe Barron",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "Rooftop Stage",
+   "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "postys",
+   "band": "Joe Barron",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "",
+   "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "luke32",
+   "band": "Joe Barron",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": "Bank Floor Stage",
+   "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "thisbar",
+   "band": "Joe Barron",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "Rooftop Stage",
+   "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "thisbar",
+   "band": "Joe Barron",
+   "start": "20:00",
+   "end": "00:00",
+   "stage": "Rooftop Stage",
+   "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "luke32",
+   "band": "Joe Barron",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": "Bank Floor Stage",
+   "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "postys",
+   "band": "Joe Barron",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "",
+   "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "luke32",
+   "band": "Joe Barron",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": "Bank Floor Stage",
+   "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "thisbar",
+   "band": "Joe Barron",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": "Rooftop Stage",
+   "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
+  }
+ ]
+}
