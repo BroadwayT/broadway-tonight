@@ -1,5 +1,5 @@
 {
- "_note": "Manual sets (artist- or Jules-provided). Applied by lineup.js on every grid tick and after every refresh; never overwritten by scrapers. Date = the night (CT), times 24h CT; a set ending after midnight still belongs to its start night. If a scraped set with the same bar/band/start exists, the scraped row is kept and only its end time is corrected.",
+ "_note": "Manual sets (artist- or Jules-provided). Applied by lineup.js on every grid tick and after every refresh; never overwritten by scrapers. Date = the night (CT), times 24h CT; a set ending after midnight still belongs to its start night. If a scraped set with the same bar/band/start exists, the scraped row is kept and only its end time is corrected. Closures ({bar,date,closed_from,closed_to}, night-relative 24h CT, start in [from,to)) remove empty TBA grid rows in that range; rated and owner rows are never touched.",
  "sets": [
   {
    "date": "2026-11-03",
@@ -1316,6 +1316,22 @@
    "start": "22:30",
    "end": "01:30",
    "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  }
+ ],
+ "closures": [
+  {
+   "bar": "roberts",
+   "date": "2026-11-25",
+   "closed_from": "22:00",
+   "closed_to": "03:00",
+   "source": "Robert's official schedule (November 2026): 'Closing at 10PM' on Nov 25"
+  },
+  {
+   "bar": "roberts",
+   "date": "2026-11-26",
+   "closed_from": "10:00",
+   "closed_to": "18:00",
+   "source": "Robert's official schedule (November 2026): Thanksgiving, closed until 'Opening at 6PM'"
   }
  ]
 }

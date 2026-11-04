@@ -14,10 +14,19 @@ try{db.exec('ALTER TABLE sets ADD COLUMN source_url TEXT')}catch(e){}
 db.prepare('INSERT OR IGNORE INTO bands(id,name) VALUES(?,?)').run(TBA_ID,TBA_NAME);
 const H=3600e3;
 function nextNight(d){const t=Date.parse(d+'T12:00:00Z')+24*H;return new Date(t).toISOString().slice(0,10);}
+// Closures (manual-sets.json "closures": [{bar,date,closed_from,closed_to}], or a sets entry with closed_from/closed_to): no empty TBA slot rows in that range.
+// Times are night-relative 24h CT (before 6 AM = after midnight, so 22:00-03:00 works); a slot is closed if its start is in [closed_from, closed_to).
+let CLOSED=[];try{const J=require('./manual-sets.json');CLOSED=[...(J.closures||[]),...(J.sets||[])].filter(c=>c&&c.bar&&/^\d{4}-\d{2}-\d{2}$/.test(c.date)&&/^\d\d:\d\d$/.test(c.closed_from)&&/^\d\d:\d\d$/.test(c.closed_to));}catch(e){console.error('[lineup] closures',e.message)}
+const nRel=t=>{const [h,m]=String(t).split(':').map(Number);return (h<6?h+24:h)*60+(m||0);};
+function isClosed(bar,date,start){const x=nRel(start);return CLOSED.some(c=>c.bar===bar&&c.date===date&&x>=nRel(c.closed_from)&&x<nRel(c.closed_to));}
+// Remove empty TBA grid rows inside a closure (never owner-edited or rated rows). Idempotent.
+function applyClosures(fromDate){let n=0;for(const c of CLOSED){if(c.date<fromDate)continue;
+ for(const r of db.prepare("SELECT id,set_start FROM sets WHERE bar_id=? AND date=? AND band_id=? AND COALESCE(source,'grid')='grid' AND id NOT IN (SELECT DISTINCT set_id FROM ratings WHERE set_id IS NOT NULL)").all(c.bar,c.date,TBA_ID))
+  if(isClosed(c.bar,c.date,r.set_start))n+=db.prepare('DELETE FROM sets WHERE id=?').run(r.id).changes;}return n;}
 // Create the 4-slot grid for every bar on a night (idempotent).
 function ensureDay(date){db.prepare('INSERT OR IGNORE INTO bands(id,name) VALUES(?,?)').run(TBA_ID,TBA_NAME);const bars=db.prepare('SELECT id FROM bars').all();
  const ins=db.prepare('INSERT OR IGNORE INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source) VALUES(?,?,?,?,?,?,?,?)');let n=0;
- db.transaction(()=>{for(const b of bars)SLOTS.forEach((s,i)=>{n+=ins.run(`${date}-${b.id}-${i}`,b.id,TBA_ID,date,s[0],s[1],`${date}-slot${i}`,'grid').changes;});})();return n;}
+ db.transaction(()=>{for(const b of bars)SLOTS.forEach((s,i)=>{if(isClosed(b.id,date,s[0]))return;n+=ins.run(`${date}-${b.id}-${i}`,b.id,TBA_ID,date,s[0],s[1],`${date}-slot${i}`,'grid').changes;});})();return n;}
 // Replace seed sample band names (band0..band19) on today/future nights with TBA.
 function clearSampleBands(fromDate){return db.prepare("UPDATE sets SET band_id=?,source='grid' WHERE date>=? AND band_id GLOB 'band[0-9]*' AND COALESCE(source,'') NOT IN ('owner')").run(TBA_ID,fromDate).changes;}
 const slotFor=h=>h<3?3:h<14?0:h<18?1:h<22?2:3;
@@ -61,7 +70,7 @@ function applyManual(fromDate){let n=0;for(const d of new Set(MANUAL.map(m=>m.da
   if(other){db.prepare('DELETE FROM sets WHERE id=? AND id NOT IN (SELECT DISTINCT set_id FROM ratings WHERE set_id IS NOT NULL)').run(mid);if(end)db.prepare('UPDATE sets SET set_end=? WHERE id=? AND COALESCE(set_end,\'\')<>?').run(end,other.id,end);continue;}
   const g=db.prepare('SELECT band_id,source,set_end FROM sets WHERE id=?').get(`${m.date}-${m.bar}-${si}`);
   if(g&&g.band_id===TBA_ID&&g.source!=='owner'){n+=db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,source='manual',source_url=NULL WHERE id=?").run(bid,m.start,end||g.set_end,`${m.date}-${m.bar}-${si}`).changes;continue;}
-  n+=db.prepare("INSERT OR IGNORE INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url) VALUES(?,?,?,?,?,?,?,'manual',NULL)").run(mid,m.bar,bid,m.date,m.start,end,`${m.date}-slot${si}`).changes;}})();return n;}
+  n+=db.prepare("INSERT OR IGNORE INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url) VALUES(?,?,?,?,?,?,?,'manual',NULL)").run(mid,m.bar,bid,m.date,m.start,end,`${m.date}-slot${si}`).changes;}})();applyClosures(fromDate);return n;}
 // Pull listings for one or more nights; owner-edited sets are never overwritten.
 let running=null,last=null;
 async function refresh(dates){if(running)return running;running=(async()=>{const res={at:new Date().toISOString(),dates,bars:{},errors:[]};
@@ -99,4 +108,4 @@ function start(){const tick=()=>{try{const n=S.ctNight();ensureDay(n);ensureDay(
  tick();setInterval(tick,5*60e3); // night flip at 3 AM CT: grid for the new night appears within 5 min (and a day ahead)
  const run=()=>{const n=S.ctNight();refresh([n,nextNight(n)]).catch(e=>console.error('[lineup] refresh',e));};
  setTimeout(run,15e3);setInterval(run,H);} // hourly while awake; also runs ~15s after every boot/wake
-module.exports={applyManual,ensureDay,refresh,start,clearSampleBands,nextNight,status:()=>last,VENUES,SOURCE_NAME};
+module.exports={applyManual,applyClosures,isClosed,ensureDay,refresh,start,clearSampleBands,nextNight,status:()=>last,VENUES,SOURCE_NAME};
