@@ -444,6 +444,878 @@
    "end": "02:00",
    "stage": "Rooftop Stage",
    "source": "Artist-provided schedule (Joe Barron's November flyer, posted in a comment on our TikTok, Nov 3 2026)"
+  },
+  {
+   "date": "2026-11-04",
+   "bar": "roberts",
+   "band": "Dave Cox",
+   "start": "10:00",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-04",
+   "bar": "roberts",
+   "band": "Paul Kramer",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-04",
+   "bar": "roberts",
+   "band": "Kelley's Heroes",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-04",
+   "bar": "roberts",
+   "band": "The Cowpokes",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-05",
+   "bar": "roberts",
+   "band": "Wendy Newcomer",
+   "start": "10:00",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-05",
+   "bar": "roberts",
+   "band": "Sarah Gayle Meech",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-05",
+   "bar": "roberts",
+   "band": "Kelley's Heroes",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-05",
+   "bar": "roberts",
+   "band": "Moot Davis",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-06",
+   "bar": "roberts",
+   "band": "Joshua Hedley & The Hedliners",
+   "start": "10:00",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-06",
+   "bar": "roberts",
+   "band": "Wendy Newcomer",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-06",
+   "bar": "roberts",
+   "band": "Kelley's Heroes",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-06",
+   "bar": "roberts",
+   "band": "The Shirt Tuckers",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-07",
+   "bar": "roberts",
+   "band": "Sarah Gayle Meech",
+   "start": "10:00",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-07",
+   "bar": "roberts",
+   "band": "Wendy Newcomer",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-07",
+   "bar": "roberts",
+   "band": "Kelley's Heroes",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-07",
+   "bar": "roberts",
+   "band": "The Shirt Tuckers",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-08",
+   "bar": "roberts",
+   "band": "Sunday Morning Gospel",
+   "start": "10:30",
+   "end": "12:00",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-08",
+   "bar": "roberts",
+   "band": "Todd Day Wait",
+   "start": "12:00",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-08",
+   "bar": "roberts",
+   "band": "John England & The Western Swingers",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-08",
+   "bar": "roberts",
+   "band": "Chris Casello Trio",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-08",
+   "bar": "roberts",
+   "band": "Austin John",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-09",
+   "bar": "roberts",
+   "band": "Aaron Till",
+   "start": "10:00",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-09",
+   "bar": "roberts",
+   "band": "Dave Cox",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-09",
+   "bar": "roberts",
+   "band": "John England & The Western Swingers",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-09",
+   "bar": "roberts",
+   "band": "Joshua Hedley & The Hedliners",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-10",
+   "bar": "roberts",
+   "band": "Dave Cox",
+   "start": "10:00",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-10",
+   "bar": "roberts",
+   "band": "The Royal Hounds",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-10",
+   "bar": "roberts",
+   "band": "Chris Casello Trio",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-10",
+   "bar": "roberts",
+   "band": "Robbie Muzick",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-11",
+   "bar": "roberts",
+   "band": "Dave Cox",
+   "start": "10:00",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-11",
+   "bar": "roberts",
+   "band": "Paul Kramer",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-11",
+   "bar": "roberts",
+   "band": "Kelley's Heroes",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-11",
+   "bar": "roberts",
+   "band": "The Cowpokes",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-12",
+   "bar": "roberts",
+   "band": "Wendy Newcomer",
+   "start": "10:00",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-12",
+   "bar": "roberts",
+   "band": "Sarah Gayle Meech",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-12",
+   "bar": "roberts",
+   "band": "Kelley's Heroes",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-12",
+   "bar": "roberts",
+   "band": "Tom Buller",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "roberts",
+   "band": "Joshua Hedley & The Hedliners",
+   "start": "10:00",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "roberts",
+   "band": "JesseLee Jones & Brazilbilly",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "roberts",
+   "band": "Kelley's Heroes",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "roberts",
+   "band": "Brandon Birkedahl & Beer Joint Jumpers",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-14",
+   "bar": "roberts",
+   "band": "Sarah Gayle Meech",
+   "start": "10:00",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-14",
+   "bar": "roberts",
+   "band": "JesseLee Jones & Brazilbilly",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-14",
+   "bar": "roberts",
+   "band": "Kelley's Heroes",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-14",
+   "bar": "roberts",
+   "band": "Brandon Birkedahl & Beer Joint Jumpers",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "roberts",
+   "band": "Sunday Morning Gospel",
+   "start": "10:30",
+   "end": "12:00",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "roberts",
+   "band": "Perley Curtis",
+   "start": "12:00",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "roberts",
+   "band": "JesseLee Jones & Brazilbilly",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "roberts",
+   "band": "Chris Casello Trio",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "roberts",
+   "band": "Sweet Megg",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "roberts",
+   "band": "Aaron Till",
+   "start": "10:00",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "roberts",
+   "band": "Dave Cox",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "roberts",
+   "band": "John England & The Western Swingers",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "roberts",
+   "band": "Joshua Hedley & The Hedliners",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-17",
+   "bar": "roberts",
+   "band": "Aaron Till",
+   "start": "10:00",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-17",
+   "bar": "roberts",
+   "band": "The Royal Hounds",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-17",
+   "bar": "roberts",
+   "band": "Chris Casello Trio",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-17",
+   "bar": "roberts",
+   "band": "The Shirt Tuckers",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "roberts",
+   "band": "Dave Cox",
+   "start": "10:00",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "roberts",
+   "band": "Paul Kramer",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "roberts",
+   "band": "Kelley's Heroes",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "roberts",
+   "band": "The Cowpokes",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "roberts",
+   "band": "Wendy Newcomer",
+   "start": "10:00",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "roberts",
+   "band": "Sarah Gayle Meech",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "roberts",
+   "band": "Kelley's Heroes",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "roberts",
+   "band": "Chuck Mead",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "roberts",
+   "band": "Joshua Hedley & The Hedliners",
+   "start": "10:00",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "roberts",
+   "band": "Wendy Newcomer",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "roberts",
+   "band": "Kelley's Heroes",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "roberts",
+   "band": "Brandon Birkedahl & Beer Joint Jumpers",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "roberts",
+   "band": "Sarah Gayle Meech",
+   "start": "10:00",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "roberts",
+   "band": "Wendy Newcomer",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "roberts",
+   "band": "Kelley's Heroes",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "roberts",
+   "band": "Brandon Birkedahl & Beer Joint Jumpers",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "roberts",
+   "band": "Sunday Morning Gospel",
+   "start": "10:30",
+   "end": "12:00",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "roberts",
+   "band": "Jon Byrd",
+   "start": "12:00",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "roberts",
+   "band": "John England & The Western Swingers",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "roberts",
+   "band": "Chris Casello Trio",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "roberts",
+   "band": "Robbie Muzick",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "roberts",
+   "band": "Aaron Till",
+   "start": "10:00",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "roberts",
+   "band": "Dave Cox",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "roberts",
+   "band": "John England & The Western Swingers",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "roberts",
+   "band": "Joshua Hedley & The Hedliners",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "roberts",
+   "band": "Aaron Till",
+   "start": "10:00",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "roberts",
+   "band": "The Royal Hounds",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "roberts",
+   "band": "Chris Casello Trio",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "roberts",
+   "band": "Robbie Muzick",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "roberts",
+   "band": "Dave Cox",
+   "start": "10:00",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "roberts",
+   "band": "Paul Kramer",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "roberts",
+   "band": "Kelley's Heroes",
+   "start": "18:30",
+   "end": "22:00",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); Robert's closing at 10 PM on Nov 25"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "roberts",
+   "band": "Sarah Gayle Meech",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "roberts",
+   "band": "Matheus Canteri Band",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "roberts",
+   "band": "Joshua Hedley & The Hedliners",
+   "start": "10:00",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "roberts",
+   "band": "Brazilbilly & Friends",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "roberts",
+   "band": "Kelley's Heroes",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "roberts",
+   "band": "Brandon Birkedahl & Beer Joint Jumpers",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "roberts",
+   "band": "Sarah Gayle Meech",
+   "start": "10:30",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "roberts",
+   "band": "Brazilbilly & Friends",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "roberts",
+   "band": "Kelley's Heroes",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "roberts",
+   "band": "Brandon Birkedahl & Beer Joint Jumpers",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "roberts",
+   "band": "Sunday Morning Gospel",
+   "start": "10:30",
+   "end": "12:00",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "roberts",
+   "band": "Perley Curtis",
+   "start": "12:00",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "roberts",
+   "band": "Brazilbilly & Friends",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "roberts",
+   "band": "Chris Casello Trio",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "roberts",
+   "band": "Austin John",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "roberts",
+   "band": "Jon Byrd",
+   "start": "10:00",
+   "end": "14:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "roberts",
+   "band": "Dave Cox",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "roberts",
+   "band": "John England & The Western Swingers",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "roberts",
+   "band": "Joshua Hedley & The Hedliners",
+   "start": "22:30",
+   "end": "01:30",
+   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
   }
  ]
 }
