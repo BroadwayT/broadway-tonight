@@ -1,4 +1,4 @@
-const express=require('express'),cookieParser=require('cookie-parser'),crypto=require('crypto'),path=require('path');
+const express=require('express'),cookieParser=require('cookie-parser'),crypto=require('crypto'),path=require('path'),fs=require('fs');
 const db=require('./db'),S=require('./scoring');
 try{if(!db.prepare('SELECT COUNT(*) c FROM bars').get().c){console.log('Empty DB, seeding');require('./scripts/seed.js');}}catch(e){console.error('seed failed',e)}
 const BARS=require('./bars');console.log('bars added',BARS.upsertBars(db));const L=require('./lineup');const SRC=require('./sources');const TIPS=require('./tips');
@@ -6,6 +6,114 @@ const TF=require('./public/timefmt');const ENG=require('./engaged');
 function appNow(){const raw=process.env.BT_NOW;if(raw){const t=Date.parse(raw);if(!Number.isNaN(t))return t;}return Date.now();}
 const nightNow=()=>S.ctNight(appNow());
 const tagEngaged=rows=>(rows||[]).map(r=>({...r,engaged:ENG.isEngaged(r)}));
+const FEATURED_PATH=path.join(__dirname,'data','featured.json');
+const BAR_ENGAGE_NOTE='We spotlight bands that engage with us — reply to our messages, like or comment on our posts, or send us a DM.';
+const SPOT_ENGAGE_NOTE="We feature bands that engage with us — reply to our messages, like or comment on our posts, or send us a DM. That's how you get on this page.";
+const blankFeatured=()=>({_note:'',barOfTheWeek:{barId:'',blurb:'',history:'',offers:[],website:'',sourceUrl:'',image:'',imageCredit:'',handle:'',weekOf:'',bands:[],engageNote:BAR_ENGAGE_NOTE},bandSpotlight:{name:'',photo:'',photoCredit:'',story:'',nextBroadwaySets:[],instagram:'',tiktok:'',website:'',video:null,engageNote:SPOT_ENGAGE_NOTE},hotRightNow:{barId:'',band:'',line:''}});
+function readFeatured(){
+  let raw={};try{raw=JSON.parse(fs.readFileSync(FEATURED_PATH,'utf8'));}catch(e){}
+  const b=blankFeatured();
+  return {_note:typeof raw._note==='string'?raw._note:b._note,barOfTheWeek:{...b.barOfTheWeek,...(raw.barOfTheWeek||{})},bandSpotlight:{...b.bandSpotlight,...(raw.bandSpotlight||{})},hotRightNow:{...b.hotRightNow,...(raw.hotRightNow||{})}};
+}
+const clip=(v,n)=>String(v==null?'':v).trim().slice(0,n);
+const httpsUrl=v=>/^https:\/\/\S+$/.test(v);
+const siteImage=v=>httpsUrl(v)||/^\/\S+$/.test(v);
+function barBrief(id){if(!id)return null;return db.prepare('SELECT id,name,address FROM bars WHERE id=?').get(id)||null;}
+function cleanOffers(list){if(!Array.isArray(list))return [];return list.slice(0,8).map(o=>({title:clip(o&&o.title,80),detail:clip(o&&o.detail,220)})).filter(o=>o.title||o.detail);}
+function cleanSlugs(list){if(!Array.isArray(list))return [];return [...new Set(list.map(s=>clip(s,80)).filter(Boolean))].slice(0,8);}
+function engageCopy(value,fallback){return clip(value,360)||fallback;}
+function mustHttps(v,label){const s=clip(v,400);if(!s)return '';if(!httpsUrl(s)){const e=new Error(label+' must be an https URL');e.code=400;throw e;}return s;}
+function cleanVideo(v){
+  if(!v||typeof v!=='object')return null;
+  const src=clip(v.src,400);if(!src)return null;
+  if(!httpsUrl(src)){const e=new Error('video src must be an https URL');e.code=400;throw e;}
+  const poster=clip(v.poster,400);
+  if(poster&&!siteImage(poster)){const e=new Error('video poster must be an https URL or a site path');e.code=400;throw e;}
+  const sourceUrl=clip(v.sourceUrl,400);
+  if(sourceUrl&&!httpsUrl(sourceUrl)){const e=new Error('video sourceUrl must be an https URL');e.code=400;throw e;}
+  return {src,poster:poster||'',sourceUrl:sourceUrl||''};
+}
+function ctToday(){return new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago'}).format(new Date());}
+function setAlreadyEnded(date,start,end){
+  const today=ctToday();
+  if(date>today)return false;
+  if(date<today)return true;
+  const n=toMin(ctHM()),s=toMin(start),e=toMin(end);
+  if(!Number.isFinite(n)||!Number.isFinite(e))return false;
+  if(e<=s)return false;
+  return n>=e;
+}
+function nextSetsFor(name){
+  const want=ENG.normName(name);if(!want)return [];
+  const rows=db.prepare(`SELECT s.date,s.set_start,s.set_end,b.id bar_id,b.name bar,bd.name band FROM sets s JOIN bars b ON b.id=s.bar_id JOIN bands bd ON bd.id=s.band_id WHERE s.date>=? ORDER BY s.date,s.set_start`).all(nightNow());
+  const out=[];
+  for(const r of rows){if(ENG.normName(r.band)!==want||setAlreadyEnded(r.date,r.set_start,r.set_end))continue;out.push({barId:r.bar_id,bar:r.bar,date:r.date,set_start:r.set_start,set_end:r.set_end});if(out.length>=3)break;}
+  return out;
+}
+function playingHere(barId,slugs){
+  if(!barId||!Array.isArray(slugs))return [];
+  try{TIPS.ensureSlugs();}catch(e){}
+  const out=[];
+  for(const slug of cleanSlugs(slugs)){
+    const b=db.prepare('SELECT id,name,slug FROM bands WHERE slug=?').get(slug);
+    if(!b)continue;
+    const rows=db.prepare('SELECT date,set_start,set_end FROM sets WHERE bar_id=? AND band_id=? AND date>=? ORDER BY date,set_start').all(barId,b.id,nightNow());
+    const next=rows.find(r=>!setAlreadyEnded(r.date,r.set_start,r.set_end));
+    if(!next)continue;
+    out.push({name:b.name,slug:b.slug,date:next.date,set_start:next.set_start,set_end:next.set_end});
+  }
+  return out;
+}
+function bandLinkFor(name){
+  const want=ENG.normName(name);if(!want)return '';
+  try{TIPS.ensureSlugs();}catch(e){}
+  const rows=db.prepare("SELECT name,slug FROM bands WHERE slug IS NOT NULL AND slug<>''").all();
+  const hit=rows.find(b=>ENG.normName(b.name)===want);
+  return hit?hit.slug:'';
+}
+// weekOf is the Monday the promo week starts. Hide the label once that Monday is more than 7 days ago.
+function freshWeekOf(weekOf){
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(weekOf||''))return '';
+  const days=(Date.parse(ctToday()+'T00:00:00Z')-Date.parse(weekOf+'T00:00:00Z'))/86400000;
+  return days>7?'':weekOf;
+}
+function publicPicks(){
+  const j=readFeatured(),w=j.barOfTheWeek||{},h=j.hotRightNow||{},s=j.bandSpotlight||{};
+  const bar=w.barId?barBrief(w.barId):null;
+  const image=clip(w.image,400);
+  const weekOf=freshWeekOf(w.weekOf);
+  const botw=bar?{barId:bar.id,name:bar.name,address:bar.address,blurb:clip(w.blurb,280),history:clip(w.history,700),offers:cleanOffers(w.offers),website:httpsUrl(w.website)?w.website:'',sourceUrl:httpsUrl(w.sourceUrl)?w.sourceUrl:'',image:siteImage(image)?image:'',imageCredit:clip(w.imageCredit,140),handle:clip(w.handle,40).replace(/^@/,''),weekOf,engageNote:engageCopy(w.engageNote,BAR_ENGAGE_NOTE),playing:playingHere(bar.id,w.bands)}:null;
+  const hb=h.barId?barBrief(h.barId):null;
+  const band=clip(h.band,80),line=clip(h.line,180);
+  const hot=(hb||band)?{barId:hb?hb.id:'',barName:hb?hb.name:'',band,line}:null;
+  const spotName=clip(s.name,80);
+  const photo=clip(s.photo,400);
+  let video=null;try{video=cleanVideo(s.video);}catch(e){video=null;}
+  const spot=spotName?{name:spotName,slug:bandLinkFor(spotName),photo:siteImage(photo)?photo:'',photoCredit:clip(s.photoCredit,140),story:clip(s.story,700),instagram:clip(s.instagram,40).replace(/^@/,''),tiktok:clip(s.tiktok,40).replace(/^@/,''),website:httpsUrl(s.website)?s.website:'',video,engageNote:engageCopy(s.engageNote,SPOT_ENGAGE_NOTE),nextSets:nextSetsFor(spotName)}:null;
+  return {barOfTheWeek:botw,hotRightNow:hot,bandSpotlight:spot};
+}
+function writeFeatured(body){
+  const cur=readFeatured();
+  const check=id=>{if(!id)return '';if(!barBrief(id)){const e=new Error('unknown bar '+id);e.code=400;throw e;}return id;};
+  if(body.barOfTheWeek){
+    const w=body.barOfTheWeek,image=clip(w.image,400),weekOf=clip(w.weekOf,10);
+    if(image&&!siteImage(image)){const e=new Error('image must be an https URL or a site path');e.code=400;throw e;}
+    if(weekOf&&!/^\d{4}-\d{2}-\d{2}$/.test(weekOf)){const e=new Error('weekOf must be YYYY-MM-DD');e.code=400;throw e;}
+    cur.barOfTheWeek={barId:check(clip(w.barId,40)),blurb:clip(w.blurb,280),history:clip(w.history,700),offers:cleanOffers(w.offers),website:mustHttps(w.website,'website'),sourceUrl:mustHttps(w.sourceUrl,'sourceUrl'),image,imageCredit:clip(w.imageCredit,140),handle:clip(w.handle,40).replace(/^@/,''),weekOf,bands:cleanSlugs(w.bands),engageNote:engageCopy(w.engageNote,BAR_ENGAGE_NOTE)};
+  }
+  if(body.hotRightNow){
+    const h=body.hotRightNow;
+    cur.hotRightNow={barId:check(clip(h.barId,40)),band:clip(h.band,80),line:clip(h.line,180)};
+  }
+  if(body.bandSpotlight){
+    const s=body.bandSpotlight,photo=clip(s.photo,400);
+    if(photo&&!siteImage(photo)){const e=new Error('photo must be an https URL or a site path');e.code=400;throw e;}
+    cur.bandSpotlight={name:clip(s.name,80),photo,photoCredit:clip(s.photoCredit,140),story:clip(s.story,700),nextBroadwaySets:Array.isArray(s.nextBroadwaySets)?s.nextBroadwaySets.slice(0,6):[],instagram:clip(s.instagram,40).replace(/^@/,''),tiktok:clip(s.tiktok,40).replace(/^@/,''),website:mustHttps(s.website,'website'),video:cleanVideo(s.video),engageNote:engageCopy(s.engageNote,SPOT_ENGAGE_NOTE)};
+  }
+  fs.mkdirSync(path.dirname(FEATURED_PATH),{recursive:true});
+  fs.writeFileSync(FEATURED_PATH,JSON.stringify(cur,null,2)+'\n');
+  return publicPicks();
+}
 const app=express();app.use(express.json());app.use(cookieParser());app.set('trust proxy','loopback');
 app.use((req,res,next)=>{let d=req.cookies.device_id;if(!d){d=crypto.randomUUID();res.cookie('device_id',d,{maxAge:365*864e5,httpOnly:true,sameSite:'lax'});}req.deviceId=d;
  req.ipHash=crypto.createHash('sha256').update(String(req.ip)).digest('hex');next();}); // raw IP never stored
@@ -57,7 +165,9 @@ app.get('/api/bars/:id',(req,res)=>{const id=req.params.id;const bar=db.prepare(
  const sets=db.prepare(`SELECT s.*,bd.name band FROM sets s JOIN bands bd ON bd.id=s.band_id WHERE s.bar_id=? AND s.date=? ORDER BY s.set_start`).all(id,date).map(r=>({...r,ratedByMe:mine.has(r.id)}));
  const t=S.tonight().find(x=>x.barId===id);const tonight=t&&!t.visible?{...t,score:null,base:null}:t||null;
  const sponsored=!!db.prepare('SELECT 1 FROM sponsors WHERE bar_id=? AND day=?').get(id,date);
- res.json({...bar,date,ctTime:ctHM(),sponsored,tonight,week:S.week().find(x=>x.barId===id)||null,vibes:(vibesForBars([id],6)[id]||[]),sets:tagEngaged(TIPS.decorate(sets))});});
+ const weekPick=publicPicks().barOfTheWeek;
+ const weekBadge=weekPick&&weekPick.barId===id?{blurb:weekPick.blurb,history:weekPick.history,handle:weekPick.handle,website:weekPick.website}:null;
+ res.json({...bar,date,ctTime:ctHM(),sponsored,barOfTheWeek:weekBadge,tonight,week:S.week().find(x=>x.barId===id)||null,vibes:(vibesForBars([id],6)[id]||[]),sets:tagEngaged(TIPS.decorate(sets))});});
 
 
 // ---- competitive: now / street / pulse / search ----
@@ -165,6 +275,9 @@ app.get('/band/:slug/tipcard.pdf',tipcard);
 app.get('/bar/:id',(q,r)=>r.sendFile(path.join(__dirname,'public','index.html')));
 const ADMIN_KEY=process.env.ADMIN_KEY||'';
 app.use('/api/admin',(q,r,n)=>{const k=String(q.get('x-admin-key')||q.query.key||'');const ok=ADMIN_KEY&&k.length===ADMIN_KEY.length&&crypto.timingSafeEqual(Buffer.from(k),Buffer.from(ADMIN_KEY));if(!ok)return r.status(401).json({error:'unauthorized'});n();});
+app.get('/api/picks',(q,r)=>r.json(publicPicks()));
+app.get('/api/admin/featured',(q,r)=>r.json(readFeatured()));
+app.post('/api/admin/featured',(q,r)=>{try{r.json(writeFeatured(q.body||{}));}catch(e){r.status(e.code||500).json({error:e.message});}});
 app.get('/api/admin/owner-links',(q,r)=>{const base=(process.env.PUBLIC_BASE_URL||'https://broadway-tonight.onrender.com').replace(/\/$/,'');
  const bars=db.prepare('SELECT id,name FROM bars ORDER BY name').all();
  r.json(bars.map(b=>{let t=db.prepare('SELECT token FROM owner_tokens WHERE bar_id=?').get(b.id);

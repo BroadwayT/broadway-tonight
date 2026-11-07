@@ -1,0 +1,34 @@
+{
+  "_note": "Picks for the public site. Leave barId blank (and hotRightNow.band blank) to hide that block. Fill these in, or POST /api/admin/featured with the admin key. A copy-paste sample is in the README.",
+  "barOfTheWeek": {
+    "barId": "",
+    "blurb": "",
+    "history": "",
+    "offers": [],
+    "website": "",
+    "sourceUrl": "",
+    "image": "",
+    "imageCredit": "",
+    "handle": "",
+    "weekOf": "",
+    "bands": [],
+    "engageNote": "We spotlight bands that engage with us — reply to our messages, like or comment on our posts, or send us a DM."
+  },
+  "bandSpotlight": {
+    "name": "",
+    "photo": "",
+    "photoCredit": "",
+    "story": "",
+    "nextBroadwaySets": [],
+    "instagram": "",
+    "tiktok": "",
+    "website": "",
+    "video": null,
+    "engageNote": "We feature bands that engage with us — reply to our messages, like or comment on our posts, or send us a DM. That's how you get on this page."
+  },
+  "hotRightNow": {
+    "barId": "",
+    "band": "",
+    "line": ""
+  }
+}
