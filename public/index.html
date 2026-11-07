@@ -55,6 +55,20 @@ h2{font-family:"Bebas Neue",Impact,sans-serif;font-size:24px;letter-spacing:.04e
 }
 .badge{display:inline-block;background:var(--neon2);color:#140f00;font-weight:800;font-size:11px;padding:6px 10px;border-radius:999px;letter-spacing:.12em;text-transform:uppercase}
 .live-badge{display:inline-block;background:var(--neon);color:#fff;font-weight:800;font-size:10px;padding:4px 8px;border-radius:999px;letter-spacing:.1em;text-transform:uppercase;animation:pulse 1.6s ease-in-out infinite}
+.on-now{margin:8px 12px 4px;padding:16px;border-radius:16px;border:1px solid rgba(255,45,149,.55);background:linear-gradient(135deg,rgba(255,45,149,.22),rgba(26,22,36,.96));box-shadow:0 0 28px rgba(255,45,149,.2)}
+.on-now-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.on-now-kicker{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--neon);font-weight:800}
+.on-now .who{font-weight:800;font-size:22px;line-height:1.2;margin-top:8px}
+.on-now .who.namey{font-family:"Bebas Neue",Impact,sans-serif;font-size:36px;letter-spacing:.02em;line-height:.95}
+.on-now .when{margin-top:8px;color:var(--neon2);font-weight:800;font-size:16px;text-shadow:0 0 12px rgba(255,214,10,.35)}
+.on-now .next{margin-top:10px;color:var(--muted);font-size:13px;line-height:1.35}
+.on-now .next b{color:var(--text)}
+.card.ended{opacity:.6}
+details.earlier{margin:0 0 8px}
+details.earlier summary{list-style:none;cursor:pointer;font-family:"Bebas Neue",Impact,sans-serif;font-size:20px;letter-spacing:.04em;color:var(--muted);padding:12px 16px 4px}
+details.earlier summary::-webkit-details-marker{display:none}
+details.earlier summary:before{content:"▸ ";color:var(--neon)}
+details.earlier[open] summary:before{content:"▾ "}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,45,149,.55)}50%{box-shadow:0 0 0 8px rgba(255,45,149,0)}}
 .spon .name{font-family:"Bebas Neue",Impact,sans-serif;font-size:28px;margin-top:8px;letter-spacing:.02em}
 .tabs{display:flex;gap:8px;margin:0 12px 6px}
@@ -251,7 +265,7 @@ h2{font-family:"Bebas Neue",Impact,sans-serif;font-size:24px;letter-spacing:.04e
     <button type="button" class="btn" style="margin-top:8px;width:100%" onclick="this.parentElement.classList.remove('on');localStorage.setItem('bt_install_dismiss','1')">Got it</button>
   </div>
   <h2>NOW PLAYING</h2>
-  <div class="section-sub" id="nowSub">Live across the strip · CT</div>
+  <div class="section-sub" id="nowSub">On the schedule right now</div>
   <div id="nowStrip" class="now-strip"></div>
   <div id="featured"></div>
   <h2 id="hot-anchor">HOT RIGHT NOW</h2>
@@ -344,6 +358,13 @@ function showNight(iso){
   if(!el||!label)return;
   el.textContent=label;el.hidden=false;
 }
+function clockMin(hm){const p=String(hm||'').split(':'),h=+p[0],m=+p[1];if(!Number.isFinite(h))return null;return {h,m:Number.isFinite(m)?m:0};}
+function nightMin(hm){const c=clockMin(hm);if(!c)return null;return (c.h<6?c.h+24:c.h)*60+c.m;}
+function nowNightMin(hm){const c=clockMin(hm);if(!c)return null;return (c.h<3?c.h+24:c.h)*60+c.m;}
+function setPhase(set,nowHM){const s=nightMin(set.set_start),n=nowNightMin(nowHM);let e=nightMin(set.set_end);if(s==null||n==null)return 'upcoming';if(e==null||e<=s)e=s+1;if(n>=s&&n<e)return 'now';if(n>=e)return 'ended';return 'upcoming';}
+function isTba(s){const n=String(s&&s.band||'').trim();return (s&&s.band_id==='tba')||/^live music \(tba\)$/i.test(n)||/^(tba|tbd)\b/i.test(n);}
+function byStart(a,b){return (nightMin(a.set_start)||0)-(nightMin(b.set_start)||0);}
+const onNowPill=()=>'<span class="live-badge">On now</span>';
 let LOGOS={};j('/api/logos').then(x=>{LOGOS=x||{};if(Object.keys(LOGOS).length){board();street();featured();if(typeof curBar!=='undefined'&&curBar)renderBar(curBar);}}).catch(()=>{});
 const SHORT={wildhorse:'C10',kidrock:'KR',luke32:'32',aldeans:'JA',kanebrown:'KB',thisbar:'TB',jbjs:'JBJ',bootbarn:'STG',boogiebar:'HW',postys:'PM',chiefs:'EC',goodnight:'JR',margaritaville:'MV',honkytonkcentral:'HTC',ajs:'AJ',tootsies:'T',rippys:'R'};
 function shortName(n,id){if(id&&SHORT[id])return SHORT[id];let s=String(n||'').replace(/\u2019/g,"'");const m=s.match(/^([A-Z][\w.]*(?: [A-Z][\w.]*)+)'s? (.+)$/);if(m)s=m[2];
@@ -401,14 +422,15 @@ async function pulse(){
 async function nowPlaying(){
   const d=await j('/api/now');
   showNight(d.date);
-  $('#nowSub').textContent=`${showTime(d.ctTime)} CT · ${d.nowPlaying.length} stages live`;
-  if(!d.nowPlaying.length){
-    $('#nowStrip').innerHTML=`<div class="card muted" style="margin:0 0 0 0;flex:1">No sets timed as live right now — check Lineup.</div>`;
+  const nOn=d.nowPlaying.length;
+  $('#nowSub').textContent=`${showTime(d.ctTime)} CT · ${nOn===1?'1 set on now':nOn+' sets on now'}`;
+  if(!nOn){
+    $('#nowStrip').innerHTML=`<div class="card muted" style="margin:0 0 0 0;flex:1">Nothing on the schedule right now. Check the lineup.</div>`;
     return;
   }
   $('#nowStrip').innerHTML=d.nowPlaying.map(x=>`
     <div class="now-card" role="link" tabindex="0" onclick="openBar('${x.barId}')">
-      <span class="live-badge">Live</span>
+      ${x.engaged?onNowPill():''}
       <div class="band">${esc(x.band)}</div>
       <div class="bar">${esc(x.bar)} · ${esc(showRange(x.set_start,x.set_end))}</div>
       ${tipBtn(x)}
@@ -420,7 +442,7 @@ async function street(){
   $('#street').innerHTML=d.bars.map(x=>{
     const dot=x.score==null?'cold':x.score>=4?'hot':'mid';
     const pulse=x.pulse?`<div class="vibe-row" style="margin-top:6px"><span class="vibe-chip pulse-chip">${esc(x.pulse)}</span>${x.ratingsLast6h?`<span class="vibe-chip">${x.ratingsLast6h} in 6h</span>`:''}</div>`:(x.ratingsLast6h?`<div class="muted" style="margin-top:6px">${x.ratingsLast6h} ratings · 6h</div>`:'');
-    const now=x.nowPlaying?`<div class="muted" style="margin-top:4px"><span class="live-badge" style="font-size:9px;padding:2px 6px">Live</span> ${esc(x.nowPlaying.band)}</div>`:'';
+    const now=x.nowPlaying?`<div class="muted" style="margin-top:4px">${x.nowPlaying.engaged?'<span class="live-badge" style="font-size:9px;padding:2px 6px">On now</span> ':''}${esc(x.nowPlaying.band)}</div>`:'';
     const late=x.lastCall?`<div class="late-hint">${esc(x.lastCall.label)}</div>`:'';
     return `<div class="street-item">
       <span class="street-dot ${dot}" title="Hot score"></span>
@@ -496,10 +518,10 @@ async function lineup(){
   }).join('');
 }
 
-function setCard(s){return `
-      <div class="card">
+function setCard(s,opt){opt=opt||{};return `
+      <div class="card${opt.ended?' ended':''}">
         <div class="row">
-          <div class="set-band">${bandName(s)}</div>
+          <div class="set-band">${opt.now&&s.engaged?`<div style="margin-bottom:6px">${onNowPill()}</div>`:''}${bandName(s)}</div>
           <span class="time-pill">${esc(showRange(s.set_start,s.set_end))}</span>
         </div>
         <div class="stars" role="group" aria-label="Rate ${esc(s.band)}">
@@ -544,7 +566,13 @@ async function renderBar(id){
   const st=(streetCache.bars||[]).find(x=>x.barId===id);
   const saved=inPlan(id);
   const vibeAmplify=Array.isArray(b.vibes)?b.vibes.slice(0,5):[];
+  const hm=b.ctTime;
+  const grouped=splitSets(b.sets||[],hm);
+  const on=grouped.now.find(s=>!isTba(s))||grouped.now[0]||null;
+  const nextNamed=on&&isTba(on)?(b.sets||[]).filter(s=>!isTba(s)&&(nightMin(s.set_start)||0)>(nightMin(on.set_start)||0)).sort(byStart)[0]:null;
+  const setsHtml=barSetsHtml(b.sets||[],hm,id);
   $('#barDetail').innerHTML=`
+    ${onNowBlock(on,nextNamed)}
     <div class="card ${b.sponsored?'spon':''}">
       ${b.sponsored?'<span class="badge">Sponsored</span>':''}
       <div style="margin-top:6px">${badge(id,b.name,true)}</div>
@@ -552,7 +580,6 @@ async function renderBar(id){
       <div class="muted" style="margin-top:6px">${esc(b.address||'')}</div>
       ${t&&t.score!=null?`<div class="row" style="margin-top:14px"><div class="muted">Tonight<br>${t.n} ratings · ${t.checkins} check-ins</div><div class="big-score">${t.score.toFixed(2)}</div></div>`:`<div class="rate-invite">${t&&t.n>0?'Ratings open, tap a band to rate':'Be the first to rate tonight'}</div>`}
       ${vibeHtml(vibeAmplify,true)}
-      ${st&&st.nowPlaying?`<div class="muted" style="margin-top:10px"><span class="live-badge">Live</span> ${esc(st.nowPlaying.band)} · ${esc(showRange(st.nowPlaying.set_start,st.nowPlaying.set_end))}</div>`:''}
       ${st&&st.lastCall?`<div class="late-hint">${esc(st.lastCall.label)}</div>`:''}
       <div class="btn-row">
         <button type="button" class="btn primary" onclick="shareBar('${id}')">Share</button>
@@ -561,7 +588,32 @@ async function renderBar(id){
     </div>
     <h2>TONIGHT’S SETS</h2>
     <label class="check"><input type="checkbox" id="ci2" onchange="$('#ci').checked=this.checked" ${$('#ci').checked?'checked':''}> I’m here — count my check-in</label>
-    ${b.sets.length?b.sets.map(s=>setCard({...s,bar_id:id})).join(''):'<div class="card muted">No sets listed tonight.</div>'}`;
+    ${setsHtml}`;
+}
+function splitSets(sets,hm){
+  const groups={now:[],upcoming:[],ended:[]};
+  if(!hm){groups.upcoming=sets.slice();return groups;}
+  for(const s of sets)groups[setPhase(s,hm)].push(s);
+  groups.now.sort(byStart);groups.upcoming.sort(byStart);groups.ended.sort(byStart);
+  return groups;
+}
+function onNowBlock(set,nextNamed){
+  if(!set)return '';
+  const tba=isTba(set);
+  const pill=set.engaged&&!tba?onNowPill():'';
+  const kicker=pill?'':`<div class="on-now-kicker">Playing right now</div>`;
+  const who=tba?'Live music on now, band not listed yet':bandName(set);
+  const next=tba&&nextNamed?`<div class="next">Next listed: <b>${esc(nextNamed.band)}</b> · ${esc(showRange(nextNamed.set_start,nextNamed.set_end))}</div>`:'';
+  const sched=!tba&&set.engaged?'<div class="next">On the schedule right now</div>':'';
+  return `<div class="on-now"><div class="on-now-top">${kicker}${pill}</div><div class="who${tba?'':' namey'}">${who}</div><div class="when">${esc(showRange(set.set_start,set.set_end))}</div>${sched}${next}</div>`;
+}
+function barSetsHtml(sets,hm,id){
+  if(!sets.length)return '<div class="card muted">No sets listed tonight.</div>';
+  const g=splitSets(sets.map(s=>({...s,bar_id:id})),hm);
+  const cards=list=>list.map(s=>setCard(s,{now:g.now.includes(s),ended:g.ended.includes(s)})).join('');
+  const coming=cards(g.now.concat(g.upcoming));
+  const earlier=g.ended.length?`<details class="earlier"${coming?'':' open'}><summary>Earlier tonight</summary>${cards(g.ended)}</details>`:'';
+  return (coming||'<div class="card muted">No sets still to come.</div>')+earlier;
 }
 
 async function shareBar(id){
@@ -632,7 +684,7 @@ async function runSearch(){
     <div class="card tap" role="link" onclick="openBar('${m.barId}')">
       <div class="row">
         <div>
-          <div class="set-band">${esc(m.band)} ${m.live?'<span class="live-badge">Live</span>':''}</div>
+          <div class="set-band">${m.live&&m.engaged?`<div style="margin-bottom:6px">${onNowPill()}</div>`:''}${esc(m.band)}</div>
           <div class="muted">${esc(m.bar)} · ${esc(m.address)}</div>
         </div>
         <span class="time-pill">${esc(showRange(m.set_start,m.set_end))}</span>

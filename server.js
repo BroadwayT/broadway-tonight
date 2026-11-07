@@ -2,12 +2,15 @@ const express=require('express'),cookieParser=require('cookie-parser'),crypto=re
 const db=require('./db'),S=require('./scoring');
 try{if(!db.prepare('SELECT COUNT(*) c FROM bars').get().c){console.log('Empty DB, seeding');require('./scripts/seed.js');}}catch(e){console.error('seed failed',e)}
 const BARS=require('./bars');console.log('bars added',BARS.upsertBars(db));const L=require('./lineup');const SRC=require('./sources');const TIPS=require('./tips');
-const TF=require('./public/timefmt');
+const TF=require('./public/timefmt');const ENG=require('./engaged');
+function appNow(){const raw=process.env.BT_NOW;if(raw){const t=Date.parse(raw);if(!Number.isNaN(t))return t;}return Date.now();}
+const nightNow=()=>S.ctNight(appNow());
+const tagEngaged=rows=>(rows||[]).map(r=>({...r,engaged:ENG.isEngaged(r)}));
 const app=express();app.use(express.json());app.use(cookieParser());app.set('trust proxy','loopback');
 app.use((req,res,next)=>{let d=req.cookies.device_id;if(!d){d=crypto.randomUUID();res.cookie('device_id',d,{maxAge:365*864e5,httpOnly:true,sameSite:'lax'});}req.deviceId=d;
  req.ipHash=crypto.createHash('sha256').update(String(req.ip)).digest('hex');next();}); // raw IP never stored
 app.use(express.static(path.join(__dirname,'public')));
-app.get('/api/lineup',(req,res)=>{const date=(!req.query.date||req.query.date==='today')?S.ctNight():req.query.date;
+app.get('/api/lineup',(req,res)=>{const date=(!req.query.date||req.query.date==='today')?nightNow():req.query.date;
  const rows=db.prepare(`SELECT s.*,b.name bar,bd.name band FROM sets s JOIN bars b ON b.id=s.bar_id JOIN bands bd ON bd.id=s.band_id WHERE s.date=? ORDER BY b.name,s.set_start`).all(date);
  const mine=new Set(db.prepare('SELECT set_id FROM ratings WHERE device_id=?').all(req.deviceId).map(r=>r.set_id));
  res.json({date,sets:TIPS.decorate(rows.map(r=>({...r,ratedByMe:mine.has(r.id)})))});});
@@ -48,18 +51,18 @@ app.get('/api/leaderboards/tonight',(q,r)=>r.json(cached('t',60e3,()=>withVibes(
 app.get('/api/leaderboards/week',(q,r)=>r.json(cached('w',60e3,()=>withVibes(S.week(),7*24))));// spec says hourly; 1 min for demo
 app.get('/api/leaderboards/streak',(q,r)=>r.json(cached('s',60e3,()=>withVibes(S.streaks(),7*24))));
 app.get('/api/bars/:id/score',(q,r)=>r.json({tonight:S.tonight().find(s=>s.barId===q.params.id),week:S.week().find(s=>s.barId===q.params.id)}));
-app.get('/api/featured',(q,r)=>r.json(db.prepare('SELECT sp.*,b.name,b.address FROM sponsors sp JOIN bars b ON b.id=sp.bar_id WHERE day=? LIMIT 3').all(S.ctNight()).map(x=>({...x,sponsored:true,label:'Sponsored'}))));
+app.get('/api/featured',(q,r)=>r.json(db.prepare('SELECT sp.*,b.name,b.address FROM sponsors sp JOIN bars b ON b.id=sp.bar_id WHERE day=? LIMIT 3').all(nightNow()).map(x=>({...x,sponsored:true,label:'Sponsored'}))));
 app.get('/api/bars/:id',(req,res)=>{const id=req.params.id;const bar=db.prepare('SELECT * FROM bars WHERE id=?').get(id);if(!bar)return res.status(404).json({error:'unknown bar'});
- const date=S.ctNight();const mine=new Set(db.prepare('SELECT set_id FROM ratings WHERE device_id=?').all(req.deviceId).map(r=>r.set_id));
+ const date=nightNow();const mine=new Set(db.prepare('SELECT set_id FROM ratings WHERE device_id=?').all(req.deviceId).map(r=>r.set_id));
  const sets=db.prepare(`SELECT s.*,bd.name band FROM sets s JOIN bands bd ON bd.id=s.band_id WHERE s.bar_id=? AND s.date=? ORDER BY s.set_start`).all(id,date).map(r=>({...r,ratedByMe:mine.has(r.id)}));
  const t=S.tonight().find(x=>x.barId===id);const tonight=t&&!t.visible?{...t,score:null,base:null}:t||null;
  const sponsored=!!db.prepare('SELECT 1 FROM sponsors WHERE bar_id=? AND day=?').get(id,date);
- res.json({...bar,date,sponsored,tonight,week:S.week().find(x=>x.barId===id)||null,vibes:(vibesForBars([id],6)[id]||[]),sets:TIPS.decorate(sets)});});
+ res.json({...bar,date,ctTime:ctHM(),sponsored,tonight,week:S.week().find(x=>x.barId===id)||null,vibes:(vibesForBars([id],6)[id]||[]),sets:tagEngaged(TIPS.decorate(sets))});});
 
 
 // ---- competitive: now / street / pulse / search ----
 const STREET_ORDER=BARS.STREET_ORDER;
-function ctHM(t=Date.now()){
+function ctHM(t=appNow()){
   const p=new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date(t));
   const h=p.find(x=>x.type==='hour').value.padStart(2,'0'),m=p.find(x=>x.type==='minute').value.padStart(2,'0');
   return h+':'+m;
@@ -83,12 +86,12 @@ function hourCounts(windowH){
   return Object.fromEntries(rows.map(r=>[r.bar_id,r.c]));
 }
 app.get('/api/now',(req,res)=>{
-  const date=S.ctNight(), hm=ctHM();
+  const date=nightNow(), hm=ctHM();
   const rows=db.prepare(`SELECT s.*,b.name bar,b.address,bd.name band FROM sets s JOIN bars b ON b.id=s.bar_id JOIN bands bd ON bd.id=s.band_id WHERE s.date=?`).all(date);
   const live=rows.filter(r=>inSet(hm,r.set_start,r.set_end))
     .sort((a,b)=>(STREET_ORDER[a.bar_id]||99)-(STREET_ORDER[b.bar_id]||99))
     .map(r=>({barId:r.bar_id,bar:r.bar,address:r.address,band:r.band,bandId:r.band_id,setId:r.id,set_start:r.set_start,set_end:r.set_end,streetOrder:STREET_ORDER[r.bar_id]||99}));
-  res.json({date,ctTime:hm,nowPlaying:TIPS.decorate(live)});
+  res.json({date,ctTime:hm,nowPlaying:tagEngaged(TIPS.decorate(live))});
 });
 app.get('/api/pulse',(req,res)=>{
   const now=Date.now();
@@ -100,7 +103,7 @@ app.get('/api/pulse',(req,res)=>{
   res.json({windowHours:windowH,ratings:total,byBar,topVibes:vibeRows.map(v=>v.vibe),label:total?`${total} rating${total===1?'':'s'} in the last ${windowH===1?'hour':windowH+' hours'} on Broadway`:'Be the first to rate a set tonight'});
 });
 app.get('/api/street',(req,res)=>{
-  const date=S.ctNight(), hm=ctHM();
+  const date=nightNow(), hm=ctHM();
   const tonight=Object.fromEntries(S.tonight().map(s=>[s.barId,s]));
   const bars=db.prepare('SELECT * FROM bars').all().sort((a,b)=>(STREET_ORDER[a.id]||99)-(STREET_ORDER[b.id]||99));
   const vibes=vibesForBars(bars.map(b=>b.id),6);
@@ -118,7 +121,7 @@ app.get('/api/street',(req,res)=>{
       barId:b.id,name:b.name,address:b.address,streetOrder:STREET_ORDER[b.id]||99,
       score:t&&t.visible?t.score:null,n:t?t.n:0,visible:!!(t&&t.visible),
       vibes:vs.map(v=>v.vibe),pulse,ratingsLast6h:counts[b.id]||0,
-      nowPlaying:now?{band:now.band,set_start:now.set_start,set_end:now.set_end}:null,
+      nowPlaying:now?(()=>{const d=TIPS.decorate([now])[0];return {band:d.band,set_start:d.set_start,set_end:d.set_end,engaged:ENG.isEngaged(d)};})():null,
       lastCall:lc
     };
   });
@@ -127,10 +130,10 @@ app.get('/api/street',(req,res)=>{
 app.get('/api/search',(req,res)=>{
   const q=String(req.query.q||'').trim().toLowerCase();
   if(q.length<2)return res.json({q,matches:[]});
-  const date=S.ctNight();
-  const rows=db.prepare(`SELECT s.*,b.name bar,b.address,bd.name band FROM sets s JOIN bars b ON b.id=s.bar_id JOIN bands bd ON bd.id=s.band_id WHERE s.date=? AND lower(bd.name) LIKE ? ORDER BY s.set_start`).all(date,'%'+q+'%');
+  const date=nightNow();
+  const rows=TIPS.decorate(db.prepare(`SELECT s.*,b.name bar,b.address,bd.name band FROM sets s JOIN bars b ON b.id=s.bar_id JOIN bands bd ON bd.id=s.band_id WHERE s.date=? AND lower(bd.name) LIKE ? ORDER BY s.set_start`).all(date,'%'+q+'%'));
   const hm=ctHM();
-  res.json({q,date,matches:rows.map(r=>({barId:r.bar_id,bar:r.bar,address:r.address,band:r.band,set_start:r.set_start,set_end:r.set_end,live:inSet(hm,r.set_start,r.set_end)}))});
+  res.json({q,date,matches:rows.map(r=>({barId:r.bar_id,bar:r.bar,address:r.address,band:r.band,set_start:r.set_start,set_end:r.set_end,live:inSet(hm,r.set_start,r.set_end),engaged:ENG.isEngaged(r)}))});
 });
 // ---- owner magic links ----
 const ownerBar=t=>{const r=db.prepare('SELECT bar_id FROM owner_tokens WHERE token=?').get(String(t||''));return r&&db.prepare('SELECT id,name,address FROM bars WHERE id=?').get(r.bar_id);};
