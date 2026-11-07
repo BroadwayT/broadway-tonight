@@ -3,9 +3,24 @@
   "barOfTheWeek": {
     "barId": "",
     "blurb": "",
+    "history": "",
+    "offers": [],
+    "website": "",
+    "sourceUrl": "",
     "image": "",
     "handle": "",
     "weekOf": ""
+  },
+  "bandSpotlight": {
+    "name": "",
+    "photo": "",
+    "photoCredit": "",
+    "story": "",
+    "nextBroadwaySets": [],
+    "instagram": "",
+    "tiktok": "",
+    "website": "",
+    "video": null
   },
   "hotRightNow": {
     "barId": "",

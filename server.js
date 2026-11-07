@@ -7,37 +7,67 @@ function appNow(){const raw=process.env.BT_NOW;if(raw){const t=Date.parse(raw);i
 const nightNow=()=>S.ctNight(appNow());
 const tagEngaged=rows=>(rows||[]).map(r=>({...r,engaged:ENG.isEngaged(r)}));
 const FEATURED_PATH=path.join(__dirname,'data','featured.json');
-const blankFeatured=()=>({_note:'',barOfTheWeek:{barId:'',blurb:'',image:'',handle:'',weekOf:''},hotRightNow:{barId:'',band:'',line:''}});
+const blankFeatured=()=>({_note:'',barOfTheWeek:{barId:'',blurb:'',history:'',offers:[],website:'',sourceUrl:'',image:'',handle:'',weekOf:''},bandSpotlight:{name:'',photo:'',photoCredit:'',story:'',nextBroadwaySets:[],instagram:'',tiktok:'',website:'',video:null},hotRightNow:{barId:'',band:'',line:''}});
 function readFeatured(){
   let raw={};try{raw=JSON.parse(fs.readFileSync(FEATURED_PATH,'utf8'));}catch(e){}
   const b=blankFeatured();
-  return {_note:typeof raw._note==='string'?raw._note:b._note,barOfTheWeek:{...b.barOfTheWeek,...(raw.barOfTheWeek||{})},hotRightNow:{...b.hotRightNow,...(raw.hotRightNow||{})}};
+  return {_note:typeof raw._note==='string'?raw._note:b._note,barOfTheWeek:{...b.barOfTheWeek,...(raw.barOfTheWeek||{})},bandSpotlight:{...b.bandSpotlight,...(raw.bandSpotlight||{})},hotRightNow:{...b.hotRightNow,...(raw.hotRightNow||{})}};
 }
 const clip=(v,n)=>String(v==null?'':v).trim().slice(0,n);
+const httpsUrl=v=>/^https:\/\/\S+$/.test(v);
+const siteImage=v=>httpsUrl(v)||/^\/\S+$/.test(v);
 function barBrief(id){if(!id)return null;return db.prepare('SELECT id,name,address FROM bars WHERE id=?').get(id)||null;}
+function cleanOffers(list){if(!Array.isArray(list))return [];return list.slice(0,8).map(o=>({title:clip(o&&o.title,80),detail:clip(o&&o.detail,220)})).filter(o=>o.title||o.detail);}
+function mustHttps(v,label){const s=clip(v,400);if(!s)return '';if(!httpsUrl(s)){const e=new Error(label+' must be an https URL');e.code=400;throw e;}return s;}
+function cleanVideo(v){
+  if(!v||typeof v!=='object')return null;
+  const src=clip(v.src,400);if(!src)return null;
+  if(!httpsUrl(src)){const e=new Error('video src must be an https URL');e.code=400;throw e;}
+  const poster=clip(v.poster,400);
+  if(poster&&!siteImage(poster)){const e=new Error('video poster must be an https URL or a site path');e.code=400;throw e;}
+  const sourceUrl=clip(v.sourceUrl,400);
+  if(sourceUrl&&!httpsUrl(sourceUrl)){const e=new Error('video sourceUrl must be an https URL');e.code=400;throw e;}
+  return {src,poster:poster||'',sourceUrl:sourceUrl||''};
+}
+function nextSetsFor(name){
+  const want=ENG.normName(name);if(!want)return [];
+  const rows=db.prepare(`SELECT s.date,s.set_start,s.set_end,b.id bar_id,b.name bar,bd.name band FROM sets s JOIN bars b ON b.id=s.bar_id JOIN bands bd ON bd.id=s.band_id WHERE s.date>=? ORDER BY s.date,s.set_start`).all(nightNow());
+  const out=[];
+  for(const r of rows){if(ENG.normName(r.band)!==want)continue;out.push({barId:r.bar_id,bar:r.bar,date:r.date,set_start:r.set_start,set_end:r.set_end});if(out.length>=4)break;}
+  return out;
+}
 function publicPicks(){
-  const j=readFeatured(),w=j.barOfTheWeek||{},h=j.hotRightNow||{};
+  const j=readFeatured(),w=j.barOfTheWeek||{},h=j.hotRightNow||{},s=j.bandSpotlight||{};
   const bar=w.barId?barBrief(w.barId):null;
   const image=clip(w.image,400);
   const weekOf=/^\d{4}-\d{2}-\d{2}$/.test(w.weekOf||'')?w.weekOf:'';
-  const botw=bar?{barId:bar.id,name:bar.name,address:bar.address,blurb:clip(w.blurb,280),image:(/^https:\/\/\S+$/.test(image)||/^\/\S+$/.test(image))?image:'',handle:clip(w.handle,40).replace(/^@/,''),weekOf}:null;
+  const botw=bar?{barId:bar.id,name:bar.name,address:bar.address,blurb:clip(w.blurb,280),history:clip(w.history,700),offers:cleanOffers(w.offers),website:httpsUrl(w.website)?w.website:'',sourceUrl:httpsUrl(w.sourceUrl)?w.sourceUrl:'',image:siteImage(image)?image:'',handle:clip(w.handle,40).replace(/^@/,''),weekOf}:null;
   const hb=h.barId?barBrief(h.barId):null;
   const band=clip(h.band,80),line=clip(h.line,180);
   const hot=(hb||band)?{barId:hb?hb.id:'',barName:hb?hb.name:'',band,line}:null;
-  return {barOfTheWeek:botw,hotRightNow:hot};
+  const spotName=clip(s.name,80);
+  const photo=clip(s.photo,400);
+  let video=null;try{video=cleanVideo(s.video);}catch(e){video=null;}
+  const spot=spotName?{name:spotName,photo:siteImage(photo)?photo:'',photoCredit:clip(s.photoCredit,140),story:clip(s.story,700),instagram:clip(s.instagram,40).replace(/^@/,''),tiktok:clip(s.tiktok,40).replace(/^@/,''),website:httpsUrl(s.website)?s.website:'',video,nextSets:nextSetsFor(spotName)}:null;
+  return {barOfTheWeek:botw,hotRightNow:hot,bandSpotlight:spot};
 }
 function writeFeatured(body){
   const cur=readFeatured();
   const check=id=>{if(!id)return '';if(!barBrief(id)){const e=new Error('unknown bar '+id);e.code=400;throw e;}return id;};
   if(body.barOfTheWeek){
     const w=body.barOfTheWeek,image=clip(w.image,400),weekOf=clip(w.weekOf,10);
-    if(image&&!/^https:\/\/\S+$/.test(image)&&!/^\/\S+$/.test(image)){const e=new Error('image must be an https URL or a site path');e.code=400;throw e;}
+    if(image&&!siteImage(image)){const e=new Error('image must be an https URL or a site path');e.code=400;throw e;}
     if(weekOf&&!/^\d{4}-\d{2}-\d{2}$/.test(weekOf)){const e=new Error('weekOf must be YYYY-MM-DD');e.code=400;throw e;}
-    cur.barOfTheWeek={barId:check(clip(w.barId,40)),blurb:clip(w.blurb,280),image,handle:clip(w.handle,40).replace(/^@/,''),weekOf};
+    cur.barOfTheWeek={barId:check(clip(w.barId,40)),blurb:clip(w.blurb,280),history:clip(w.history,700),offers:cleanOffers(w.offers),website:mustHttps(w.website,'website'),sourceUrl:mustHttps(w.sourceUrl,'sourceUrl'),image,handle:clip(w.handle,40).replace(/^@/,''),weekOf};
   }
   if(body.hotRightNow){
     const h=body.hotRightNow;
     cur.hotRightNow={barId:check(clip(h.barId,40)),band:clip(h.band,80),line:clip(h.line,180)};
+  }
+  if(body.bandSpotlight){
+    const s=body.bandSpotlight,photo=clip(s.photo,400);
+    if(photo&&!siteImage(photo)){const e=new Error('photo must be an https URL or a site path');e.code=400;throw e;}
+    cur.bandSpotlight={name:clip(s.name,80),photo,photoCredit:clip(s.photoCredit,140),story:clip(s.story,700),nextBroadwaySets:Array.isArray(s.nextBroadwaySets)?s.nextBroadwaySets.slice(0,6):[],instagram:clip(s.instagram,40).replace(/^@/,''),tiktok:clip(s.tiktok,40).replace(/^@/,''),website:mustHttps(s.website,'website'),video:cleanVideo(s.video)};
   }
   fs.mkdirSync(path.dirname(FEATURED_PATH),{recursive:true});
   fs.writeFileSync(FEATURED_PATH,JSON.stringify(cur,null,2)+'\n');
@@ -94,8 +124,9 @@ app.get('/api/bars/:id',(req,res)=>{const id=req.params.id;const bar=db.prepare(
  const sets=db.prepare(`SELECT s.*,bd.name band FROM sets s JOIN bands bd ON bd.id=s.band_id WHERE s.bar_id=? AND s.date=? ORDER BY s.set_start`).all(id,date).map(r=>({...r,ratedByMe:mine.has(r.id)}));
  const t=S.tonight().find(x=>x.barId===id);const tonight=t&&!t.visible?{...t,score:null,base:null}:t||null;
  const sponsored=!!db.prepare('SELECT 1 FROM sponsors WHERE bar_id=? AND day=?').get(id,date);
- const week=publicPicks().barOfTheWeek;
- res.json({...bar,date,ctTime:ctHM(),sponsored,barOfTheWeek:week&&week.barId===id?{blurb:week.blurb,handle:week.handle}:null,tonight,week:S.week().find(x=>x.barId===id)||null,vibes:(vibesForBars([id],6)[id]||[]),sets:tagEngaged(TIPS.decorate(sets))});});
+ const weekPick=publicPicks().barOfTheWeek;
+ const weekBadge=weekPick&&weekPick.barId===id?{blurb:weekPick.blurb,history:weekPick.history,handle:weekPick.handle,website:weekPick.website}:null;
+ res.json({...bar,date,ctTime:ctHM(),sponsored,barOfTheWeek:weekBadge,tonight,week:S.week().find(x=>x.barId===id)||null,vibes:(vibesForBars([id],6)[id]||[]),sets:tagEngaged(TIPS.decorate(sets))});});
 
 
 // ---- competitive: now / street / pulse / search ----
