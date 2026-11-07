@@ -1,34 +1,55 @@
 {
-  "_note": "Picks for the public site. Leave barId blank (and hotRightNow.band blank) to hide that block. Fill these in, or POST /api/admin/featured with the admin key. A copy-paste sample is in the README.",
   "barOfTheWeek": {
-    "barId": "",
-    "blurb": "",
-    "history": "",
-    "offers": [],
-    "website": "",
-    "sourceUrl": "",
-    "image": "",
-    "imageCredit": "",
+    "barId": "bootbarn",
+    "blurb": "Live country music, cold drinks, and a rooftop on Lower Broadway.",
+    "history": "The Stage is one of the honky-tonks that grew up with Lower Broadway. An original painting of The Highwaymen, once owned by Waylon Jennings and hung in his Nashville home, hangs over the front door.",
+    "offers": [
+      {
+        "title": "Live music",
+        "detail": "Country bands on the main floor, the second floor, and the rooftop."
+      },
+      {
+        "title": "Hours",
+        "detail": "Open every day, 10 AM to 2:30 AM. Artists and times can change."
+      },
+      {
+        "title": "After 6 PM",
+        "detail": "21 and up after 6 PM."
+      },
+      {
+        "title": "Private events",
+        "detail": "Private parties, corporate events, and VIP rooms."
+      }
+    ],
+    "website": "https://thestageonbroadway.com/",
+    "sourceUrl": "https://thestageonbroadway.com/about-us/",
+    "image": "https://wst-media.sfo2.digitaloceanspaces.com/TheStage/wp-content/uploads/2025/10/22174250/TheStage_NEON_bigger.png",
+    "imageCredit": "Logo belongs to The Stage on Broadway",
     "handle": "",
-    "weekOf": "",
-    "bands": [],
+    "weekOf": "2026-11-02",
+    "bands": [
+      "mac-watts",
+      "kristine-kabbes-and-the-skallywags",
+      "conner-sweet-band",
+      "rachael-turner"
+    ],
     "engageNote": "We spotlight bands that engage with us — reply to our messages, like or comment on our posts, or send us a DM."
   },
   "bandSpotlight": {
-    "name": "",
-    "photo": "",
-    "photoCredit": "",
-    "story": "",
+    "name": "Mac Watts",
+    "photo": "https://images.zoogletools.com/s:bzglfiles/u/244485/208a3ef8c4c519b9480c13e0e33743fe7fed28f6/original/img-8992.jpeg",
+    "photoCredit": "Photo from macwattsmusic.com/gigs",
+    "story": "Mac Watts grew up just north of Detroit and moved to Nashville in 2017. He has released the EPs Dynamite and Cast Away, plus the singles On My Own and Raise Em Up Proud. He plays regularly on Broadway, including sets at The Stage on Broadway.",
     "nextBroadwaySets": [],
-    "instagram": "",
+    "instagram": "macwattsmusic",
     "tiktok": "",
-    "website": "",
+    "website": "https://macwattsmusic.com/",
     "video": null,
     "engageNote": "We feature bands that engage with us — reply to our messages, like or comment on our posts, or send us a DM. That's how you get on this page."
   },
   "hotRightNow": {
-    "barId": "",
-    "band": "",
-    "line": ""
+    "barId": "luke32",
+    "band": "Joe Barron",
+    "line": "Playing Luke's 32 Bridge tonight 6 to 10 PM."
   }
 }
