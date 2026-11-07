@@ -33,7 +33,7 @@ function nextSetsFor(name){
   const want=ENG.normName(name);if(!want)return [];
   const rows=db.prepare(`SELECT s.date,s.set_start,s.set_end,b.id bar_id,b.name bar,bd.name band FROM sets s JOIN bars b ON b.id=s.bar_id JOIN bands bd ON bd.id=s.band_id WHERE s.date>=? ORDER BY s.date,s.set_start`).all(nightNow());
   const out=[];
-  for(const r of rows){if(ENG.normName(r.band)!==want)continue;out.push({barId:r.bar_id,bar:r.bar,date:r.date,set_start:r.set_start,set_end:r.set_end});if(out.length>=4)break;}
+  for(const r of rows){if(ENG.normName(r.band)!==want)continue;out.push({barId:r.bar_id,bar:r.bar,date:r.date,set_start:r.set_start,set_end:r.set_end});if(out.length>=8)break;}
   return out;
 }
 function publicPicks(){

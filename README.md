@@ -16,31 +16,31 @@ Set them in the file, or with the admin key:
 <!-- sample, not live. Copy into data/featured.json when you want it on the site.
 {
   "barOfTheWeek": {
-    "barId": "whiskeybent",
-    "blurb": "Family-owned honky-tonk at 306 Broadway.",
+    "barId": "bootbarn",
+    "blurb": "Honky-tonk at 412 Broadway, with live country music on three floors.",
     "history": "Two or three plain sentences from the bar's own site.",
-    "offers": [{"title": "Live music", "detail": "What their site lists for tonight."}],
-    "website": "https://whiskeybentnash.com/",
-    "sourceUrl": "https://whiskeybentnash.com/about",
+    "offers": [{"title": "Live music", "detail": "What their site lists."}],
+    "website": "https://thestageonbroadway.com/",
+    "sourceUrl": "https://thestageonbroadway.com/about-us/",
     "image": "",
-    "handle": "whiskeybentsaloon",
+    "handle": "",
     "weekOf": "2026-11-02"
   },
   "bandSpotlight": {
-    "name": "Sarah Gayle Meech",
+    "name": "Mac Watts",
     "photo": "",
     "photoCredit": "Photo from the artist's own site",
     "story": "Two or three sentences from public bios.",
     "nextBroadwaySets": [],
-    "instagram": "sarahgaylemeech",
+    "instagram": "macwattsmusic",
     "tiktok": "",
-    "website": "https://www.sarahgaylemeech.com/",
+    "website": "https://macwattsmusic.com/",
     "video": null
   },
   "hotRightNow": {
-    "barId": "whiskeybent",
-    "band": "House band",
-    "line": "On stage at Whiskey Bent tonight."
+    "barId": "bootbarn",
+    "band": "Kristine Kabbes and the Skallywags",
+    "line": "On the lineup at The Stage on Broadway."
   }
 }
 -->
