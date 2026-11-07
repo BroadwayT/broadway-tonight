@@ -40,6 +40,7 @@ header{
 .kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--neon);font-weight:700;margin-bottom:4px}
 h1{margin:0;font-family:"Bebas Neue",Impact,sans-serif;font-size:36px;line-height:0.95;letter-spacing:.02em}
 .sub{margin-top:6px;color:var(--muted);font-size:13px;line-height:1.35}
+.night-date{margin:10px 0 0;font-size:16px;font-weight:800;letter-spacing:.02em;color:var(--neon2);text-shadow:0 0 16px rgba(255,214,10,.45);line-height:1.2}
 h2{font-family:"Bebas Neue",Impact,sans-serif;font-size:24px;letter-spacing:.04em;margin:18px 16px 8px}
 .card{
   background:linear-gradient(180deg,var(--card2),var(--card));
@@ -236,6 +237,7 @@ h2{font-family:"Bebas Neue",Impact,sans-serif;font-size:24px;letter-spacing:.04e
   <div class="kicker">Nashville · Lower Broadway</div>
   <h1>BROADWAY<br>TONIGHT</h1>
   <div class="sub">Who’s on. Who’s hot. Rate the set in one tap.</div>
+  <p class="night-date" id="nightDate" hidden></p>
   <div class="social-head" aria-label="Follow Broadway Tonight">
     <a href="https://www.instagram.com/broadwaytonightnash/" target="_blank" rel="noopener" aria-label="Broadway Tonight on Instagram"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
     <a href="https://www.tiktok.com/@broadwaytonightnash" target="_blank" rel="noopener" aria-label="Broadway Tonight on TikTok"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.6 2.6 0 0 1 0-5.2c.27 0 .53.04.77.12V9.66a5.73 5.73 0 0 0-.77-.05 5.69 5.69 0 1 0 5.69 5.69V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3a4.3 4.3 0 0 1-3.25-1.48z"/></svg></a>
@@ -330,6 +332,18 @@ const toast=m=>{const t=$('#toast');t.textContent=m;t.style.display='block';setT
 const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const showTime=t=>TimeFmt.formatTime(t);
 const showRange=(a,b)=>TimeFmt.formatRange(a,b);
+// Broadway night is the lineup date (YYYY-MM-DD). Format that calendar day in Chicago so 1 AM still reads as the previous evening.
+function nightLabel(iso){
+  const m=String(iso||'').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if(!m)return '';
+  const dt=new Date(Date.UTC(+m[1],+m[2]-1,+m[3],18));
+  return new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',weekday:'long',month:'short',day:'numeric'}).format(dt);
+}
+function showNight(iso){
+  const label=nightLabel(iso);const el=$('#nightDate');
+  if(!el||!label)return;
+  el.textContent=label;el.hidden=false;
+}
 let LOGOS={};j('/api/logos').then(x=>{LOGOS=x||{};if(Object.keys(LOGOS).length){board();street();featured();if(typeof curBar!=='undefined'&&curBar)renderBar(curBar);}}).catch(()=>{});
 const SHORT={wildhorse:'C10',kidrock:'KR',luke32:'32',aldeans:'JA',kanebrown:'KB',thisbar:'TB',jbjs:'JBJ',bootbarn:'STG',boogiebar:'HW',postys:'PM',chiefs:'EC',goodnight:'JR',margaritaville:'MV',honkytonkcentral:'HTC',ajs:'AJ',tootsies:'T',rippys:'R'};
 function shortName(n,id){if(id&&SHORT[id])return SHORT[id];let s=String(n||'').replace(/\u2019/g,"'");const m=s.match(/^([A-Z][\w.]*(?: [A-Z][\w.]*)+)'s? (.+)$/);if(m)s=m[2];
@@ -386,6 +400,7 @@ async function pulse(){
 
 async function nowPlaying(){
   const d=await j('/api/now');
+  showNight(d.date);
   $('#nowSub').textContent=`${showTime(d.ctTime)} CT · ${d.nowPlaying.length} stages live`;
   if(!d.nowPlaying.length){
     $('#nowStrip').innerHTML=`<div class="card muted" style="margin:0 0 0 0;flex:1">No sets timed as live right now — check Lineup.</div>`;
@@ -472,6 +487,7 @@ async function board(){
 
 async function lineup(){
   const d=await j('/api/lineup?date=today');
+  showNight(d.date);
   let last='';
   $('#lineup').innerHTML=d.sets.map(s=>{
     const h=s.bar!==last ? `<div class="venue-head">${esc(s.bar)}</div>` : '';
