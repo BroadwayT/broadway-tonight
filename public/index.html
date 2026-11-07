@@ -168,6 +168,7 @@ details.earlier[open] summary:before{content:"▾ "}
   background:rgba(184,255,60,.08);border:1px solid rgba(184,255,60,.25);
   color:var(--lime);font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px;
 }
+.ticker[hidden]{display:none !important}
 .ticker .dot{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime);flex-shrink:0}
 .now-strip{display:flex;gap:10px;overflow-x:auto;padding:4px 12px 8px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
 .now-strip::-webkit-scrollbar{display:none}
@@ -432,8 +433,14 @@ function renderPlan(){
 async function pulse(){
   const d=await j('/api/pulse');
   const el=$('#ticker');
-  if(!d.label||/be the first to rate|ratings open/i.test(d.label)){el.hidden=true;return;}
-  $('#tickerText').textContent=d.label;el.hidden=false;
+  const label=String(d&&d.label||'').trim();
+  if(!label||/be the first to rate|ratings open/i.test(label)){
+    $('#tickerText').textContent='';
+    el.hidden=true;
+    return;
+  }
+  $('#tickerText').textContent=label;
+  el.hidden=false;
 }
 function weekLabel(iso){
   const m=String(iso||'').match(/^(\d{4})-(\d{2})-(\d{2})$/);
