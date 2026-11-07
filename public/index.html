@@ -83,6 +83,10 @@ details.earlier[open] summary:before{content:"▾ "}
 .week-history{margin-top:8px;font-size:14px;line-height:1.45}
 .offers{margin-top:12px;display:grid;gap:8px}
 .offers .label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--neon);font-weight:800}
+.engage-note{margin:0;font-size:14px;line-height:1.45;font-weight:500;color:#d7d0e2}
+.spot .engage-note{padding:10px 16px 12px}
+.playing-here{margin-top:14px}
+.playing-here .offers{margin-top:8px}
 .offer{padding:8px 10px;border-radius:12px;background:rgba(255,214,10,.08);border:1px solid rgba(255,214,10,.28)}
 .offer b{display:block;font-size:14px}
 .offer span{display:block;margin-top:2px;color:var(--muted);font-size:13px;font-weight:500;line-height:1.35}
@@ -90,10 +94,12 @@ details.earlier[open] summary:before{content:"▾ "}
 .card.spot{padding:0;overflow:hidden;border:1px solid rgba(255,45,149,.55)}
 .spot-photo{width:100%;height:340px;object-fit:cover;object-position:center 18%;display:block;background:#111}
 .spot-credit{margin:0;padding:6px 16px 0;font-size:11px;color:var(--muted)}
+.week-credit{margin:6px 0 0;font-size:11px;line-height:1.3;color:var(--muted);font-weight:500}
 .spot-body{padding:12px 16px 16px}
 .spot-name{margin:0;font-family:"Bebas Neue",Impact,sans-serif;font-size:44px;line-height:.9;letter-spacing:.02em;color:var(--neon2)}
 .spot-sets{display:grid;gap:6px;margin-top:10px}
-.spot-set{display:block;text-align:left;width:100%;border:1px solid rgba(255,214,10,.28);background:rgba(255,214,10,.08);color:var(--text);border-radius:12px;padding:10px 12px;font-weight:700;font-size:14px}
+.spot-set{display:block;text-align:left;width:100%;border:1px solid rgba(255,214,10,.28);background:rgba(255,214,10,.08);color:var(--text);border-radius:12px;padding:10px 12px;font-weight:700;font-size:14px;text-decoration:none}
+.spot-set span{display:block;margin-top:2px;color:var(--neon2);font-weight:700}
 .follow-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
 .follow-row a{display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;border-radius:999px;border:1px solid rgba(255,45,149,.45);color:var(--text);text-decoration:none;font-weight:800;font-size:14px;background:rgba(255,45,149,.12)}
 .hot-pick{border:1px solid rgba(255,45,149,.55);background:linear-gradient(145deg,rgba(255,45,149,.22),#1a1624 58%)}
@@ -507,11 +513,13 @@ function weekCard(w){
     <span class="badge">Bar of the Week</span>
     ${when?`<div class="week-when">Week of ${esc(when)}</div>`:''}
     ${img}
+    ${w.image&&w.imageCredit?`<p class="week-credit">${esc(w.imageCredit)}</p>`:''}
     <div class="week-name">${esc(w.name)}</div>
     ${w.blurb?`<div class="week-blurb">${esc(w.blurb)}</div>`:''}
     ${w.history?`<div class="week-history">${esc(w.history)}</div>`:''}
     ${w.address?`<div class="muted" style="margin-top:6px">${esc(w.address)}</div>`:''}
     ${offers?`<div class="offers"><div class="label">What's on</div>${offers}</div>`:''}
+    ${(w.playing||[]).length?`<div class="playing-here"><p class="engage-note">${esc(w.engageNote||'')}</p><div class="offers"><div class="label">Playing here</div><div class="spot-sets">${(w.playing||[]).map(p=>`<a class="spot-set" href="/band/${encodeURIComponent(p.slug)}" onclick="event.preventDefault();openBand('${p.slug}')"><b>${esc(p.name)}</b><span>${esc(dayLabel(p.date))} · ${esc(showRange(p.set_start,p.set_end))}</span></a>`).join('')}</div></div></div>`:''}
     ${site}
     <div class="btn-row">
       <button type="button" class="btn" onclick="shareWeek()">Share</button>
@@ -525,7 +533,8 @@ function spotCard(s){
   const media=s.video&&s.video.src
     ?`<video class="spot-photo" src="${esc(s.video.src)}" ${s.photo||s.video.poster?`poster="${esc(s.photo||s.video.poster)}"`:''} muted loop playsinline autoplay></video>`
     :(s.photo?`<img class="spot-photo" src="${esc(s.photo)}" alt="${esc(s.name)}">`:'');
-  const sets=(s.nextSets||[]).map(x=>`<button type="button" class="spot-set" onclick="openBar('${x.barId}')">${esc(dayLabel(x.date))} · ${esc(showRange(x.set_start,x.set_end))}<br>${esc(x.bar)}</button>`).join('');
+  const sets=(s.nextSets||[]).slice(0,3).map(x=>`<button type="button" class="spot-set" onclick="openBar('${x.barId}')">${esc(dayLabel(x.date))} · ${esc(showRange(x.set_start,x.set_end))}<br>${esc(x.bar)}</button>`).join('');
+  const all=s.slug?`<a class="ig-link" href="/band/${encodeURIComponent(s.slug)}" onclick="event.preventDefault();openBand('${s.slug}')">See all dates</a>`:'';
   const follows=[
     s.instagram?`<a href="https://instagram.com/${encodeURIComponent(s.instagram)}" target="_blank" rel="noopener">Instagram</a>`:'',
     s.tiktok?`<a href="https://www.tiktok.com/@${encodeURIComponent(s.tiktok)}" target="_blank" rel="noopener">TikTok</a>`:'',
@@ -533,12 +542,13 @@ function spotCard(s){
   ].filter(Boolean).join('');
   return `<div class="card spot" id="spotCard">
     <div class="on-now-kicker" style="padding:14px 16px 0" id="band-spotlight">Band spotlight</div>
+    <p class="engage-note">${esc(s.engageNote||'')}</p>
     ${media}
     ${s.photoCredit?`<p class="spot-credit">${esc(s.photoCredit)}</p>`:''}
     <div class="spot-body">
       <h3 class="spot-name">${esc(s.name)}</h3>
       ${s.story?`<div class="week-history">${esc(s.story)}</div>`:''}
-      ${sets?`<div class="offers"><div class="label">Next on Broadway</div><div class="spot-sets">${sets}</div></div>`:''}
+      ${sets?`<div class="offers"><div class="label">Next on Broadway</div><div class="spot-sets">${sets}</div>${all?`<div style="margin-top:8px">${all}</div>`:''}</div>`:''}
       ${follows?`<div class="follow-row">${follows}</div>`:''}
       <div class="btn-row"><button type="button" class="btn" onclick="shareSpot()">Share</button></div>
     </div>
@@ -546,7 +556,7 @@ function spotCard(s){
 }
 function hotCard(h){
   const go=h.barId?` role="link" tabindex="0" onclick="openBar('${h.barId}')"`:'';
-  return `<div class="card hot-pick${h.barId?' tap':''}"${go}>
+  return `<div class="card hot-pick${h.barId?' tap':''}" id="hotCard"${go}>
     <div class="on-now-kicker">Hot right now</div>
     ${h.band?`<div class="hot-band">${esc(h.band)}</div>`:''}
     ${h.barName?`<div class="hot-bar">${esc(h.barName)}</div>`:''}

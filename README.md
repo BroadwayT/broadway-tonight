@@ -5,7 +5,7 @@ Lower Broadway lineup + one-tap set ratings + Hot Right Now leaderboards. Scorin
     npm run seed     # resets data/app.db with sample lineup for tonight (CT) + fake ratings
     npm start        # http://127.0.0.1:3847/  (bound to localhost only)
 ## Picks
-`data/featured.json` drives Bar of the Week, Band Spotlight, and Hot Right Now. Leave `barOfTheWeek.barId` blank, `bandSpotlight.name` blank, and `hotRightNow` without a bar or band, and that block stays hidden. `image` and `photo` are https URLs or paths on this site. `handle`, `instagram`, and `tiktok` are names, with or without @. `weekOf` is `YYYY-MM-DD`. `offers` is a list of `{title, detail}` taken from the bar's own site. `video` is optional `{src, poster, sourceUrl}` and only for a clip the band posted of themselves performing. Next Broadway times are filled from the lineup when the spotlight name matches.
+`data/featured.json` drives Bar of the Week, Band Spotlight, and Hot Right Now. Leave `barOfTheWeek.barId` blank, `bandSpotlight.name` blank, and `hotRightNow` without a bar or band, and that block stays hidden. `image` and `photo` are https URLs or paths on this site. `handle`, `instagram`, and `tiktok` are names, with or without @. `weekOf` is the Monday that starts the promo week (`YYYY-MM-DD`). The “Week of” label hides when that Monday is more than 7 days ago. `offers` is a list of `{title, detail}` taken from the bar's own site. `imageCredit` is a short photo credit, such as “Photo from thestageonbroadway.com”. `bands` is a list of band slugs. The card shows only those acts, with each one’s next set at that bar. `barOfTheWeek.engageNote` sits above that list, and `bandSpotlight.engageNote` sits under the Band Spotlight label. Leave either blank and the site uses its default sentence. `video` is optional `{src, poster, sourceUrl}` and only for a clip the band posted of themselves performing. Next Broadway times are filled from the lineup when the spotlight name matches.
 
 Set them in the file, or with the admin key:
 
@@ -23,8 +23,11 @@ Set them in the file, or with the admin key:
     "website": "https://thestageonbroadway.com/",
     "sourceUrl": "https://thestageonbroadway.com/about-us/",
     "image": "",
+    "imageCredit": "",
     "handle": "",
-    "weekOf": "2026-11-02"
+    "weekOf": "2026-11-02",
+    "bands": ["mac-watts", "kristine-kabbes-and-the-skallywags", "conner-sweet-band", "rachael-turner"],
+    "engageNote": ""
   },
   "bandSpotlight": {
     "name": "Mac Watts",
@@ -35,7 +38,8 @@ Set them in the file, or with the admin key:
     "instagram": "macwattsmusic",
     "tiktok": "",
     "website": "https://macwattsmusic.com/",
-    "video": null
+    "video": null,
+    "engageNote": ""
   },
   "hotRightNow": {
     "barId": "bootbarn",

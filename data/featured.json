@@ -8,8 +8,11 @@
     "website": "",
     "sourceUrl": "",
     "image": "",
+    "imageCredit": "",
     "handle": "",
-    "weekOf": ""
+    "weekOf": "",
+    "bands": [],
+    "engageNote": "We spotlight bands that engage with us — reply to our messages, like or comment on our posts, or send us a DM."
   },
   "bandSpotlight": {
     "name": "",
@@ -20,7 +23,8 @@
     "instagram": "",
     "tiktok": "",
     "website": "",
-    "video": null
+    "video": null,
+    "engageNote": "We feature bands that engage with us — reply to our messages, like or comment on our posts, or send us a DM. That's how you get on this page."
   },
   "hotRightNow": {
     "barId": "",
