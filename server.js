@@ -2,6 +2,7 @@ const express=require('express'),cookieParser=require('cookie-parser'),crypto=re
 const db=require('./db'),S=require('./scoring');
 try{if(!db.prepare('SELECT COUNT(*) c FROM bars').get().c){console.log('Empty DB, seeding');require('./scripts/seed.js');}}catch(e){console.error('seed failed',e)}
 const BARS=require('./bars');console.log('bars added',BARS.upsertBars(db));const L=require('./lineup');const SRC=require('./sources');const TIPS=require('./tips');
+const TF=require('./public/timefmt');
 const app=express();app.use(express.json());app.use(cookieParser());app.set('trust proxy','loopback');
 app.use((req,res,next)=>{let d=req.cookies.device_id;if(!d){d=crypto.randomUUID();res.cookie('device_id',d,{maxAge:365*864e5,httpOnly:true,sameSite:'lax'});}req.deviceId=d;
  req.ipHash=crypto.createHash('sha256').update(String(req.ip)).digest('hex');next();}); // raw IP never stored
@@ -43,7 +44,7 @@ function spikeCheck(bar,now){const q=(a,b)=>db.prepare('SELECT COUNT(*) c,AVG(ra
  if(why.length&&!db.prepare('SELECT 1 FROM review_queue WHERE bar_id=? AND created_at>?').get(bar,now-S.H))db.prepare('INSERT INTO review_queue(bar_id,reason,created_at) VALUES(?,?,?)').run(bar,why.join('; '),now);}
 let cache={};const cached=(k,ms,f)=>{const c=cache[k];if(c&&Date.now()-c.t<ms)return c.v;const v=f();cache[k]={t:Date.now(),v};return v;};
 app.use('/api',(req,res,next)=>{if(req.method==='POST')cache={};next();});
-app.get('/api/leaderboards/tonight',(q,r)=>r.json(cached('t',60e3,()=>withVibes(S.tonight().map(s=>s.visible?s:{...s,score:null,base:null,label:'Not enough ratings yet'}),6))));
+app.get('/api/leaderboards/tonight',(q,r)=>r.json(cached('t',60e3,()=>withVibes(S.tonight().map(s=>s.visible?s:{...s,score:null,base:null}),6))));
 app.get('/api/leaderboards/week',(q,r)=>r.json(cached('w',60e3,()=>withVibes(S.week(),7*24))));// spec says hourly; 1 min for demo
 app.get('/api/leaderboards/streak',(q,r)=>r.json(cached('s',60e3,()=>withVibes(S.streaks(),7*24))));
 app.get('/api/bars/:id/score',(q,r)=>r.json({tonight:S.tonight().find(s=>s.barId===q.params.id),week:S.week().find(s=>s.barId===q.params.id)}));
@@ -51,7 +52,7 @@ app.get('/api/featured',(q,r)=>r.json(db.prepare('SELECT sp.*,b.name,b.address F
 app.get('/api/bars/:id',(req,res)=>{const id=req.params.id;const bar=db.prepare('SELECT * FROM bars WHERE id=?').get(id);if(!bar)return res.status(404).json({error:'unknown bar'});
  const date=S.ctNight();const mine=new Set(db.prepare('SELECT set_id FROM ratings WHERE device_id=?').all(req.deviceId).map(r=>r.set_id));
  const sets=db.prepare(`SELECT s.*,bd.name band FROM sets s JOIN bands bd ON bd.id=s.band_id WHERE s.bar_id=? AND s.date=? ORDER BY s.set_start`).all(id,date).map(r=>({...r,ratedByMe:mine.has(r.id)}));
- const t=S.tonight().find(x=>x.barId===id);const tonight=t&&!t.visible?{...t,score:null,base:null,label:'Not enough ratings yet'}:t||null;
+ const t=S.tonight().find(x=>x.barId===id);const tonight=t&&!t.visible?{...t,score:null,base:null}:t||null;
  const sponsored=!!db.prepare('SELECT 1 FROM sponsors WHERE bar_id=? AND day=?').get(id,date);
  res.json({...bar,date,sponsored,tonight,week:S.week().find(x=>x.barId===id)||null,vibes:(vibesForBars([id],6)[id]||[]),sets:TIPS.decorate(sets)});});
 
@@ -74,7 +75,7 @@ function lastCallHint(sets){
   // pick latest set_end treating overnight ends (< noon) as after midnight
   let best=null,bestKey=-1;
   for(const s of sets){const e=toMin(s.set_end);const key=e<12*60?e+24*60:e;if(key>bestKey){bestKey=key;best=s;}}
-  return best?{lastEnd:best.set_end,label:`Music til ~${best.set_end} · last call ~30 min before`}:null;
+  return best?{lastEnd:best.set_end,label:`Music til ~${TF.formatTime(best.set_end)} · last call ~30 min before`}:null;
 }
 function hourCounts(windowH){
   const now=Date.now();

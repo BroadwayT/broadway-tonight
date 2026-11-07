@@ -40,6 +40,7 @@ header{
 .kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--neon);font-weight:700;margin-bottom:4px}
 h1{margin:0;font-family:"Bebas Neue",Impact,sans-serif;font-size:36px;line-height:0.95;letter-spacing:.02em}
 .sub{margin-top:6px;color:var(--muted);font-size:13px;line-height:1.35}
+.night-date{margin:10px 0 0;font-size:16px;font-weight:800;letter-spacing:.02em;color:var(--neon2);text-shadow:0 0 16px rgba(255,214,10,.45);line-height:1.2}
 h2{font-family:"Bebas Neue",Impact,sans-serif;font-size:24px;letter-spacing:.04em;margin:18px 16px 8px}
 .card{
   background:linear-gradient(180deg,var(--card2),var(--card));
@@ -69,7 +70,7 @@ h2{font-family:"Bebas Neue",Impact,sans-serif;font-size:24px;letter-spacing:.04e
 .muted{color:var(--muted);font-size:13px;line-height:1.3}
 .score{font-family:"Bebas Neue",Impact,sans-serif;font-size:34px;color:var(--lime);letter-spacing:.02em;text-shadow:0 0 18px rgba(184,255,60,.25);line-height:1;flex-shrink:0}
 .bar-title{font-weight:700;font-size:16px;line-height:1.25}
-.set-band{font-weight:700;font-size:17px;line-height:1.25}
+.set-band{font-weight:700;font-size:17px;line-height:1.25;flex:1;min-width:0}
 .vibe-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .vibe-chip{
   font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
@@ -91,6 +92,8 @@ h2{font-family:"Bebas Neue",Impact,sans-serif;font-size:24px;letter-spacing:.04e
 .check{display:flex;align-items:center;gap:12px;margin:0 12px 10px;padding:14px;min-height:var(--tap);background:rgba(255,45,149,.08);border:1px dashed rgba(255,45,149,.35);border-radius:14px;font-size:14px;font-weight:600}
 .check input{accent-color:var(--neon);width:22px;height:22px;flex-shrink:0}
 .time-pill{font-size:12px;font-weight:700;color:var(--neon2);background:rgba(255,214,10,.1);border:1px solid rgba(255,214,10,.25);padding:6px 10px;border-radius:999px;white-space:nowrap}
+.rate-invite{margin-top:14px;padding:12px 14px;border-radius:14px;border:1px solid rgba(255,45,149,.45);background:linear-gradient(135deg,rgba(255,45,149,.16),rgba(255,214,10,.08));color:var(--neon2);font-weight:700;font-size:14px;line-height:1.35}
+.card.rate-invite{margin:8px 12px;text-align:center}
 #toast{
   position:fixed;bottom:calc(var(--nav-h) + var(--safe-b) + 12px);
   left:max(12px, calc(50% - 215px + 12px));right:max(12px, calc(50% - 215px + 12px));
@@ -234,6 +237,7 @@ h2{font-family:"Bebas Neue",Impact,sans-serif;font-size:24px;letter-spacing:.04e
   <div class="kicker">Nashville · Lower Broadway</div>
   <h1>BROADWAY<br>TONIGHT</h1>
   <div class="sub">Who’s on. Who’s hot. Rate the set in one tap.</div>
+  <p class="night-date" id="nightDate" hidden></p>
   <div class="social-head" aria-label="Follow Broadway Tonight">
     <a href="https://www.instagram.com/broadwaytonightnash/" target="_blank" rel="noopener" aria-label="Broadway Tonight on Instagram"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
     <a href="https://www.tiktok.com/@broadwaytonightnash" target="_blank" rel="noopener" aria-label="Broadway Tonight on TikTok"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.6 2.6 0 0 1 0-5.2c.27 0 .53.04.77.12V9.66a5.73 5.73 0 0 0-.77-.05 5.69 5.69 0 1 0 5.69 5.69V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3a4.3 4.3 0 0 1-3.25-1.48z"/></svg></a>
@@ -317,6 +321,7 @@ h2{font-family:"Bebas Neue",Impact,sans-serif;font-size:24px;letter-spacing:.04e
   <button type="button" data-panel="lineup" id="nav-lineup"><span class="ico">♪</span>Lineup</button>
 </nav>
 
+<script src="/timefmt.js"></script>
 <script>
 const $=s=>document.querySelector(s);let tab='tonight';
 const VIBES=['loud','chill','packed','dancing','tipsy'];
@@ -325,6 +330,20 @@ const PLAN_KEY='bt_tonight_plan';
 const j=u=>fetch(u).then(r=>r.json());
 const toast=m=>{const t=$('#toast');t.textContent=m;t.style.display='block';setTimeout(()=>t.style.display='none',2500)};
 const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const showTime=t=>TimeFmt.formatTime(t);
+const showRange=(a,b)=>TimeFmt.formatRange(a,b);
+// Broadway night is the lineup date (YYYY-MM-DD). Format that calendar day in Chicago so 1 AM still reads as the previous evening.
+function nightLabel(iso){
+  const m=String(iso||'').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if(!m)return '';
+  const dt=new Date(Date.UTC(+m[1],+m[2]-1,+m[3],18));
+  return new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',weekday:'long',month:'short',day:'numeric'}).format(dt);
+}
+function showNight(iso){
+  const label=nightLabel(iso);const el=$('#nightDate');
+  if(!el||!label)return;
+  el.textContent=label;el.hidden=false;
+}
 let LOGOS={};j('/api/logos').then(x=>{LOGOS=x||{};if(Object.keys(LOGOS).length){board();street();featured();if(typeof curBar!=='undefined'&&curBar)renderBar(curBar);}}).catch(()=>{});
 const SHORT={wildhorse:'C10',kidrock:'KR',luke32:'32',aldeans:'JA',kanebrown:'KB',thisbar:'TB',jbjs:'JBJ',bootbarn:'STG',boogiebar:'HW',postys:'PM',chiefs:'EC',goodnight:'JR',margaritaville:'MV',honkytonkcentral:'HTC',ajs:'AJ',tootsies:'T',rippys:'R'};
 function shortName(n,id){if(id&&SHORT[id])return SHORT[id];let s=String(n||'').replace(/\u2019/g,"'");const m=s.match(/^([A-Z][\w.]*(?: [A-Z][\w.]*)+)'s? (.+)$/);if(m)s=m[2];
@@ -381,7 +400,8 @@ async function pulse(){
 
 async function nowPlaying(){
   const d=await j('/api/now');
-  $('#nowSub').textContent=`${d.ctTime} CT · ${d.nowPlaying.length} stages live`;
+  showNight(d.date);
+  $('#nowSub').textContent=`${showTime(d.ctTime)} CT · ${d.nowPlaying.length} stages live`;
   if(!d.nowPlaying.length){
     $('#nowStrip').innerHTML=`<div class="card muted" style="margin:0 0 0 0;flex:1">No sets timed as live right now — check Lineup.</div>`;
     return;
@@ -390,7 +410,7 @@ async function nowPlaying(){
     <div class="now-card" role="link" tabindex="0" onclick="openBar('${x.barId}')">
       <span class="live-badge">Live</span>
       <div class="band">${esc(x.band)}</div>
-      <div class="bar">${esc(x.bar)} · ${esc(x.set_start)}–${esc(x.set_end)}</div>
+      <div class="bar">${esc(x.bar)} · ${esc(showRange(x.set_start,x.set_end))}</div>
       ${tipBtn(x)}
     </div>`).join('');
 }
@@ -411,7 +431,7 @@ async function street(){
             <div class="muted">${esc(x.address)}</div>
             ${now}${pulse}${late}
           </div></div>
-          <div class="hot-score-mini">${x.score!=null?x.score.toFixed(2):'—'}<span class="chev">›</span></div>
+          <div class="hot-score-mini">${x.score!=null?x.score.toFixed(2):''}<span class="chev">›</span></div>
         </div>
       </div>
     </div>`;
@@ -428,9 +448,20 @@ async function featured(){
     </div>`).join('');
 }
 
+function boardRows(rows){
+  if(tab==='tonight')return rows.filter(x=>x.visible&&x.score!=null);
+  if(tab==='week')return rows.filter(x=>(x.n||0)>0);
+  return rows.filter(x=>(x.streak||0)>0);
+}
+function emptyBoardCopy(rows){
+  if(tab==='streak')return 'Ratings open, tap a band to rate';
+  return rows.some(x=>(x.n||0)>0)?'Ratings open, tap a band to rate':'Be the first to rate tonight';
+}
 async function board(){
   const d=await j('/api/leaderboards/'+tab);
-  $('#board').innerHTML=d.map((x,i)=>`
+  const rows=boardRows(d);
+  if(!rows.length){$('#board').innerHTML=`<div class="card rate-invite">${esc(emptyBoardCopy(d))}</div>`;return;}
+  $('#board').innerHTML=rows.map((x,i)=>`
     <div class="card tap" role="link" tabindex="0" onclick="openBar('${x.barId}')">
       <div class="row">
         <div style="display:flex;align-items:flex-start;min-width:0">
@@ -440,14 +471,13 @@ async function board(){
             <div class="muted">${
               tab==='streak' ? `${x.streak} night streak · week ${x.weekScore}` :
               tab==='week' ? `${x.n} ratings this week` :
-              x.visible ? `${x.n} ratings · ${x.checkins} check-ins (+${x.boost})` :
-              'Not enough ratings yet'
+              `${x.n} ratings · ${x.checkins} check-ins (+${x.boost})`
             }</div>
           </div>
         </div>
         <div class="score">${
           tab==='streak' ? x.streak+'🔥' :
-          x.score==null ? '—' :
+          x.score==null ? '' :
           x.score.toFixed(2)
         }<span class="chev">›</span></div>
       </div>
@@ -457,6 +487,7 @@ async function board(){
 
 async function lineup(){
   const d=await j('/api/lineup?date=today');
+  showNight(d.date);
   let last='';
   $('#lineup').innerHTML=d.sets.map(s=>{
     const h=s.bar!==last ? `<div class="venue-head">${esc(s.bar)}</div>` : '';
@@ -469,7 +500,7 @@ function setCard(s){return `
       <div class="card">
         <div class="row">
           <div class="set-band">${bandName(s)}</div>
-          <span class="time-pill">${esc(s.set_start)}–${esc(s.set_end)}</span>
+          <span class="time-pill">${esc(showRange(s.set_start,s.set_end))}</span>
         </div>
         <div class="stars" role="group" aria-label="Rate ${esc(s.band)}">
           ${[1,2,3,4,5].map(n=>`<button type="button" aria-label="${n} star" class="${s.ratedByMe?'lit':''}" ${s.ratedByMe?'disabled':''}
@@ -496,11 +527,11 @@ function openBand(slug,push=true){curBand=slug;curBar=null;if(push)history.pushS
 async function renderBand(slug){const r=await fetch('/api/band/'+encodeURIComponent(slug));
   if(!r.ok){$('#barDetail').innerHTML='<div class="card">Band not found.</div>';return;}
   const b=await r.json();document.title=b.name+' · Broadway Tonight';
-  const up=b.upcoming.length?b.upcoming.map(x=>`<div class="card tap" role="link" tabindex="0" onclick="openBar('${x.bar_id}')"><div class="row"><div style="min-width:0"><div class="bar-title">${esc(x.bar)}</div><div class="muted">${esc(x.date)} · ${esc(x.address||'')}</div></div><span class="time-pill">${esc(x.set_start)}–${esc(x.set_end)}</span></div></div>`).join(''):'<div class="card muted">No upcoming sets listed.</div>';
+  const up=b.upcoming.length?b.upcoming.map(x=>`<div class="card tap" role="link" tabindex="0" onclick="openBar('${x.bar_id}')"><div class="row"><div style="min-width:0"><div class="bar-title">${esc(x.bar)}</div><div class="muted">${esc(x.date)} · ${esc(x.address||'')}</div></div><span class="time-pill">${esc(showRange(x.set_start,x.set_end))}</span></div></div>`).join(''):'<div class="card muted">No upcoming sets listed.</div>';
   $('#barDetail').innerHTML=`<div class="card">
     <div class="muted" style="text-transform:uppercase;letter-spacing:.12em;font-size:11px">Band</div>
     <div class="name" style="font-family:'Bebas Neue',Impact,sans-serif;font-size:34px;letter-spacing:.02em;margin-top:4px">${esc(b.name)}</div>
-    <div class="muted" style="margin-top:6px">${b.rating?`★ ${b.rating.avg.toFixed(2)} · ${b.rating.n} ratings`:'No ratings yet'}</div>
+    <div class="muted" style="margin-top:6px">${b.rating?`★ ${b.rating.avg.toFixed(2)} · ${b.rating.n} ratings`:'<span class="rate-invite" style="display:inline-block;margin-top:0">Be the first to rate tonight</span>'}</div>
     <div class="tip-row">${tipBtn(b)}${b.instagram?`<a class="ig-link" href="${esc(b.instagram)}" target="_blank" rel="noopener">Instagram ↗</a>`:''}</div>
     ${b.tip?'<div class="muted" style="font-size:12px;margin-top:8px">Tips go straight to the band through their own app. Broadway Tonight never handles money.</div>':''}
   </div><div class="venue-head">Upcoming sets</div>${up}`;}
@@ -519,12 +550,9 @@ async function renderBar(id){
       <div style="margin-top:6px">${badge(id,b.name,true)}</div>
       <div class="name" style="font-family:'Bebas Neue',Impact,sans-serif;font-size:28px;letter-spacing:.02em;margin-top:4px">${esc(b.name)}</div>
       <div class="muted" style="margin-top:6px">${esc(b.address||'')}</div>
-      <div class="row" style="margin-top:14px">
-        <div class="muted">Tonight<br>${t&&t.score!=null?`${t.n} ratings · ${t.checkins} check-ins`:'Not enough ratings yet'}</div>
-        <div class="big-score">${t&&t.score!=null?t.score.toFixed(2):'—'}</div>
-      </div>
+      ${t&&t.score!=null?`<div class="row" style="margin-top:14px"><div class="muted">Tonight<br>${t.n} ratings · ${t.checkins} check-ins</div><div class="big-score">${t.score.toFixed(2)}</div></div>`:`<div class="rate-invite">${t&&t.n>0?'Ratings open, tap a band to rate':'Be the first to rate tonight'}</div>`}
       ${vibeHtml(vibeAmplify,true)}
-      ${st&&st.nowPlaying?`<div class="muted" style="margin-top:10px"><span class="live-badge">Live</span> ${esc(st.nowPlaying.band)} · ${esc(st.nowPlaying.set_start)}–${esc(st.nowPlaying.set_end)}</div>`:''}
+      ${st&&st.nowPlaying?`<div class="muted" style="margin-top:10px"><span class="live-badge">Live</span> ${esc(st.nowPlaying.band)} · ${esc(showRange(st.nowPlaying.set_start,st.nowPlaying.set_end))}</div>`:''}
       ${st&&st.lastCall?`<div class="late-hint">${esc(st.lastCall.label)}</div>`:''}
       <div class="btn-row">
         <button type="button" class="btn primary" onclick="shareBar('${id}')">Share</button>
@@ -540,10 +568,10 @@ async function shareBar(id){
   const r=await fetch('/api/bars/'+encodeURIComponent(id));
   if(!r.ok)return toast('Could not share');
   const b=await r.json();
-  const score=b.tonight&&b.tonight.score!=null?b.tonight.score.toFixed(2):'—';
-  const bands=(b.sets||[]).map(s=>`${s.set_start} ${s.band}`).slice(0,4).join(' · ');
+  const scored=b.tonight&&b.tonight.score!=null;
+  const bands=(b.sets||[]).map(s=>`${showRange(s.set_start,s.set_end)} ${s.band}`).slice(0,4).join(' · ');
   const url=location.origin+'/bar/'+encodeURIComponent(id);
-  const text=`${b.name} is ${score} tonight on Broadway Tonight.\n${bands}\n${url}`;
+  const text=`${scored?`${b.name} is ${b.tonight.score.toFixed(2)} tonight on Broadway Tonight.`:`Be the first to rate ${b.name} tonight on Broadway Tonight.`}\n${bands}\n${url}`;
   try{
     if(navigator.share){await navigator.share({title:b.name+' · Broadway Tonight',text,url});}
     else{await navigator.clipboard.writeText(text);toast('Link copied');}
@@ -607,7 +635,7 @@ async function runSearch(){
           <div class="set-band">${esc(m.band)} ${m.live?'<span class="live-badge">Live</span>':''}</div>
           <div class="muted">${esc(m.bar)} · ${esc(m.address)}</div>
         </div>
-        <span class="time-pill">${esc(m.set_start)}–${esc(m.set_end)}</span>
+        <span class="time-pill">${esc(showRange(m.set_start,m.set_end))}</span>
       </div>
     </div>`).join('');
 }
