@@ -1,4 +1,4 @@
-const express=require('express'),cookieParser=require('cookie-parser'),crypto=require('crypto'),path=require('path');
+const express=require('express'),cookieParser=require('cookie-parser'),crypto=require('crypto'),path=require('path'),fs=require('fs');
 const db=require('./db'),S=require('./scoring');
 try{if(!db.prepare('SELECT COUNT(*) c FROM bars').get().c){console.log('Empty DB, seeding');require('./scripts/seed.js');}}catch(e){console.error('seed failed',e)}
 const BARS=require('./bars');console.log('bars added',BARS.upsertBars(db));const L=require('./lineup');const SRC=require('./sources');const TIPS=require('./tips');
@@ -6,6 +6,43 @@ const TF=require('./public/timefmt');const ENG=require('./engaged');
 function appNow(){const raw=process.env.BT_NOW;if(raw){const t=Date.parse(raw);if(!Number.isNaN(t))return t;}return Date.now();}
 const nightNow=()=>S.ctNight(appNow());
 const tagEngaged=rows=>(rows||[]).map(r=>({...r,engaged:ENG.isEngaged(r)}));
+const FEATURED_PATH=path.join(__dirname,'data','featured.json');
+const blankFeatured=()=>({_note:'',barOfTheWeek:{barId:'',blurb:'',image:'',handle:'',weekOf:''},hotRightNow:{barId:'',band:'',line:''}});
+function readFeatured(){
+  let raw={};try{raw=JSON.parse(fs.readFileSync(FEATURED_PATH,'utf8'));}catch(e){}
+  const b=blankFeatured();
+  return {_note:typeof raw._note==='string'?raw._note:b._note,barOfTheWeek:{...b.barOfTheWeek,...(raw.barOfTheWeek||{})},hotRightNow:{...b.hotRightNow,...(raw.hotRightNow||{})}};
+}
+const clip=(v,n)=>String(v==null?'':v).trim().slice(0,n);
+function barBrief(id){if(!id)return null;return db.prepare('SELECT id,name,address FROM bars WHERE id=?').get(id)||null;}
+function publicPicks(){
+  const j=readFeatured(),w=j.barOfTheWeek||{},h=j.hotRightNow||{};
+  const bar=w.barId?barBrief(w.barId):null;
+  const image=clip(w.image,400);
+  const weekOf=/^\d{4}-\d{2}-\d{2}$/.test(w.weekOf||'')?w.weekOf:'';
+  const botw=bar?{barId:bar.id,name:bar.name,address:bar.address,blurb:clip(w.blurb,280),image:(/^https:\/\/\S+$/.test(image)||/^\/\S+$/.test(image))?image:'',handle:clip(w.handle,40).replace(/^@/,''),weekOf}:null;
+  const hb=h.barId?barBrief(h.barId):null;
+  const band=clip(h.band,80),line=clip(h.line,180);
+  const hot=(hb||band)?{barId:hb?hb.id:'',barName:hb?hb.name:'',band,line}:null;
+  return {barOfTheWeek:botw,hotRightNow:hot};
+}
+function writeFeatured(body){
+  const cur=readFeatured();
+  const check=id=>{if(!id)return '';if(!barBrief(id)){const e=new Error('unknown bar '+id);e.code=400;throw e;}return id;};
+  if(body.barOfTheWeek){
+    const w=body.barOfTheWeek,image=clip(w.image,400),weekOf=clip(w.weekOf,10);
+    if(image&&!/^https:\/\/\S+$/.test(image)&&!/^\/\S+$/.test(image)){const e=new Error('image must be an https URL or a site path');e.code=400;throw e;}
+    if(weekOf&&!/^\d{4}-\d{2}-\d{2}$/.test(weekOf)){const e=new Error('weekOf must be YYYY-MM-DD');e.code=400;throw e;}
+    cur.barOfTheWeek={barId:check(clip(w.barId,40)),blurb:clip(w.blurb,280),image,handle:clip(w.handle,40).replace(/^@/,''),weekOf};
+  }
+  if(body.hotRightNow){
+    const h=body.hotRightNow;
+    cur.hotRightNow={barId:check(clip(h.barId,40)),band:clip(h.band,80),line:clip(h.line,180)};
+  }
+  fs.mkdirSync(path.dirname(FEATURED_PATH),{recursive:true});
+  fs.writeFileSync(FEATURED_PATH,JSON.stringify(cur,null,2)+'\n');
+  return publicPicks();
+}
 const app=express();app.use(express.json());app.use(cookieParser());app.set('trust proxy','loopback');
 app.use((req,res,next)=>{let d=req.cookies.device_id;if(!d){d=crypto.randomUUID();res.cookie('device_id',d,{maxAge:365*864e5,httpOnly:true,sameSite:'lax'});}req.deviceId=d;
  req.ipHash=crypto.createHash('sha256').update(String(req.ip)).digest('hex');next();}); // raw IP never stored
@@ -57,7 +94,8 @@ app.get('/api/bars/:id',(req,res)=>{const id=req.params.id;const bar=db.prepare(
  const sets=db.prepare(`SELECT s.*,bd.name band FROM sets s JOIN bands bd ON bd.id=s.band_id WHERE s.bar_id=? AND s.date=? ORDER BY s.set_start`).all(id,date).map(r=>({...r,ratedByMe:mine.has(r.id)}));
  const t=S.tonight().find(x=>x.barId===id);const tonight=t&&!t.visible?{...t,score:null,base:null}:t||null;
  const sponsored=!!db.prepare('SELECT 1 FROM sponsors WHERE bar_id=? AND day=?').get(id,date);
- res.json({...bar,date,ctTime:ctHM(),sponsored,tonight,week:S.week().find(x=>x.barId===id)||null,vibes:(vibesForBars([id],6)[id]||[]),sets:tagEngaged(TIPS.decorate(sets))});});
+ const week=publicPicks().barOfTheWeek;
+ res.json({...bar,date,ctTime:ctHM(),sponsored,barOfTheWeek:week&&week.barId===id?{blurb:week.blurb,handle:week.handle}:null,tonight,week:S.week().find(x=>x.barId===id)||null,vibes:(vibesForBars([id],6)[id]||[]),sets:tagEngaged(TIPS.decorate(sets))});});
 
 
 // ---- competitive: now / street / pulse / search ----
@@ -165,6 +203,9 @@ app.get('/band/:slug/tipcard.pdf',tipcard);
 app.get('/bar/:id',(q,r)=>r.sendFile(path.join(__dirname,'public','index.html')));
 const ADMIN_KEY=process.env.ADMIN_KEY||'';
 app.use('/api/admin',(q,r,n)=>{const k=String(q.get('x-admin-key')||q.query.key||'');const ok=ADMIN_KEY&&k.length===ADMIN_KEY.length&&crypto.timingSafeEqual(Buffer.from(k),Buffer.from(ADMIN_KEY));if(!ok)return r.status(401).json({error:'unauthorized'});n();});
+app.get('/api/picks',(q,r)=>r.json(publicPicks()));
+app.get('/api/admin/featured',(q,r)=>r.json(readFeatured()));
+app.post('/api/admin/featured',(q,r)=>{try{r.json(writeFeatured(q.body||{}));}catch(e){r.status(e.code||500).json({error:e.message});}});
 app.get('/api/admin/owner-links',(q,r)=>{const base=(process.env.PUBLIC_BASE_URL||'https://broadway-tonight.onrender.com').replace(/\/$/,'');
  const bars=db.prepare('SELECT id,name FROM bars ORDER BY name').all();
  r.json(bars.map(b=>{let t=db.prepare('SELECT token FROM owner_tokens WHERE bar_id=?').get(b.id);

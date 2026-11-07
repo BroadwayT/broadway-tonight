@@ -4,5 +4,6 @@ data/*.db*
 *.png
 data/*
 !data/.gitkeep
+!data/featured.json
 docs/bars-contacts.csv
 docs/outreach-drafts*.md

@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Broadway Tonight">
 <meta name="theme-color" content="#07060a">
-<meta name="description" content="Lower Broadway live — who's on stage now, who's hot, rate the set.">
+<meta name="description" content="Who's playing tonight on Lower Broadway.">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="apple-touch-icon" href="/icon-192.png">
 <title>Broadway Tonight</title>
@@ -71,6 +71,18 @@ details.earlier summary:before{content:"▸ ";color:var(--neon)}
 details.earlier[open] summary:before{content:"▾ "}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,45,149,.55)}50%{box-shadow:0 0 0 8px rgba(255,45,149,0)}}
 .spon .name{font-family:"Bebas Neue",Impact,sans-serif;font-size:28px;margin-top:8px;letter-spacing:.02em}
+.badge-row{display:flex;gap:8px;flex-wrap:wrap}
+.week{border:1px solid rgba(255,214,10,.55);background:linear-gradient(160deg,rgba(255,214,10,.18),rgba(255,45,149,.1) 46%,#1a1624);box-shadow:0 0 28px rgba(255,214,10,.14)}
+.week-name,.hot-band{font-family:"Bebas Neue",Impact,sans-serif;letter-spacing:.02em;line-height:.95}
+.week-name{font-size:36px;margin-top:8px}
+.week-blurb{margin-top:8px;font-size:15px;line-height:1.4}
+.week-when{margin-top:8px;color:var(--neon2);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.week-photo{width:100%;height:168px;object-fit:cover;border-radius:12px;margin-top:10px;display:block;background:#111}
+.hot-pick{border:1px solid rgba(255,45,149,.55);background:linear-gradient(145deg,rgba(255,45,149,.22),#1a1624 58%);box-shadow:0 0 24px rgba(255,45,149,.16)}
+.hot-band{font-size:32px;margin-top:6px}
+.hot-bar{margin-top:4px;font-weight:800}
+.rate-line{margin-top:10px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:800}
+#barOfWeek:empty,#hotPick:empty{display:none}
 .tabs{display:flex;gap:8px;margin:0 12px 6px}
 .tabs button{
   flex:1;min-height:var(--tap);padding:12px 8px;background:rgba(255,255,255,.04);
@@ -95,7 +107,7 @@ details.earlier[open] summary:before{content:"▾ "}
 .pulse-chip{background:rgba(184,255,60,.1);color:var(--lime);border-color:rgba(184,255,60,.35)}
 .stars{margin-top:12px;display:flex;align-items:center;justify-content:space-between;gap:4px;width:100%}
 .stars button{
-  flex:1;min-height:var(--tap);min-width:44px;font-size:32px;line-height:1;
+  flex:1;min-height:44px;min-width:44px;font-size:22px;line-height:1;
   background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:12px;
   color:rgba(255,255,255,.25);padding:8px 0;touch-action:manipulation;cursor:pointer;
 }
@@ -250,7 +262,7 @@ details.earlier[open] summary:before{content:"▾ "}
 <header>
   <div class="kicker">Nashville · Lower Broadway</div>
   <h1>BROADWAY<br>TONIGHT</h1>
-  <div class="sub">Who’s on. Who’s hot. Rate the set in one tap.</div>
+  <div class="sub">Who’s playing on Lower Broadway tonight.</div>
   <p class="night-date" id="nightDate" hidden></p>
   <div class="social-head" aria-label="Follow Broadway Tonight">
     <a href="https://www.instagram.com/broadwaytonightnash/" target="_blank" rel="noopener" aria-label="Broadway Tonight on Instagram"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
@@ -264,17 +276,12 @@ details.earlier[open] summary:before{content:"▾ "}
     <strong>Add to Home Screen</strong> for one-tap access — Share → Add to Home Screen on iPhone, or the browser menu on Android.
     <button type="button" class="btn" style="margin-top:8px;width:100%" onclick="this.parentElement.classList.remove('on');localStorage.setItem('bt_install_dismiss','1')">Got it</button>
   </div>
+  <div id="barOfWeek"></div>
   <h2>NOW PLAYING</h2>
   <div class="section-sub" id="nowSub">On the schedule right now</div>
   <div id="nowStrip" class="now-strip"></div>
+  <div id="hotPick"></div>
   <div id="featured"></div>
-  <h2 id="hot-anchor">HOT RIGHT NOW</h2>
-  <div class="tabs">
-    <button data-t="tonight" class="on">Tonight</button>
-    <button data-t="week">Week</button>
-    <button data-t="streak">Streak</button>
-  </div>
-  <div id="board"></div>
   <h2>WALK THE STRIP</h2>
   <div class="section-sub">River → 5th · hot score dots</div>
   <div id="street" class="street-rail"></div>
@@ -288,6 +295,15 @@ details.earlier[open] summary:before{content:"▾ "}
   <div id="searchResults"></div>
   <label class="check"><input type="checkbox" id="ci"> I’m here — count my check-in</label>
   <div id="lineup"></div>
+  <div id="ratingsSection" hidden>
+    <h2>RATINGS</h2>
+    <div class="tabs">
+      <button data-t="tonight" class="on">Tonight</button>
+      <button data-t="week">Week</button>
+      <button data-t="streak">Streak</button>
+    </div>
+    <div id="board"></div>
+  </div>
 </div>
 
 <div id="panel-bar" class="panel">
@@ -416,7 +432,42 @@ function renderPlan(){
 async function pulse(){
   const d=await j('/api/pulse');
   const el=$('#ticker');
-  if(d.label){$('#tickerText').textContent=d.label;el.hidden=false;}
+  if(!d.label||/be the first to rate|ratings open/i.test(d.label)){el.hidden=true;return;}
+  $('#tickerText').textContent=d.label;el.hidden=false;
+}
+function weekLabel(iso){
+  const m=String(iso||'').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if(!m)return '';
+  const dt=new Date(Date.UTC(+m[1],+m[2]-1,+m[3],18));
+  return new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',month:'short',day:'numeric'}).format(dt);
+}
+function weekCard(w){
+  const img=w.image?`<img class="week-photo" src="${esc(w.image)}" alt="">`:'';
+  const when=weekLabel(w.weekOf);
+  const ig=w.handle?`<a class="ig-link" href="https://instagram.com/${encodeURIComponent(w.handle)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">@${esc(w.handle)}</a>`:'';
+  return `<div class="card week tap" role="link" tabindex="0" onclick="openBar('${w.barId}')">
+    <span class="badge">Bar of the Week</span>
+    ${when?`<div class="week-when">Week of ${esc(when)}</div>`:''}
+    ${img}
+    <div class="week-name">${esc(w.name)}</div>
+    ${w.blurb?`<div class="week-blurb">${esc(w.blurb)}</div>`:''}
+    ${w.address?`<div class="muted" style="margin-top:6px">${esc(w.address)}</div>`:''}
+    ${ig?`<div style="margin-top:8px">${ig}</div>`:''}
+  </div>`;
+}
+function hotCard(h){
+  const go=h.barId?` role="link" tabindex="0" onclick="openBar('${h.barId}')"`:'';
+  return `<div class="card hot-pick${h.barId?' tap':''}"${go}>
+    <div class="on-now-kicker">Hot right now</div>
+    ${h.band?`<div class="hot-band">${esc(h.band)}</div>`:''}
+    ${h.barName?`<div class="hot-bar">${esc(h.barName)}</div>`:''}
+    ${h.line?`<div class="week-blurb">${esc(h.line)}</div>`:''}
+  </div>`;
+}
+async function picks(){
+  const p=await j('/api/picks');
+  $('#barOfWeek').innerHTML=p.barOfTheWeek?weekCard(p.barOfTheWeek):'';
+  $('#hotPick').innerHTML=p.hotRightNow?hotCard(p.hotRightNow):'';
 }
 
 async function nowPlaying(){
@@ -470,19 +521,18 @@ async function featured(){
     </div>`).join('');
 }
 
-function boardRows(rows){
-  if(tab==='tonight')return rows.filter(x=>x.visible&&x.score!=null);
-  if(tab==='week')return rows.filter(x=>(x.n||0)>0);
+function boardRows(rows,which){
+  const t=which||tab;
+  if(t==='tonight')return rows.filter(x=>x.visible&&x.score!=null);
+  if(t==='week')return rows.filter(x=>(x.n||0)>0);
   return rows.filter(x=>(x.streak||0)>0);
-}
-function emptyBoardCopy(rows){
-  if(tab==='streak')return 'Ratings open, tap a band to rate';
-  return rows.some(x=>(x.n||0)>0)?'Ratings open, tap a band to rate':'Be the first to rate tonight';
 }
 async function board(){
   const d=await j('/api/leaderboards/'+tab);
   const rows=boardRows(d);
-  if(!rows.length){$('#board').innerHTML=`<div class="card rate-invite">${esc(emptyBoardCopy(d))}</div>`;return;}
+  const section=$('#ratingsSection');
+  if(!rows.length){$('#board').innerHTML='';return;}
+  if(section)section.hidden=false;
   $('#board').innerHTML=rows.map((x,i)=>`
     <div class="card tap" role="link" tabindex="0" onclick="openBar('${x.barId}')">
       <div class="row">
@@ -524,6 +574,7 @@ function setCard(s,opt){opt=opt||{};return `
           <div class="set-band">${opt.now&&s.engaged?`<div style="margin-bottom:6px">${onNowPill()}</div>`:''}${bandName(s)}</div>
           <span class="time-pill">${esc(showRange(s.set_start,s.set_end))}</span>
         </div>
+        <div class="rate-line">Rate this band</div>
         <div class="stars" role="group" aria-label="Rate ${esc(s.band)}">
           ${[1,2,3,4,5].map(n=>`<button type="button" aria-label="${n} star" class="${s.ratedByMe?'lit':''}" ${s.ratedByMe?'disabled':''}
             onclick="beginRate('${s.bar_id}','${s.band_id}','${s.id}',${n},'${String(s.band).replace(/'/g,'')}')">★</button>`).join('')}
@@ -553,7 +604,7 @@ async function renderBand(slug){const r=await fetch('/api/band/'+encodeURICompon
   $('#barDetail').innerHTML=`<div class="card">
     <div class="muted" style="text-transform:uppercase;letter-spacing:.12em;font-size:11px">Band</div>
     <div class="name" style="font-family:'Bebas Neue',Impact,sans-serif;font-size:34px;letter-spacing:.02em;margin-top:4px">${esc(b.name)}</div>
-    <div class="muted" style="margin-top:6px">${b.rating?`★ ${b.rating.avg.toFixed(2)} · ${b.rating.n} ratings`:'<span class="rate-invite" style="display:inline-block;margin-top:0">Be the first to rate tonight</span>'}</div>
+    ${b.rating?`<div class="muted" style="margin-top:6px">★ ${b.rating.avg.toFixed(2)} · ${b.rating.n} ratings</div>`:''}
     <div class="tip-row">${tipBtn(b)}${b.instagram?`<a class="ig-link" href="${esc(b.instagram)}" target="_blank" rel="noopener">Instagram ↗</a>`:''}</div>
     ${b.tip?'<div class="muted" style="font-size:12px;margin-top:8px">Tips go straight to the band through their own app. Broadway Tonight never handles money.</div>':''}
   </div><div class="venue-head">Upcoming sets</div>${up}`;}
@@ -574,11 +625,12 @@ async function renderBar(id){
   $('#barDetail').innerHTML=`
     ${onNowBlock(on,nextNamed)}
     <div class="card ${b.sponsored?'spon':''}">
-      ${b.sponsored?'<span class="badge">Sponsored</span>':''}
+      ${(b.barOfTheWeek||b.sponsored)?`<div class="badge-row">${b.barOfTheWeek?'<span class="badge">Bar of the Week</span>':''}${b.sponsored?'<span class="badge">Sponsored</span>':''}</div>`:''}
+      ${b.barOfTheWeek&&b.barOfTheWeek.blurb?`<div class="week-blurb">${esc(b.barOfTheWeek.blurb)}</div>`:''}
       <div style="margin-top:6px">${badge(id,b.name,true)}</div>
       <div class="name" style="font-family:'Bebas Neue',Impact,sans-serif;font-size:28px;letter-spacing:.02em;margin-top:4px">${esc(b.name)}</div>
       <div class="muted" style="margin-top:6px">${esc(b.address||'')}</div>
-      ${t&&t.score!=null?`<div class="row" style="margin-top:14px"><div class="muted">Tonight<br>${t.n} ratings · ${t.checkins} check-ins</div><div class="big-score">${t.score.toFixed(2)}</div></div>`:`<div class="rate-invite">${t&&t.n>0?'Ratings open, tap a band to rate':'Be the first to rate tonight'}</div>`}
+      ${t&&t.score!=null?`<div class="row" style="margin-top:14px"><div class="muted">Tonight<br>${t.n} ratings · ${t.checkins} check-ins</div><div class="big-score">${t.score.toFixed(2)}</div></div>`:''}
       ${vibeHtml(vibeAmplify,true)}
       ${st&&st.lastCall?`<div class="late-hint">${esc(st.lastCall.label)}</div>`:''}
       <div class="btn-row">
@@ -623,7 +675,7 @@ async function shareBar(id){
   const scored=b.tonight&&b.tonight.score!=null;
   const bands=(b.sets||[]).map(s=>`${showRange(s.set_start,s.set_end)} ${s.band}`).slice(0,4).join(' · ');
   const url=location.origin+'/bar/'+encodeURIComponent(id);
-  const text=`${scored?`${b.name} is ${b.tonight.score.toFixed(2)} tonight on Broadway Tonight.`:`Be the first to rate ${b.name} tonight on Broadway Tonight.`}\n${bands}\n${url}`;
+  const text=`${scored?`${b.name} is ${b.tonight.score.toFixed(2)} tonight on Broadway Tonight.`:`${b.name} tonight on Broadway Tonight.`}\n${bands}\n${url}`;
   try{
     if(navigator.share){await navigator.share({title:b.name+' · Broadway Tonight',text,url});}
     else{await navigator.clipboard.writeText(text);toast('Link copied');}
@@ -695,7 +747,7 @@ async function runSearch(){
 $('#vibeSkip').onclick=()=>finishRate(null);
 $('#vibeSheet').onclick=e=>{if(e.target.id==='vibeSheet')finishRate(null)};
 
-document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{
+document.querySelectorAll('#ratingsSection .tabs button').forEach(b=>b.onclick=()=>{
   document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('on'));
   b.classList.add('on');tab=b.dataset.t;board();
 });
@@ -731,8 +783,20 @@ function maybeInstall(){
   if(!isStandalone)$('#installHint').classList.add('on');
 }
 
-featured();board();lineup();pulse();nowPlaying();street();renderPlan();maybeInstall();route();
-setInterval(()=>{board();pulse();nowPlaying();streetCache=null;street();},60000);
+async function initRatings(){
+  for(const t of ['tonight','week','streak']){
+    const rows=boardRows(await j('/api/leaderboards/'+t),t);
+    if(!rows.length)continue;
+    if(t!==tab){
+      tab=t;
+      document.querySelectorAll('#ratingsSection .tabs button').forEach(x=>x.classList.toggle('on',x.dataset.t===t));
+    }
+    return board();
+  }
+  $('#ratingsSection').hidden=true;
+}
+picks();featured();initRatings();lineup();pulse();nowPlaying();street();renderPlan();maybeInstall();route();
+setInterval(()=>{picks();board();pulse();nowPlaying();streetCache=null;street();},60000);
 </script>
 </body>
 </html>

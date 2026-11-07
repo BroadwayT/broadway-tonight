@@ -1,0 +1,15 @@
+{
+  "_note": "Picks for the public site. Leave barId blank (and hotRightNow.band blank) to hide that block. Fill these in, or POST /api/admin/featured with the admin key. A copy-paste sample is in the README.",
+  "barOfTheWeek": {
+    "barId": "",
+    "blurb": "",
+    "image": "",
+    "handle": "",
+    "weekOf": ""
+  },
+  "hotRightNow": {
+    "barId": "",
+    "band": "",
+    "line": ""
+  }
+}

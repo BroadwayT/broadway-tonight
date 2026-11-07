@@ -1,7 +1,7 @@
 {
   "name": "Broadway Tonight",
   "short_name": "Broadway",
-  "description": "Who's on. Who's hot. Lower Broadway live.",
+  "description": "Who's playing tonight on Lower Broadway.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#07060a",
