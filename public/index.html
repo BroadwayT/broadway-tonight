@@ -705,7 +705,7 @@ async function renderBand(slug){const r=await fetch('/api/band/'+encodeURICompon
     <div class="muted" style="text-transform:uppercase;letter-spacing:.12em;font-size:11px">Band</div>
     <div class="name" style="font-family:'Bebas Neue',Impact,sans-serif;font-size:34px;letter-spacing:.02em;margin-top:4px">${esc(b.name)}</div>
     ${b.rating?`<div class="muted" style="margin-top:6px">★ ${b.rating.avg.toFixed(2)} · ${b.rating.n} ratings</div>`:''}
-    <div class="tip-row">${tipBtn(b)}${b.instagram?`<a class="ig-link" href="${esc(b.instagram)}" target="_blank" rel="noopener">Instagram ↗</a>`:''}</div>
+    <div class="tip-row">${tipBtn(b)}${b.instagram?`<a class="ig-link" href="${esc(b.instagram)}" target="_blank" rel="noopener">Instagram ↗</a>`:''}${b.tiktok?`<a class="ig-link" href="${esc(b.tiktok)}" target="_blank" rel="noopener">TikTok ↗</a>`:''}</div>
     ${b.tip?'<div class="muted" style="font-size:12px;margin-top:8px">Tips go straight to the band through their own app. Broadway Tonight never handles money.</div>':''}
   </div><div class="venue-head">Upcoming sets</div>${up}`;}
 let curBar=null;let streetCache=null;

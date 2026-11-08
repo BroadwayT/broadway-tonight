@@ -35,13 +35,16 @@ function cleanVideo(v){
 }
 function ctToday(){return new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago'}).format(new Date());}
 function setAlreadyEnded(date,start,end){
-  const today=ctToday();
-  if(date>today)return false;
-  if(date<today)return true;
+  // Compare against the Broadway night (rolls at 3 AM CT), not the calendar date.
+  // An end before the start (22:00–02:00) is still that night, through the morning end.
+  const night=nightNow();
+  if(date>night)return false;
+  if(date<night)return true;
   const n=toMin(ctHM()),s=toMin(start),e=toMin(end);
   if(!Number.isFinite(n)||!Number.isFinite(e))return false;
-  if(e<=s)return false;
-  return n>=e;
+  const endAt=e<s?e+24*60:e;
+  const nowAt=n<3*60?n+24*60:n;
+  return nowAt>=endAt;
 }
 function nextSetsFor(name){
   const want=ENG.normName(name);if(!want)return [];
