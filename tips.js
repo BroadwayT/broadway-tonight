@@ -38,7 +38,7 @@ function setHandles(bandId,h){const b=db.prepare('SELECT * FROM bands WHERE id=?
  for(const [k,v] of Object.entries(upd))db.prepare(`UPDATE bands SET ${k}=? WHERE id=?`).run(v,bandId);return db.prepare('SELECT id,name,slug,venmo,cashapp,paypal,instagram FROM bands WHERE id=?').get(bandId);}
 function bandBySlug(slug){let b=db.prepare('SELECT * FROM bands WHERE slug=?').get(String(slug));if(!b&&ensureSlugs())b=db.prepare('SELECT * FROM bands WHERE slug=?').get(String(slug));return b&&b.id!=='tba'?b:null;}
 function bandPage(slug){const b=bandBySlug(slug);if(!b)return null;const today=S.ctNight();
- const sets=db.prepare('SELECT s.id,s.bar_id,s.date,s.set_start,s.set_end,br.name bar,br.address FROM sets s JOIN bars br ON br.id=s.bar_id WHERE s.band_id=? AND s.date>=? ORDER BY s.date,s.set_start LIMIT 20').all(b.id,today);
+ const sets=db.prepare('SELECT s.id,s.bar_id,s.date,s.set_start,s.set_end,s.stage,br.name bar,br.address FROM sets s JOIN bars br ON br.id=s.bar_id WHERE s.band_id=? AND s.date>=? ORDER BY s.date,s.set_start LIMIT 20').all(b.id,today);
  const r=db.prepare('SELECT COUNT(*) n,AVG(rating) avg FROM ratings WHERE band_id=? AND hidden=0').get(b.id);const l=links(b);const v=verifiedSocial(b.name)||{};
  return {name:b.name,slug:b.slug,url:BASE+'/band/'+b.slug,tip:l.tip,instagram:l.instagram||v.instagram||null,tiktok:v.tiktok||null,rating:r.n?{avg:+r.avg.toFixed(2),n:r.n}:null,upcoming:sets};}
 // Printable tip card (letter: 1 big card; small: 4 per page)

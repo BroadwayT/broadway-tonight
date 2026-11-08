@@ -152,6 +152,8 @@ details.earlier[open] summary:before{content:"▾ "}
 }
 .venue-head{font-family:"Bebas Neue",Impact,sans-serif;font-size:20px;letter-spacing:.04em;margin:16px 16px 6px;color:var(--text);display:flex;align-items:center;gap:8px}
 .venue-head::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--neon)}
+.stage-head{margin:10px 16px 0;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.on-now-stage{color:var(--muted);font-weight:700;font-size:13px}
 .panel{display:none}.panel.on{display:block}
 .bottom-nav{
   position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:100%;max-width:430px;
@@ -403,6 +405,27 @@ function nowNightMin(hm){const c=clockMin(hm);if(!c)return null;return (c.h<3?c.
 function setPhase(set,nowHM){const s=nightMin(set.set_start),n=nowNightMin(nowHM);let e=nightMin(set.set_end);if(s==null||n==null)return 'upcoming';if(e==null||e<=s)e=s+1;if(n>=s&&n<e)return 'now';if(n>=e)return 'ended';return 'upcoming';}
 function isTba(s){const n=String(s&&s.band||'').trim();return (s&&s.band_id==='tba')||/^live music \(tba\)$/i.test(n)||/^(tba|tbd)\b/i.test(n);}
 function byStart(a,b){return (nightMin(a.set_start)||0)-(nightMin(b.set_start)||0);}
+function stageOf(s){return String(s&&s.stage||'').trim();}
+// Stage-less sets are the main floor. Any number of named floors follow, each by start time.
+function stageGroups(sets){
+  const main=[],named=new Map();
+  for(const s of sets){
+    const st=stageOf(s);
+    if(!st){main.push(s);continue;}
+    const k=st.toLowerCase();
+    if(!named.has(k))named.set(k,{name:st,sets:[]});
+    named.get(k).sets.push(s);
+  }
+  for(const g of named.values())g.sets.sort(byStart);
+  const stages=[...named.values()].sort((a,b)=>(nightMin(a.sets[0].set_start)||0)-(nightMin(b.sets[0].set_start)||0)||a.name.localeCompare(b.name));
+  const groups=[];
+  if(main.length)groups.push({name:'Main Floor',main:true,sets:main});
+  for(const g of stages)groups.push({name:g.name,main:false,sets:g.sets});
+  return groups;
+}
+function stageHeadsOn(groups){return groups.length>1||(groups.length===1&&!groups[0].main);}
+function stageHead(name,on){return on?`<div class="stage-head">${esc(name)}</div>`:'';}
+function withStage(text,stage){const st=String(stage||'').trim();return st?`${text} · ${esc(st)}`:text;}
 const onNowPill=()=>'<span class="live-badge">On now</span>';
 let LOGOS={};j('/api/logos').then(x=>{LOGOS=x||{};if(Object.keys(LOGOS).length){board();street();featured();if(typeof curBar!=='undefined'&&curBar)renderBar(curBar);}}).catch(()=>{});
 const SHORT={wildhorse:'C10',kidrock:'KR',luke32:'32',aldeans:'JA',kanebrown:'KB',thisbar:'TB',jbjs:'JBJ',bootbarn:'STG',boogiebar:'HW',postys:'PM',chiefs:'EC',goodnight:'JR',margaritaville:'MV',honkytonkcentral:'HTC',ajs:'AJ',tootsies:'T',rippys:'R'};
@@ -493,13 +516,13 @@ async function shareWeek(){
 }
 async function shareSpot(){
   const p=await j('/api/picks');const s=p.bandSpotlight;if(!s)return;
-  const sets=(s.nextSets||[]).slice(0,3).map(x=>`${dayLabel(x.date)} ${showRange(x.set_start,x.set_end)} at ${x.bar}`).join('\n');
+  const sets=(s.nextSets||[]).slice(0,3).map(x=>`${dayLabel(x.date)} ${showRange(x.set_start,x.set_end)}${x.stage?` (${x.stage})`:''} at ${x.bar}`).join('\n');
   const url=location.origin+'/#band-spotlight';
   await shareText(s.name+' · Band Spotlight',`${s.name} on Broadway Tonight.\n${s.story||''}\n${sets}\n${url}`.trim(),url);
 }
 async function shareLineup(){
   const d=await j('/api/lineup?date=today');
-  const lines=(d.sets||[]).slice(0,8).map(s=>`${showRange(s.set_start,s.set_end)} ${s.band} at ${s.bar}`);
+  const lines=(d.sets||[]).slice(0,8).map(s=>`${showRange(s.set_start,s.set_end)} ${s.band}${s.stage?` (${s.stage})`:''} at ${s.bar}`);
   const url=location.origin+'/#lineup';
   await shareText('Tonight’s lineup · Broadway Tonight',`Tonight on Lower Broadway\n${lines.join('\n')}\n${url}`,url);
 }
@@ -519,7 +542,7 @@ function weekCard(w){
     ${w.history?`<div class="week-history">${esc(w.history)}</div>`:''}
     ${w.address?`<div class="muted" style="margin-top:6px">${esc(w.address)}</div>`:''}
     ${offers?`<div class="offers"><div class="label">What's on</div>${offers}</div>`:''}
-    ${(w.playing||[]).length?`<div class="playing-here"><p class="engage-note">${esc(w.engageNote||'')}</p><div class="offers"><div class="label">Playing here</div><div class="spot-sets">${(w.playing||[]).map(p=>`<a class="spot-set" href="/band/${encodeURIComponent(p.slug)}" onclick="event.preventDefault();openBand('${p.slug}')"><b>${esc(p.name)}</b><span>${esc(dayLabel(p.date))} · ${esc(showRange(p.set_start,p.set_end))}</span></a>`).join('')}</div></div></div>`:''}
+    ${(w.playing||[]).length?`<div class="playing-here"><p class="engage-note">${esc(w.engageNote||'')}</p><div class="offers"><div class="label">Playing here</div><div class="spot-sets">${(w.playing||[]).map(p=>`<a class="spot-set" href="/band/${encodeURIComponent(p.slug)}" onclick="event.preventDefault();openBand('${p.slug}')"><b>${esc(p.name)}</b><span>${esc(dayLabel(p.date))} · ${withStage(esc(showRange(p.set_start,p.set_end)),p.stage)}</span></a>`).join('')}</div></div></div>`:''}
     ${site}
     <div class="btn-row">
       <button type="button" class="btn" onclick="shareWeek()">Share</button>
@@ -533,7 +556,7 @@ function spotCard(s){
   const media=s.video&&s.video.src
     ?`<video class="spot-photo" src="${esc(s.video.src)}" ${s.photo||s.video.poster?`poster="${esc(s.photo||s.video.poster)}"`:''} muted loop playsinline autoplay></video>`
     :(s.photo?`<img class="spot-photo" src="${esc(s.photo)}" alt="${esc(s.name)}">`:'');
-  const sets=(s.nextSets||[]).slice(0,3).map(x=>`<button type="button" class="spot-set" onclick="openBar('${x.barId}')">${esc(dayLabel(x.date))} · ${esc(showRange(x.set_start,x.set_end))}<br>${esc(x.bar)}</button>`).join('');
+  const sets=(s.nextSets||[]).slice(0,3).map(x=>`<button type="button" class="spot-set" onclick="openBar('${x.barId}')">${esc(dayLabel(x.date))} · ${withStage(esc(showRange(x.set_start,x.set_end)),x.stage)}<br>${esc(x.bar)}</button>`).join('');
   const all=s.slug?`<a class="ig-link" href="/band/${encodeURIComponent(s.slug)}" onclick="event.preventDefault();openBand('${s.slug}')">See all dates</a>`:'';
   const follows=[
     s.instagram?`<a href="https://instagram.com/${encodeURIComponent(s.instagram)}" target="_blank" rel="noopener">Instagram</a>`:'',
@@ -583,7 +606,7 @@ async function nowPlaying(){
     <div class="now-card" role="link" tabindex="0" onclick="openBar('${x.barId}')">
       ${x.engaged?onNowPill():''}
       <div class="band">${esc(x.band)}</div>
-      <div class="bar">${esc(x.bar)} · ${esc(showRange(x.set_start,x.set_end))}</div>
+      <div class="bar">${esc(x.bar)} · ${withStage(esc(showRange(x.set_start,x.set_end)),x.stage)}</div>
       ${tipBtn(x)}
     </div>`).join('');
 }
@@ -593,7 +616,7 @@ async function street(){
   $('#street').innerHTML=d.bars.map(x=>{
     const dot=x.score==null?'cold':x.score>=4?'hot':'mid';
     const pulse=x.pulse?`<div class="vibe-row" style="margin-top:6px"><span class="vibe-chip pulse-chip">${esc(x.pulse)}</span>${x.ratingsLast6h?`<span class="vibe-chip">${x.ratingsLast6h} in 6h</span>`:''}</div>`:(x.ratingsLast6h?`<div class="muted" style="margin-top:6px">${x.ratingsLast6h} ratings · 6h</div>`:'');
-    const now=x.nowPlaying?`<div class="muted" style="margin-top:4px">${x.nowPlaying.engaged?'<span class="live-badge" style="font-size:9px;padding:2px 6px">On now</span> ':''}${esc(x.nowPlaying.band)}</div>`:'';
+    const now=x.nowPlaying?`<div class="muted" style="margin-top:4px">${x.nowPlaying.engaged?'<span class="live-badge" style="font-size:9px;padding:2px 6px">On now</span> ':''}${esc(x.nowPlaying.band)}${x.nowPlaying.stage?` · ${esc(x.nowPlaying.stage)}`:''}</div>`:'';
     const late=x.lastCall?`<div class="late-hint">${esc(x.lastCall.label)}</div>`:'';
     return `<div class="street-item">
       <span class="street-dot ${dot}" title="Hot score"></span>
@@ -660,11 +683,16 @@ async function board(){
 async function lineup(){
   const d=await j('/api/lineup?date=today');
   showNight(d.date);
-  let last='';
-  $('#lineup').innerHTML=d.sets.map(s=>{
-    const h=s.bar!==last ? `<div class="venue-head">${esc(s.bar)}</div>` : '';
-    last=s.bar;
-    return h+setCard({...s,bar_id:s.bar_id});
+  const bars=[];
+  for(const s of d.sets||[]){
+    let b=bars[bars.length-1];
+    if(!b||b.id!==s.bar_id){b={id:s.bar_id,name:s.bar,sets:[]};bars.push(b);}
+    b.sets.push(s);
+  }
+  $('#lineup').innerHTML=bars.map(b=>{
+    const groups=stageGroups(b.sets);
+    const heads=stageHeadsOn(groups);
+    return `<div class="venue-head">${esc(b.name)}</div>`+groups.map(g=>stageHead(g.name,heads)+g.sets.map(s=>setCard(s)).join('')).join('');
   }).join('');
 }
 
@@ -700,7 +728,7 @@ function openBand(slug,push=true){curBand=slug;curBar=null;if(push)history.pushS
 async function renderBand(slug){const r=await fetch('/api/band/'+encodeURIComponent(slug));
   if(!r.ok){$('#barDetail').innerHTML='<div class="card">Band not found.</div>';return;}
   const b=await r.json();document.title=b.name+' · Broadway Tonight';
-  const up=b.upcoming.length?b.upcoming.map(x=>`<div class="card tap" role="link" tabindex="0" onclick="openBar('${x.bar_id}')"><div class="row"><div style="min-width:0"><div class="bar-title">${esc(x.bar)}</div><div class="muted">${esc(x.date)} · ${esc(x.address||'')}</div></div><span class="time-pill">${esc(showRange(x.set_start,x.set_end))}</span></div></div>`).join(''):'<div class="card muted">No upcoming sets listed.</div>';
+  const up=b.upcoming.length?b.upcoming.map(x=>`<div class="card tap" role="link" tabindex="0" onclick="openBar('${x.bar_id}')"><div class="row"><div style="min-width:0"><div class="bar-title">${esc(x.bar)}</div><div class="muted">${esc(x.date)}${x.stage?` · ${esc(x.stage)}`:''} · ${esc(x.address||'')}</div></div><span class="time-pill">${esc(showRange(x.set_start,x.set_end))}</span></div></div>`).join(''):'<div class="card muted">No upcoming sets listed.</div>';
   $('#barDetail').innerHTML=`<div class="card">
     <div class="muted" style="text-transform:uppercase;letter-spacing:.12em;font-size:11px">Band</div>
     <div class="name" style="font-family:'Bebas Neue',Impact,sans-serif;font-size:34px;letter-spacing:.02em;margin-top:4px">${esc(b.name)}</div>
@@ -719,7 +747,7 @@ async function renderBar(id){
   const vibeAmplify=Array.isArray(b.vibes)?b.vibes.slice(0,5):[];
   const hm=b.ctTime;
   const grouped=splitSets(b.sets||[],hm);
-  const on=grouped.now.find(s=>!isTba(s))||grouped.now[0]||null;
+  const on=grouped.now.find(s=>!isTba(s)&&!stageOf(s))||grouped.now.find(s=>!isTba(s))||grouped.now[0]||null;
   const nextNamed=on&&isTba(on)?(b.sets||[]).filter(s=>!isTba(s)&&(nightMin(s.set_start)||0)>(nightMin(on.set_start)||0)).sort(byStart)[0]:null;
   const setsHtml=barSetsHtml(b.sets||[],hm,id);
   $('#barDetail').innerHTML=`
@@ -758,17 +786,22 @@ function onNowBlock(set,nextNamed){
   const pill=set.engaged&&!tba?onNowPill():'';
   const kicker=pill?'':`<div class="on-now-kicker">Playing right now</div>`;
   const who=tba?'Live music on now, band not listed yet':bandName(set);
-  const next=tba&&nextNamed?`<div class="next">Next listed: <b>${esc(nextNamed.band)}</b> · ${esc(showRange(nextNamed.set_start,nextNamed.set_end))}</div>`:'';
+  const next=tba&&nextNamed?`<div class="next">Next listed: <b>${esc(nextNamed.band)}</b> · ${withStage(esc(showRange(nextNamed.set_start,nextNamed.set_end)),nextNamed.stage)}</div>`:'';
   const sched=!tba&&set.engaged?'<div class="next">On the schedule right now</div>':'';
-  return `<div class="on-now"><div class="on-now-top">${kicker}${pill}</div><div class="who${tba?'':' namey'}">${who}</div><div class="when">${esc(showRange(set.set_start,set.set_end))}</div>${sched}${next}</div>`;
+  const stageNote=stageOf(set)?`<span class="on-now-stage"> · ${esc(stageOf(set))}</span>`:'';
+  return `<div class="on-now"><div class="on-now-top">${kicker}${pill}</div><div class="who${tba?'':' namey'}">${who}</div><div class="when">${esc(showRange(set.set_start,set.set_end))}${stageNote}</div>${sched}${next}</div>`;
 }
 function barSetsHtml(sets,hm,id){
   if(!sets.length)return '<div class="card muted">No sets listed tonight.</div>';
-  const g=splitSets(sets.map(s=>({...s,bar_id:id})),hm);
-  const cards=list=>list.map(s=>setCard(s,{now:g.now.includes(s),ended:g.ended.includes(s)})).join('');
-  const coming=cards(g.now.concat(g.upcoming));
-  const earlier=g.ended.length?`<details class="earlier"${coming?'':' open'}><summary>Earlier tonight</summary>${cards(g.ended)}</details>`:'';
-  return (coming||'<div class="card muted">No sets still to come.</div>')+earlier;
+  const groups=stageGroups(sets.map(s=>({...s,bar_id:id})));
+  const heads=stageHeadsOn(groups);
+  return groups.map(g=>{
+    const split=splitSets(g.sets,hm);
+    const cards=list=>list.map(s=>setCard(s,{now:split.now.includes(s),ended:split.ended.includes(s)})).join('');
+    const coming=cards(split.now.concat(split.upcoming));
+    const earlier=split.ended.length?`<details class="earlier"${coming?'':' open'}><summary>Earlier tonight</summary>${cards(split.ended)}</details>`:'';
+    return stageHead(g.name,heads)+(coming||'<div class="card muted">No sets still to come.</div>')+earlier;
+  }).join('');
 }
 
 async function shareBar(id){
@@ -776,7 +809,7 @@ async function shareBar(id){
   if(!r.ok)return toast('Could not share');
   const b=await r.json();
   const scored=b.tonight&&b.tonight.score!=null;
-  const bands=(b.sets||[]).map(s=>`${showRange(s.set_start,s.set_end)} ${s.band}`).slice(0,4).join(' · ');
+  const bands=(b.sets||[]).map(s=>`${showRange(s.set_start,s.set_end)} ${s.band}${s.stage?` (${s.stage})`:''}`).slice(0,8).join(' · ');
   const url=location.origin+'/bar/'+encodeURIComponent(id);
   const text=`${scored?`${b.name} is ${b.tonight.score.toFixed(2)} tonight on Broadway Tonight.`:`${b.name} tonight on Broadway Tonight.`}\n${bands}\n${url}`;
   try{
@@ -840,7 +873,7 @@ async function runSearch(){
       <div class="row">
         <div>
           <div class="set-band">${m.live&&m.engaged?`<div style="margin-bottom:6px">${onNowPill()}</div>`:''}${esc(m.band)}</div>
-          <div class="muted">${esc(m.bar)} · ${esc(m.address)}</div>
+          <div class="muted">${esc(m.bar)}${m.stage?` · ${esc(m.stage)}`:''} · ${esc(m.address)}</div>
         </div>
         <span class="time-pill">${esc(showRange(m.set_start,m.set_end))}</span>
       </div>

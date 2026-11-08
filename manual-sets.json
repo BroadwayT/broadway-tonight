@@ -1,5 +1,5 @@
 {
- "_note": "Manual sets (artist- or Jules-provided). Applied by lineup.js on every grid tick and after every refresh; never overwritten by scrapers. Date = the night (CT), times 24h CT; a set ending after midnight still belongs to its start night. If a scraped set with the same bar/band/start exists, the scraped row is kept and only its end time is corrected. Closures ({bar,date,closed_from,closed_to}, night-relative 24h CT, start in [from,to)) remove empty TBA grid rows in that range; rated and owner rows are never touched.",
+ "_note": "Manual sets (artist- or Jules-provided). Applied by lineup.js on every grid tick and after every refresh; never overwritten by scrapers. Date = the night (CT), times 24h CT; a set ending after midnight still belongs to its start night (midnight end is 00:00). A non-empty stage is another floor (Rooftop, 2nd Floor, 3rd Floor, and so on): when that slot already has a main-floor set (no stage), the staged set is added beside it and does not replace TBA rows. Any number of stage names can share a night. A stage on an otherwise open slot still fills the grid. If a scraped set with the same bar/band/start exists, the scraped row is kept and only its end time is corrected. Closures ({bar,date,closed_from,closed_to}, night-relative 24h CT, start in [from,to)) remove empty TBA grid rows in that range; rated and owner rows are never touched.",
  "sets": [
   {
    "date": "2026-11-03",
@@ -1407,6 +1407,33 @@
    "start": "22:00",
    "end": "02:00",
    "source": "Bar's own Nov 2-8 lineup carousel (https://www.instagram.com/friendsbarnash/p/DfQHbKwidpv/); overnight set stays on the start night, end 02:00"
+  },
+  {
+   "date": "2026-11-08",
+   "bar": "flp",
+   "band": "Anna Scott",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": "Oasis Rooftop",
+   "source": "https://www.instagram.com/friendsbarnash/p/DfQHbKwidpv/"
+  },
+  {
+   "date": "2026-11-08",
+   "bar": "flp",
+   "band": "Chris Shrader",
+   "start": "16:00",
+   "end": "20:00",
+   "stage": "Oasis Rooftop",
+   "source": "https://www.instagram.com/friendsbarnash/p/DfQHbKwidpv/"
+  },
+  {
+   "date": "2026-11-08",
+   "bar": "flp",
+   "band": "Michael Scalabrino",
+   "start": "20:00",
+   "end": "00:00",
+   "stage": "Oasis Rooftop",
+   "source": "https://www.instagram.com/friendsbarnash/p/DfQHbKwidpv/"
   }
  ],
  "closures": [
