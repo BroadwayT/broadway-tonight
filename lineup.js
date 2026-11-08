@@ -52,8 +52,23 @@ function bandIdsFor(name,bid){const n=normName(name),ids=new Set([bid]);if(n)for
 function manualCovers(bar,date,name,start){if(!MANUAL.length)return false;const n=normName(name);
  return MANUAL.some(m=>m.bar===bar&&m.date===date&&normName(m.band)===n&&near(m.start,start));}
 const rated=id=>!!db.prepare('SELECT 1 FROM ratings WHERE set_id=? LIMIT 1').get(id);
+// Blank stage = main floor (fills the grid, same as before). A name is another floor
+// (Rooftop, 2nd Floor, 3rd Floor, …). Those rows are added beside the main floor.
+function manualStage(m){const s=m&&m.stage==null?'':String(m.stage).trim();return s?s.slice(0,80):null;}
+function stageSlug(s){return String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,32)||'stage';}
+// Add the stage row, and leave TBA / main-floor rows alone, when a stage-less manual
+// set already occupies this slot. If the slot is still empty, fill it the old way
+// and ignore the stage text so nights that were a single list do not grow a TBA hole.
+function isExtraStage(m){const stage=manualStage(m);if(!stage)return false;const si=slotFor(+String(m.start).slice(0,2));
+ return MANUAL.some(o=>o!==m&&o.bar===m.bar&&o.date===m.date&&!manualStage(o)&&slotFor(+String(o.start).slice(0,2))===si);}
+function upsertExtraStage(m,bid){const stage=manualStage(m),si=slotFor(+m.start.slice(0,2)),end=m.end||null;
+ const sid=`${m.date}-${m.bar}-st-${stageSlug(stage)}-${m.start.replace(':','')}-${bid}`;
+ const cur=db.prepare('SELECT set_end FROM sets WHERE id=?').get(sid);
+ if(cur){db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,stage=?,source='manual',source_url=NULL WHERE id=?").run(bid,m.start,end||cur.set_end,stage,sid);return 0;}
+ return db.prepare("INSERT INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url,stage) VALUES(?,?,?,?,?,?,?,'manual',NULL,?)").run(sid,m.bar,bid,m.date,m.start,end,`${m.date}-slot${si}`,stage).changes;}
 function applyManual(fromDate){let n=0;for(const d of new Set(MANUAL.map(m=>m.date)))if(d>=fromDate)ensureDay(d);const bars=new Set(db.prepare('SELECT id FROM bars').all().map(b=>b.id));
  db.transaction(()=>{for(const m of MANUAL){if(m.date<fromDate||!bars.has(m.bar))continue;const bid=bandIdFor(m.band),si=slotFor(+m.start.slice(0,2)),end=m.end||null;
+  if(isExtraStage(m)){n+=upsertExtraStage(m,bid);continue;}
   const mid=`${m.date}-${m.bar}-${si}-m-${bid}-${m.start.replace(':','')}`;
   // Scraped (non-manual, non-owner) rows for the same artist at this bar/night starting within 90 min: merge into one row with the manual times.
   const ids=bandIdsFor(m.band,bid);
@@ -66,7 +81,7 @@ function applyManual(fromDate){let n=0;for(const d of new Set(MANUAL.map(m=>m.da
     if(gm){const sl=SLOTS[+gm[1]];db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,source='grid',source_url=NULL WHERE id=?").run(TBA_ID,sl[0],sl[1],id);} // grid slot rows go back to TBA, never deleted
     else db.prepare('DELETE FROM sets WHERE id=?').run(id);}
    continue;}
-  const other=db.prepare("SELECT id FROM sets WHERE bar_id=? AND date=? AND band_id=? AND set_start=? AND id<>?").get(m.bar,m.date,bid,m.start,mid);
+  const other=db.prepare("SELECT id FROM sets WHERE bar_id=? AND date=? AND band_id=? AND set_start=? AND id<>? AND COALESCE(stage,'')=''").get(m.bar,m.date,bid,m.start,mid);
   if(other){db.prepare('DELETE FROM sets WHERE id=? AND id NOT IN (SELECT DISTINCT set_id FROM ratings WHERE set_id IS NOT NULL)').run(mid);if(end)db.prepare('UPDATE sets SET set_end=? WHERE id=? AND COALESCE(set_end,\'\')<>?').run(end,other.id,end);continue;}
   const g=db.prepare('SELECT band_id,source,set_end FROM sets WHERE id=?').get(`${m.date}-${m.bar}-${si}`);
   if(g&&g.band_id===TBA_ID&&g.source!=='owner'){n+=db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,source='manual',source_url=NULL WHERE id=?").run(bid,m.start,end||g.set_end,`${m.date}-${m.bar}-${si}`).changes;continue;}
