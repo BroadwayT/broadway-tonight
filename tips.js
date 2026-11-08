@@ -1,5 +1,6 @@
 // Band tip handles + public band pages + printable tip cards. We only build links to the payment apps; we never handle money.
-const db=require('./db'),S=require('./scoring');
+const db=require('./db'),S=require('./scoring'),fs=require('fs'),path=require('path');
+const HANDLES_FILE=path.join(__dirname,'handles.json');
 for(const c of ['slug','venmo','cashapp','paypal','instagram'])try{db.exec(`ALTER TABLE bands ADD COLUMN ${c} TEXT`)}catch(e){}
 const BASE=(process.env.PUBLIC_BASE_URL||'https://broadway-tonight.onrender.com').replace(/\/$/,'');
 const RULES={venmo:/^[A-Za-z0-9_-]{5,30}$/,cashapp:/^[A-Za-z][A-Za-z0-9_]{0,19}$/,paypal:/^[A-Za-z0-9]{1,20}$/,instagram:/^[A-Za-z0-9._]{1,30}$/};
@@ -9,6 +10,16 @@ function cleanHandle(kind,v){let s=String(v==null?'':v).trim();if(!s)return '';
  if(/^https?:\/\//i.test(s)){let u;try{u=new URL(s)}catch(e){throw new Error(kind+': bad URL')}if(!HOSTS[kind].test(u.hostname.replace(/^www\./,'')))throw new Error(kind+': URL must be on '+HOSTS[kind].source.replace(/\\|\$/g,''));
   s=u.pathname.split('/').filter(Boolean).filter(x=>x!=='u'&&x!=='paypalme').pop()||'';}
  s=s.replace(/^[@$]/,'');if(!RULES[kind].test(s))throw new Error(`${kind}: invalid handle "${String(v).slice(0,40)}"`);return s;}
+// Verified IG/TikTok names (handles.json). Used when the band has not saved their own.
+function verifiedSocial(name){
+  let raw;try{raw=JSON.parse(fs.readFileSync(HANDLES_FILE,'utf8'));}catch(e){return null;}
+  const list=Array.isArray(raw)?raw:(raw&&raw.bands)||[];
+  const n=String(name||'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+  const hit=list.find(h=>String(h&&h.name||'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim()===n);
+  if(!hit)return null;
+  const ig=String(hit.instagram||'').trim().replace(/^@/,''),tt=String(hit.tiktok||'').trim().replace(/^@/,'');
+  return {instagram:ig&&RULES.instagram.test(ig)?'https://instagram.com/'+encodeURIComponent(ig):null,tiktok:tt&&RULES.instagram.test(tt)?'https://www.tiktok.com/@'+encodeURIComponent(tt):null};
+}
 function links(b){if(!b)return null;const o={};
  if(b.venmo&&RULES.venmo.test(b.venmo))o.venmo='https://venmo.com/u/'+encodeURIComponent(b.venmo);
  if(b.cashapp&&RULES.cashapp.test(b.cashapp))o.cashapp='https://cash.app/$'+encodeURIComponent(b.cashapp);
@@ -28,8 +39,8 @@ function setHandles(bandId,h){const b=db.prepare('SELECT * FROM bands WHERE id=?
 function bandBySlug(slug){let b=db.prepare('SELECT * FROM bands WHERE slug=?').get(String(slug));if(!b&&ensureSlugs())b=db.prepare('SELECT * FROM bands WHERE slug=?').get(String(slug));return b&&b.id!=='tba'?b:null;}
 function bandPage(slug){const b=bandBySlug(slug);if(!b)return null;const today=S.ctNight();
  const sets=db.prepare('SELECT s.id,s.bar_id,s.date,s.set_start,s.set_end,br.name bar,br.address FROM sets s JOIN bars br ON br.id=s.bar_id WHERE s.band_id=? AND s.date>=? ORDER BY s.date,s.set_start LIMIT 20').all(b.id,today);
- const r=db.prepare('SELECT COUNT(*) n,AVG(rating) avg FROM ratings WHERE band_id=? AND hidden=0').get(b.id);const l=links(b);
- return {name:b.name,slug:b.slug,url:BASE+'/band/'+b.slug,tip:l.tip,instagram:l.instagram,rating:r.n?{avg:+r.avg.toFixed(2),n:r.n}:null,upcoming:sets};}
+ const r=db.prepare('SELECT COUNT(*) n,AVG(rating) avg FROM ratings WHERE band_id=? AND hidden=0').get(b.id);const l=links(b);const v=verifiedSocial(b.name)||{};
+ return {name:b.name,slug:b.slug,url:BASE+'/band/'+b.slug,tip:l.tip,instagram:l.instagram||v.instagram||null,tiktok:v.tiktok||null,rating:r.n?{avg:+r.avg.toFixed(2),n:r.n}:null,upcoming:sets};}
 // Printable tip card (letter: 1 big card; small: 4 per page)
 async function tipCardPdf(slug,layout,out){const PDF=require('pdfkit'),QR=require('qrcode');const p=bandPage(slug);if(!p)throw Object.assign(new Error('unknown band'),{code:404});
  const qr=await QR.toBuffer(p.url,{type:'png',margin:1,width:900,errorCorrectionLevel:'M',color:{dark:'#07060a',light:'#ffffff'}});
