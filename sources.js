@@ -13,8 +13,9 @@ const SOURCES={
  roberts:[{type:'nmc',url:'https://nashvillemusiccalendar.com/venue/roberts-western-world/'}],
  legends:[{type:'nmc',url:'https://nashvillemusiccalendar.com/venue/legends-corner/'}],
  bootbarn:[{type:'nmc',url:'https://nashvillemusiccalendar.com/venue/the-stage-on-broadway/'}],
- aldeans:[{type:'nmc',url:'https://nashvillemusiccalendar.com/venue/jason-aldeans-kitchen-rooftop-bar/'}],
- // Same TC Restaurant Group schedule layout as Bell Bottoms Up (MM/DD/YYYY | "Act, Stage" | time)
+ // Same TC Restaurant Group schedule layout as Bell Bottoms Up (MM/DD/YYYY | "Act, Stage" | time).
+ // Aldean's Nashville Music Calendar page is empty; the lineup is on the bar's own music page.
+ aldeans:[{type:'bellb',url:'https://jasonaldeansbar.com/nashville/music/'}],
  thisbar:[{type:'bellb',url:'https://mwthisbar.com/music/'}],
  postys:[{type:'bellb',url:'https://postysbar.com/music/'}],
  // Bars whose own websites embed the Strumn schedule widget (public JSON API behind it)

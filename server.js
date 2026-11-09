@@ -290,6 +290,7 @@ app.get('/band/:slug',(q,r)=>r.sendFile(path.join(__dirname,'public','index.html
 app.get('/api/band/:slug',(q,r)=>{const p=TIPS.bandPage(q.params.slug);if(!p)return r.status(404).json({error:'unknown band'});r.json(p);});
 const tipcard=async(q,r)=>{try{if(!TIPS.bandBySlug(q.params.slug))return r.status(404).json({error:'unknown band'});r.type('application/pdf');r.set('Content-Disposition',`inline; filename="tipcard-${q.params.slug}${q.query.layout==='small'?'-4up':''}.pdf"`);await TIPS.tipCardPdf(q.params.slug,q.query.layout==='small'?'small':'letter',r);}catch(e){if(!r.headersSent)r.status(e.code||500).json({error:e.message});}};
 app.get('/band/:slug/tipcard.pdf',tipcard);
+app.get('/bar/underground',(q,r)=>r.redirect(302,'/'));
 app.get('/bar/:id',(q,r)=>r.sendFile(path.join(__dirname,'public','index.html')));
 const ADMIN_KEY=process.env.ADMIN_KEY||'';
 app.use('/api/admin',(q,r,n)=>{const k=String(q.get('x-admin-key')||q.query.key||'');const ok=ADMIN_KEY&&k.length===ADMIN_KEY.length&&crypto.timingSafeEqual(Buffer.from(k),Buffer.from(ADMIN_KEY));if(!ok)return r.status(401).json({error:'unauthorized'});n();});

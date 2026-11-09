@@ -1,5 +1,5 @@
 {
- "_note": "Manual sets (artist- or Jules-provided). Applied by lineup.js on every grid tick and after every refresh; never overwritten by scrapers. Date = the night (CT), times 24h CT; a set ending after midnight still belongs to its start night (midnight end is 00:00). A non-empty stage is another floor (Rooftop, 2nd Floor, 3rd Floor, and so on): when that slot already has a main-floor set (no stage), the staged set is added beside it and does not replace TBA rows. Any number of stage names can share a night. A stage on an otherwise open slot still fills the grid. If a scraped set with the same bar/band/start exists, the scraped row is kept and only its end time is corrected. Closures ({bar,date,closed_from,closed_to}, night-relative 24h CT, start in [from,to)) remove empty TBA grid rows in that range; rated and owner rows are never touched.",
+ "_note": "Manual sets (artist- or Jules-provided). Applied by lineup.js on every grid tick and after every refresh; never overwritten by scrapers. Date = the night (CT), times 24h CT; a set ending after midnight still belongs to its start night (midnight end is 00:00). A non-empty stage is another floor (Rooftop, 2nd Floor, 3rd Floor, and so on): when that slot already has a main-floor set (no stage), the staged set is added beside it and does not replace TBA rows. Any number of stage names can share a night. A stage on an otherwise open slot still fills the grid and keeps its stage name. If a scraped set with the same bar/band/start exists, the scraped row is kept and only its end time is corrected. Closures ({bar,date,closed_from,closed_to}, night-relative 24h CT, start in [from,to)) remove empty TBA grid rows in that range; rated and owner rows are never touched.",
  "sets": [
   {
    "date": "2026-11-03",
@@ -2917,6 +2917,177 @@
    "end": "00:00",
    "stage": "Hurricane Hall",
    "source": "https://www.category10.com/nashville/events/booking_01m4bxwx349tynyabrt0g5va9k/"
+  },
+  {
+   "date": "2026-11-09",
+   "bar": "bellbottomsup",
+   "band": "Nick West",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": "Dining Stage",
+   "source": "https://bellbottomsupbar.com/music/ (Dining Stage; end inferred from the next act on that stage)"
+  },
+  {
+   "date": "2026-11-09",
+   "bar": "bellbottomsup",
+   "band": "Jara Ward",
+   "start": "16:00",
+   "end": "20:00",
+   "stage": "Dining Stage",
+   "source": "https://bellbottomsupbar.com/music/ (Dining Stage; end inferred from the next act on that stage)"
+  },
+  {
+   "date": "2026-11-09",
+   "bar": "bellbottomsup",
+   "band": "Rob Carter",
+   "start": "20:00",
+   "end": null,
+   "stage": "Dining Stage",
+   "source": "https://bellbottomsupbar.com/music/ (Dining Stage; no end published, last act listed)"
+  },
+  {
+   "date": "2026-11-09",
+   "bar": "postys",
+   "band": "Ryan Ernest",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": "Main Stage",
+   "source": "https://postysbar.com/music/ (Main Stage; end inferred from the next act on that stage)"
+  },
+  {
+   "date": "2026-11-09",
+   "bar": "postys",
+   "band": "Elijah Wise",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": "Main Stage",
+   "source": "https://postysbar.com/music/ (Main Stage; end inferred from the next act on that stage)"
+  },
+  {
+   "date": "2026-11-09",
+   "bar": "postys",
+   "band": "J. Hartley",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "Main Stage",
+   "source": "https://postysbar.com/music/ (Main Stage; end inferred from the next act on that stage)"
+  },
+  {
+   "date": "2026-11-09",
+   "bar": "postys",
+   "band": "Griffin Sinclair",
+   "start": "22:00",
+   "end": null,
+   "stage": "Main Stage",
+   "source": "https://postysbar.com/music/ (Main Stage; no end published, last act listed)"
+  },
+  {
+   "date": "2026-11-09",
+   "bar": "aldeans",
+   "band": "Rachel Schumacher",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "Rooftop Stage",
+   "source": "https://jasonaldeansbar.com/nashville/music/ (Rooftop Stage; end inferred from the next act on that stage)"
+  },
+  {
+   "date": "2026-11-09",
+   "bar": "aldeans",
+   "band": "Warren Garret",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": "Dining Stage",
+   "source": "https://jasonaldeansbar.com/nashville/music/ (Dining Stage; name spelled Garret on the bar page; end inferred from the next act on that stage)"
+  },
+  {
+   "date": "2026-11-09",
+   "bar": "aldeans",
+   "band": "Jessie Wilson",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": "Rooftop Stage",
+   "source": "https://jasonaldeansbar.com/nashville/music/ (Rooftop Stage; end inferred from the next act on that stage)"
+  },
+  {
+   "date": "2026-11-09",
+   "bar": "aldeans",
+   "band": "Lexie Laplante",
+   "start": "18:00",
+   "end": null,
+   "stage": "Dining Stage",
+   "source": "https://jasonaldeansbar.com/nashville/music/ (Dining Stage; no end published)"
+  },
+  {
+   "date": "2026-11-09",
+   "bar": "aldeans",
+   "band": "Mark Burke",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "Rooftop Stage",
+   "source": "https://jasonaldeansbar.com/nashville/music/ (Rooftop Stage; end inferred from the next act on that stage)"
+  },
+  {
+   "date": "2026-11-09",
+   "bar": "aldeans",
+   "band": "DJ Mason Edwards",
+   "start": "22:00",
+   "end": null,
+   "stage": "Rooftop Stage",
+   "source": "https://jasonaldeansbar.com/nashville/music/ (Rooftop Stage; no end published)"
+  },
+  {
+   "date": "2026-11-09",
+   "bar": "flp",
+   "band": "Cash Crawford",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/venue/friends-in-low-places-bar-honky-tonk/ (end inferred from the next listing)"
+  },
+  {
+   "date": "2026-11-09",
+   "bar": "flp",
+   "band": "Tera Fister",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/venue/friends-in-low-places-bar-honky-tonk/ (end inferred from the next listing)"
+  },
+  {
+   "date": "2026-11-09",
+   "bar": "flp",
+   "band": "Liam Coleman",
+   "start": "22:00",
+   "end": null,
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/venue/friends-in-low-places-bar-honky-tonk/ (no end published)"
+  },
+  {
+   "date": "2026-11-09",
+   "bar": "nudies",
+   "band": "Ivey Andrews",
+   "start": "14:30",
+   "end": "18:30",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/venue/nudies-honky-tonk/ (end inferred from the next listing)"
+  },
+  {
+   "date": "2026-11-09",
+   "bar": "nudies",
+   "band": "Scotty Chapman",
+   "start": "18:30",
+   "end": "22:30",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/venue/nudies-honky-tonk/ (end inferred from the next listing)"
+  },
+  {
+   "date": "2026-11-09",
+   "bar": "nudies",
+   "band": "Stoney T",
+   "start": "22:30",
+   "end": null,
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/venue/nudies-honky-tonk/ (no end published)"
   }
  ],
  "closures": [

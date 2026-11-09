@@ -1,9 +1,10 @@
 # Bars to add to the site DB (live music, not in db.js / scripts/seed.js)
 Fix the existing entry too: `wildhorse` "Wildhorse Saloon" (120 2nd Ave N) is now **Luke Combs' Category 10**. Rename it.
 
+Nashville Underground (105 Broadway) closed May 31, 2026. Leave it off the site.
+
 | id (suggested) | name | address |
 |---|---|---|
-| underground | Nashville Underground | 105 Broadway |
 | chiefs | Eric Church's Chief's | 200 Broadway |
 | bootleggers | Bootleggers Inn | 207 Broadway |
 | redneckriviera | John Rich's Redneck Riviera | 208 Broadway |

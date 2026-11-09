@@ -1,7 +1,6 @@
 // Canonical Lower Broadway bar list (idempotent upsert on startup). Street order = river (1st Ave) -> 5th Ave.
 const BARS=[
  ['acme',"Acme Feed & Seed",'101 Broadway','https://www.acmefeedandseed.com'],
- ['underground','Nashville Underground','105 Broadway','https://www.nashunderground.com'],
  ['wildhorse',"Luke Combs' Category 10",'120 2nd Ave N','https://www.category10.com'],
  ['chiefs',"Eric Church's Chief's",'200 Broadway','https://www.chiefsonbroadway.com'],
  ['bootleggers','Bootleggers Inn','207 Broadway','https://www.bootleggersnashville.com'],
@@ -35,10 +34,19 @@ const BARS=[
  ['rippys',"Rippy's Smokin' Bar & Grill",'429 Broadway','https://www.rippyshonkytonk.com'],
 ];
 const STREET_ORDER=Object.fromEntries(BARS.map((b,i)=>[b[0],i+1]));
+// Nashville Underground closed May 31, 2026. Drop it (and its sets) on startup so an
+// existing DB stops listing the bar, its TBA grid, and its owner link.
+function purgeClosed(db){
+ const id='underground';
+ if(!db.prepare('SELECT 1 FROM bars WHERE id=?').get(id))return 0;
+ for(const sql of ['DELETE FROM sets WHERE bar_id=?','DELETE FROM ratings WHERE bar_id=?','DELETE FROM owner_tokens WHERE bar_id=?','DELETE FROM owner_contacts WHERE bar_id=?','DELETE FROM sponsors WHERE bar_id=?','DELETE FROM daily_top5 WHERE bar_id=?','DELETE FROM review_queue WHERE bar_id=?','DELETE FROM bars WHERE id=?'])
+  db.prepare(sql).run(id);
+ return 1;}
 function upsertBars(db){const crypto=require('crypto');
  const ins=db.prepare('INSERT OR IGNORE INTO bars(id,name,address) VALUES(?,?,?)');let added=0;
  db.transaction(()=>{for(const b of BARS)added+=ins.run(b[0],b[1],b[2]).changes;
   db.prepare("UPDATE bars SET name=?,address=? WHERE id='wildhorse'").run("Luke Combs' Category 10",'120 2nd Ave N');
+  purgeClosed(db);
   for(const b of db.prepare('SELECT id FROM bars WHERE id NOT IN (SELECT bar_id FROM owner_tokens)').all())
    db.prepare('INSERT INTO owner_tokens(token,bar_id,created_at) VALUES(?,?,?)').run(crypto.randomBytes(24).toString('hex'),b.id,Date.now());})();
  return added;}

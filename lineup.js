@@ -56,36 +56,56 @@ const rated=id=>!!db.prepare('SELECT 1 FROM ratings WHERE set_id=? LIMIT 1').get
 // (Rooftop, 2nd Floor, 3rd Floor, …). Those rows are added beside the main floor.
 function manualStage(m){const s=m&&m.stage==null?'':String(m.stage).trim();return s?s.slice(0,80):null;}
 function stageSlug(s){return String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,32)||'stage';}
+// undefined = "end" omitted (keep the grid slot's end). null = published with no end time.
+function manualEnd(m){if(!m||!Object.prototype.hasOwnProperty.call(m,'end'))return undefined;return /^\d\d:\d\d$/.test(m.end)?m.end:null;}
+function chosenEnd(specified,fallback){const v=specified===undefined?fallback:specified;return v==null?null:v;}
 // Add the stage row, and leave TBA / main-floor rows alone, when a stage-less manual
-// set already occupies this slot. If the slot is still empty, fill it the old way
-// and ignore the stage text so nights that were a single list do not grow a TBA hole.
+// set already occupies this slot. Otherwise the set fills the open grid slot (so the
+// night does not grow a TBA hole) and keeps its stage name.
 function isExtraStage(m){const stage=manualStage(m);if(!stage)return false;const si=slotFor(+String(m.start).slice(0,2));
  return MANUAL.some(o=>o!==m&&o.bar===m.bar&&o.date===m.date&&!manualStage(o)&&slotFor(+String(o.start).slice(0,2))===si);}
-function upsertExtraStage(m,bid){const stage=manualStage(m),si=slotFor(+m.start.slice(0,2)),end=m.end||null;
+function upsertExtraStage(m,bid){const stage=manualStage(m),si=slotFor(+m.start.slice(0,2)),end=manualEnd(m);
  const sid=`${m.date}-${m.bar}-st-${stageSlug(stage)}-${m.start.replace(':','')}-${bid}`;
  const cur=db.prepare('SELECT set_end FROM sets WHERE id=?').get(sid);
- if(cur){db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,stage=?,source='manual',source_url=NULL WHERE id=?").run(bid,m.start,end||cur.set_end,stage,sid);return 0;}
- return db.prepare("INSERT INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url,stage) VALUES(?,?,?,?,?,?,?,'manual',NULL,?)").run(sid,m.bar,bid,m.date,m.start,end,`${m.date}-slot${si}`,stage).changes;}
+ const setEnd=chosenEnd(end,cur&&cur.set_end);
+ if(cur){db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,stage=?,source='manual',source_url=NULL WHERE id=?").run(bid,m.start,setEnd,stage,sid);return 0;}
+ return db.prepare("INSERT INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url,stage) VALUES(?,?,?,?,?,?,?,'manual',NULL,?)").run(sid,m.bar,bid,m.date,m.start,setEnd,`${m.date}-slot${si}`,stage).changes;}
 function applyManual(fromDate){let n=0;for(const d of new Set(MANUAL.map(m=>m.date)))if(d>=fromDate)ensureDay(d);const bars=new Set(db.prepare('SELECT id FROM bars').all().map(b=>b.id));
- db.transaction(()=>{for(const m of MANUAL){if(m.date<fromDate||!bars.has(m.bar))continue;const bid=bandIdFor(m.band),si=slotFor(+m.start.slice(0,2)),end=m.end||null;
+ db.transaction(()=>{for(const m of MANUAL){if(m.date<fromDate||!bars.has(m.bar))continue;const bid=bandIdFor(m.band),si=slotFor(+m.start.slice(0,2)),end=manualEnd(m),stage=manualStage(m);
   if(isExtraStage(m)){n+=upsertExtraStage(m,bid);continue;}
   const mid=`${m.date}-${m.bar}-${si}-m-${bid}-${m.start.replace(':','')}`;
+  const gid=`${m.date}-${m.bar}-${si}`;
   // Scraped (non-manual, non-owner) rows for the same artist at this bar/night starting within 90 min: merge into one row with the manual times.
   const ids=bandIdsFor(m.band,bid);
   const dupes=db.prepare(`SELECT id,set_start,set_end FROM sets WHERE bar_id=? AND date=? AND band_id IN (${ids.map(()=>'?').join(',')}) AND id<>? AND COALESCE(source,'') NOT IN ('manual','owner')`).all(m.bar,m.date,...ids,mid).filter(r=>near(r.set_start,m.start));
   if(dupes.length){const hasMid=!!db.prepare('SELECT 1 FROM sets WHERE id=?').get(mid);
    const keep=(dupes.find(r=>rated(r.id))||{}).id||(hasMid?mid:dupes[0].id);
    const ke=db.prepare('SELECT set_end FROM sets WHERE id=?').get(keep).set_end;
-   db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,source='manual',source_url=NULL WHERE id=?").run(bid,m.start,end||ke,keep);
+   db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,stage=?,source='manual',source_url=NULL WHERE id=?").run(bid,m.start,chosenEnd(end,ke),stage,keep);
    for(const id of [...dupes.map(r=>r.id),mid])if(id!==keep&&!rated(id)){const gm=id.match(new RegExp(`^${m.date}-${m.bar}-([0-3])$`));
-    if(gm){const sl=SLOTS[+gm[1]];db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,source='grid',source_url=NULL WHERE id=?").run(TBA_ID,sl[0],sl[1],id);} // grid slot rows go back to TBA, never deleted
+    if(gm){const sl=SLOTS[+gm[1]];db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,stage=NULL,source='grid',source_url=NULL WHERE id=?").run(TBA_ID,sl[0],sl[1],id);} // grid slot rows go back to TBA, never deleted
     else db.prepare('DELETE FROM sets WHERE id=?').run(id);}
    continue;}
-  const other=db.prepare("SELECT id FROM sets WHERE bar_id=? AND date=? AND band_id=? AND set_start=? AND id<>? AND COALESCE(stage,'')=''").get(m.bar,m.date,bid,m.start,mid);
-  if(other){db.prepare('DELETE FROM sets WHERE id=? AND id NOT IN (SELECT DISTINCT set_id FROM ratings WHERE set_id IS NOT NULL)').run(mid);if(end)db.prepare('UPDATE sets SET set_end=? WHERE id=? AND COALESCE(set_end,\'\')<>?').run(end,other.id,end);continue;}
-  const g=db.prepare('SELECT band_id,source,set_end FROM sets WHERE id=?').get(`${m.date}-${m.bar}-${si}`);
-  if(g&&g.band_id===TBA_ID&&g.source!=='owner'){n+=db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,source='manual',source_url=NULL WHERE id=?").run(bid,m.start,end||g.set_end,`${m.date}-${m.bar}-${si}`).changes;continue;}
-  n+=db.prepare("INSERT OR IGNORE INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url) VALUES(?,?,?,?,?,?,?,'manual',NULL)").run(mid,m.bar,bid,m.date,m.start,end,`${m.date}-slot${si}`).changes;}})();applyClosures(fromDate);return n;}
+  if(stage){
+   const g=db.prepare('SELECT band_id,source,set_start,set_end,stage FROM sets WHERE id=?').get(gid);
+   const gStage=g?String(g.stage||'').trim():'';
+   const claim=g&&g.source!=='owner'&&(g.band_id===TBA_ID||(g.band_id===bid&&g.set_start===m.start&&(gStage===''||gStage===stage)));
+   if(claim){n+=db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,stage=?,source='manual',source_url=NULL WHERE id=?").run(bid,m.start,chosenEnd(end,g.set_end),stage,gid).changes;
+    db.prepare("DELETE FROM sets WHERE bar_id=? AND date=? AND band_id=? AND set_start=? AND id<>? AND COALESCE(stage,'')='' AND COALESCE(source,'')<>'owner' AND id NOT IN (SELECT DISTINCT set_id FROM ratings WHERE set_id IS NOT NULL)").run(m.bar,m.date,bid,m.start,gid);
+    if(mid!==gid&&!rated(mid))db.prepare('DELETE FROM sets WHERE id=?').run(mid);
+    continue;}
+   // Older runs stored a staged set on a blank-stage row. Reuse it instead of inserting a second copy.
+   const legacy=db.prepare("SELECT id,set_end FROM sets WHERE bar_id=? AND date=? AND band_id=? AND set_start=? AND COALESCE(stage,'')='' AND COALESCE(source,'')<>'owner'").get(m.bar,m.date,bid,m.start);
+   if(legacy){n+=db.prepare("UPDATE sets SET set_end=?,stage=?,source='manual',source_url=NULL WHERE id=?").run(chosenEnd(end,legacy.set_end),stage,legacy.id).changes;continue;}
+   const same=db.prepare('SELECT id,set_end FROM sets WHERE bar_id=? AND date=? AND band_id=? AND set_start=? AND stage=?').get(m.bar,m.date,bid,m.start,stage);
+   if(same){const setEnd=chosenEnd(end,same.set_end);if(setEnd!==same.set_end)db.prepare('UPDATE sets SET set_end=? WHERE id=?').run(setEnd,same.id);continue;}
+   n+=db.prepare("INSERT INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url,stage) VALUES(?,?,?,?,?,?,?,'manual',NULL,?)").run(mid,m.bar,bid,m.date,m.start,chosenEnd(end,null),`${m.date}-slot${si}`,stage).changes;
+   continue;}
+  const other=db.prepare("SELECT id,set_end FROM sets WHERE bar_id=? AND date=? AND band_id=? AND set_start=? AND id<>? AND COALESCE(stage,'')=''").get(m.bar,m.date,bid,m.start,mid);
+  if(other){db.prepare('DELETE FROM sets WHERE id=? AND id NOT IN (SELECT DISTINCT set_id FROM ratings WHERE set_id IS NOT NULL)').run(mid);const setEnd=chosenEnd(end,other.set_end);if(setEnd!==other.set_end)db.prepare('UPDATE sets SET set_end=? WHERE id=?').run(setEnd,other.id);continue;}
+  const g=db.prepare('SELECT band_id,source,set_end FROM sets WHERE id=?').get(gid);
+  if(g&&g.band_id===TBA_ID&&g.source!=='owner'){n+=db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,stage=NULL,source='manual',source_url=NULL WHERE id=?").run(bid,m.start,chosenEnd(end,g.set_end),gid).changes;continue;}
+  n+=db.prepare("INSERT OR IGNORE INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url) VALUES(?,?,?,?,?,?,?,'manual',NULL)").run(mid,m.bar,bid,m.date,m.start,chosenEnd(end,null),`${m.date}-slot${si}`).changes;}})();applyClosures(fromDate);return n;}
 // Pull listings for one or more nights; owner-edited sets are never overwritten.
 let running=null,last=null;
 async function refresh(dates){if(running)return running;running=(async()=>{const res={at:new Date().toISOString(),dates,bars:{},errors:[]};
