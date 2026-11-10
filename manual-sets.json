@@ -3088,6 +3088,87 @@
    "end": null,
    "stage": null,
    "source": "https://nashvillemusiccalendar.com/venue/nudies-honky-tonk/ (no end published)"
+  },
+  {
+   "date": "2026-11-10",
+   "bar": "nudies",
+   "band": "Jabe Burgess",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/jabe-burgess-at-nudies-honky-tonk-27/"
+  },
+  {
+   "date": "2026-11-10",
+   "bar": "nudies",
+   "band": "Mike Riley",
+   "start": "14:30",
+   "end": "17:30",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/mike-riley-at-nudies-honky-tonk-62/"
+  },
+  {
+   "date": "2026-11-10",
+   "bar": "nudies",
+   "band": "Scotty Chapman",
+   "start": "18:30",
+   "end": "21:30",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/scotty-chapman-at-nudies-honky-tonk-68/"
+  },
+  {
+   "date": "2026-11-10",
+   "bar": "nudies",
+   "band": "Stoney T",
+   "start": "22:30",
+   "end": "01:30",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/stoney-t-at-nudies-honky-tonk-58/"
+  },
+  {
+   "date": "2026-11-10",
+   "bar": "flp",
+   "band": "Cash Crawford",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/cash-crawford-at-friends-in-low-places-bar-honky-tonk-39/"
+  },
+  {
+   "date": "2026-11-10",
+   "bar": "flp",
+   "band": "Allie Colleen",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/allie-colleen-at-friends-in-low-places-bar-honky-tonk-16/"
+  },
+  {
+   "date": "2026-11-10",
+   "bar": "flp",
+   "band": "Myles Baker",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/myles-baker-at-friends-in-low-places-bar-honky-tonk-12/"
+  },
+  {
+   "date": "2026-11-10",
+   "bar": "flp",
+   "band": "Melissa Livingstone",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/melissa-livingstone-at-friends-in-low-places-bar-honky-tonk-18/"
+  },
+  {
+   "date": "2026-11-10",
+   "bar": "flp",
+   "band": "Ryan Spencer",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/ryan-spencer-at-friends-in-low-places-bar-honky-tonk-18/"
   }
  ],
  "closures": [
