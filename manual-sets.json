@@ -2696,11 +2696,11 @@
   {
    "date": "2026-11-11",
    "bar": "wildhorse",
-   "band": "Shantaia",
+   "band": "Dylan Gerard",
    "start": "12:00",
    "end": "15:00",
    "stage": "The Honky-Tonk",
-   "source": "https://www.category10.com/nashville/events/booking_01m4gmkjvr2bd9hbhyh4xdkm00/"
+   "source": "https://www.category10.com/nashville/events/booking_01m742ryvyjtzy82a39501r92m/"
   },
   {
    "date": "2026-11-11",
@@ -3169,6 +3169,96 @@
    "end": "01:00",
    "stage": null,
    "source": "https://nashvillemusiccalendar.com/show/ryan-spencer-at-friends-in-low-places-bar-honky-tonk-18/"
+  },
+  {
+   "date": "2026-11-11",
+   "bar": "nudies",
+   "band": "Jabe Burgess",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/jabe-burgess-at-nudies-honky-tonk-28/ (matches Nudie's official homepage Wednesday 1st Floor)"
+  },
+  {
+   "date": "2026-11-11",
+   "bar": "nudies",
+   "band": "Mike Riley",
+   "start": "14:30",
+   "end": "17:30",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/mike-riley-at-nudies-honky-tonk-63/ (matches Nudie's official homepage Wednesday 1st Floor)"
+  },
+  {
+   "date": "2026-11-11",
+   "bar": "nudies",
+   "band": "Brandon Jackson",
+   "start": "18:30",
+   "end": "21:30",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/brandon-jackson-at-nudies-honky-tonk-26/ (matches Nudie's official homepage Wednesday 1st Floor)"
+  },
+  {
+   "date": "2026-11-11",
+   "bar": "nudies",
+   "band": "Multi Ultra",
+   "start": "22:30",
+   "end": "01:30",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/multi-ultra-at-nudies-honky-tonk-35/ (matches Nudie's official homepage Wednesday 1st Floor)"
+  },
+  {
+   "date": "2026-11-11",
+   "bar": "flp",
+   "band": "Chris Monhollen",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/chris-monhollen-at-friends-in-low-places-bar-honky-tonk-20/"
+  },
+  {
+   "date": "2026-11-11",
+   "bar": "flp",
+   "band": "Lydia Simonds",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/lydia-simonds-at-friends-in-low-places-bar-honky-tonk-20/"
+  },
+  {
+   "date": "2026-11-11",
+   "bar": "flp",
+   "band": "Ben Law",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/ben-law-at-friends-in-low-places-bar-honky-tonk-21/"
+  },
+  {
+   "date": "2026-11-11",
+   "bar": "aldeans",
+   "band": "Johnny Cochran",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "Rooftop Stage",
+   "source": "https://jasonaldeansbar.com/nashville/music/ (Wednesday 11/11/2026 Rooftop Stage; end from NMC show page)"
+  },
+  {
+   "date": "2026-11-11",
+   "bar": "aldeans",
+   "band": "Shane Rivers Band",
+   "start": "21:30",
+   "end": "00:30",
+   "stage": "Rooftop Stage",
+   "source": "https://jasonaldeansbar.com/nashville/music/ (Wednesday 11/11/2026 Rooftop Stage; end from NMC show page)"
+  },
+  {
+   "date": "2026-11-11",
+   "bar": "aldeans",
+   "band": "DJ Big Red",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "Rooftop Stage",
+   "source": "https://jasonaldeansbar.com/nashville/music/ (Wednesday 11/11/2026 Rooftop Stage; end from NMC show page)"
   }
  ],
  "closures": [
