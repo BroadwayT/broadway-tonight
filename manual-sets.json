@@ -3234,6 +3234,141 @@
    "source": "https://nashvillemusiccalendar.com/show/ben-law-at-friends-in-low-places-bar-honky-tonk-21/"
   },
   {
+   "date": "2026-11-12",
+   "bar": "nudies",
+   "band": "John Caldwell",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/venue/nudies-honky-tonk/ (matches Nudie's official homepage Thursday 1st Floor)"
+  },
+  {
+   "date": "2026-11-12",
+   "bar": "nudies",
+   "band": "Blaine Holcomb",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": "Rooftop",
+   "source": "https://nashvillemusiccalendar.com/venue/nudies-honky-tonk/ (matches Nudie's official homepage Thursday Rooftop; end start+3h)"
+  },
+  {
+   "date": "2026-11-12",
+   "bar": "nudies",
+   "band": "Mike Riley",
+   "start": "14:30",
+   "end": "17:30",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/mike-riley-at-nudies-honky-tonk-64/ (matches Nudie's official homepage Thursday 1st Floor)"
+  },
+  {
+   "date": "2026-11-12",
+   "bar": "nudies",
+   "band": "Dixon Darling",
+   "start": "16:00",
+   "end": "19:00",
+   "stage": "Rooftop",
+   "source": "https://nashvillemusiccalendar.com/venue/nudies-honky-tonk/ (matches Nudie's official homepage Thursday Rooftop; end start+3h)"
+  },
+  {
+   "date": "2026-11-12",
+   "bar": "nudies",
+   "band": "DJ",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "Rooftop",
+   "source": "Nudie's official homepage Thursday Rooftop (https://www.nudieshonkytonk.com/); end not listed, used start+4h until late-evening rooftop turnover"
+  },
+  {
+   "date": "2026-11-12",
+   "bar": "nudies",
+   "band": "Carson Bull",
+   "start": "18:30",
+   "end": "21:30",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/carson-bull-at-nudies-honky-tonk-6/ (matches Nudie's official homepage Thursday 1st Floor)"
+  },
+  {
+   "date": "2026-11-12",
+   "bar": "nudies",
+   "band": "Stoney T",
+   "start": "22:30",
+   "end": "01:30",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/stoney-t-at-nudies-honky-tonk-59/ (matches Nudie's official homepage Thursday 1st Floor)"
+  },
+  {
+   "date": "2026-11-12",
+   "bar": "flp",
+   "band": "Nick Smith",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/nick-smith-at-friends-in-low-places-bar-honky-tonk-21/"
+  },
+  {
+   "date": "2026-11-12",
+   "bar": "flp",
+   "band": "Anna Scott",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": "Oasis Rooftop",
+   "source": "https://nashvillemusiccalendar.com/show/anna-scott-at-friends-in-low-places-bar-honky-tonk-21/ (NMC stage: Oasis)"
+  },
+  {
+   "date": "2026-11-12",
+   "bar": "flp",
+   "band": "Lucas John Caccetta",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/lucas-john-caccetta-at-friends-in-low-places-bar-honky-tonk-20/"
+  },
+  {
+   "date": "2026-11-12",
+   "bar": "flp",
+   "band": "Evan Cyote",
+   "start": "15:00",
+   "end": "19:00",
+   "stage": "Oasis Rooftop",
+   "source": "https://nashvillemusiccalendar.com/venue/friends-in-low-places-bar-honky-tonk/ (Thu Nov 12 3:00 PM; end 7:00 PM from public Lower Broadway listing)"
+  },
+  {
+   "date": "2026-11-12",
+   "bar": "flp",
+   "band": "Isaac Harris",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/venue/friends-in-low-places-bar-honky-tonk/ (Thu Nov 12 6:00 PM; end 10:00 PM from public Lower Broadway listing)"
+  },
+  {
+   "date": "2026-11-12",
+   "bar": "flp",
+   "band": "DJ Dirty Darren",
+   "start": "19:00",
+   "end": "22:00",
+   "stage": "Oasis Rooftop",
+   "source": "https://nashvillemusiccalendar.com/venue/friends-in-low-places-bar-honky-tonk/ (Thu Nov 12 7:00 PM; end 10:00 PM from public Lower Broadway listing)"
+  },
+  {
+   "date": "2026-11-12",
+   "bar": "flp",
+   "band": "Frankie Rae",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/venue/friends-in-low-places-bar-honky-tonk/ (Thu Nov 12 10:00 PM; end 2:00 AM from public Lower Broadway listing)"
+  },
+  {
+   "date": "2026-11-12",
+   "bar": "flp",
+   "band": "DJ Hish",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": "Oasis Rooftop",
+   "source": "https://nashvillemusiccalendar.com/venue/friends-in-low-places-bar-honky-tonk/ (Thu Nov 12 10:00 PM; end 2:00 AM from public Lower Broadway listing)"
+  },
+  {
    "date": "2026-11-11",
    "bar": "aldeans",
    "band": "Johnny Cochran",
@@ -3851,6 +3986,13 @@
    "closed_from": "10:00",
    "closed_to": "18:00",
    "source": "Robert's official schedule (November 2026): Thanksgiving, closed until 'Opening at 6PM'"
+  },
+  {
+   "bar": "wildhorse",
+   "date": "2026-11-12",
+   "closed_from": "11:00",
+   "closed_to": "00:00",
+   "source": "Category 10 Nashville calendar featured Closed for Private Event; corroborated by https://nashvillelineup.com/bars/category10 schema.org MusicEvent Private event startDate 2026-11-12T11:00:00-06:00 (closed to the public)"
   }
  ]
 }
