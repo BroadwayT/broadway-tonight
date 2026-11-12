@@ -3970,6 +3970,69 @@
    "start": "22:00",
    "end": "01:00",
    "source": "Bar-provided November lineup (Instagram post shared by @ajsgoodtimebar in a DM to @broadwaytonightnash, Nov 11 2026; https://www.instagram.com/p/DfP1zeAEVrx/). First floor. End times taken as the next listed start (11 AM-2 PM, 2 PM-6 PM, 6 PM-10 PM); 10 PM end was not listed, so 1 AM per start+3h site convention. Artists subject to change."
+  },
+  {
+   "date": "2026-11-12",
+   "bar": "olered",
+   "band": "Charity Bowden",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/charity-bowden-at-ole-red-31/"
+  },
+  {
+   "date": "2026-11-12",
+   "bar": "bellbottomsup",
+   "band": "Zach Westcott",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": "Dining Stage",
+   "source": "https://bellbottomsupbar.com/music/ (Dining Stage; times match https://nashvillemusiccalendar.com/venue/bell-bottoms-up/)"
+  },
+  {
+   "date": "2026-11-12",
+   "bar": "bellbottomsup",
+   "band": "Troy Woods",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": "Rooftop Stage",
+   "source": "https://bellbottomsupbar.com/music/ (Rooftop Stage; times match https://nashvillemusiccalendar.com/venue/bell-bottoms-up/)"
+  },
+  {
+   "date": "2026-11-12",
+   "bar": "bellbottomsup",
+   "band": "Riane Cates",
+   "start": "16:00",
+   "end": "19:00",
+   "stage": "Dining Stage",
+   "source": "https://bellbottomsupbar.com/music/ (Dining Stage; times match https://nashvillemusiccalendar.com/venue/bell-bottoms-up/)"
+  },
+  {
+   "date": "2026-11-12",
+   "bar": "bellbottomsup",
+   "band": "Devon Beck",
+   "start": "16:00",
+   "end": "19:00",
+   "stage": "Rooftop Stage",
+   "source": "https://bellbottomsupbar.com/music/ (Rooftop Stage; times match https://nashvillemusiccalendar.com/venue/bell-bottoms-up/)"
+  },
+  {
+   "date": "2026-11-12",
+   "bar": "bellbottomsup",
+   "band": "Cameron Merrell",
+   "start": "20:00",
+   "end": "23:00",
+   "stage": "Dining Stage",
+   "source": "https://bellbottomsupbar.com/music/ (Dining Stage; times match https://nashvillemusiccalendar.com/venue/bell-bottoms-up/)"
+  },
+  {
+   "date": "2026-11-12",
+   "bar": "bellbottomsup",
+   "band": "Brad Redlich",
+   "start": "20:00",
+   "end": "23:00",
+   "stage": "Rooftop Stage",
+   "source": "https://bellbottomsupbar.com/music/ (Rooftop Stage; times match https://nashvillemusiccalendar.com/venue/bell-bottoms-up/)"
   }
  ],
  "closures": [
