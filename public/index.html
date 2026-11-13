@@ -384,6 +384,12 @@ let pending=null;
 const PLAN_KEY='bt_tonight_plan';
 const j=u=>fetch(u).then(r=>r.json());
 const toast=m=>{const t=$('#toast');t.textContent=m;t.style.display='block';setTimeout(()=>t.style.display='none',2500)};
+let lastTrack='';
+const LAND=(()=>{try{const q=new URLSearchParams(location.search);return {ref:document.referrer||'',utm_source:q.get('utm_source')||'',utm_medium:q.get('utm_medium')||'',utm_campaign:q.get('utm_campaign')||''};}catch(e){return {ref:'',utm_source:'',utm_medium:'',utm_campaign:''};}})();
+function sendEvent(body){try{const json=JSON.stringify(body);if(navigator.sendBeacon){const blob=new Blob([json],{type:'application/json'});if(navigator.sendBeacon('/api/collect',blob))return;}fetch('/api/collect',{method:'POST',body:json,headers:{'Content-Type':'application/json'},keepalive:true}).catch(()=>{});}catch(e){}}
+function trackView(path){try{const p=String(path||'/');if(!p||p===lastTrack)return;lastTrack=p;sendEvent({t:'page',path:p,ref:LAND.ref,utm_source:LAND.utm_source,utm_medium:LAND.utm_medium,utm_campaign:LAND.utm_campaign});}catch(e){}}
+function trackOut(bar,link){try{sendEvent({t:'click',bar:bar||'',link:link||''});}catch(e){}}
+document.addEventListener('click',e=>{try{const el=e.target&&e.target.closest&&e.target.closest('a,button');if(!el)return;let kind=(el.getAttribute('data-out')||'').toLowerCase();let bar=el.getAttribute('data-bar')||'';if(!kind){const href=el.getAttribute('href')||'';if(/ticketmaster\.|axs\.com|eventbrite\.|seatgeek\.|ticketweb\.|tickets\.com/i.test(href))kind='tickets';}if(!kind)return;if(!bar&&typeof curBar==='string')bar=curBar;trackOut(bar,kind);}catch(err){}},true);
 const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const showTime=t=>TimeFmt.formatTime(t);
 const showRange=(a,b)=>TimeFmt.formatRange(a,b);
@@ -529,9 +535,9 @@ async function shareLineup(){
 function weekCard(w){
   const img=w.image?`<img class="week-photo" src="${esc(w.image)}" alt="">`:'';
   const when=weekLabel(w.weekOf);
-  const ig=w.handle?`<a class="ig-link" href="https://instagram.com/${encodeURIComponent(w.handle)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">@${esc(w.handle)}</a>`:'';
+  const ig=w.handle?`<a class="ig-link" data-out="instagram" data-bar="${esc(w.barId)}" href="https://instagram.com/${encodeURIComponent(w.handle)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">@${esc(w.handle)}</a>`:'';
   const offers=(w.offers||[]).map(o=>`<div class="offer"><b>${esc(o.title)}</b>${o.detail?`<span>${esc(o.detail)}</span>`:''}</div>`).join('');
-  const site=w.website?`<a class="visit-btn" href="${esc(w.website)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Visit their website</a>`:'';
+  const site=w.website?`<a class="visit-btn" data-out="website" data-bar="${esc(w.barId)}" href="${esc(w.website)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Visit their website</a>`:'';
   return `<div class="card week" id="weekCard">
     <span class="badge">Bar of the Week</span>
     ${when?`<div class="week-when">Week of ${esc(when)}</div>`:''}
@@ -713,18 +719,18 @@ function setCard(s,opt){opt=opt||{};return `
 
 
 const TIPMAP={};
-function tipBtn(s){if(!s||!s.tip)return '';const k='t'+Object.keys(TIPMAP).length;TIPMAP[k]={band:s.band,tip:s.tip};
+function tipBtn(s){if(!s||!s.tip)return '';const k='t'+Object.keys(TIPMAP).length;TIPMAP[k]={band:s.band,tip:s.tip,bar:s.bar_id||s.barId||''};
   return `<button type="button" class="tip-btn" onclick="event.stopPropagation();openTip('${k}')" aria-label="Tip ${esc(s.band)}">💸 Tip the band</button>`;}
 const TIPNAMES={venmo:'Venmo',cashapp:'Cash App',paypal:'PayPal'};
 function openTip(k){const t=TIPMAP[k];if(!t)return;const ks=Object.keys(t.tip);
-  if(ks.length===1){location.href=t.tip[ks[0]];return;}
+  if(ks.length===1){trackOut(t.bar,'tip');location.href=t.tip[ks[0]];return;}
   $('#tipTitle').textContent='Tip '+t.band;
-  $('#tipOpts').innerHTML=ks.map(x=>`<a class="tip-btn" href="${esc(t.tip[x])}" rel="noopener">${TIPNAMES[x]}</a>`).join('');
+  $('#tipOpts').innerHTML=ks.map(x=>`<a class="tip-btn" data-out="tip" data-bar="${esc(t.bar||'')}" href="${esc(t.tip[x])}" rel="noopener">${TIPNAMES[x]}</a>`).join('');
   $('#tipSheet').classList.add('on');}
 function bandName(s){return s.bandSlug?`<a class="band-link" href="/band/${encodeURIComponent(s.bandSlug)}" onclick="event.stopPropagation();event.preventDefault();openBand('${s.bandSlug}')">${esc(s.band)}</a>`:esc(s.band);}
 let curBand=null;
 function openBand(slug,push=true){curBand=slug;curBar=null;if(push)history.pushState({band:slug},'','/band/'+encodeURIComponent(slug));
-  showPanel('bar');window.scrollTo(0,0);document.querySelectorAll('.bottom-nav button').forEach(x=>x.classList.remove('on'));renderBand(slug);}
+  showPanel('bar');window.scrollTo(0,0);document.querySelectorAll('.bottom-nav button').forEach(x=>x.classList.remove('on'));renderBand(slug);trackView('/band/'+slug);}
 async function renderBand(slug){const r=await fetch('/api/band/'+encodeURIComponent(slug));
   if(!r.ok){$('#barDetail').innerHTML='<div class="card">Band not found.</div>';return;}
   const b=await r.json();document.title=b.name+' · Broadway Tonight';
@@ -767,7 +773,7 @@ async function renderBar(id){
         <a class="btn" href="${esc(mapsUrl(b.name,b.address))}" target="_blank" rel="noopener">Map</a>
         <button type="button" class="btn" onclick="togglePlan('${id}','${jsStr(b.name)}')">${saved?'Remove plan':'＋ Tonight Plan'}</button>
       </div>
-      ${b.barOfTheWeek&&b.barOfTheWeek.website?`<a class="visit-btn" href="${esc(b.barOfTheWeek.website)}" target="_blank" rel="noopener">Visit their website</a>`:''}
+      ${b.barOfTheWeek&&b.barOfTheWeek.website?`<a class="visit-btn" data-out="website" data-bar="${esc(id)}" href="${esc(b.barOfTheWeek.website)}" target="_blank" rel="noopener">Visit their website</a>`:''}
     </div>
     <h2>TONIGHT’S SETS</h2>
     <label class="check"><input type="checkbox" id="ci2" onchange="$('#ci').checked=this.checked" ${$('#ci').checked?'checked':''}> I’m here — count my check-in</label>
@@ -827,12 +833,16 @@ function openBar(id,push=true){
   showPanel('bar');window.scrollTo(0,0);
   document.querySelectorAll('.bottom-nav button').forEach(x=>x.classList.remove('on'));
   renderBar(id);
+  trackView('/bar/'+id);
 }
 function goHome(push=true){
   curBar=null;if(push)history.pushState({},'','/');
   showPanel('home');$('#nav-home').classList.add('on');window.scrollTo(0,0);
+  trackView('/');
 }
-function route(){const bm=location.pathname.match(/^\/band\/([^/]+)/);if(bm)return openBand(decodeURIComponent(bm[1]),false);const m=location.pathname.match(/^\/bar\/([^/]+)/);if(m)openBar(decodeURIComponent(m[1]),false);else goHome(false);}
+function route(){const bm=location.pathname.match(/^\/band\/([^/]+)/);if(bm)return openBand(decodeURIComponent(bm[1]),false);const m=location.pathname.match(/^\/bar\/([^/]+)/);if(m)return openBar(decodeURIComponent(m[1]),false);
+  if(location.hash==='#lineup'){curBar=null;showPanel('home');$('#nav-home').classList.add('on');window.scrollTo(0,0);trackView('/lineup');return;}
+  goHome(false);}
 window.addEventListener('popstate',route);
 
 function beginRate(barId,bandId,setId,rating,bandName){
@@ -896,23 +906,27 @@ document.querySelectorAll('.bottom-nav button').forEach(b=>b.onclick=()=>{
   showPanel(panel);
   if(b.dataset.scroll==='street'){
     showPanel('home');
+    trackView('/');
     requestAnimationFrame(()=>{
       const el=$('#street');
       if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
     });
   } else if(b.dataset.scroll==='lineup'){
     showPanel('home');
+    trackView('/lineup');
     requestAnimationFrame(()=>{
       const el=$('#lineupAnchor');
       if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
     });
   } else if(b.dataset.scroll==='featured'){
     showPanel('home');
+    trackView('/');
     requestAnimationFrame(()=>{
       const el=$('#spon-card')||$('#featured');
       if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
     });
   } else {
+    trackView('/');
     window.scrollTo({top:0,behavior:'smooth'});
   }
 });
