@@ -4033,6 +4033,204 @@
    "end": "23:00",
    "stage": "Rooftop Stage",
    "source": "https://bellbottomsupbar.com/music/ (Rooftop Stage; times match https://nashvillemusiccalendar.com/venue/bell-bottoms-up/)"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "nudies",
+   "band": "John Caldwell",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/john-caldwell-at-nudies-honky-tonk-89/ (1st Floor on https://nashvillelineup.com/bars/nudies; stage null)"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "nudies",
+   "band": "Mike Godwin",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "Rooftop",
+   "source": "https://nashvillemusiccalendar.com/show/mike-godwin-at-nudies-honky-tonk-8/ (Rooftop on https://nashvillelineup.com/bars/nudies; end 2:00 PM on the show page)"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "nudies",
+   "band": "Brandon Jackson",
+   "start": "14:30",
+   "end": "17:30",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/brandon-jackson-at-nudies-honky-tonk-27/ (1st Floor on https://nashvillelineup.com/bars/nudies; stage null)"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "nudies",
+   "band": "Blaine Holcomb",
+   "start": "15:00",
+   "end": "18:00",
+   "stage": "Rooftop",
+   "source": "https://nashvillemusiccalendar.com/show/blaine-holcomb-at-nudies-honky-tonk-14/ (Rooftop on https://nashvillelineup.com/bars/nudies)"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "nudies",
+   "band": "Amanda Rowland",
+   "start": "18:30",
+   "end": "21:30",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/amanda-rowland-at-nudies-honky-tonk-15/ (1st Floor on https://nashvillelineup.com/bars/nudies; stage null)"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "nudies",
+   "band": "Multi Ultra",
+   "start": "22:30",
+   "end": "01:30",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/show/multi-ultra-at-nudies-honky-tonk-36/ (1st Floor on https://nashvillelineup.com/bars/nudies; stage null)"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "flp",
+   "band": "The Other Guys",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/venue/friends-in-low-places-bar-honky-tonk/ (Fri Nov 13 10:00 AM Honky Tonk; end 2:00 PM). Stage: Honky Tonk on https://nashvillemusiccalendar.com/show/the-other-guys-at-friends-in-low-places-bar-honky-tonk-17/"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "flp",
+   "band": "James Carothers",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": "Oasis Rooftop",
+   "source": "https://nashvillemusiccalendar.com/venue/friends-in-low-places-bar-honky-tonk/ (Fri Nov 13 10:00 AM Oasis; end 2:00 PM). Show page does not name a stage: https://nashvillemusiccalendar.com/show/james-carothers-at-friends-in-low-places-bar-honky-tonk-16/"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "flp",
+   "band": "Addison Simmons",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/venue/friends-in-low-places-bar-honky-tonk/ (Fri Nov 13 2:00 PM Honky Tonk; end 6:00 PM). Stage: Honky Tonk on https://nashvillemusiccalendar.com/show/addison-simmons-at-friends-in-low-places-bar-honky-tonk-18/"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "flp",
+   "band": "Garret Browning",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": "Oasis Rooftop",
+   "source": "https://nashvillemusiccalendar.com/show/garret-browning-at-friends-in-low-places-bar-honky-tonk-19/ (NMC stage: Oasis; Fri Nov 13 end 6:00 PM)"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "flp",
+   "band": "Chris Lee & Sara Spicer",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/venue/friends-in-low-places-bar-honky-tonk/ (Fri Nov 13 6:00 PM Honky Tonk; end 10:00 PM)"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "flp",
+   "band": "Rod Youree",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "Oasis Rooftop",
+   "source": "https://nashvillemusiccalendar.com/venue/friends-in-low-places-bar-honky-tonk/ (Fri Nov 13 6:00 PM Oasis; end 10:00 PM)"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "flp",
+   "band": "Liam Coleman",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "https://nashvillemusiccalendar.com/venue/friends-in-low-places-bar-honky-tonk/ (Fri Nov 13 10:00 PM Honky Tonk; end 2:00 AM). Stage: Honky Tonk on https://nashvillemusiccalendar.com/show/liam-coleman-at-friends-in-low-places-bar-honky-tonk-41/"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "flp",
+   "band": "DJ Tanner",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": "Oasis Rooftop",
+   "source": "https://nashvillemusiccalendar.com/venue/friends-in-low-places-bar-honky-tonk/ (Fri Nov 13 10:00 PM Oasis; end 2:00 AM)"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "luckybastard",
+   "band": "Los Honky Tonkers",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/bars/luckybastard (Fri Nov 13 10:00 AM-2:00 PM; no stage named)"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "luckybastard",
+   "band": "Billy Ferguson Band",
+   "start": "10:30",
+   "end": "13:30",
+   "stage": null,
+   "source": "https://nashvillelineup.com/bars/luckybastard (Fri Nov 13 10:30 AM-1:30 PM; no stage named)"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "luckybastard",
+   "band": "Honky Tonk Heroes",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/bars/luckybastard (Fri Nov 13 2:00 PM-6:00 PM; no stage named)"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "luckybastard",
+   "band": "Theresa Veneziano",
+   "start": "14:00",
+   "end": "17:45",
+   "stage": null,
+   "source": "https://nashvillelineup.com/bars/luckybastard (Fri Nov 13 2:00 PM-5:45 PM; no stage named)"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "luckybastard",
+   "band": "Trent Ingram",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/bars/luckybastard (Fri Nov 13 6:00 PM-10:00 PM; no stage named)"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "luckybastard",
+   "band": "Too Hot for Leather",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/bars/luckybastard (Fri Nov 13 6:00 PM-10:00 PM; no stage named)"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "luckybastard",
+   "band": "DJ Chip The Love Dip",
+   "start": "18:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/bars/luckybastard (Fri Nov 13 6:00 PM-2:00 AM; no stage named)"
+  },
+  {
+   "date": "2026-11-13",
+   "bar": "luckybastard",
+   "band": "Too Hot for Leather",
+   "start": "22:00",
+   "end": "02:45",
+   "stage": null,
+   "source": "https://nashvillelineup.com/bars/luckybastard (Fri Nov 13 10:00 PM-2:45 AM; no stage named)"
   }
  ],
  "closures": [
