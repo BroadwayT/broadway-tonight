@@ -49,6 +49,14 @@ Set them in the file, or with the admin key:
 }
 -->
 
+## Analytics
+Anonymous page views and sponsor-link clicks live in the same SQLite file as the rest of the app (`DB_PATH`, or `data/app.db` when that is unset). Nothing here uses a cookie or a third-party script. The stats page is off until `ANALYTICS_TOKEN` is set on the host.
+
+- `GET /stats?token=...&from=YYYY-MM-DD&to=YYYY-MM-DD` — private page, last 7 America/Chicago days when the dates are omitted
+- `GET /api/stats` — same numbers as JSON. Send the token as `?token=`, the `x-analytics-token` header, or `Authorization: Bearer`
+
+Treat the token like a password. A bookmark of `/stats?token=...` is the private page.
+
 ## API
 - `GET /api/lineup?date=today` · `POST /api/ratings {barId,bandId,setId,rating,checkIn}`
 - `GET /api/picks` · `GET|POST /api/admin/featured` (admin key)
