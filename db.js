@@ -11,4 +11,5 @@ try{db.exec('ALTER TABLE ratings ADD COLUMN vibe TEXT');}catch(e){/* already exi
 try{db.exec('ALTER TABLE sets ADD COLUMN stage TEXT');}catch(e){/* already exists */}
 db.exec(`CREATE TABLE IF NOT EXISTS owner_tokens(token TEXT PRIMARY KEY,bar_id TEXT NOT NULL,created_at INTEGER,last_used_at INTEGER);
 CREATE TABLE IF NOT EXISTS owner_contacts(bar_id TEXT PRIMARY KEY,email TEXT,phone TEXT,updated_at INTEGER);`);
+try{require('./subscribe').ensure(db);}catch(e){console.error('subscribers',e.message);}
 module.exports=db;
