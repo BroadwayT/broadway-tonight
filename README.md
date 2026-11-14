@@ -55,7 +55,10 @@ Anonymous page views and sponsor-link clicks live in the same SQLite file as the
 - `GET /stats?token=...&from=YYYY-MM-DD&to=YYYY-MM-DD` — private page, last 7 America/Chicago days when the dates are omitted
 - `GET /api/stats` — same numbers as JSON. Send the token as `?token=`, the `x-analytics-token` header, or `Authorization: Bearer`
 
-Treat the token like a password. A bookmark of `/stats?token=...` is the private page.
+Treat the token like a password. A bookmark of `/stats?token=...` is the private page. The same page shows how many people are on the weekend picks list, and links to `GET /api/subscribers.csv` (active subscribers only, same token).
+
+## Weekend picks
+The lineup and bar pages post to `POST /api/subscribe` with `{email, hp_field, source, utm_source, utm_medium, utm_campaign}`. The email is trimmed and lowercased. `hp_field` is a hidden honeypot and must be empty. Five attempts per IP per hour. Rows live in `subscribers` in the same SQLite file (`email` unique, `created_at`, source page and utm tags, `status` `active` or `unsubscribed`, `unsubscribe_token`). No confirmation email is sent. `GET /unsubscribe?token=...` marks that row unsubscribed. A successful signup is also a first-party `subscribe` event, without the email address.
 
 ## API
 - `GET /api/lineup?date=today` · `POST /api/ratings {barId,bandId,setId,rating,checkIn}`

@@ -276,6 +276,37 @@ details.earlier[open] summary:before{content:"▾ "}
 .social-row a{display:inline-flex;align-items:center;gap:8px;min-height:var(--tap);padding:10px 18px;border-radius:999px;font-weight:700;font-size:14px;color:var(--text);text-decoration:none;background:var(--card);border:1px solid var(--line)}
 .social-row a svg{color:var(--neon)}
 .source-credit{padding-bottom:calc(var(--nav-h) + var(--safe-b) + 32px)}
+.signup{
+  position:relative;margin:8px 12px;padding:16px 16px 14px;border-radius:16px;
+  border:1px solid rgba(255,214,10,.5);
+  background:
+    linear-gradient(155deg, rgba(255,45,149,.24), rgba(26,22,36,.96) 52%),
+    linear-gradient(180deg, rgba(255,214,10,.12), transparent);
+  box-shadow:0 0 0 1px rgba(255,45,149,.2), 0 12px 32px rgba(0,0,0,.35);
+}
+.signup h3{
+  margin:0;font-family:"Bebas Neue",Impact,sans-serif;font-size:30px;letter-spacing:.03em;
+  line-height:.95;color:var(--neon2);
+}
+.signup .subline{margin:8px 0 12px;color:var(--text);font-size:14px;line-height:1.4}
+.signup-row{display:flex;flex-direction:column;gap:8px}
+.signup input[type=email]{
+  width:100%;min-height:48px;border-radius:12px;border:1px solid rgba(255,214,10,.35);
+  background:rgba(7,6,10,.55);color:var(--text);padding:12px 14px;font-size:16px;font-family:inherit;
+}
+.signup input[type=email]::placeholder{color:var(--muted)}
+.signup input[type=email]:focus{outline:2px solid rgba(255,214,10,.75);outline-offset:1px}
+.signup button[type=submit]{
+  width:100%;min-height:48px;border:0;border-radius:12px;background:var(--neon);color:#fff;
+  font-weight:800;font-size:15px;font-family:inherit;touch-action:manipulation;
+}
+.signup button[type=submit]:disabled{opacity:.65}
+.signup button[type=submit]:active:not(:disabled){transform:scale(.98)}
+.signup .fine{margin:10px 0 0;color:var(--muted);font-size:12px;line-height:1.4}
+.signup .fine a{color:var(--neon2)}
+.signup .msg{margin:10px 0 0;font-size:15px;font-weight:700;line-height:1.35;color:var(--neon2)}
+.signup .msg.err{color:#ffb0c8}
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
 </style>
 </head>
 <body>
@@ -309,6 +340,7 @@ details.earlier[open] summary:before{content:"▾ "}
   </div>
   <div id="searchResults"></div>
   <div id="lineup"></div>
+  <div id="signupPark" hidden></div>
   <div id="ratingsSection" hidden>
     <h2>RATINGS</h2>
     <div class="tabs">
@@ -351,7 +383,7 @@ details.earlier[open] summary:before{content:"▾ "}
   </div>
 </div>
 
-<p class="source-credit" style="text-align:center;font-size:12px;opacity:.7;margin:24px 16px 0">Listings via <a href="https://nashvillemusiccalendar.com/" target="_blank" rel="noopener" style="color:inherit">Nashville Music Calendar</a> and bar owners. Lineups can change; check with the venue.</p>
+<p class="source-credit" style="text-align:center;font-size:12px;opacity:.7;margin:24px 16px 0">Listings via <a href="https://nashvillemusiccalendar.com/" target="_blank" rel="noopener" style="color:inherit">Nashville Music Calendar</a> and bar owners. Lineups can change; check with the venue. <a href="/privacy" style="color:inherit">Privacy</a></p>
 
 <nav class="bottom-nav" aria-label="Main">
   <button type="button" data-panel="home" class="on" id="nav-home"><span class="ico">🔥</span>Hot Now</button>
@@ -686,8 +718,66 @@ async function board(){
     </div>`).join('');
 }
 
+function signupFormHtml(id){
+  return `<form class="signup" id="${id}" novalidate>
+    <h3>Get the weekend picks</h3>
+    <p class="subline">Every Thursday, the best sets for Friday to Sunday. Free, unsubscribe anytime.</p>
+    <div class="hp" aria-hidden="true"><label>Leave this blank <input type="text" name="hp_field" tabindex="-1" autocomplete="off" value=""></label></div>
+    <div class="signup-row">
+      <input type="email" name="email" placeholder="Email address" autocomplete="email" inputmode="email" maxlength="254" aria-label="Email address" autocapitalize="none" spellcheck="false">
+      <button type="submit">Send me the picks</button>
+    </div>
+    <p class="fine"><a href="/privacy">Privacy</a></p>
+    <p class="msg" role="status" hidden></p>
+  </form>`;
+}
+function mountHomeSignup(){
+  const park=$('#signupPark');
+  let card=$('#signupCard');
+  if(!card&&park){park.insertAdjacentHTML('beforeend', signupFormHtml('signupCard'));card=$('#signupCard');}
+  if(card&&park&&card.parentElement!==park)park.appendChild(card);
+  return card;
+}
+async function sendSignup(form){
+  if(form.dataset.busy==='1')return;
+  const msg=form.querySelector('.msg');
+  const btn=form.querySelector('button[type=submit]');
+  const emailInput=form.querySelector('input[name=email]');
+  const show=(text,err)=>{msg.hidden=false;msg.textContent=text;msg.classList.toggle('err',!!err);};
+  form.dataset.busy='1';
+  if(btn)btn.disabled=true;
+  try{
+    const r=await fetch('/api/subscribe',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        email:emailInput?emailInput.value:'',
+        hp_field:form.hp_field?form.hp_field.value:'',
+        source:location.pathname||'/',
+        utm_source:LAND.utm_source,utm_medium:LAND.utm_medium,utm_campaign:LAND.utm_campaign
+      })
+    });
+    const b=await r.json().catch(()=>({}));
+    show(b.message||(r.ok?"You're in. Watch for the picks Thursday.":'Something went wrong. Try again.'),!r.ok);
+    if(r.ok){
+      const row=form.querySelector('.signup-row');if(row)row.remove();
+      const hp=form.querySelector('.hp');if(hp)hp.remove();
+      const fine=form.querySelector('.fine');if(fine)fine.remove();
+    }else if(btn)btn.disabled=false;
+  }catch(err){
+    show('Something went wrong. Try again.',true);
+    if(btn)btn.disabled=false;
+  }
+  form.dataset.busy='';
+}
+document.addEventListener('submit',e=>{
+  const form=e.target;
+  if(!form||!form.classList||!form.classList.contains('signup'))return;
+  e.preventDefault();
+  sendSignup(form);
+});
 async function lineup(){
   const d=await j('/api/lineup?date=today');
+  const card=mountHomeSignup();
   showNight(d.date);
   const bars=[];
   for(const s of d.sets||[]){
@@ -695,11 +785,17 @@ async function lineup(){
     if(!b||b.id!==s.bar_id){b={id:s.bar_id,name:s.bar,sets:[]};bars.push(b);}
     b.sets.push(s);
   }
-  $('#lineup').innerHTML=bars.map(b=>{
+  let html='';
+  bars.forEach((b,i)=>{
     const groups=stageGroups(b.sets);
     const heads=stageHeadsOn(groups);
-    return `<div class="venue-head">${esc(b.name)}</div>`+groups.map(g=>stageHead(g.name,heads)+g.sets.map(s=>setCard(s)).join('')).join('');
-  }).join('');
+    html+=`<div class="venue-head">${esc(b.name)}</div>`+groups.map(g=>stageHead(g.name,heads)+g.sets.map(s=>setCard(s)).join('')).join('');
+    if(i===1)html+='<div id="signupSlot"></div>';
+  });
+  if(bars.length<2)html+='<div id="signupSlot"></div>';
+  $('#lineup').innerHTML=html;
+  const slot=$('#signupSlot');
+  if(slot&&card)slot.appendChild(card);
 }
 
 function setCard(s,opt){opt=opt||{};return `
@@ -769,7 +865,8 @@ async function renderBar(id){
       ${b.barOfTheWeek&&b.barOfTheWeek.website?`<a class="visit-btn" data-out="website" data-bar="${esc(id)}" href="${esc(b.barOfTheWeek.website)}" target="_blank" rel="noopener">Visit their website</a>`:''}
     </div>
     <h2>TONIGHT’S SETS</h2>
-    ${setsHtml}`;
+    ${setsHtml}
+    ${signupFormHtml('signupCardBar')}`;
 }
 function splitSets(sets,hm){
   const groups={now:[],upcoming:[],ended:[]};

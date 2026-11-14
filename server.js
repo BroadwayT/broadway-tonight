@@ -135,7 +135,7 @@ function writeFeatured(body){
 const app=express();app.use(express.json());app.use(cookieParser());app.set('trust proxy','loopback');
 app.use((req,res,next)=>{
  // Analytics must not mint the ratings cookie. Page views use a daily hash, not this id.
- if(req.path==='/api/collect'||req.path==='/api/stats'||req.path==='/stats')return next();
+ if(req.path==='/api/collect'||req.path==='/api/stats'||req.path==='/stats'||req.path==='/api/subscribers.csv'||req.path==='/unsubscribe'||req.path==='/privacy')return next();
  let d=req.cookies.device_id;if(!d){d=crypto.randomUUID();res.cookie('device_id',d,{maxAge:365*864e5,httpOnly:true,sameSite:'lax'});}req.deviceId=d;
  req.ipHash=crypto.createHash('sha256').update(String(req.ip)).digest('hex');next();}); // raw IP never stored
 app.use(express.static(path.join(__dirname,'public')));
@@ -323,5 +323,8 @@ app.get('/api/admin/review',(q,r)=>r.json(db.prepare('SELECT * FROM review_queue
 // streak snapshot: check every 5 min; snapshot previous night once after 3 AM CT
 setInterval(()=>{try{const h=+new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',hour:'numeric',hourCycle:'h23'}).format(new Date());
  if(h===2){const day=S.ctNight();db.prepare('DELETE FROM daily_top5 WHERE day=?').run(day);S.snapshotTonight();}}catch(e){console.error(e)}},5*60e3); // final write in the 2-3 AM CT hour = 3 AM snapshot
-try{require('./analytics').mount(app);}catch(e){console.error('analytics disabled',e.message);}
+let analyticsApi=null;
+try{analyticsApi=require('./analytics').mount(app);}catch(e){console.error('analytics disabled',e.message);}
+require('./subscribe').mount(app,db,{analytics:analyticsApi});
+app.get('/privacy',(q,r)=>r.sendFile(path.join(__dirname,'public','privacy.html')));
 L.start();const PORT=process.env.PORT||3847;app.listen(PORT,'0.0.0.0',()=>console.log('Broadway MVP on port '+PORT));

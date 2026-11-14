@@ -39,7 +39,16 @@ function ensure(db){
   CREATE TABLE IF NOT EXISTS analytics_salt(
     day TEXT PRIMARY KEY,
     salt TEXT NOT NULL
-  );`);
+  );
+  CREATE TABLE IF NOT EXISTS product_events(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    ts INTEGER NOT NULL,
+    day TEXT NOT NULL,
+    name TEXT NOT NULL,
+    path TEXT,
+    visitor TEXT NOT NULL
+  );
+  CREATE INDEX IF NOT EXISTS product_events_day ON product_events(day, name);`);
 }
 
 function dayKey(ts){
@@ -158,6 +167,7 @@ function createAnalytics(db,opts){
   const hits=new Map();
   const insView=db.prepare('INSERT INTO pageviews(ts,day,path,referrer,source,utm_source,utm_medium,utm_campaign,device,visitor) VALUES(?,?,?,?,?,?,?,?,?,?)');
   const insClick=db.prepare('INSERT INTO outbound_clicks(ts,day,bar,link_type,visitor) VALUES(?,?,?,?,?)');
+  const insEvent=db.prepare('INSERT INTO product_events(ts,day,name,path,visitor) VALUES(?,?,?,?,?)');
 
   function saltFor(day){
     if(saltMemo.day===day&&saltMemo.salt)return saltMemo.salt;
@@ -200,6 +210,15 @@ function createAnalytics(db,opts){
     ev=ev||{};
     const ua=String(ev.ua||'');
     if(isBot(ua))return {stored:false,reason:'bot'};
+    if(ev.kind==='subscribe'){
+      const subPath=normalizePath(ev.path)||'/';
+      const ip=String(ev.ip||'');
+      if(limited(ip,ua))return {stored:false,reason:'rate'};
+      const ts=nowFn();
+      const day=dayKey(ts);
+      insEvent.run(ts,day,'subscribe',subPath,visitorId(ip,ua,day));
+      return {stored:true,kind:'subscribe',day,path:subPath};
+    }
     let path=null,link=null,bar=null,ref=null,utm_source=null,utm_medium=null,utm_campaign=null,source=null,device=null;
     if(ev.kind==='click'){
       link=cleanLink(ev.link);
@@ -265,12 +284,26 @@ function createAnalytics(db,opts){
     for(const r of deviceRows)if(r.device==='mobile'||r.device==='desktop')devices[r.device]=r.c;
     const clicks=db.prepare('SELECT bar, link_type link, COUNT(*) clicks FROM outbound_clicks WHERE day>=? AND day<=? GROUP BY bar, link_type ORDER BY clicks DESC, bar, link_type LIMIT 50').all(from,to)
       .map(r=>({bar:r.bar||'',name:r.bar?barName(r.bar)||r.bar:'',link:r.link,clicks:r.clicks}));
+    let subscribeEvents=0;
+    try{subscribeEvents=db.prepare("SELECT COUNT(*) c FROM product_events WHERE name='subscribe' AND day>=? AND day<=?").get(from,to).c;}catch(e){}
     return {
       from,to,timezone:TZ,
       views:views.c,visitors:views.v,
       visitorsNote:'Counted once per day. Someone who comes back on another day counts again, because the visitor id rotates daily and the salt is not kept.',
-      viewsPerDay,topPages,topBarPages,sources,referrers,utm,devices,clicks
+      viewsPerDay,topPages,topBarPages,sources,referrers,utm,devices,clicks,
+      subscribers:subscriberCounts(),subscribeEvents
     };
+  }
+  function subscriberCounts(){
+    try{
+      const rows=db.prepare('SELECT status, COUNT(*) c FROM subscribers GROUP BY status').all();
+      const out={active:0,unsubscribed:0};
+      for(const r of rows){
+        if(r.status==='active')out.active=r.c;
+        else if(r.status==='unsubscribed')out.unsubscribed=r.c;
+      }
+      return out;
+    }catch(e){return {active:0,unsubscribed:0};}
   }
 
   function presentedToken(req){
@@ -333,7 +366,7 @@ function createAnalytics(db,opts){
     }catch(e){console.error('[analytics]',e.message);}
     res.status(204).set('Cache-Control','no-store').end();
   }
-  return {record,collect,stats,statsJson,statsPage,barName,pageLabel};
+  return {record,collect,stats,statsJson,statsPage,gate,barName,pageLabel};
 }
 
 function statsHtml(d,token){
@@ -385,7 +418,9 @@ function statsHtml(d,token){
   <div class="num"><b>${d.visitors.toLocaleString('en-US')}</b><span>Unique visitors</span></div>
   <div class="num"><b>${d.devices.mobile.toLocaleString('en-US')}</b><span>Mobile views</span></div>
   <div class="num"><b>${d.devices.desktop.toLocaleString('en-US')}</b><span>Desktop views</span></div>
+  <div class="num"><b>${(d.subscribers&&d.subscribers.active||0).toLocaleString('en-US')}</b><span>Active subscribers</span></div>
 </div>
+<p class="note">${(d.subscribers&&d.subscribers.active||0).toLocaleString('en-US')} active and ${(d.subscribers&&d.subscribers.unsubscribed||0).toLocaleString('en-US')} unsubscribed on the weekend picks list. This count is the current list, not the date range. Subscribe events in this range: ${(d.subscribeEvents||0).toLocaleString('en-US')}. <a href="/api/subscribers.csv?token=${esc(encodeURIComponent(token))}">Download active subscribers (CSV)</a></p>
 <p class="note">${esc(d.visitorsNote)}</p>
 <h2>Views per day</h2>
 ${d.viewsPerDay.map(x=>`<div class="day"><span>${esc(x.day)}</span><span class="bar" style="width:${x.views?Math.max(4,Math.round(x.views/max*100)):0}%"></span><span>${x.views.toLocaleString('en-US')} · ${x.visitors.toLocaleString('en-US')} uniq</span></div>`).join('')}
