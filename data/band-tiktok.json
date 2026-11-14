@@ -1,4 +1,290 @@
 {
-  "_note": "Optional TikTok handles. Keys are the lineup band name, lowercase and trimmed. tiktok is the profile name without @. Leave a band out when the handle is not known.",
-  "bands": {}
+ "_note": "VERIFIED TikTok handles only, keyed by lowercase lineup name. Never guess.",
+ "bands": {
+  "3eachhouse": {
+   "tiktok": "3eachhouse"
+  },
+  "aly cutter": {
+   "tiktok": "alycutter"
+  },
+  "amber delacruz": {
+   "tiktok": "amberdelacruz"
+  },
+  "annie b band": {
+   "tiktok": "theanniebband"
+  },
+  "ariel mcreynolds": {
+   "tiktok": "arielmcreynolds"
+  },
+  "bear redell": {
+   "tiktok": "bearredell"
+  },
+  "ben law": {
+   "tiktok": "benlawmusic"
+  },
+  "bobby mcclendon": {
+   "tiktok": "bobbymcclendonmusic"
+  },
+  "brandon birkedahl & beer joint jumpers": {
+   "tiktok": "brandon.birkedahl"
+  },
+  "bøøm": {
+   "tiktok": "iamboommusic"
+  },
+  "cami nyx": {
+   "tiktok": "thecaminyx"
+  },
+  "charlie mcneal": {
+   "tiktok": "charliemcnealmusic"
+  },
+  "christian stolz": {
+   "tiktok": "christianstolzmusic"
+  },
+  "conner sweet band": {
+   "tiktok": "connersweetmusic"
+  },
+  "dalles jacobus": {
+   "tiktok": "dallesjacobusmusic"
+  },
+  "dan burnell band": {
+   "tiktok": "danburnellbandofficial"
+  },
+  "devon beck": {
+   "tiktok": "devonbeckofficial"
+  },
+  "dj bbooney": {
+   "tiktok": "dj.bbooney"
+  },
+  "dj big red": {
+   "tiktok": "iamdjbigred"
+  },
+  "dj dustin c": {
+   "tiktok": "djdustinc"
+  },
+  "dj mason edwards": {
+   "tiktok": "djmasonedwards"
+  },
+  "dj nick at nite": {
+   "tiktok": "djnickatnite"
+  },
+  "erath old": {
+   "tiktok": "erathold"
+  },
+  "eva maxine": {
+   "tiktok": "iamevamaxine"
+  },
+  "father jumanji": {
+   "tiktok": "fatherjumanji"
+  },
+  "garrett browning": {
+   "tiktok": "garrettbrowningmusic"
+  },
+  "gina owens": {
+   "tiktok": "ginaowensmusic"
+  },
+  "griffin sinclair": {
+   "tiktok": "griffinsinclairmusic"
+  },
+  "hudson valley": {
+   "tiktok": "officialhudsonvalley"
+  },
+  "hype creek": {
+   "tiktok": "hypecreekband"
+  },
+  "isaac cole": {
+   "tiktok": "isaaccolemusic"
+  },
+  "isaac harris": {
+   "tiktok": "isaacharrismusic"
+  },
+  "ivey andrews": {
+   "tiktok": "iveyandrews"
+  },
+  "jabe burgess": {
+   "tiktok": "jabe_burgess"
+  },
+  "jara ward": {
+   "tiktok": "jaraward"
+  },
+  "jason mcphail": {
+   "tiktok": "jasonmcphailmusic"
+  },
+  "jered ames": {
+   "tiktok": "jeredames"
+  },
+  "jessie wilson": {
+   "tiktok": "jessiewilsonmusic"
+  },
+  "joe barron": {
+   "tiktok": "joebarronmusic"
+  },
+  "josh paige": {
+   "tiktok": "joshpaigemusic"
+  },
+  "justin bryan": {
+   "tiktok": "justinbryanmusic"
+  },
+  "kelly & sarah": {
+   "tiktok": "kellysarahmusic"
+  },
+  "krystal steel": {
+   "tiktok": "krystalsteelmusic"
+  },
+  "kyle elliott": {
+   "tiktok": "thekyleelliott"
+  },
+  "landon parker": {
+   "tiktok": "landonparkermusic"
+  },
+  "lauren rose thayer": {
+   "tiktok": "laurenrosethayer"
+  },
+  "levi orr": {
+   "tiktok": "leviorrofficial"
+  },
+  "lexie laplante": {
+   "tiktok": "lexielaplante"
+  },
+  "lexie rut": {
+   "tiktok": "lexierutmusic"
+  },
+  "los honky tonkers": {
+   "tiktok": "los.honky.tonkers"
+  },
+  "mac watts": {
+   "tiktok": "macwattsmusic"
+  },
+  "makenzie schriner": {
+   "tiktok": "makenzieschriner"
+  },
+  "matt bennett": {
+   "tiktok": "mattbennettband"
+  },
+  "matt marinchick": {
+   "tiktok": "mattmarinchick"
+  },
+  "melissa livingstone": {
+   "tiktok": "melissalivingstonemusic"
+  },
+  "monique smaz": {
+   "tiktok": "moniquesmaz"
+  },
+  "natalie brady": {
+   "tiktok": "nataliebradymusic"
+  },
+  "nick walker": {
+   "tiktok": "nickwalkerofficial"
+  },
+  "nick west": {
+   "tiktok": "nickwestcountry"
+  },
+  "nicole sumerlyn": {
+   "tiktok": "nicolesumerlyn"
+  },
+  "noah garner": {
+   "tiktok": "noahgarnermusic"
+  },
+  "noah silver": {
+   "tiktok": "noahsilvermusic"
+  },
+  "paul juneau": {
+   "tiktok": "pauljuneaumusic"
+  },
+  "rachael blount": {
+   "tiktok": "rachaelblountmusic"
+  },
+  "rachael turner": {
+   "tiktok": "rachaelturnermusic"
+  },
+  "reagan woodside": {
+   "tiktok": "reaganwoodsidemusic"
+  },
+  "renata the band": {
+   "tiktok": "renatatheband"
+  },
+  "riane cates": {
+   "tiktok": "i.am.riane"
+  },
+  "rob carter": {
+   "tiktok": "robcartermusic"
+  },
+  "rob riser": {
+   "tiktok": "robrisermusic"
+  },
+  "ross flora": {
+   "tiktok": "rossfloramusic"
+  },
+  "ross livermore": {
+   "tiktok": "ross.livermore"
+  },
+  "ryan ernest": {
+   "tiktok": "ryanernestmusic"
+  },
+  "ryan jacobs": {
+   "tiktok": "ryanjacobsmusic"
+  },
+  "rylan fowler": {
+   "tiktok": "rylanfowlermusic"
+  },
+  "sarah gayle meech": {
+   "tiktok": "sarahgaylemeech"
+  },
+  "sarah jade": {
+   "tiktok": "sarahjademusic"
+  },
+  "scotty mac band": {
+   "tiktok": "scottymacband"
+  },
+  "shannon willis": {
+   "tiktok": "shannonwillismusic"
+  },
+  "sofia nargentino": {
+   "tiktok": "sofianargentino"
+  },
+  "tanglewood": {
+   "tiktok": "tanglewoodofficial"
+  },
+  "the beasley brothers": {
+   "tiktok": "thebeasleybrothers"
+  },
+  "the huffer brothers": {
+   "tiktok": "thehufferbrothers"
+  },
+  "the magi": {
+   "tiktok": "themagimusic"
+  },
+  "the overall protocol": {
+   "tiktok": "theoverallprotocol"
+  },
+  "the tyson hanes band": {
+   "tiktok": "tysonhanes"
+  },
+  "tj watson": {
+   "tiktok": "tjwatsonmusic"
+  },
+  "todd cameron": {
+   "tiktok": "toddcameronmusic"
+  },
+  "trey lewis": {
+   "tiktok": "treylewismusic"
+  },
+  "troy woods": {
+   "tiktok": "iamtroywoods"
+  },
+  "vikki nova": {
+   "tiktok": "vikkinovamusic"
+  },
+  "weston robinson": {
+   "tiktok": "westonrobinson_music"
+  },
+  "will clark": {
+   "tiktok": "willclarkcountry"
+  },
+  "zach westcott": {
+   "tiktok": "zachwestcottmusic"
+  },
+  "zach zurcher": {
+   "tiktok": "zachzurchermusic"
+  }
+ }
 }

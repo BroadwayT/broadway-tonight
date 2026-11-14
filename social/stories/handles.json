@@ -1,8 +1,202 @@
 {
-  "_note": "Verified Instagram handles only. Band keys are the lineup name, lowercase and trimmed. bars are keyed by bar_id. instagram is the profile name without @. Do not add a handle that has not been checked.",
-  "bands": {
-    "will clark": {"instagram": "willclarkcountry"},
-    "rodney griffin & the fiddlequeen": {"instagram": "rodneygriffin_music"}
+ "_note": "VERIFIED Instagram handles only (official site/venue links). Never guess; leave a name out if unsure. Bars keyed by site bar_id, bands by lowercase band name.",
+ "bars": {
+  "kidrock": {
+   "handle": "kidrocksbigasshonkytonk"
   },
-  "bars": {}
+  "tootsies": {
+   "handle": "tootsies_orchid_lounge"
+  },
+  "luke32": {
+   "handle": "lukes32bridge"
+  },
+  "olered": {
+   "handle": "olered"
+  },
+  "aldeans": {
+   "handle": "jasonaldeans"
+  },
+  "thisbar": {
+   "handle": "mwthisbar"
+  },
+  "wildhorse": {
+   "handle": "officialcategory10"
+  },
+  "whiskeyrow": {
+   "handle": "whiskeyrownashville"
+  },
+  "flp": {
+   "handle": "friendsbarnash"
+  },
+  "bellbottomsup": {
+   "handle": "bellbottomsupbar"
+  },
+  "casarosa": {
+   "handle": "casarosanashville"
+  },
+  "postys": {
+   "handle": "postysbar"
+  },
+  "goodnight": {
+   "handle": "goodnightnash"
+  },
+  "chiefs": {
+   "handle": "chiefsbroadway"
+  },
+  "kanebrown": {
+   "handle": "kanebrownsonbroadway"
+  },
+  "redneckriviera": {
+   "handle": "rnrbarnash"
+  },
+  "jbjs": {
+   "handle": "jbjsnash"
+  },
+  "ajs": {
+   "handle": "ajsgoodtimebar"
+  },
+  "boogiebar": {
+   "handle": "hanks_nash"
+  },
+  "margaritaville": {
+   "handle": "margaritavillenashville_eats"
+  },
+  "honkytonkcentral": {
+   "handle": "htcnashville"
+  },
+  "rippys": {
+   "handle": "rippyshonkytonk"
+  },
+  "roberts": {
+   "handle": "robertswesternworld"
+  },
+  "legends": {
+   "handle": "legendscorner"
+  },
+  "acme": {
+   "handle": "acmenashville"
+  },
+  "nudies": {
+   "handle": "nudieshonky_tonk"
+  },
+  "tinroof": {
+   "handle": "tinroofbroadway"
+  },
+  "whiskeybent": {
+   "handle": "whiskeybentsaloon"
+  },
+  "bootleggers": {
+   "handle": "bootleggersinn"
+  },
+  "layla": {
+   "handle": "laylasnashville"
+  },
+  "bootbarn": {
+   "handle": "stageonbroadway"
+  }
+ },
+ "bands": {
+  "charles \"wigg\" walker": {
+   "handle": "charleswiggwalker"
+  },
+  "father jumanji": {
+   "handle": "fatherjumanji"
+  },
+  "krystal steel": {
+   "handle": "krystalsteelmusic"
+  },
+  "alex smith & the mobile homeboys": {
+   "handle": "mobilehomeboys"
+  },
+  "kelly & sarah": {
+   "handle": "kellysarahmusic"
+  },
+  "the huffer brothers": {
+   "handle": "thehufferbrothers"
+  },
+  "melanie lenau": {
+   "handle": "melanielenau"
+  },
+  "ross flora": {
+   "handle": "rossfloramusic"
+  },
+  "ashley lynn": {
+   "handle": "ashleylynnbarrett"
+  },
+  "sarah gayle meech": {
+   "handle": "sarahgaylemeech"
+  },
+  "jesselee jones & brazilbilly": {
+   "handle": "jesseleejones"
+  },
+  "matthew davidson": {
+   "handle": "matthdavidson"
+  },
+  "charlie mcneal": {
+   "handle": "charliemcnealmusic"
+  },
+  "mac watts": {
+   "handle": "macwattsmusic"
+  },
+  "kristine kabbes and the skallywags": {
+   "handle": "kristinekabbes"
+  },
+  "conner sweet band": {
+   "handle": "connersweetmusic"
+  },
+  "jason mcphail": {
+   "handle": "jason_mcphail_music"
+  },
+  "zach westcott": {
+   "handle": "zachwestcottmusic"
+  },
+  "melissa livingstone": {
+   "handle": "melissalivingstonemusic"
+  },
+  "erath old": {
+   "handle": "erathold"
+  },
+  "bobby mcclendon": {
+   "handle": "bobbymcclendon"
+  },
+  "nicole sumerlyn": {
+   "handle": "nicolesumerlyn"
+  },
+  "aly cutter": {
+   "handle": "alycuttermusic"
+  },
+  "jannelle means": {
+   "handle": "jannellesingsandloves"
+  },
+  "natalie brady": {
+   "handle": "nataliebradymusic"
+  },
+  "landon parker": {
+   "handle": "landonparker"
+  },
+  "joe barron": {
+   "handle": "joebarronmusic"
+  },
+  "joshua hedley & the hedliners": {
+   "handle": "joshuahedley"
+  },
+  "kelley's heroes": {
+   "handle": "kelleysheroes"
+  },
+  "kelley’s heroes": {
+   "handle": "kelleysheroes"
+  },
+  "chris casello trio": {
+   "handle": "chriscasello"
+  },
+  "brazilbilly & friends": {
+   "handle": "jesseleejones"
+  },
+  "will clark": {
+   "handle": "willclarkcountry"
+  },
+  "rodney griffin & the fiddlequeen": {
+   "handle": "rodneygriffin_music"
+  }
+ }
 }

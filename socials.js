@@ -30,7 +30,10 @@ function emptyTt(){return {bands:new Map()};}
 function take(value,field){
   if(value==null)return '';
   if(typeof value==='string'||typeof value==='number')return cleanHandle(value);
-  if(typeof value==='object'&&!Array.isArray(value))return cleanHandle(value[field]);
+  if(typeof value==='object'&&!Array.isArray(value)){
+    if(value[field]!=null&&String(value[field]).trim()!=='')return cleanHandle(value[field]);
+    if(field!=='handle'&&value.handle!=null)return cleanHandle(value.handle);
+  }
   return '';
 }
 function indexInstagram(raw){
