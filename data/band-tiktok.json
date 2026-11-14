@@ -1,0 +1,4 @@
+{
+  "_note": "Optional TikTok handles. Keys are the lineup band name, lowercase and trimmed. tiktok is the profile name without @. Leave a band out when the handle is not known.",
+  "bands": {}
+}

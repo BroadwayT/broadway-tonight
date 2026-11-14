@@ -105,7 +105,6 @@ details.earlier[open] summary:before{content:"▾ "}
 .hot-pick{border:1px solid rgba(255,45,149,.55);background:linear-gradient(145deg,rgba(255,45,149,.22),#1a1624 58%)}
 .hot-band{font-size:32px;margin-top:6px}
 .hot-bar{margin-top:4px;font-weight:800}
-.rate-line{margin-top:10px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:800}
 #barOfWeek:empty,#hotPick:empty,#bandSpotlight:empty{display:none}
 .tabs{display:flex;gap:8px;margin:0 12px 6px}
 .tabs button{
@@ -120,7 +119,22 @@ details.earlier[open] summary:before{content:"▾ "}
 .muted{color:var(--muted);font-size:13px;line-height:1.3}
 .score{font-family:"Bebas Neue",Impact,sans-serif;font-size:34px;color:var(--lime);letter-spacing:.02em;line-height:1;flex-shrink:0}
 .bar-title{font-weight:700;font-size:16px;line-height:1.25}
-.set-band{font-weight:700;font-size:17px;line-height:1.25;flex:1;min-width:0}
+.set-band{font-weight:700;font-size:16px;line-height:1.25;flex:1;min-width:0}
+.card.set{margin:6px 12px;padding:11px 12px;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.28)}
+.set-line{align-items:center;gap:10px}
+.set-main{min-width:0;flex:1}
+.set-live{margin-bottom:4px}
+.set-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:8px}
+.set-social{
+  display:inline-flex;align-items:center;gap:6px;min-height:44px;max-width:100%;
+  padding:0 12px;border-radius:999px;border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.05);color:var(--text);text-decoration:none;
+  font-weight:700;font-size:14px;line-height:1;touch-action:manipulation;
+}
+.set-social span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.set-social svg{flex:0 0 auto;color:var(--neon2)}
+.set-social:active{transform:scale(.97);background:rgba(255,214,10,.12)}
+.set-actions .tip-btn{min-height:44px}
 .vibe-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .vibe-chip{
   font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
@@ -129,21 +143,7 @@ details.earlier[open] summary:before{content:"▾ "}
   border:1px solid rgba(255,45,149,.3);
 }
 .pulse-chip{background:rgba(184,255,60,.1);color:var(--lime);border-color:rgba(184,255,60,.35)}
-.stars{margin-top:12px;display:flex;align-items:center;justify-content:space-between;gap:4px;width:100%}
-.stars button{
-  flex:1;min-height:44px;min-width:44px;font-size:22px;line-height:1;
-  background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:12px;
-  color:rgba(255,255,255,.25);padding:8px 0;touch-action:manipulation;cursor:pointer;
-}
-.stars button:active:not(:disabled){color:var(--neon2);transform:scale(.96);background:rgba(255,214,10,.12)}
-.stars button:disabled{opacity:.4;cursor:default}
-.stars button.lit{color:var(--neon2);border-color:rgba(255,214,10,.35);background:rgba(255,214,10,.1)}
-.rated-tag{display:block;margin-top:8px;font-size:12px;color:var(--muted);font-weight:600}
-.check{display:flex;align-items:center;gap:12px;margin:0 12px 10px;padding:14px;min-height:var(--tap);background:rgba(255,45,149,.08);border:1px dashed rgba(255,45,149,.35);border-radius:14px;font-size:14px;font-weight:600}
-.check input{accent-color:var(--neon);width:22px;height:22px;flex-shrink:0}
 .time-pill{font-size:12px;font-weight:700;color:var(--neon2);background:rgba(255,214,10,.1);border:1px solid rgba(255,214,10,.25);padding:6px 10px;border-radius:999px;white-space:nowrap}
-.rate-invite{margin-top:14px;padding:12px 14px;border-radius:14px;border:1px solid rgba(255,45,149,.45);background:linear-gradient(135deg,rgba(255,45,149,.16),rgba(255,214,10,.08));color:var(--neon2);font-weight:700;font-size:14px;line-height:1.35}
-.card.rate-invite{margin:8px 12px;text-align:center}
 #toast{
   position:fixed;bottom:calc(var(--nav-h) + var(--safe-b) + 12px);
   left:max(12px, calc(50% - 215px + 12px));right:max(12px, calc(50% - 215px + 12px));
@@ -175,13 +175,6 @@ details.earlier[open] summary:before{content:"▾ "}
 }
 .sheet h3{margin:0 0 4px;font-family:"Bebas Neue",Impact,sans-serif;font-size:26px;letter-spacing:.04em}
 .sheet .hint{color:var(--muted);font-size:13px;margin-bottom:14px}
-.vibe-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.vibe-grid button{
-  min-height:var(--tap);border-radius:14px;border:1px solid var(--line);
-  background:rgba(255,255,255,.05);color:var(--text);font-weight:700;font-size:15px;
-  text-transform:capitalize;touch-action:manipulation;
-}
-.vibe-grid button:active{background:rgba(255,45,149,.2);border-color:var(--neon);color:var(--neon);transform:scale(.97)}
 .sheet .skip{width:100%;margin-top:12px;min-height:44px;border:0;background:transparent;color:var(--muted);font-weight:600;font-size:14px}
 .card.tap{cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .card.tap:active{transform:scale(.985);border-color:var(--neon)}
@@ -315,7 +308,6 @@ details.earlier[open] summary:before{content:"▾ "}
     <input type="search" id="bandSearch" placeholder="Search a band…" autocomplete="off" enterkeyhint="search">
   </div>
   <div id="searchResults"></div>
-  <label class="check"><input type="checkbox" id="ci"> I’m here — count my check-in</label>
   <div id="lineup"></div>
   <div id="ratingsSection" hidden>
     <h2>RATINGS</h2>
@@ -351,15 +343,6 @@ details.earlier[open] summary:before{content:"▾ "}
     <button type="button" class="skip" onclick="$('#tipSheet').classList.remove('on')">Close</button>
   </div>
 </div>
-<div class="sheet-bg" id="vibeSheet" role="dialog" aria-modal="true" aria-labelledby="vibeTitle">
-  <div class="sheet">
-    <h3 id="vibeTitle">Pick a vibe</h3>
-    <div class="hint" id="vibeHint">How’s the room right now?</div>
-    <div class="vibe-grid" id="vibeGrid"></div>
-    <button type="button" class="skip" id="vibeSkip">Skip vibe</button>
-  </div>
-</div>
-
 <div class="follow-us">
   <div class="title">Follow us</div>
   <div class="social-row">
@@ -379,8 +362,6 @@ details.earlier[open] summary:before{content:"▾ "}
 <script src="/timefmt.js"></script>
 <script>
 const $=s=>document.querySelector(s);let tab='tonight';
-const VIBES=['loud','chill','packed','dancing','tipsy'];
-let pending=null;
 const PLAN_KEY='bt_tonight_plan';
 const j=u=>fetch(u).then(r=>r.json());
 const toast=m=>{const t=$('#toast');t.textContent=m;t.style.display='block';setTimeout(()=>t.style.display='none',2500)};
@@ -391,6 +372,24 @@ function trackView(path){try{const p=String(path||'/');if(!p||p===lastTrack)retu
 function trackOut(bar,link){try{sendEvent({t:'click',bar:bar||'',link:link||''});}catch(e){}}
 document.addEventListener('click',e=>{try{const el=e.target&&e.target.closest&&e.target.closest('a,button');if(!el)return;let kind=(el.getAttribute('data-out')||'').toLowerCase();let bar=el.getAttribute('data-bar')||'';if(!kind){const href=el.getAttribute('href')||'';if(/ticketmaster\.|axs\.com|eventbrite\.|seatgeek\.|ticketweb\.|tickets\.com/i.test(href))kind='tickets';}if(!kind)return;if(!bar&&typeof curBar==='string')bar=curBar;trackOut(bar,kind);}catch(err){}},true);
 const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const IG_SVG='<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>';
+const TT_SVG='<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.6 2.6 0 0 1 0-5.2c.27 0 .53.04.77.12V9.66a5.73 5.73 0 0 0-.77-.05 5.69 5.69 0 1 0 5.69 5.69V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3a4.3 4.3 0 0 1-3.25-1.48z"/></svg>';
+function socialBits(s){
+  if(!s)return '';
+  const out=[];
+  if(s.ig&&s.igUrl)out.push(`<a class="set-social" href="${esc(s.igUrl)}" target="_blank" rel="noopener" aria-label="Instagram @${esc(s.ig)}" onclick="event.stopPropagation()">${IG_SVG}<span>@${esc(s.ig)}</span></a>`);
+  if(s.tt&&s.ttUrl)out.push(`<a class="set-social" href="${esc(s.ttUrl)}" target="_blank" rel="noopener" aria-label="TikTok @${esc(s.tt)}" onclick="event.stopPropagation()">${TT_SVG}<span>@${esc(s.tt)}</span></a>`);
+  return out.join('');
+}
+function socialLinks(s){
+  const bits=socialBits(s);
+  return bits?`<div class="set-actions">${bits}</div>`:'';
+}
+function setActions(s){
+  const links=socialBits(s),tip=s&&s.tip?tipBtn(s):'';
+  if(!links&&!tip)return '';
+  return `<div class="set-actions">${links}${tip}</div>`;
+}
 const showTime=t=>TimeFmt.formatTime(t);
 const showRange=(a,b)=>TimeFmt.formatRange(a,b);
 // Broadway night is the lineup date (YYYY-MM-DD). Format that calendar day in Chicago so 1 AM still reads as the previous evening.
@@ -613,6 +612,7 @@ async function nowPlaying(){
       ${x.engaged?onNowPill():''}
       <div class="band">${esc(x.band)}</div>
       <div class="bar">${esc(x.bar)} · ${withStage(esc(showRange(x.set_start,x.set_end)),x.stage)}</div>
+      ${socialLinks(x)}
       ${tipBtn(x)}
     </div>`).join('');
 }
@@ -703,18 +703,12 @@ async function lineup(){
 }
 
 function setCard(s,opt){opt=opt||{};return `
-      <div class="card${opt.ended?' ended':''}">
-        <div class="row">
-          <div class="set-band">${opt.now&&s.engaged?`<div style="margin-bottom:6px">${onNowPill()}</div>`:''}${bandName(s)}</div>
+      <div class="card set${opt.ended?' ended':''}">
+        <div class="row set-line">
+          <div class="set-band">${opt.now&&s.engaged?`<div class="set-live">${onNowPill()}</div>`:''}${bandName(s)}</div>
           <span class="time-pill">${esc(showRange(s.set_start,s.set_end))}</span>
         </div>
-        <div class="rate-line">Rate this band</div>
-        <div class="stars" role="group" aria-label="Rate ${esc(s.band)}">
-          ${[1,2,3,4,5].map(n=>`<button type="button" aria-label="${n} star" class="${s.ratedByMe?'lit':''}" ${s.ratedByMe?'disabled':''}
-            onclick="beginRate('${s.bar_id}','${s.band_id}','${s.id}',${n},'${String(s.band).replace(/'/g,'')}')">★</button>`).join('')}
-        </div>
-        ${s.ratedByMe?'<span class="rated-tag">rated ✓</span>':''}
-        ${s.tip?`<div class="tip-row">${tipBtn(s)}</div>`:''}
+        ${setActions(s)}
       </div>`;}
 
 
@@ -738,7 +732,6 @@ async function renderBand(slug){const r=await fetch('/api/band/'+encodeURICompon
   $('#barDetail').innerHTML=`<div class="card">
     <div class="muted" style="text-transform:uppercase;letter-spacing:.12em;font-size:11px">Band</div>
     <div class="name" style="font-family:'Bebas Neue',Impact,sans-serif;font-size:34px;letter-spacing:.02em;margin-top:4px">${esc(b.name)}</div>
-    ${b.rating?`<div class="muted" style="margin-top:6px">★ ${b.rating.avg.toFixed(2)} · ${b.rating.n} ratings</div>`:''}
     <div class="tip-row">${tipBtn(b)}${b.instagram?`<a class="ig-link" href="${esc(b.instagram)}" target="_blank" rel="noopener">Instagram ↗</a>`:''}${b.tiktok?`<a class="ig-link" href="${esc(b.tiktok)}" target="_blank" rel="noopener">TikTok ↗</a>`:''}</div>
     ${b.tip?'<div class="muted" style="font-size:12px;margin-top:8px">Tips go straight to the band through their own app. Broadway Tonight never handles money.</div>':''}
   </div><div class="venue-head">Upcoming sets</div>${up}`;}
@@ -776,7 +769,6 @@ async function renderBar(id){
       ${b.barOfTheWeek&&b.barOfTheWeek.website?`<a class="visit-btn" data-out="website" data-bar="${esc(id)}" href="${esc(b.barOfTheWeek.website)}" target="_blank" rel="noopener">Visit their website</a>`:''}
     </div>
     <h2>TONIGHT’S SETS</h2>
-    <label class="check"><input type="checkbox" id="ci2" onchange="$('#ci').checked=this.checked" ${$('#ci').checked?'checked':''}> I’m here — count my check-in</label>
     ${setsHtml}`;
 }
 function splitSets(sets,hm){
@@ -845,27 +837,6 @@ function route(){const bm=location.pathname.match(/^\/band\/([^/]+)/);if(bm)retu
   goHome(false);}
 window.addEventListener('popstate',route);
 
-function beginRate(barId,bandId,setId,rating,bandName){
-  pending={barId,bandId,setId,rating};
-  $('#vibeHint').textContent=`${rating}★ for ${bandName||'this set'} — how’s the room?`;
-  $('#vibeGrid').innerHTML=VIBES.map(v=>`<button type="button" onclick="finishRate('${v}')">${v}</button>`).join('');
-  $('#vibeSheet').classList.add('on');
-}
-
-async function finishRate(vibe){
-  if(!pending)return;
-  const p=pending;pending=null;
-  $('#vibeSheet').classList.remove('on');
-  const r=await fetch('/api/ratings',{
-    method:'POST',headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({...p,vibe:vibe||null,checkIn:$('#ci').checked})
-  });
-  const b=await r.json();
-  const tag=vibe?` · ${vibe}`:'';
-  toast(r.ok?`Rated ${p.rating}★${tag} — thanks!`:b.error);
-  lineup();board();pulse();streetCache=null;street();nowPlaying();if(curBar)renderBar(curBar);
-}
-
 let searchTimer=null;
 $('#bandSearch').addEventListener('input',()=>{
   clearTimeout(searchTimer);
@@ -879,19 +850,17 @@ async function runSearch(){
   const d=await j('/api/search?q='+encodeURIComponent(q));
   if(!d.matches.length){box.innerHTML=`<div class="card muted">No bands matching “${esc(q)}” tonight.</div>`;return;}
   box.innerHTML=d.matches.map(m=>`
-    <div class="card tap" role="link" onclick="openBar('${m.barId}')">
-      <div class="row">
-        <div>
-          <div class="set-band">${m.live&&m.engaged?`<div style="margin-bottom:6px">${onNowPill()}</div>`:''}${esc(m.band)}</div>
+    <div class="card set tap" role="link" onclick="openBar('${m.barId}')">
+      <div class="row set-line">
+        <div class="set-main">
+          <div class="set-band">${m.live&&m.engaged?`<div class="set-live">${onNowPill()}</div>`:''}${esc(m.band)}</div>
           <div class="muted">${esc(m.bar)}${m.stage?` · ${esc(m.stage)}`:''} · ${esc(m.address)}</div>
         </div>
         <span class="time-pill">${esc(showRange(m.set_start,m.set_end))}</span>
       </div>
+      ${socialLinks(m)}
     </div>`).join('');
 }
-
-$('#vibeSkip').onclick=()=>finishRate(null);
-$('#vibeSheet').onclick=e=>{if(e.target.id==='vibeSheet')finishRate(null)};
 
 document.querySelectorAll('#ratingsSection .tabs button').forEach(b=>b.onclick=()=>{
   document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('on'));

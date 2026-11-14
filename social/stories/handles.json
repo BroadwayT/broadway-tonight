@@ -1,0 +1,8 @@
+{
+  "_note": "Verified Instagram handles only. Band keys are the lineup name, lowercase and trimmed. bars are keyed by bar_id. instagram is the profile name without @. Do not add a handle that has not been checked.",
+  "bands": {
+    "will clark": {"instagram": "willclarkcountry"},
+    "rodney griffin & the fiddlequeen": {"instagram": "rodneygriffin_music"}
+  },
+  "bars": {}
+}

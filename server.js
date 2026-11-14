@@ -264,7 +264,7 @@ app.get('/api/search',(req,res)=>{
   const date=nightNow();
   const rows=TIPS.decorate(db.prepare(`SELECT s.*,b.name bar,b.address,bd.name band FROM sets s JOIN bars b ON b.id=s.bar_id JOIN bands bd ON bd.id=s.band_id WHERE s.date=? AND lower(bd.name) LIKE ? ORDER BY s.set_start`).all(date,'%'+q+'%'));
   const hm=ctHM();
-  res.json({q,date,matches:rows.map(r=>({barId:r.bar_id,bar:r.bar,address:r.address,band:r.band,set_start:r.set_start,set_end:r.set_end,stage:stageOf(r)||null,live:inSet(hm,r.set_start,r.set_end),engaged:ENG.isEngaged(r)}))});
+  res.json({q,date,matches:rows.map(r=>({barId:r.bar_id,bar:r.bar,address:r.address,band:r.band,set_start:r.set_start,set_end:r.set_end,stage:stageOf(r)||null,live:inSet(hm,r.set_start,r.set_end),engaged:ENG.isEngaged(r),ig:r.ig||null,igUrl:r.igUrl||null,tt:r.tt||null,ttUrl:r.ttUrl||null}))});
 });
 // ---- owner magic links ----
 const ownerBar=t=>{const r=db.prepare('SELECT bar_id FROM owner_tokens WHERE token=?').get(String(t||''));return r&&db.prepare('SELECT id,name,address FROM bars WHERE id=?').get(r.bar_id);};
