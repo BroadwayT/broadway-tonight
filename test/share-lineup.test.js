@@ -106,6 +106,12 @@ test('uses 12-hour times and a compact bar name', () => {
   assert.equal(Share.shortBarName({ bar_id: 'thisbar', bar: "Morgan Wallen's This Bar & Tennessee Kitchen" }), 'This Bar');
 });
 
+test('lists 5 bands by default', () => {
+  assert.equal(Share.LIMIT, 5);
+  const picked = Share.pickSets(sets, { now: AT['2pm'], picks });
+  assert.equal(picked.length, 5);
+});
+
 test('counts unique named bands not listed', () => {
   const text = Share.build(sets, { now: AT['2pm'], picks, limit: 3 });
   // Unique named (non-TBA) bands in the fixture: Russell Brown, The Bruisers, Timbo,

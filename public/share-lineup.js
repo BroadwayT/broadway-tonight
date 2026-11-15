@@ -8,7 +8,7 @@
 })(typeof globalThis !== 'undefined' ? globalThis : this, function (TF) {
   'use strict';
 
-  const LIMIT = 10;
+  const LIMIT = 5;
   const SITE = 'broadwaytonightnash.com';
   const TZ = 'America/Chicago';
 
