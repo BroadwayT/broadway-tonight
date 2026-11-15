@@ -1,55 +1,78 @@
 {
+  "_note": "Bar of the Week is Posty's; band spotlight is Joe Barron. Live edits are stored on the host disk and survive deploys.",
   "barOfTheWeek": {
-    "barId": "bootbarn",
-    "blurb": "Live country music, cold drinks, and a rooftop on Lower Broadway.",
-    "history": "The Stage is one of the honky-tonks that grew up with Lower Broadway. An original painting of The Highwaymen, once owned by Waylon Jennings and hung in his Nashville home, hangs over the front door.",
+    "barId": "postys",
+    "blurb": "Post Malone's Posty's at 305 Broadway has three stages, a dining room, and a rooftop. Joe Barron plays here Friday, Nov 20, 6 to 10 PM.",
+    "history": "Posty's opened in early July 2025 at 305 Broadway, in a partnership between Post Malone and TC Restaurant Group. The venue is about 26,000 square feet, with six bars, three stages, a full-service dining room, and a rooftop. The operator bills the main floor as the largest ground-floor footprint on Broadway.",
     "offers": [
       {
-        "title": "Live music",
-        "detail": "Country bands on the main floor, the second floor, and the rooftop."
-      },
-      {
         "title": "Hours",
-        "detail": "Open every day, 10 AM to 2:30 AM. Artists and times can change."
+        "detail": "Venue and dining room open 9 AM to close."
       },
       {
-        "title": "After 6 PM",
-        "detail": "21 and up after 6 PM."
-      },
-      {
-        "title": "Private events",
-        "detail": "Private parties, corporate events, and VIP rooms."
+        "title": "Karaoke",
+        "detail": "Thursday through Sunday from 6 PM."
       }
     ],
-    "website": "https://thestageonbroadway.com/",
-    "sourceUrl": "https://thestageonbroadway.com/about-us/",
-    "image": "https://wst-media.sfo2.digitaloceanspaces.com/TheStage/wp-content/uploads/2025/10/22174250/TheStage_NEON_bigger.png",
-    "imageCredit": "Logo belongs to The Stage on Broadway",
-    "handle": "",
-    "weekOf": "2026-11-07",
+    "website": "https://postysbar.com",
+    "sourceUrl": "https://postysbar.com/postys/post-malone-to-open-venue-on-nashvilles-lower-broadway/",
+    "image": "https://postysbar.com/wp-content/uploads/2026/02/PM__Nash_-Red-Beige-Outline-scaled.png",
+    "imageCredit": "Logo belongs to Post Malone's Posty's",
+    "handle": "postysbar",
+    "weekOf": "2026-11-16",
     "bands": [
-      "mac-watts",
-      "kristine-kabbes-and-the-skallywags",
-      "conner-sweet-band",
-      "rachael-turner"
+      "joe-barron"
     ],
-    "engageNote": "We spotlight bands that engage with us — reply to our messages, like or comment on our posts, or send us a DM."
+    "engageNote": "We spotlight bands that engage with us \u2014 reply to our messages, like or comment on our posts, or send us a DM."
   },
   "bandSpotlight": {
-    "name": "Mac Watts",
-    "photo": "https://images.zoogletools.com/s:bzglfiles/u/244485/208a3ef8c4c519b9480c13e0e33743fe7fed28f6/original/img-8992.jpeg",
-    "photoCredit": "Photo from macwattsmusic.com/gigs",
-    "story": "Mac Watts grew up just north of Detroit and moved to Nashville in 2017. He has released the EPs Dynamite and Cast Away, plus the singles On My Own and Raise Em Up Proud. He plays regularly on Broadway, including sets at The Stage on Broadway.",
-    "nextBroadwaySets": [],
-    "instagram": "macwattsmusic",
-    "tiktok": "",
-    "website": "https://macwattsmusic.com/",
+    "name": "Joe Barron",
+    "photo": "https://static.wixstatic.com/media/562236_51b08f222e1044bc86a05b8c8d1cd47d~mv2.jpg",
+    "photoCredit": "Photo from joebarronmusic.com",
+    "story": "Joe Barron is from El Paso, Texas, and moved to Nashville in 2016. His site says he first played guitar at 8, later opened for Thompson Square, Parmalee, and Randy Rogers Band, and has had residencies at the Jason Aldean, Luke Bryan, and Florida Georgia Line venues downtown. His singles include Chainsmoking, which reached Spotify's New Music Nashville playlist, and Dirt Road Dance.",
+    "nextBroadwaySets": [
+      {
+        "barId": "thisbar",
+        "bar": "Morgan Wallen's This Bar & Tennessee Kitchen",
+        "date": "2026-11-15",
+        "set_start": "16:00",
+        "set_end": "19:00",
+        "stage": "Rooftop Stage"
+      },
+      {
+        "barId": "postys",
+        "bar": "Post Malone's Posty's",
+        "date": "2026-11-20",
+        "set_start": "18:00",
+        "set_end": "22:00",
+        "stage": null
+      },
+      {
+        "barId": "luke32",
+        "bar": "Luke's 32 Bridge",
+        "date": "2026-11-21",
+        "set_start": "22:00",
+        "set_end": "02:00",
+        "stage": "Bank Floor Stage"
+      },
+      {
+        "barId": "thisbar",
+        "bar": "Morgan Wallen's This Bar & Tennessee Kitchen",
+        "date": "2026-11-22",
+        "set_start": "18:00",
+        "set_end": "22:00",
+        "stage": "Rooftop Stage"
+      }
+    ],
+    "instagram": "joebarronmusic",
+    "tiktok": "joebarronmusic",
+    "website": "https://www.joebarronmusic.com/",
     "video": null,
-    "engageNote": "We feature bands that engage with us — reply to our messages, like or comment on our posts, or send us a DM. That's how you get on this page."
+    "engageNote": "We feature bands that engage with us \u2014 reply to our messages, like or comment on our posts, or send us a DM. That's how you get on this page."
   },
   "hotRightNow": {
-    "barId": "luke32",
-    "band": "Joe Barron",
-    "line": "Playing Luke's 32 Bridge tonight 6 to 10 PM."
+    "barId": "bootbarn",
+    "band": "Conner Sweet Band",
+    "line": "Playing The Stage on Broadway today 2:45 to 6:15 PM."
   }
 }

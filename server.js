@@ -21,7 +21,18 @@ function orderBarSets(rows){
 }
 function orderLineup(rows){const out=[];for(let i=0;i<rows.length;){const id=rows[i].bar_id;let j=i;while(j<rows.length&&rows[j].bar_id===id)j++;out.push(...orderBarSets(rows.slice(i,j)));i=j;}return out;}
 const tagEngaged=rows=>(rows||[]).map(r=>({...r,engaged:ENG.isEngaged(r)}));
-const FEATURED_PATH=path.join(__dirname,'data','featured.json');
+const DATA_DIR=process.env.DATA_DIR||(process.env.DB_PATH?path.dirname(process.env.DB_PATH):path.join(__dirname,'data'));
+const FEATURED_SEED=path.join(__dirname,'data','featured.json');
+const FEATURED_PATH=process.env.FEATURED_PATH||path.join(DATA_DIR,'featured.json');
+function seedFeaturedIfMissing(){
+  if(path.resolve(FEATURED_PATH)===path.resolve(FEATURED_SEED))return;
+  try{
+    if(fs.existsSync(FEATURED_PATH))return;
+    fs.mkdirSync(path.dirname(FEATURED_PATH),{recursive:true});
+    fs.copyFileSync(FEATURED_SEED,FEATURED_PATH);
+  }catch(e){console.error('featured seed',e.message);}
+}
+seedFeaturedIfMissing();
 const BAR_ENGAGE_NOTE='We spotlight bands that engage with us — reply to our messages, like or comment on our posts, or send us a DM.';
 const SPOT_ENGAGE_NOTE="We feature bands that engage with us — reply to our messages, like or comment on our posts, or send us a DM. That's how you get on this page.";
 const blankFeatured=()=>({_note:'',barOfTheWeek:{barId:'',blurb:'',history:'',offers:[],website:'',sourceUrl:'',image:'',imageCredit:'',handle:'',weekOf:'',bands:[],engageNote:BAR_ENGAGE_NOTE},bandSpotlight:{name:'',photo:'',photoCredit:'',story:'',nextBroadwaySets:[],instagram:'',tiktok:'',website:'',video:null,engageNote:SPOT_ENGAGE_NOTE},hotRightNow:{barId:'',band:'',line:''}});
