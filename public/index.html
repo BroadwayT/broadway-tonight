@@ -392,6 +392,7 @@ details.earlier[open] summary:before{content:"▾ "}
 </nav>
 
 <script src="/timefmt.js"></script>
+<script src="/share-lineup.js"></script>
 <script>
 const $=s=>document.querySelector(s);let tab='tonight';
 const PLAN_KEY='bt_tonight_plan';
@@ -558,10 +559,10 @@ async function shareSpot(){
   await shareText(s.name+' · Band Spotlight',`${s.name} on Broadway Tonight.\n${s.story||''}\n${sets}\n${url}`.trim(),url);
 }
 async function shareLineup(){
-  const d=await j('/api/lineup?date=today');
-  const lines=(d.sets||[]).slice(0,8).map(s=>`${showRange(s.set_start,s.set_end)} ${s.band}${s.stage?` (${s.stage})`:''} at ${s.bar}`);
+  const [d,p]=await Promise.all([j('/api/lineup?date=today'),j('/api/picks')]);
+  const text=ShareLineup.build(d.sets||[],{now:Date.now(),picks:p||{}});
   const url=location.origin+'/#lineup';
-  await shareText('Tonight’s lineup · Broadway Tonight',`Tonight on Lower Broadway\n${lines.join('\n')}\n${url}`,url);
+  await shareText('Tonight’s lineup · Broadway Tonight',text,url);
 }
 function weekCard(w){
   const img=w.image?`<img class="week-photo" src="${esc(w.image)}" alt="">`:'';
