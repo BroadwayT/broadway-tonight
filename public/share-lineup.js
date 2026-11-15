@@ -3,11 +3,17 @@
 // Band of the Week, Hot Right Now, engaged bands, and Bar of the Week.
 // DJ, karaoke, trivia, and other non-band events are left out of the list and the count.
 (function (root, factory) {
-  const api = factory(typeof require === 'function' ? require('./timefmt') : (root && root.TimeFmt));
+  const TF = typeof require === 'function' ? require('./timefmt') : (root && root.TimeFmt);
+  const LB = typeof require === 'function' ? require('./live-band') : (root && root.LiveBand);
+  const api = factory(TF, LB);
   if (typeof module === 'object' && module.exports) module.exports = api;
   if (root) root.ShareLineup = api;
-})(typeof globalThis !== 'undefined' ? globalThis : this, function (TF) {
+})(typeof globalThis !== 'undefined' ? globalThis : this, function (TF, LB) {
   'use strict';
+  const isTba = LB.isTba;
+  const isNonBand = LB.isNonBand;
+  const isLiveBand = LB.isLiveBand;
+  const normName = LB.normName;
 
   const LIMIT = 5;
   const SITE = 'broadwaytonightnash.com';
@@ -49,39 +55,10 @@
     rippys: "Rippy's"
   };
 
-  function isTba(band) {
-    const n = String(band || '').trim().toLowerCase();
-    if (!n) return true;
-    if (/\btba\b/.test(n) || /\btbd\b/.test(n)) return true;
-    if (n === 'live music' || n === 'live band') return true;
-    if (/^live music\b/.test(n)) return true;
-    return false;
-  }
-
-  // DJ sets, karaoke, trivia, and similar non-band events. "DJ" alone also counts.
-  function isNonBand(band) {
-    const n = normName(band);
-    if (!n) return false;
-    if (n === 'dj' || n.startsWith('dj ')) return true;
-    if (n.includes(' dj ')) return true;
-    if (/\bkaraoke\b/.test(n)) return true;
-    if (/\btrivia\b/.test(n)) return true;
-    if (/\bhome game\b/.test(n)) return true;
-    return false;
-  }
-
-  function isLiveBand(band) {
-    return !isTba(band) && !isNonBand(band);
-  }
-
   function shortBarName(set) {
     const id = String((set && set.bar_id) || '').toLowerCase();
     if (SHORT_BARS[id]) return SHORT_BARS[id];
     return String((set && set.bar) || '').trim() || 'Broadway';
-  }
-
-  function normName(s) {
-    return String(s || '').trim().toLowerCase().replace(/\s+/g, ' ');
   }
 
   // Minutes from 6 AM, so 1 AM is after 10 PM. Matches server nightKey.
