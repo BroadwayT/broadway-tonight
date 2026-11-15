@@ -2,6 +2,9 @@ node_modules
 data/*.db*
 *.bak*
 *.png
+!public/icon-192.png
+!public/icon-512.png
+!public/apple-touch-icon.png
 data/*
 !data/.gitkeep
 !data/featured.json

@@ -9,7 +9,8 @@
 <meta name="theme-color" content="#07060a">
 <meta name="description" content="Who's playing tonight on Lower Broadway.">
 <link rel="manifest" href="/manifest.webmanifest">
-<link rel="apple-touch-icon" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png">
 <title>Broadway Tonight</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -243,13 +244,13 @@ details.earlier[open] summary:before{content:"▾ "}
   background:rgba(255,214,10,.12);border:1px solid rgba(255,214,10,.35);font-size:12px;font-weight:700;
 }
 .plan-chip button{border:0;background:transparent;color:var(--muted);font-size:16px;line-height:1;padding:0 0 0 2px}
-.install-hint{
-  margin:8px 12px;padding:12px 14px;border-radius:14px;display:none;
-  background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.2);
-  font-size:13px;color:var(--muted);
+.install-wrap{margin:8px 12px}
+.install-wrap .btn{width:100%}
+.install-steps{margin:0 0 12px;padding:0 0 0 18px;color:var(--text);font-size:14px;line-height:1.45}
+.install-steps li{margin:0 0 8px}
+@media (display-mode: standalone){
+  .install-wrap{display:none !important}
 }
-.install-hint.on{display:block}
-.install-hint strong{color:var(--text)}
 .late-hint{margin-top:8px;font-size:12px;color:var(--neon2);font-weight:600}
 .section-sub{margin:-4px 16px 8px;color:var(--muted);font-size:12px}
 .hot-score-mini{font-family:"Bebas Neue",Impact,sans-serif;font-size:22px;color:var(--lime)}
@@ -325,9 +326,8 @@ details.earlier[open] summary:before{content:"▾ "}
 
 <div id="panel-home" class="panel on">
   <div id="ticker" class="ticker" hidden><span class="dot"></span><span id="tickerText"></span></div>
-  <div id="installHint" class="install-hint">
-    <strong>Add to Home Screen</strong> for one-tap access — Share → Add to Home Screen on iPhone, or the browser menu on Android.
-    <button type="button" class="btn" style="margin-top:8px;width:100%" onclick="this.parentElement.classList.remove('on');localStorage.setItem('bt_install_dismiss','1')">Got it</button>
+  <div id="installWrap" class="install-wrap" hidden>
+    <button type="button" class="btn" id="installBtn">Add to Home Screen</button>
   </div>
   <div id="barOfWeek"></div>
   <div id="bandSpotlight"></div>
@@ -375,6 +375,16 @@ details.earlier[open] summary:before{content:"▾ "}
     <div class="hint">Opens the band’s payment app. Broadway Tonight never handles money.</div>
     <div class="tip-opts" id="tipOpts"></div>
     <button type="button" class="skip" onclick="$('#tipSheet').classList.remove('on')">Close</button>
+  </div>
+</div>
+<div class="sheet-bg" id="installSheet" role="dialog" aria-modal="true" aria-labelledby="installTitle" onclick="if(event.target===this)this.classList.remove('on')">
+  <div class="sheet">
+    <h3 id="installTitle">Add to Home Screen</h3>
+    <ol class="install-steps">
+      <li>Tap the Share icon at the bottom of Safari, then Add to Home Screen.</li>
+      <li>In Chrome on iPhone, the Share icon is in the address bar.</li>
+    </ol>
+    <button type="button" class="skip" id="installSheetClose">Close</button>
   </div>
 </div>
 <div class="follow-us">
@@ -1060,10 +1070,54 @@ document.querySelectorAll('.bottom-nav button').forEach(b=>b.onclick=()=>{
 
 $('#backBtn').onclick=()=>history.length>1&&history.state&&history.state.bar?history.back():goHome();
 
+function isStandaloneApp(){
+  return window.matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
+}
+function isIosDevice(){
+  const ua=navigator.userAgent||'';
+  return /iPhone|iPad|iPod/.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+}
+let deferredInstall=null;
+function showInstallBtn(){
+  const wrap=$('#installWrap');
+  if(!wrap||isStandaloneApp())return;
+  wrap.hidden=false;
+}
+function hideInstallBtn(){
+  const wrap=$('#installWrap');
+  if(wrap)wrap.hidden=true;
+}
+function closeInstallSheet(){
+  const sheet=$('#installSheet');
+  if(sheet)sheet.classList.remove('on');
+}
+async function startInstall(){
+  if(isStandaloneApp()){hideInstallBtn();return;}
+  if(deferredInstall){
+    const ev=deferredInstall;
+    deferredInstall=null;
+    ev.prompt();
+    try{await ev.userChoice;}catch(e){}
+    hideInstallBtn();
+    return;
+  }
+  if(isIosDevice()){
+    const sheet=$('#installSheet');
+    if(sheet)sheet.classList.add('on');
+  }
+}
 function maybeInstall(){
-  if(localStorage.getItem('bt_install_dismiss'))return;
-  const isStandalone=window.matchMedia('(display-mode: standalone)').matches||navigator.standalone;
-  if(!isStandalone)$('#installHint').classList.add('on');
+  if(isStandaloneApp()){hideInstallBtn();return;}
+  if(isIosDevice())showInstallBtn();
+  const btn=$('#installBtn'),sheet=$('#installSheet'),closeBtn=$('#installSheetClose');
+  if(btn)btn.onclick=startInstall;
+  if(closeBtn)closeBtn.onclick=closeInstallSheet;
+  window.addEventListener('beforeinstallprompt',e=>{
+    e.preventDefault();
+    deferredInstall=e;
+    if(!isStandaloneApp())showInstallBtn();
+  });
+  window.addEventListener('appinstalled',()=>{deferredInstall=null;hideInstallBtn();closeInstallSheet();});
 }
 
 async function initRatings(){
