@@ -119,3 +119,31 @@ test('counts unique named bands not listed', () => {
   // Rod Jansen, David Ray, Ricky Rouix = 11. Limit 3 leaves 8 more.
   assert.ok(text.includes('+ 8 more bands tonight'));
 });
+
+test('skips DJ, karaoke, trivia, and home-game sets and leaves them out of the count', () => {
+  assert.equal(Share.isNonBand('DJ'), true);
+  assert.equal(Share.isNonBand('DJ Chip The Love Dip'), true);
+  assert.equal(Share.isNonBand('Open Format DJ Set'), true);
+  assert.equal(Share.isNonBand('Karaoke Night'), true);
+  assert.equal(Share.isNonBand('Tuesday Trivia'), true);
+  assert.equal(Share.isNonBand('TITANS HOME GAME'), true);
+  assert.equal(Share.isNonBand('Joe Barron'), false);
+  assert.equal(Share.isLiveBand('DJ'), false);
+  assert.equal(Share.isLiveBand('Live music (TBA)'), false);
+  assert.equal(Share.isLiveBand('Joe Barron'), true);
+
+  const extra = sets.concat([
+    set({ bar_id: 'luckybastard', bar: 'Lucky Bastard Saloon', band: 'DJ Chip The Love Dip', set_start: '12:00', set_end: '20:00' }),
+    set({ bar_id: 'olered', bar: "Blake Shelton's Ole Red Nashville", band: 'TITANS HOME GAME', set_start: '10:00', set_end: '15:00' }),
+    set({ bar_id: 'nudies', bar: "Nudie's Honky Tonk", band: 'Karaoke', set_start: '18:00', set_end: '22:00' }),
+    set({ bar_id: 'aldeans', bar: "Jason Aldean's Kitchen + Rooftop", band: 'Tuesday Trivia', set_start: '14:00', set_end: '16:00' }),
+    set({ bar_id: 'postys', bar: "Post Malone's Posty's", band: 'DJ Road', set_start: '14:00', set_end: '17:00' })
+  ]);
+  const picked = Share.pickSets(extra, { now: AT['2pm'], picks });
+  assert.ok(!picked.some(r => Share.isNonBand(r.set.band)));
+  const text = Share.build(extra, { now: AT['2pm'], picks, limit: 3 });
+  assert.ok(!/DJ |Karaoke|Trivia|HOME GAME/i.test(text));
+  // Unique live bands are still the 11 named bands from the base fixture.
+  // Limit 3 leaves 8 more. The DJ, karaoke, trivia, and home-game names do not add to the count.
+  assert.ok(text.includes('+ 8 more bands tonight'));
+});

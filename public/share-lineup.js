@@ -1,6 +1,7 @@
 // Share lineup text for the "Share lineup" button.
-// Picks named sets that are on now or up next, one per bar, and leads with
+// Picks named live-band sets that are on now or up next, one per bar, and leads with
 // Band of the Week, Hot Right Now, engaged bands, and Bar of the Week.
+// DJ, karaoke, trivia, and other non-band events are left out of the list and the count.
 (function (root, factory) {
   const api = factory(typeof require === 'function' ? require('./timefmt') : (root && root.TimeFmt));
   if (typeof module === 'object' && module.exports) module.exports = api;
@@ -55,6 +56,22 @@
     if (n === 'live music' || n === 'live band') return true;
     if (/^live music\b/.test(n)) return true;
     return false;
+  }
+
+  // DJ sets, karaoke, trivia, and similar non-band events. "DJ" alone also counts.
+  function isNonBand(band) {
+    const n = normName(band);
+    if (!n) return false;
+    if (n === 'dj' || n.startsWith('dj ')) return true;
+    if (n.includes(' dj ')) return true;
+    if (/\bkaraoke\b/.test(n)) return true;
+    if (/\btrivia\b/.test(n)) return true;
+    if (/\bhome game\b/.test(n)) return true;
+    return false;
+  }
+
+  function isLiveBand(band) {
+    return !isTba(band) && !isNonBand(band);
   }
 
   function shortBarName(set) {
@@ -190,7 +207,7 @@
     const picks = opts.picks || {};
     const byBar = new Map();
     for (const set of sets || []) {
-      if (isTba(set && set.band)) continue;
+      if (!isLiveBand(set && set.band)) continue;
       const row = pack(set, nowKey, picks);
       if (row.status !== 'now' && row.status !== 'later') continue;
       const barId = set.bar_id || set.bar || ('bar-' + byBar.size);
@@ -235,7 +252,7 @@
   function uniqueNamedBands(sets) {
     const names = new Set();
     for (const set of sets || []) {
-      if (isTba(set && set.band)) continue;
+      if (!isLiveBand(set && set.band)) continue;
       const n = normName(set.band);
       if (n) names.add(n);
     }
@@ -260,6 +277,8 @@
     LIMIT,
     SITE,
     isTba,
+    isNonBand,
+    isLiveBand,
     shortBarName,
     nightKey,
     chicagoHM,
