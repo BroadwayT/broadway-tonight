@@ -198,7 +198,7 @@ app.use(express.static(path.join(__dirname,'public')));
 app.get('/api/lineup',(req,res)=>{const date=(!req.query.date||req.query.date==='today')?nightNow():req.query.date;
  const rows=orderLineup(db.prepare(`SELECT s.*,b.name bar,bd.name band FROM sets s JOIN bars b ON b.id=s.bar_id JOIN bands bd ON bd.id=s.band_id WHERE s.date=? ORDER BY b.name,s.set_start`).all(date));
  const mine=new Set(db.prepare('SELECT set_id FROM ratings WHERE device_id=?').all(req.deviceId).map(r=>r.set_id));
- res.json({date,sets:TIPS.decorate(rows.map(r=>({...r,ratedByMe:mine.has(r.id)})))});});
+ res.json({date,sets:tagEngaged(TIPS.decorate(rows.map(r=>({...r,ratedByMe:mine.has(r.id)}))))});});
 const VIBES=new Set(['loud','chill','packed','dancing','tipsy']);
 function vibesForBars(barIds,windowH){
  const now=Date.now();const ids=barIds.length?barIds:[''];
