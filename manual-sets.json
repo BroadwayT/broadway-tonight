@@ -4870,6 +4870,636 @@
    "end": "21:00",
    "stage": "Rooftop",
    "source": "https://nashvillelineup.com/this-weekend (Sat Nov 14 6:30 PM-9:00 PM Roof Top stage)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "flp",
+   "band": "The Other'd",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": "Honky Tonk",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "flp",
+   "band": "Jessica Rose",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": "The Oasis",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "flp",
+   "band": "Cash Crawford",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": "Honky Tonk",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "flp",
+   "band": "Chris Shrader",
+   "start": "16:00",
+   "end": "20:00",
+   "stage": "The Oasis",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "flp",
+   "band": "Isaac Harris",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "Honky Tonk",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "flp",
+   "band": "Michael Scalabrino",
+   "start": "20:00",
+   "end": "00:00",
+   "stage": "The Oasis",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "flp",
+   "band": "Frankie Moody",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": "Honky Tonk",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "honkytonkcentral",
+   "band": "Josh Sampson band + Neely",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "honkytonkcentral",
+   "band": "Lanndon",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "honkytonkcentral",
+   "band": "Smitty",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": "2nd Floor",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "honkytonkcentral",
+   "band": "Chris Essex",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "honkytonkcentral",
+   "band": "Aiden Moore band",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "2nd Floor",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "honkytonkcentral",
+   "band": "Pj",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "honkytonkcentral",
+   "band": "John Matthew",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": "2nd Floor",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "jbjs",
+   "band": "Sara Spicer",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "jbjs",
+   "band": "Jordan Grace",
+   "start": "11:00",
+   "end": "15:00",
+   "stage": "4th Floor",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "jbjs",
+   "band": "Aj Kang",
+   "start": "12:00",
+   "end": "18:00",
+   "stage": "Rooftop DJ",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "jbjs",
+   "band": "Ashton Smith",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "jbjs",
+   "band": "Gladwyn Graham",
+   "start": "17:30",
+   "end": "23:30",
+   "stage": "Rooftop DJ",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "jbjs",
+   "band": "Kelsey Hickman",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "jbjs",
+   "band": "Hand Over Face",
+   "start": "22:00",
+   "end": "02:30",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "kidrock",
+   "band": "Darren T",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "kidrock",
+   "band": "Freel",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "Rooftop",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "kidrock",
+   "band": "Jackson Capps",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "kidrock",
+   "band": "Erik F",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": "Rooftop",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "kidrock",
+   "band": "Dean James",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "kidrock",
+   "band": "Yankee drawl",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "Rooftop",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "kidrock",
+   "band": "Jacob Martin",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "kidrock",
+   "band": "Olivia / Marco",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": "Rooftop",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "layla",
+   "band": "Betty Rose",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "luckybastard",
+   "band": "Lonestar Magnolia",
+   "start": "10:00",
+   "end": "12:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "luckybastard",
+   "band": "Tyson Hanes",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "luckybastard",
+   "band": "Dj Chip The Love Dip",
+   "start": "12:00",
+   "end": "20:00",
+   "stage": "2nd Floor",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "luckybastard",
+   "band": "Honky Tonk Heroes",
+   "start": "16:00",
+   "end": "20:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "luckybastard",
+   "band": "Ricky Rooker",
+   "start": "20:00",
+   "end": "00:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "nudies",
+   "band": "John Caldwell",
+   "start": "10:00",
+   "end": "14:30",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "nudies",
+   "band": "Colin Patrick",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": "Rooftop",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "nudies",
+   "band": "Mike Riley",
+   "start": "14:30",
+   "end": "18:30",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "nudies",
+   "band": "Dixon Darling",
+   "start": "16:00",
+   "end": "17:30",
+   "stage": "Rooftop",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "nudies",
+   "band": "DJ",
+   "start": "17:30",
+   "end": "22:00",
+   "stage": "Rooftop",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "nudies",
+   "band": "Troy Woods",
+   "start": "18:30",
+   "end": "22:30",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "nudies",
+   "band": "Stoney T",
+   "start": "22:30",
+   "end": "02:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "olered",
+   "band": "Lana Scott Beck",
+   "start": "10:00",
+   "end": "15:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "olered",
+   "band": "DJ Redsolocup",
+   "start": "10:30",
+   "end": "14:30",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "olered",
+   "band": "Space Radio",
+   "start": "15:00",
+   "end": "19:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "olered",
+   "band": "Josh Gallagher",
+   "start": "15:30",
+   "end": "19:30",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "olered",
+   "band": "Renata The Band",
+   "start": "19:00",
+   "end": "23:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "olered",
+   "band": "Matt Ferranti",
+   "start": "20:00",
+   "end": "00:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "rippys",
+   "band": "Lucas / John / Lily + Zach / John / Ahren",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "rippys",
+   "band": "Eric + Jody / Will / Dewey + Dylan Stulley / Justin B",
+   "start": "11:00",
+   "end": "18:00",
+   "stage": "2nd Floor",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "rippys",
+   "band": "Ken / Milo / Cameron L + Layla / Milo / Alex",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "3rd Floor",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "rippys",
+   "band": "Zach / AhrenJohn",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "rippys",
+   "band": "Eric / Anthony / Cameron",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": "3rd Floor",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "rippys",
+   "band": "John Mathew's band + Tim Andrews",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "rippys",
+   "band": "Camron band",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "2nd Floor",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "rippys",
+   "band": "Donavin",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "3rd Floor",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "rippys",
+   "band": "Lilly O’Hearn",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "rippys",
+   "band": "Benny and the Jets",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": "2nd Floor",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "rippys",
+   "band": "Dexter",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": "3rd Floor",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "tootsies",
+   "band": "Marie Wise-Hawkins",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "tootsies",
+   "band": "Zac / Lukas / Alex",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": "2nd Floor",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "tootsies",
+   "band": "Macy Tabor",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": "3rd Floor",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "tootsies",
+   "band": "Rod Jansen",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "tootsies",
+   "band": "Bobby Jo",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": "2nd Floor",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "tootsies",
+   "band": "Micheal Pope",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": "3rd Floor",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "tootsies",
+   "band": "David Ray",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "tootsies",
+   "band": "Jennie Wynn",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "2nd Floor",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "tootsies",
+   "band": "Derek Allen",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "3rd Floor",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "tootsies",
+   "band": "Ricky Rouix",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
+  },
+  {
+   "date": "2026-11-15",
+   "bar": "tootsies",
+   "band": "Joey Falcone",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": "2nd Floor",
+   "source": "https://nashvillelineup.com/this-weekend (fetched 2026-11-14 ~22:10 PT)"
   }
  ],
  "closures": [
