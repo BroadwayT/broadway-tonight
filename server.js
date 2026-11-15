@@ -2,7 +2,7 @@ const express=require('express'),cookieParser=require('cookie-parser'),crypto=re
 const db=require('./db'),S=require('./scoring');
 try{if(!db.prepare('SELECT COUNT(*) c FROM bars').get().c){console.log('Empty DB, seeding');require('./scripts/seed.js');}}catch(e){console.error('seed failed',e)}
 const BARS=require('./bars');console.log('bars added',BARS.upsertBars(db));const L=require('./lineup');const SRC=require('./sources');const TIPS=require('./tips');
-const TF=require('./public/timefmt');const ENG=require('./engaged');
+const TF=require('./public/timefmt');const ENG=require('./engaged');const LB=require('./public/live-band');
 function appNow(){const raw=process.env.BT_NOW;if(raw){const t=Date.parse(raw);if(!Number.isNaN(t))return t;}return Date.now();}
 const nightNow=()=>S.ctNight(appNow());
 function nightKey(t){const [h,m]=String(t||'').split(':').map(Number);return ((Number.isFinite(h)?(h<6?h+24:h):0)*60)+(Number.isFinite(m)?m:0);}
@@ -85,7 +85,7 @@ function playingHere(barId,slugs){
   const out=[];
   for(const slug of cleanSlugs(slugs)){
     const b=db.prepare('SELECT id,name,slug FROM bands WHERE slug=?').get(slug);
-    if(!b)continue;
+    if(!b||LB.isNonBand(b.name))continue;
     const rows=db.prepare('SELECT date,set_start,set_end,stage FROM sets WHERE bar_id=? AND band_id=? AND date>=? ORDER BY date,set_start').all(barId,b.id,nightNow());
     const next=rows.find(r=>!setAlreadyEnded(r.date,r.set_start,r.set_end));
     if(!next)continue;
@@ -94,10 +94,8 @@ function playingHere(barId,slugs){
   return out;
 }
 
-function isTbaSet(s){
-  const n=String(s&&s.band||'').trim();
-  return (s&&s.band_id==='tba')||/^live music \(tba\)$/i.test(n)||/^(tba|tbd)\b/i.test(n);
-}
+const hideNonBands=rows=>LB.hideNonBands(rows);
+const namedLiveSets=rows=>LB.namedLiveSets(rows);
 function addIsoDays(iso,n){
   const m=String(iso||'').match(/^(\d{4})-(\d{2})-(\d{2})$/);
   if(!m)return '';
@@ -120,7 +118,7 @@ function tonightAtBar(barId){
   const today=nightNow(),hm=ctHM();
   for(let i=0;i<=14;i++){
     const date=addIsoDays(today,i);
-    const rows=barSetRows(barId,date).filter(s=>!isTbaSet(s));
+    const rows=namedLiveSets(barSetRows(barId,date));
     if(!rows.length)continue;
     return {date,today:i===0,sets:rows.map(s=>({name:s.band,slug:s.slug||'',set_start:s.set_start,set_end:s.set_end,stage:stageOf(s)||null,nowPlaying:i===0&&setIsOnNow(s,hm)}))};
   }
@@ -132,7 +130,7 @@ function upcomingDaysForBar(barId,fromDate){
   const out=[];
   for(let i=1;i<=14;i++){
     const date=addIsoDays(fromDate,i);
-    const rows=barSetRows(barId,date).filter(s=>!isTbaSet(s));
+    const rows=namedLiveSets(barSetRows(barId,date));
     if(!rows.length)continue;
     out.push({date,sets:tagEngaged(TIPS.decorate(rows.map(r=>({...r,ratedByMe:false}))))});
   }
@@ -159,7 +157,7 @@ function publicPicks(){
   const botw=bar?{barId:bar.id,name:bar.name,address:bar.address,blurb:clip(w.blurb,280),history:clip(w.history,700),offers:cleanOffers(w.offers),website:httpsUrl(w.website)?w.website:'',sourceUrl:httpsUrl(w.sourceUrl)?w.sourceUrl:'',image:siteImage(image)?image:'',imageCredit:clip(w.imageCredit,140),handle:clip(w.handle,40).replace(/^@/,''),weekOf,engageNote:engageCopy(w.engageNote,BAR_ENGAGE_NOTE),playing:playingHere(bar.id,w.bands),tonightAt:tonightAtBar(bar.id)}:null;
   const hb=h.barId?barBrief(h.barId):null;
   const band=clip(h.band,80),line=clip(h.line,180);
-  const hot=(hb||band)?{barId:hb?hb.id:'',barName:hb?hb.name:'',band,line}:null;
+  const hot=(hb||band)&&!LB.isNonBand(band)?{barId:hb?hb.id:'',barName:hb?hb.name:'',band,line}:null;
   const spotName=clip(s.name,80);
   const photo=clip(s.photo,400);
   let video=null;try{video=cleanVideo(s.video);}catch(e){video=null;}
@@ -198,7 +196,7 @@ app.use(express.static(path.join(__dirname,'public')));
 app.get('/api/lineup',(req,res)=>{const date=(!req.query.date||req.query.date==='today')?nightNow():req.query.date;
  const rows=orderLineup(db.prepare(`SELECT s.*,b.name bar,bd.name band FROM sets s JOIN bars b ON b.id=s.bar_id JOIN bands bd ON bd.id=s.band_id WHERE s.date=? ORDER BY b.name,s.set_start`).all(date));
  const mine=new Set(db.prepare('SELECT set_id FROM ratings WHERE device_id=?').all(req.deviceId).map(r=>r.set_id));
- res.json({date,sets:tagEngaged(TIPS.decorate(rows.map(r=>({...r,ratedByMe:mine.has(r.id)}))))});});
+ res.json({date,sets:tagEngaged(TIPS.decorate(hideNonBands(rows.map(r=>({...r,ratedByMe:mine.has(r.id)})))))});});
 const VIBES=new Set(['loud','chill','packed','dancing','tipsy']);
 function vibesForBars(barIds,windowH){
  const now=Date.now();const ids=barIds.length?barIds:[''];
@@ -244,7 +242,7 @@ app.get('/api/bars/:id',(req,res)=>{const id=req.params.id;const bar=db.prepare(
  const sponsored=!!db.prepare('SELECT 1 FROM sponsors WHERE bar_id=? AND day=?').get(id,date);
  const weekPick=publicPicks().barOfTheWeek;
  const weekBadge=weekPick&&weekPick.barId===id?{blurb:weekPick.blurb,history:weekPick.history,handle:weekPick.handle,website:weekPick.website}:null;
- res.json({...bar,date,ctTime:ctHM(),sponsored,barOfTheWeek:weekBadge,tonight,week:S.week().find(x=>x.barId===id)||null,vibes:(vibesForBars([id],6)[id]||[]),sets:tagEngaged(TIPS.decorate(sets)),upcomingDays:upcomingDaysForBar(id,date)});});
+ res.json({...bar,date,ctTime:ctHM(),sponsored,barOfTheWeek:weekBadge,tonight,week:S.week().find(x=>x.barId===id)||null,vibes:(vibesForBars([id],6)[id]||[]),sets:tagEngaged(TIPS.decorate(hideNonBands(sets))),upcomingDays:upcomingDaysForBar(id,date)});});
 
 
 // ---- competitive: now / street / pulse / search ----
@@ -275,7 +273,7 @@ function hourCounts(windowH){
 app.get('/api/now',(req,res)=>{
   const date=nightNow(), hm=ctHM();
   const rows=db.prepare(`SELECT s.*,b.name bar,b.address,bd.name band FROM sets s JOIN bars b ON b.id=s.bar_id JOIN bands bd ON bd.id=s.band_id WHERE s.date=?`).all(date);
-  const live=rows.filter(r=>inSet(hm,r.set_start,r.set_end))
+  const live=hideNonBands(rows).filter(r=>inSet(hm,r.set_start,r.set_end))
     .sort((a,b)=>(STREET_ORDER[a.bar_id]||99)-(STREET_ORDER[b.bar_id]||99))
     .map(r=>({barId:r.bar_id,bar:r.bar,address:r.address,band:r.band,bandId:r.band_id,setId:r.id,set_start:r.set_start,set_end:r.set_end,stage:stageOf(r)||null,streetOrder:STREET_ORDER[r.bar_id]||99}));
   res.json({date,ctTime:hm,nowPlaying:tagEngaged(TIPS.decorate(live))});
@@ -299,7 +297,7 @@ app.get('/api/street',(req,res)=>{
   const byBar={};for(const s of setsAll){(byBar[s.bar_id]=byBar[s.bar_id]||[]).push(s);}
   const list=bars.map(b=>{
     const sets=byBar[b.id]||[];
-    const now=sets.find(s=>inSet(hm,s.set_start,s.set_end));
+    const now=sets.find(s=>inSet(hm,s.set_start,s.set_end)&&!LB.isNonBand(s));
     const t=tonight[b.id];
     const lc=lastCallHint(sets);
     const vs=(vibes[b.id]||[]).slice(0,3);
@@ -320,7 +318,7 @@ app.get('/api/search',(req,res)=>{
   const date=nightNow();
   const rows=TIPS.decorate(db.prepare(`SELECT s.*,b.name bar,b.address,bd.name band FROM sets s JOIN bars b ON b.id=s.bar_id JOIN bands bd ON bd.id=s.band_id WHERE s.date=? AND lower(bd.name) LIKE ? ORDER BY s.set_start`).all(date,'%'+q+'%'));
   const hm=ctHM();
-  res.json({q,date,matches:rows.map(r=>({barId:r.bar_id,bar:r.bar,address:r.address,band:r.band,set_start:r.set_start,set_end:r.set_end,stage:stageOf(r)||null,live:inSet(hm,r.set_start,r.set_end),engaged:ENG.isEngaged(r),ig:r.ig||null,igUrl:r.igUrl||null,tt:r.tt||null,ttUrl:r.ttUrl||null}))});
+  res.json({q,date,matches:hideNonBands(rows).map(r=>({barId:r.bar_id,bar:r.bar,address:r.address,band:r.band,set_start:r.set_start,set_end:r.set_end,stage:stageOf(r)||null,live:inSet(hm,r.set_start,r.set_end),engaged:ENG.isEngaged(r),ig:r.ig||null,igUrl:r.igUrl||null,tt:r.tt||null,ttUrl:r.ttUrl||null}))});
 });
 // ---- owner magic links ----
 const ownerBar=t=>{const r=db.prepare('SELECT bar_id FROM owner_tokens WHERE token=?').get(String(t||''));return r&&db.prepare('SELECT id,name,address FROM bars WHERE id=?').get(r.bar_id);};

@@ -404,6 +404,7 @@ details.earlier[open] summary:before{content:"▾ "}
 </nav>
 
 <script src="/timefmt.js"></script>
+<script src="/live-band.js"></script>
 <script src="/share-lineup.js"></script>
 <script>
 const $=s=>document.querySelector(s);let tab='tonight';
@@ -453,13 +454,16 @@ function clockMin(hm){const p=String(hm||'').split(':'),h=+p[0],m=+p[1];if(!Numb
 function nightMin(hm){const c=clockMin(hm);if(!c)return null;return (c.h<6?c.h+24:c.h)*60+c.m;}
 function nowNightMin(hm){const c=clockMin(hm);if(!c)return null;return (c.h<3?c.h+24:c.h)*60+c.m;}
 function setPhase(set,nowHM){const s=nightMin(set.set_start),n=nowNightMin(nowHM);let e=nightMin(set.set_end);if(s==null||n==null)return 'upcoming';if(e==null||e<=s)e=s+1;if(n>=s&&n<e)return 'now';if(n>=e)return 'ended';return 'upcoming';}
-function isTba(s){const n=String(s&&s.band||'').trim();return (s&&s.band_id==='tba')||/^live music \(tba\)$/i.test(n)||/^(tba|tbd)\b/i.test(n);}
+function isTba(s){return LiveBand.isTba(s);}
 function shortBarName(name){const t=String(name||'').trim();const m=t.match(/^(?:.*?'s )(.+)$/);return m&&m[1].length<=24?m[1]:t;}
 function addIsoDays(iso,n){const m=String(iso||'').match(/^(\d{4})-(\d{2})-(\d{2})$/);if(!m)return '';return new Date(Date.UTC(+m[1],+m[2]-1,+m[3]+n)).toISOString().slice(0,10);}
-function namedSets(list){return (list||[]).filter(s=>!isTba(s));}
+function namedSets(list){return LiveBand.namedLiveSets(list);}
 async function withTonightAt(w){
   if(!w||!w.barId)return w;
-  if(w.tonightAt&&Array.isArray(w.tonightAt.sets))return w;
+  if(w.tonightAt&&Array.isArray(w.tonightAt.sets)){
+    w.tonightAt.sets=namedSets(w.tonightAt.sets);
+    if(w.tonightAt.sets.length)return w;
+  }
   try{
     const bar=await j('/api/bars/'+encodeURIComponent(w.barId));
     const today=bar.date,hm=bar.ctTime;
@@ -851,6 +855,7 @@ async function lineup(){
   showNight(d.date);
   const bars=[];
   for(const s of d.sets||[]){
+    if(LiveBand.isNonBand(s))continue;
     let b=bars[bars.length-1];
     if(!b||b.id!==s.bar_id){b={id:s.bar_id,name:s.bar,sets:[]};bars.push(b);}
     b.sets.push(s);
@@ -911,10 +916,11 @@ async function renderBar(id){
   const saved=inPlan(id);
   const vibeAmplify=Array.isArray(b.vibes)?b.vibes.slice(0,5):[];
   const hm=b.ctTime;
-  const grouped=splitSets(b.sets||[],hm);
-  const on=grouped.now.find(s=>!isTba(s)&&!stageOf(s))||grouped.now.find(s=>!isTba(s))||grouped.now[0]||null;
-  const nextNamed=on&&isTba(on)?(b.sets||[]).filter(s=>!isTba(s)&&(nightMin(s.set_start)||0)>(nightMin(on.set_start)||0)).sort(byStart)[0]:null;
-  const setsHtml=barSetsHtml(b.sets||[],hm,id);
+  const sets=LiveBand.hideNonBands(b.sets||[]);
+  const grouped=splitSets(sets,hm);
+  const on=grouped.now.find(s=>LiveBand.isLiveBand(s)&&!stageOf(s))||grouped.now.find(s=>LiveBand.isLiveBand(s))||grouped.now.find(s=>!LiveBand.isNonBand(s))||null;
+  const nextNamed=on&&isTba(on)?sets.filter(s=>LiveBand.isLiveBand(s)&&(nightMin(s.set_start)||0)>(nightMin(on.set_start)||0)).sort(byStart)[0]:null;
+  const setsHtml=barSetsHtml(sets,hm,id);
   $('#barDetail').innerHTML=`
     ${onNowBlock(on,nextNamed)}
     <div class="card ${b.sponsored?'spon':''}">
@@ -975,7 +981,7 @@ async function shareBar(id){
   if(!r.ok)return toast('Could not share');
   const b=await r.json();
   const scored=b.tonight&&b.tonight.score!=null;
-  const bands=(b.sets||[]).map(s=>`${showRange(s.set_start,s.set_end)} ${s.band}${s.stage?` (${s.stage})`:''}`).slice(0,8).join(' · ');
+  const bands=namedSets(b.sets||[]).map(s=>`${showRange(s.set_start,s.set_end)} ${s.band}${s.stage?` (${s.stage})`:''}`).slice(0,8).join(' · ');
   const url=location.origin+'/bar/'+encodeURIComponent(id);
   const text=`${scored?`${b.name} is ${b.tonight.score.toFixed(2)} tonight on Broadway Tonight.`:`${b.name} tonight on Broadway Tonight.`}\n${bands}\n${url}`;
   try{
