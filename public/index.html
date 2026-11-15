@@ -87,6 +87,8 @@ details.earlier[open] summary:before{content:"▾ "}
 .spot .engage-note{padding:10px 16px 12px}
 .playing-here{margin-top:14px}
 .playing-here .offers{margin-top:8px}
+.spot-set-top{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.spot-set-top .live-badge{flex-shrink:0;letter-spacing:.08em}
 .offer{padding:8px 10px;border-radius:12px;background:rgba(255,214,10,.08);border:1px solid rgba(255,214,10,.28)}
 .offer b{display:block;font-size:14px}
 .offer span{display:block;margin-top:2px;color:var(--muted);font-size:13px;font-weight:500;line-height:1.35}
@@ -441,6 +443,62 @@ function nightMin(hm){const c=clockMin(hm);if(!c)return null;return (c.h<6?c.h+2
 function nowNightMin(hm){const c=clockMin(hm);if(!c)return null;return (c.h<3?c.h+24:c.h)*60+c.m;}
 function setPhase(set,nowHM){const s=nightMin(set.set_start),n=nowNightMin(nowHM);let e=nightMin(set.set_end);if(s==null||n==null)return 'upcoming';if(e==null||e<=s)e=s+1;if(n>=s&&n<e)return 'now';if(n>=e)return 'ended';return 'upcoming';}
 function isTba(s){const n=String(s&&s.band||'').trim();return (s&&s.band_id==='tba')||/^live music \(tba\)$/i.test(n)||/^(tba|tbd)\b/i.test(n);}
+function shortBarName(name){const t=String(name||'').trim();const m=t.match(/^(?:.*?'s )(.+)$/);return m&&m[1].length<=24?m[1]:t;}
+function addIsoDays(iso,n){const m=String(iso||'').match(/^(\d{4})-(\d{2})-(\d{2})$/);if(!m)return '';return new Date(Date.UTC(+m[1],+m[2]-1,+m[3]+n)).toISOString().slice(0,10);}
+function namedSets(list){return (list||[]).filter(s=>!isTba(s));}
+async function withTonightAt(w){
+  if(!w||!w.barId)return w;
+  if(w.tonightAt&&Array.isArray(w.tonightAt.sets))return w;
+  try{
+    const bar=await j('/api/bars/'+encodeURIComponent(w.barId));
+    const today=bar.date,hm=bar.ctTime;
+    let date=today,sets=namedSets(bar.sets||[]),isToday=true;
+    if(!sets.length&&today){
+      for(let i=1;i<=14;i++){
+        const d=addIsoDays(today,i);if(!d)break;
+        const lu=await j('/api/lineup?date='+encodeURIComponent(d));
+        sets=namedSets((lu.sets||[]).filter(s=>s.bar_id===w.barId));
+        if(sets.length){date=d;isToday=false;break;}
+      }
+    }
+    w.tonightAt={date,today:isToday,sets:sets.map(s=>({name:s.band||s.name,slug:s.bandSlug||s.slug||'',set_start:s.set_start,set_end:s.set_end,stage:s.stage||null,nowPlaying:isToday&&setPhase(s,hm)==='now'}))};
+  }catch(e){w.tonightAt={date:'',today:true,sets:[]};}
+  return w;
+}
+async function withUpcomingDays(b){
+  if(!b)return b;
+  if(Array.isArray(b.upcomingDays))return b;
+  try{
+    const days=[];
+    for(let i=1;i<=14;i++){
+      const d=addIsoDays(b.date,i);if(!d)break;
+      const lu=await j('/api/lineup?date='+encodeURIComponent(d));
+      const sets=namedSets((lu.sets||[]).filter(s=>s.bar_id===b.id));
+      if(sets.length)days.push({date:d,sets});
+    }
+    b.upcomingDays=days;
+  }catch(e){b.upcomingDays=[];}
+  return b;
+}
+function tonightAtHtml(w){
+  const t=w.tonightAt,sets=(t&&t.sets)||[];
+  if(!sets.length)return '';
+  const short=shortBarName(w.name);
+  const label=t.today!==false?('Tonight at '+short):(dayLabel(t.date)+' at '+short);
+  const rows=sets.map(p=>{
+    const name=p.name||p.band||'';
+    const slug=p.slug||p.bandSlug||'';
+    const tag=p.nowPlaying?' <span class="live-badge">Now playing</span>':'';
+    const inner=`<div class="spot-set-top"><b>${esc(name)}</b>${tag}</div><span>${withStage(esc(showRange(p.set_start,p.set_end)),p.stage)}</span>`;
+    if(slug)return `<a class="spot-set" href="/band/${encodeURIComponent(slug)}" onclick="event.preventDefault();openBand('${slug}')">${inner}</a>`;
+    return `<div class="spot-set">${inner}</div>`;
+  }).join('');
+  return `<div class="playing-here"><div class="offers"><div class="label">${esc(label)}</div><div class="spot-sets">${rows}</div></div></div>`;
+}
+function upcomingDaysHtml(days,id){
+  if(!days||!days.length)return '';
+  return '<h2>COMING UP</h2>'+days.map(d=>`<div class="venue-head">${esc(dayLabel(d.date))}</div>${barSetsHtml(d.sets||[],'',id)}`).join('');
+}
 function byStart(a,b){return (nightMin(a.set_start)||0)-(nightMin(b.set_start)||0);}
 function stageOf(s){return String(s&&s.stage||'').trim();}
 // Stage-less sets are the main floor. Any number of named floors follow, each by start time.
@@ -579,12 +637,12 @@ function weekCard(w){
     ${w.history?`<div class="week-history">${esc(w.history)}</div>`:''}
     ${w.address?`<div class="muted" style="margin-top:6px">${esc(w.address)}</div>`:''}
     ${offers?`<div class="offers"><div class="label">What's on</div>${offers}</div>`:''}
-    ${(w.playing||[]).length?`<div class="playing-here"><p class="engage-note">${esc(w.engageNote||'')}</p><div class="offers"><div class="label">Playing here</div><div class="spot-sets">${(w.playing||[]).map(p=>`<a class="spot-set" href="/band/${encodeURIComponent(p.slug)}" onclick="event.preventDefault();openBand('${p.slug}')"><b>${esc(p.name)}</b><span>${esc(dayLabel(p.date))} · ${withStage(esc(showRange(p.set_start,p.set_end)),p.stage)}</span></a>`).join('')}</div></div></div>`:''}
+    ${tonightAtHtml(w)}
     ${site}
     <div class="btn-row">
       <button type="button" class="btn" onclick="shareWeek()">Share</button>
       <a class="btn" href="${esc(mapsUrl(w.name,w.address))}" target="_blank" rel="noopener">Map</a>
-      <button type="button" class="btn" onclick="openBar('${w.barId}')">Bar page</button>
+      <button type="button" class="btn" onclick="openBar('${w.barId}')">${w.tonightAt&&w.tonightAt.today===false?'See all sets':'Tonight’s sets'}</button>
     </div>
     ${ig?`<div style="margin-top:8px">${ig}</div>`:''}
   </div>`;
@@ -625,7 +683,8 @@ function hotCard(h){
 }
 async function picks(){
   const p=await j('/api/picks');
-  $('#barOfWeek').innerHTML=p.barOfTheWeek?weekCard(p.barOfTheWeek):'';
+  const w=p.barOfTheWeek?await withTonightAt(p.barOfTheWeek):null;
+  $('#barOfWeek').innerHTML=w?weekCard(w):'';
   const spot=$('#bandSpotlight');if(spot)spot.innerHTML=p.bandSpotlight?spotCard(p.bandSpotlight):'';
   $('#hotPick').innerHTML=p.hotRightNow?hotCard(p.hotRightNow):'';
 }
@@ -835,7 +894,7 @@ let curBar=null;let streetCache=null;
 async function renderBar(id){
   const r=await fetch('/api/bars/'+encodeURIComponent(id));
   if(!r.ok){$('#barDetail').innerHTML='<div class="card">Bar not found.</div>';return;}
-  const b=await r.json();const t=b.tonight;
+  const b=await withUpcomingDays(await r.json());const t=b.tonight;
   if(!streetCache)streetCache=await j('/api/street');
   const st=(streetCache.bars||[]).find(x=>x.barId===id);
   const saved=inPlan(id);
@@ -866,6 +925,7 @@ async function renderBar(id){
     </div>
     <h2>TONIGHT’S SETS</h2>
     ${setsHtml}
+    ${upcomingDaysHtml(b.upcomingDays,id)}
     ${signupFormHtml('signupCardBar')}`;
 }
 function splitSets(sets,hm){

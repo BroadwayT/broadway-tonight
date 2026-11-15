@@ -93,6 +93,51 @@ function playingHere(barId,slugs){
   }
   return out;
 }
+
+function isTbaSet(s){
+  const n=String(s&&s.band||'').trim();
+  return (s&&s.band_id==='tba')||/^live music \(tba\)$/i.test(n)||/^(tba|tbd)\b/i.test(n);
+}
+function addIsoDays(iso,n){
+  const m=String(iso||'').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if(!m)return '';
+  return new Date(Date.UTC(+m[1],+m[2]-1,+m[3]+n)).toISOString().slice(0,10);
+}
+function setIsOnNow(set,nowHM){
+  const night=hm=>{const [h,m]=String(hm||'').split(':').map(Number);if(!Number.isFinite(h))return null;return ((h<6?h+24:h)*60)+(Number.isFinite(m)?m:0);};
+  const now=hm=>{const [h,m]=String(hm||'').split(':').map(Number);if(!Number.isFinite(h))return null;return ((h<3?h+24:h)*60)+(Number.isFinite(m)?m:0);};
+  const start=night(set.set_start),at=now(nowHM);let end=night(set.set_end);
+  if(start==null||at==null)return false;
+  if(end==null||end<=start)end=start+1;
+  return at>=start&&at<end;
+}
+function barSetRows(barId,date){
+  return orderBarSets(db.prepare(`SELECT s.*,bd.name band,bd.slug FROM sets s JOIN bands bd ON bd.id=s.band_id WHERE s.bar_id=? AND s.date=? ORDER BY s.set_start`).all(barId,date));
+}
+function tonightAtBar(barId){
+  if(!barId)return {date:'',today:true,sets:[]};
+  try{TIPS.ensureSlugs();}catch(e){}
+  const today=nightNow(),hm=ctHM();
+  for(let i=0;i<=14;i++){
+    const date=addIsoDays(today,i);
+    const rows=barSetRows(barId,date).filter(s=>!isTbaSet(s));
+    if(!rows.length)continue;
+    return {date,today:i===0,sets:rows.map(s=>({name:s.band,slug:s.slug||'',set_start:s.set_start,set_end:s.set_end,stage:stageOf(s)||null,nowPlaying:i===0&&setIsOnNow(s,hm)}))};
+  }
+  return {date:today,today:true,sets:[]};
+}
+function upcomingDaysForBar(barId,fromDate){
+  if(!barId||!fromDate)return [];
+  try{TIPS.ensureSlugs();}catch(e){}
+  const out=[];
+  for(let i=1;i<=14;i++){
+    const date=addIsoDays(fromDate,i);
+    const rows=barSetRows(barId,date).filter(s=>!isTbaSet(s));
+    if(!rows.length)continue;
+    out.push({date,sets:tagEngaged(TIPS.decorate(rows.map(r=>({...r,ratedByMe:false}))))});
+  }
+  return out;
+}
 function bandLinkFor(name){
   const want=ENG.normName(name);if(!want)return '';
   try{TIPS.ensureSlugs();}catch(e){}
@@ -111,7 +156,7 @@ function publicPicks(){
   const bar=w.barId?barBrief(w.barId):null;
   const image=clip(w.image,400);
   const weekOf=freshWeekOf(w.weekOf);
-  const botw=bar?{barId:bar.id,name:bar.name,address:bar.address,blurb:clip(w.blurb,280),history:clip(w.history,700),offers:cleanOffers(w.offers),website:httpsUrl(w.website)?w.website:'',sourceUrl:httpsUrl(w.sourceUrl)?w.sourceUrl:'',image:siteImage(image)?image:'',imageCredit:clip(w.imageCredit,140),handle:clip(w.handle,40).replace(/^@/,''),weekOf,engageNote:engageCopy(w.engageNote,BAR_ENGAGE_NOTE),playing:playingHere(bar.id,w.bands)}:null;
+  const botw=bar?{barId:bar.id,name:bar.name,address:bar.address,blurb:clip(w.blurb,280),history:clip(w.history,700),offers:cleanOffers(w.offers),website:httpsUrl(w.website)?w.website:'',sourceUrl:httpsUrl(w.sourceUrl)?w.sourceUrl:'',image:siteImage(image)?image:'',imageCredit:clip(w.imageCredit,140),handle:clip(w.handle,40).replace(/^@/,''),weekOf,engageNote:engageCopy(w.engageNote,BAR_ENGAGE_NOTE),playing:playingHere(bar.id,w.bands),tonightAt:tonightAtBar(bar.id)}:null;
   const hb=h.barId?barBrief(h.barId):null;
   const band=clip(h.band,80),line=clip(h.line,180);
   const hot=(hb||band)?{barId:hb?hb.id:'',barName:hb?hb.name:'',band,line}:null;
@@ -199,7 +244,7 @@ app.get('/api/bars/:id',(req,res)=>{const id=req.params.id;const bar=db.prepare(
  const sponsored=!!db.prepare('SELECT 1 FROM sponsors WHERE bar_id=? AND day=?').get(id,date);
  const weekPick=publicPicks().barOfTheWeek;
  const weekBadge=weekPick&&weekPick.barId===id?{blurb:weekPick.blurb,history:weekPick.history,handle:weekPick.handle,website:weekPick.website}:null;
- res.json({...bar,date,ctTime:ctHM(),sponsored,barOfTheWeek:weekBadge,tonight,week:S.week().find(x=>x.barId===id)||null,vibes:(vibesForBars([id],6)[id]||[]),sets:tagEngaged(TIPS.decorate(sets))});});
+ res.json({...bar,date,ctTime:ctHM(),sponsored,barOfTheWeek:weekBadge,tonight,week:S.week().find(x=>x.barId===id)||null,vibes:(vibesForBars([id],6)[id]||[]),sets:tagEngaged(TIPS.decorate(sets)),upcomingDays:upcomingDaysForBar(id,date)});});
 
 
 // ---- competitive: now / street / pulse / search ----
