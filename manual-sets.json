@@ -5509,6 +5509,591 @@
    "end": "22:00",
    "stage": null,
    "source": "Artist flyer @isaaccolemusic (week of 11/15 to 11/21)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "bootleggers",
+   "band": "Robert Meza",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "bootleggers",
+   "band": "Scott Dorman",
+   "start": "15:00",
+   "end": "19:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "bootleggers",
+   "band": "Elio and the Hank Sinatra Band",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "bootleggers",
+   "band": "John Hibbard and the Haybirds",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "flp",
+   "band": "Anna Scott",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "Honky Tonk",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "flp",
+   "band": "Cash Crawford",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "Honky Tonk",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "flp",
+   "band": "The Downtown Band",
+   "start": "17:00",
+   "end": "22:00",
+   "stage": "Honky Tonk",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "flp",
+   "band": "Liam Coleman",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": "Honky Tonk",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "honkytonkcentral",
+   "band": "Marie Wise-Hawkins",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "honkytonkcentral",
+   "band": "Rob Ferencz / Sam / Lew",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "honkytonkcentral",
+   "band": "Brandon Roberts",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "honkytonkcentral",
+   "band": "Jonny Gray",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "jbjs",
+   "band": "Nick Smith",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "jbjs",
+   "band": "Paul Juneau",
+   "start": "13:00",
+   "end": "16:00",
+   "stage": "Rooftop",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "jbjs",
+   "band": "Peter Buonaiuto",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "jbjs",
+   "band": "Johnny Fera",
+   "start": "17:00",
+   "end": "21:00",
+   "stage": "Rooftop",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "jbjs",
+   "band": "The Future Legends",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "jbjs",
+   "band": "Hand Over Face",
+   "start": "22:00",
+   "end": "02:30",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "kidrock",
+   "band": "Nate / Keira",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "kidrock",
+   "band": "Freel",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "Rooftop",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "kidrock",
+   "band": "Jackson",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "kidrock",
+   "band": "Orio",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": "Rooftop",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "kidrock",
+   "band": "Scott Collier",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "kidrock",
+   "band": "Sam Riffle / Tyler Montgomery / Erik F",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "Rooftop",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "kidrock",
+   "band": "Dean James",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "kidrock",
+   "band": "Yankee Drawl",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": "Rooftop",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "luckybastard",
+   "band": "Los Honky Tonkers",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "luckybastard",
+   "band": "Samantha Stroh",
+   "start": "16:00",
+   "end": "20:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "luckybastard",
+   "band": "Ricky Rooker",
+   "start": "20:00",
+   "end": "00:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "nudies",
+   "band": "John Caldwell",
+   "start": "10:00",
+   "end": "14:30",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "nudies",
+   "band": "Ivey Andrews",
+   "start": "14:30",
+   "end": "18:30",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "nudies",
+   "band": "Scotty Chapman",
+   "start": "18:30",
+   "end": "22:30",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "nudies",
+   "band": "Stoney T",
+   "start": "22:30",
+   "end": "02:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "wildhorse",
+   "band": "The Nashville Mixtape",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": "The Honky-Tonk",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "wildhorse",
+   "band": "Ben Chase",
+   "start": "15:30",
+   "end": "18:30",
+   "stage": "The Honky-Tonk",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "wildhorse",
+   "band": "HWY 80",
+   "start": "17:00",
+   "end": "21:00",
+   "stage": "The Eye",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "wildhorse",
+   "band": "Johnny Widner",
+   "start": "19:00",
+   "end": "22:00",
+   "stage": "The Honky-Tonk",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "rippys",
+   "band": "Lew / John / Brennan",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "rippys",
+   "band": "Zac / Jordan / Milo",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "2nd Floor",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "rippys",
+   "band": "Milo / Dewey / Alex",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "3rd Floor",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "rippys",
+   "band": "Eric / Cody Lee / Kieran",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "rippys",
+   "band": "Bridgett Mozi band",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": "2nd Floor",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "rippys",
+   "band": "Alexis / Gaven",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": "3rd Floor",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "rippys",
+   "band": "Tim Andrews",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "rippys",
+   "band": "Troy Gutterson",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "2nd Floor",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "rippys",
+   "band": "Jacob Allmond",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "3rd Floor",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "rippys",
+   "band": "Joey Falcone",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "rippys",
+   "band": "Jinx",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": "2nd Floor",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "rippys",
+   "band": "John Mathew",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": "3rd Floor",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "tootsies",
+   "band": "Ken Taylor + Averi / Dusty",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "tootsies",
+   "band": "Cameron L / Lukas / Sam",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": "2nd Floor",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "tootsies",
+   "band": "Cameron Oliver band",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": "3rd Floor",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "tootsies",
+   "band": "Sticks band",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "tootsies",
+   "band": "Patrick Kenny",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": "2nd Floor",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "tootsies",
+   "band": "Joyful Noise",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": "3rd Floor",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "tootsies",
+   "band": "Jake Maurer",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "tootsies",
+   "band": "Gina Owens",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "2nd Floor",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "tootsies",
+   "band": "Jay Marlar",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "3rd Floor",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "tootsies",
+   "band": "Avery Franks",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "tootsies",
+   "band": "Daniel Winfree",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": "2nd Floor",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "tootsies",
+   "band": "Clay / Molli",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": "3rd Floor",
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "whiskeybent",
+   "band": "Mike Leatherman",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "whiskeybent",
+   "band": "Bill Roemer",
+   "start": "15:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "whiskeybent",
+   "band": "Dave Baker Band",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
+  },
+  {
+   "date": "2026-11-16",
+   "bar": "whiskeybent",
+   "band": "The Snake Farmers",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~07:20 PT)"
   }
  ],
  "closures": [
