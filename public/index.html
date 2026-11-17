@@ -123,6 +123,7 @@ details.earlier[open] summary:before{content:"▾ "}
 .score{font-family:"Bebas Neue",Impact,sans-serif;font-size:34px;color:var(--lime);letter-spacing:.02em;line-height:1;flex-shrink:0}
 .bar-title{font-weight:700;font-size:16px;line-height:1.25}
 .set-band{font-weight:700;font-size:16px;line-height:1.25;flex:1;min-width:0}
+.set-note{display:block;margin-top:2px;font-size:11px;line-height:1.3;font-weight:500;color:var(--muted)}
 .card.set{margin:6px 12px;padding:11px 12px;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.28)}
 .set-line{align-items:center;gap:10px}
 .set-main{min-width:0;flex:1}
@@ -873,10 +874,11 @@ async function lineup(){
   if(slot&&card)slot.appendChild(card);
 }
 
+function setNote(s){const n=String(s&&s.note||'').trim();return n?`<div class="set-note">${esc(n)}</div>`:'';}
 function setCard(s,opt){opt=opt||{};return `
       <div class="card set${opt.ended?' ended':''}">
         <div class="row set-line">
-          <div class="set-band">${opt.now&&s.engaged?`<div class="set-live">${onNowPill()}</div>`:''}${bandName(s)}</div>
+          <div class="set-band">${opt.now&&s.engaged?`<div class="set-live">${onNowPill()}</div>`:''}${bandName(s)}${setNote(s)}</div>
           <span class="time-pill">${esc(showRange(s.set_start,s.set_end))}</span>
         </div>
         ${setActions(s)}
@@ -1028,6 +1030,7 @@ async function runSearch(){
       <div class="row set-line">
         <div class="set-main">
           <div class="set-band">${m.live&&m.engaged?`<div class="set-live">${onNowPill()}</div>`:''}${esc(m.band)}</div>
+          ${setNote(m)}
           <div class="muted">${esc(m.bar)}${m.stage?` · ${esc(m.stage)}`:''} · ${esc(m.address)}</div>
         </div>
         <span class="time-pill">${esc(showRange(m.set_start,m.set_end))}</span>

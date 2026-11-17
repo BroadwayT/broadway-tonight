@@ -1,5 +1,5 @@
 {
- "_note": "Manual sets (artist- or Jules-provided). Applied by lineup.js on every grid tick and after every refresh; never overwritten by scrapers. Date = the night (CT), times 24h CT; a set ending after midnight still belongs to its start night (midnight end is 00:00). A non-empty stage is another floor (Rooftop, 2nd Floor, 3rd Floor, and so on): when that slot already has a main-floor set (no stage), the staged set is added beside it and does not replace TBA rows. Any number of stage names can share a night. A stage on an otherwise open slot still fills the grid and keeps its stage name. If a scraped set with the same bar/band/start exists, the scraped row is kept and only its end time is corrected. Closures ({bar,date,closed_from,closed_to}, night-relative 24h CT, start in [from,to)) remove empty TBA grid rows in that range; rated and owner rows are never touched.",
+ "_note": "Manual sets (artist- or Jules-provided). Applied by lineup.js on every grid tick and after every refresh; never overwritten by scrapers. Date = the night (CT), times 24h CT; a set ending after midnight still belongs to its start night (midnight end is 00:00). A non-empty stage is another floor (Rooftop, 2nd Floor, 3rd Floor, and so on): when that slot already has a main-floor set (no stage), the staged set is added beside it and does not replace TBA rows. Any number of stage names can share a night. A stage on an otherwise open slot still fills the grid and keeps its stage name. If a scraped set with the same bar/band/start exists, the scraped row is kept and only its end time is corrected. Closures ({bar,date,closed_from,closed_to}, night-relative 24h CT, start in [from,to)) remove empty TBA grid rows in that range; rated and owner rows are never touched. Optional note is shown in small muted text under the artist on that set row and is omitted when blank.",
  "sets": [
   {
    "date": "2026-11-03",
@@ -6922,6 +6922,692 @@
    "end": "01:00",
    "stage": null,
    "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~10:20 PM PT)"
+  },
+  {
+   "date": "2026-11-17",
+   "bar": "chiefs",
+   "band": "Shelby Lee Lowe",
+   "start": "10:30",
+   "end": "14:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-17",
+   "bar": "chiefs",
+   "band": "Lauren Rose",
+   "start": "11:30",
+   "end": "14:30",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-17",
+   "bar": "chiefs",
+   "band": "Amelia White",
+   "start": "14:30",
+   "end": "17:30",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-17",
+   "bar": "chiefs",
+   "band": "Jenifer Wrinkle",
+   "start": "14:30",
+   "end": "18:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-17",
+   "bar": "chiefs",
+   "band": "Kiely Connell",
+   "start": "17:30",
+   "end": "20:30",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-17",
+   "bar": "chiefs",
+   "band": "Timothy James",
+   "start": "18:30",
+   "end": "22:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-17",
+   "bar": "chiefs",
+   "band": "Timbo",
+   "start": "20:30",
+   "end": "23:00",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-17",
+   "bar": "chiefs",
+   "band": "Cian Pedersen",
+   "start": "22:30",
+   "end": "02:00",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "chiefs",
+   "band": "Cody Adkins",
+   "start": "02:00",
+   "end": "17:00",
+   "stage": "Friendly Shadows – 2nd Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "chiefs",
+   "band": "Shelby Lee Lowe",
+   "start": "10:30",
+   "end": "14:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "chiefs",
+   "band": "Amelia White",
+   "start": "14:30",
+   "end": "17:30",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "chiefs",
+   "band": "Boo Ray",
+   "start": "14:30",
+   "end": "18:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "chiefs",
+   "band": "Dean Harlem",
+   "start": "17:00",
+   "end": "20:00",
+   "stage": "Friendly Shadows – 2nd Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "chiefs",
+   "band": "Lauren Rose",
+   "start": "17:30",
+   "end": "20:30",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "chiefs",
+   "band": "Timothy James",
+   "start": "18:30",
+   "end": "22:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "chiefs",
+   "band": "Uncle B’s Damned Ole Opry Presents: Heart of Gold Meets Blue Bayou – the Songs of Neil & Linda",
+   "start": "19:00",
+   "stage": "Friendly Shadows",
+   "source": "https://www.chiefsonbroadway.com/events/uncle-bs-damned-ole-opry-presents-heart-of-gold-meets-blue-bayou-the-songs-of-neil-linda"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "chiefs",
+   "band": "Danny Burns",
+   "start": "20:00",
+   "end": "23:00",
+   "stage": "Friendly Shadows – 2nd Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "chiefs",
+   "band": "Nathan Belt",
+   "start": "20:30",
+   "end": "23:00",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "chiefs",
+   "band": "Chili Dawg",
+   "start": "22:30",
+   "end": "02:00",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "chiefs",
+   "band": "Kevin Mac",
+   "start": "23:30",
+   "end": "14:30",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "chiefs",
+   "band": "Shelby Lee Lowe",
+   "start": "10:30",
+   "end": "14:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "chiefs",
+   "band": "Zachariah Malachi",
+   "start": "11:30",
+   "end": "15:00",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "chiefs",
+   "band": "Kevin Mac",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "Friendly Shadows – 2nd Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "chiefs",
+   "band": "Timothy James",
+   "start": "14:30",
+   "end": "18:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "chiefs",
+   "band": "George Shingleton",
+   "start": "15:00",
+   "end": "18:30",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "chiefs",
+   "band": "Michael Leatherman",
+   "start": "17:00",
+   "end": "20:00",
+   "stage": "Friendly Shadows – 2nd Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "chiefs",
+   "band": "Kiely Connell",
+   "start": "18:30",
+   "end": "21:30",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "chiefs",
+   "band": "Skyelor Anderson",
+   "start": "18:30",
+   "end": "22:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "chiefs",
+   "band": "Cort Carpenter",
+   "start": "20:00",
+   "end": "23:00",
+   "stage": "Friendly Shadows – 2nd Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "chiefs",
+   "band": "Chili Dawg",
+   "start": "22:30",
+   "end": "02:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "chiefs",
+   "band": "Shelby Lee Lowe",
+   "start": "10:30",
+   "end": "14:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "chiefs",
+   "band": "Zachariah Malachi",
+   "start": "11:30",
+   "end": "14:30",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "chiefs",
+   "band": "Lauren Rose",
+   "start": "14:30",
+   "end": "18:00",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "chiefs",
+   "band": "Cort Carpenter",
+   "start": "14:30",
+   "end": "18:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "chiefs",
+   "band": "Michael Leatherman",
+   "start": "16:00",
+   "end": "18:30",
+   "stage": "Friendly Shadows – 2nd Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "chiefs",
+   "band": "Kiely Connell",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "chiefs",
+   "band": "Dueling Pianos",
+   "start": "18:30",
+   "end": "02:30",
+   "stage": "Friendly Shadows – 2nd Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "chiefs",
+   "band": "Skyelor Anderson",
+   "start": "18:30",
+   "end": "22:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "chiefs",
+   "band": "Cay Aliese",
+   "start": "21:00",
+   "end": "00:00",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "chiefs",
+   "band": "Griffin Winton",
+   "start": "22:30",
+   "end": "02:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "chiefs",
+   "band": "Jim McGuinn",
+   "start": "10:30",
+   "end": "14:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "chiefs",
+   "band": "Sofia Nargentino",
+   "start": "11:30",
+   "end": "14:30",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "chiefs",
+   "band": "Jake Neuman",
+   "start": "14:30",
+   "end": "18:00",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "chiefs",
+   "band": "Skyelor Anderson",
+   "start": "14:30",
+   "end": "18:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "chiefs",
+   "band": "Cian Pedersen",
+   "start": "16:00",
+   "end": "18:30",
+   "stage": "Friendly Shadows – 2nd Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "chiefs",
+   "band": "Aliyah Good",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "chiefs",
+   "band": "Dueling Pianos",
+   "start": "18:30",
+   "end": "02:30",
+   "stage": "Friendly Shadows – 2nd Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "chiefs",
+   "band": "Griffin Winton",
+   "start": "18:30",
+   "end": "22:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "chiefs",
+   "band": "Cay Aliese",
+   "start": "21:00",
+   "end": "00:00",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "chiefs",
+   "band": "Timothy James",
+   "start": "22:30",
+   "end": "02:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "chiefs",
+   "band": "Jake Neuman",
+   "start": "05:30",
+   "end": "20:30",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "chiefs",
+   "band": "Cort Carpenter",
+   "start": "10:30",
+   "end": "14:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "chiefs",
+   "band": "Dean Harlem",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "Friendly Shadows – 2nd Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "chiefs",
+   "band": "Kiely Connell",
+   "start": "14:30",
+   "end": "17:30",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "chiefs",
+   "band": "Beth Garner",
+   "start": "14:30",
+   "end": "18:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "chiefs",
+   "band": "Cay Aliese",
+   "start": "17:00",
+   "end": "20:00",
+   "stage": "Friendly Shadows – 2nd Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "chiefs",
+   "band": "Zachariah Malachi",
+   "start": "18:30",
+   "end": "22:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "chiefs",
+   "band": "Michael Leatherman",
+   "start": "20:00",
+   "end": "23:00",
+   "stage": "Friendly Shadows – 2nd Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "chiefs",
+   "band": "Timbo",
+   "start": "20:30",
+   "end": "23:00",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "chiefs",
+   "band": "Cian Pedersen",
+   "start": "22:30",
+   "end": "02:00",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "chiefs",
+   "band": "Shelby Lee Lowe",
+   "start": "10:30",
+   "end": "14:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "chiefs",
+   "band": "Jake Neuman",
+   "start": "11:30",
+   "end": "14:30",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "chiefs",
+   "band": "Kevin Mac",
+   "start": "14:30",
+   "end": "17:30",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "chiefs",
+   "band": "Boo Ray",
+   "start": "14:30",
+   "end": "18:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "chiefs",
+   "band": "Kiely Connell",
+   "start": "17:30",
+   "end": "20:30",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "chiefs",
+   "band": "Buddy’s Place Writer’s Round w/ Abby Bowers, Ryan Larkins, DEK of Hearts",
+   "start": "18:00",
+   "stage": "Friendly Shadows",
+   "source": "https://www.chiefsonbroadway.com/events/buddys-place-writers-round-w-abby-bowers-avery-roberson-dek-of-hearts"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "chiefs",
+   "band": "Zachariah Malachi",
+   "start": "18:30",
+   "end": "22:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "chiefs",
+   "band": "King Corduroy",
+   "start": "20:30",
+   "end": "23:00",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "chiefs",
+   "band": "Chili Dawg",
+   "start": "22:30",
+   "end": "02:00",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists",
+   "note": "Subject to change"
   }
  ],
  "closures": [
