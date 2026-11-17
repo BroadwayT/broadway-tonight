@@ -17,6 +17,7 @@ test('flags DJ, karaoke, trivia, and home-game names as non-band', () => {
 
 test('isTba covers placeholders and empty names, including band_id', () => {
   assert.equal(LB.isTba('Live music (TBA)'), true);
+  assert.equal(LB.isTba('Live bands all day'), true);
   assert.equal(LB.isTba('live band'), true);
   assert.equal(LB.isTba('live music'), true);
   assert.equal(LB.isTba(''), true);
@@ -30,6 +31,7 @@ test('isLiveBand is a named live act, not TBA and not a DJ', () => {
   assert.equal(LB.isLiveBand('Phillips Family Electric'), true);
   assert.equal(LB.isLiveBand('DJ'), false);
   assert.equal(LB.isLiveBand('Live music (TBA)'), false);
+  assert.equal(LB.isLiveBand('Live bands all day'), false);
   assert.equal(LB.isLiveBand({ band_id: 'tba', band: 'Live music (TBA)' }), false);
 });
 

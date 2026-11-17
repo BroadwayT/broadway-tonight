@@ -25,6 +25,7 @@
     if (/\btba\b/.test(n) || /\btbd\b/.test(n)) return true;
     if (n === 'live music' || n === 'live band') return true;
     if (/^live music\b/.test(n)) return true;
+    if (/^live bands?\b/.test(n)) return true;
     return false;
   }
 

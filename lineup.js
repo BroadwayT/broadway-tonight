@@ -2,7 +2,7 @@
 // Low rate (one request every 3s, identified User-Agent), venue pages only (allowed by robots.txt), credited as source.
 const db=require('./db'),S=require('./scoring'),SRC=require('./sources');
 const SLOTS=[["10:00","14:00"],["14:00","18:00"],["18:00","22:00"],["22:00","02:00"]];
-const TBA_ID='tba',TBA_NAME='Live music (TBA)';
+const TBA_ID='tba',TBA_NAME='Live bands all day';
 const SOURCE_NAME='Nashville Music Calendar';
 // bar id -> nashvillemusiccalendar.com venue slug (null = no venue page on the source)
 const VENUES={tootsies:'tootsies-orchid-lounge',roberts:'roberts-western-world',legends:'legends-corner',layla:null,
@@ -13,6 +13,7 @@ try{db.exec('ALTER TABLE sets ADD COLUMN source TEXT')}catch(e){}
 try{db.exec('ALTER TABLE sets ADD COLUMN source_url TEXT')}catch(e){}
 try{db.exec('ALTER TABLE sets ADD COLUMN note TEXT')}catch(e){}
 db.prepare('INSERT OR IGNORE INTO bands(id,name) VALUES(?,?)').run(TBA_ID,TBA_NAME);
+db.prepare('UPDATE bands SET name=? WHERE id=? AND name<>?').run(TBA_NAME,TBA_ID,TBA_NAME);
 const H=3600e3;
 function nextNight(d){const t=Date.parse(d+'T12:00:00Z')+24*H;return new Date(t).toISOString().slice(0,10);}
 // Closures (manual-sets.json "closures": [{bar,date,closed_from,closed_to}], or a sets entry with closed_from/closed_to): no empty TBA slot rows in that range.
@@ -25,7 +26,8 @@ function applyClosures(fromDate){let n=0;for(const c of CLOSED){if(c.date<fromDa
  for(const r of db.prepare("SELECT id,set_start FROM sets WHERE bar_id=? AND date=? AND band_id=? AND COALESCE(source,'grid')='grid' AND id NOT IN (SELECT DISTINCT set_id FROM ratings WHERE set_id IS NOT NULL)").all(c.bar,c.date,TBA_ID))
   if(isClosed(c.bar,c.date,r.set_start))n+=db.prepare('DELETE FROM sets WHERE id=?').run(r.id).changes;}return n;}
 // Create the 4-slot grid for every bar on a night (idempotent).
-function ensureDay(date){db.prepare('INSERT OR IGNORE INTO bands(id,name) VALUES(?,?)').run(TBA_ID,TBA_NAME);const bars=db.prepare('SELECT id FROM bars').all();
+function ensureDay(date){db.prepare('INSERT OR IGNORE INTO bands(id,name) VALUES(?,?)').run(TBA_ID,TBA_NAME);
+db.prepare('UPDATE bands SET name=? WHERE id=? AND name<>?').run(TBA_NAME,TBA_ID,TBA_NAME);const bars=db.prepare('SELECT id FROM bars').all();
  const ins=db.prepare('INSERT OR IGNORE INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source) VALUES(?,?,?,?,?,?,?,?)');let n=0;
  db.transaction(()=>{for(const b of bars)SLOTS.forEach((s,i)=>{if(isClosed(b.id,date,s[0]))return;n+=ins.run(`${date}-${b.id}-${i}`,b.id,TBA_ID,date,s[0],s[1],`${date}-slot${i}`,'grid').changes;});})();return n;}
 // Replace seed sample band names (band0..band19) on today/future nights with TBA.
