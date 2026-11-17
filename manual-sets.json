@@ -6596,8 +6596,8 @@
    "band": "Theresa Veneziano",
    "start": "12:00",
    "end": "16:00",
-   "stage": null,
-   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~10:20 PM PT)"
+   "stage": "Main Stage",
+   "source": "Lucky Bastard Saloon's own Instagram story (@luckybastardsaloon, Nov 17 2026, Main Stage), seen Nov 17 2026"
   },
   {
    "date": "2026-11-17",
@@ -6605,8 +6605,8 @@
    "band": "Cullen Greer",
    "start": "16:00",
    "end": "20:00",
-   "stage": null,
-   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~10:20 PM PT)"
+   "stage": "Main Stage",
+   "source": "Lucky Bastard Saloon's own Instagram story (@luckybastardsaloon, Nov 17 2026, Main Stage), seen Nov 17 2026"
   },
   {
    "date": "2026-11-17",
@@ -6614,8 +6614,8 @@
    "band": "Ricky Rooker",
    "start": "20:00",
    "end": "00:00",
-   "stage": null,
-   "source": "https://nashvillelineup.com/broadway (fetched 2026-11-16 ~10:20 PM PT)"
+   "stage": "Main Stage",
+   "source": "Lucky Bastard Saloon's own Instagram story (@luckybastardsaloon, Nov 17 2026, Main Stage), seen Nov 17 2026"
   },
   {
    "date": "2026-11-17",
@@ -7714,6 +7714,13 @@
    "closed_from": "11:00",
    "closed_to": "00:00",
    "source": "Category 10 Nashville calendar featured Closed for Private Event; corroborated by https://nashvillelineup.com/bars/category10 schema.org MusicEvent Private event startDate 2026-11-12T11:00:00-06:00 (closed to the public)"
+  },
+  {
+   "bar": "luckybastard",
+   "date": "2026-11-17",
+   "closed_from": "22:00",
+   "closed_to": "03:00",
+   "source": "Lucky Bastard Saloon's own Instagram story (@luckybastardsaloon, Nov 17 2026): Main Stage listings end at midnight (Ricky Rooker 8 PM-12 AM); no later Main Stage act was posted, so the empty 10 PM grid slot is omitted"
   }
  ]
 }
