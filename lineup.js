@@ -102,14 +102,23 @@ function collapseManualDupes(fromDate){const rows=db.prepare("SELECT id,bar_id,b
   for(const r of group){if(r.id===keep.id||rated(r.id))continue;const gm=r.id.match(new RegExp('^'+man.date+'-'+man.bar+'-([0-3])$'));
    if(gm){const sl=SLOTS[+gm[1]];db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,stage=NULL,source='grid',source_url=NULL WHERE id=?").run(TBA_ID,sl[0],sl[1],r.id);}
    else db.prepare('DELETE FROM sets WHERE id=?').run(r.id);}}return n;}
+// Manual rows for today or later that left manual-sets.json: grid slots go back to TBA, extras are deleted. Owner and rated rows stay.
+function dropRemovedManual(fromDate){const rows=db.prepare("SELECT id,bar_id,band_id,date,set_start,stage FROM sets WHERE date>=? AND source='manual' AND band_id<>?").all(fromDate,TBA_ID);let n=0;
+ for(const r of rows){if(rated(r.id))continue;const b=db.prepare('SELECT name FROM bands WHERE id=?').get(r.band_id);
+  const name=normName(b&&b.name),st=String(r.stage||'').trim();
+  if(MANUAL.some(m=>m.bar===r.bar_id&&m.date===r.date&&normName(m.band)===name&&near(m.start,r.set_start)&&(manualStage(m)||'')===st))continue;
+  const gm=String(r.id).match(new RegExp('^'+r.date+'-'+r.bar_id+'-([0-3])$'));
+  if(gm){const sl=SLOTS[+gm[1]];n+=db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,stage=NULL,source='grid',source_url=NULL WHERE id=?").run(TBA_ID,sl[0],sl[1],r.id).changes;}
+  else n+=db.prepare('DELETE FROM sets WHERE id=?').run(r.id).changes;}
+ return n;}
 function applyManual(fromDate){let n=0;for(const d of new Set(MANUAL.map(m=>m.date)))if(d>=fromDate)ensureDay(d);const bars=new Set(db.prepare('SELECT id FROM bars').all().map(b=>b.id));
  db.transaction(()=>{for(const m of MANUAL){if(m.date<fromDate||!bars.has(m.bar))continue;const bid=bandIdFor(m.band),si=slotFor(+m.start.slice(0,2)),end=manualEnd(m),stage=manualStage(m);
   if(isExtraStage(m)){n+=upsertExtraStage(m,bid);continue;}
   const mid=`${m.date}-${m.bar}-${si}-m-${bid}-${m.start.replace(':','')}`;
   const gid=`${m.date}-${m.bar}-${si}`;
-  // Scraped (non-manual, non-owner) rows for the same artist at this bar/night starting within 90 min: merge into one row with the manual times.
+  // Same artist at this bar/night starting within 90 min (scraped, or an earlier manual row on the same stage): merge into one row with the manual times. Owner rows stay.
   const ids=bandIdsFor(m.band,bid);
-  const dupes=db.prepare(`SELECT id,set_start,set_end FROM sets WHERE bar_id=? AND date=? AND band_id IN (${ids.map(()=>'?').join(',')}) AND id<>? AND COALESCE(source,'') NOT IN ('manual','owner')`).all(m.bar,m.date,...ids,mid).filter(r=>near(r.set_start,m.start));
+  const dupes=db.prepare(`SELECT id,set_start,set_end,source,stage FROM sets WHERE bar_id=? AND date=? AND band_id IN (${ids.map(()=>'?').join(',')}) AND id<>? AND COALESCE(source,'')<>'owner'`).all(m.bar,m.date,...ids,mid).filter(r=>near(r.set_start,m.start)&&(r.source!=='manual'||String(r.stage||'').trim()===(stage||'')));
   if(dupes.length){const hasMid=!!db.prepare('SELECT 1 FROM sets WHERE id=?').get(mid);
    const keep=(dupes.find(r=>rated(r.id))||{}).id||(hasMid?mid:dupes[0].id);
    const ke=db.prepare('SELECT set_end FROM sets WHERE id=?').get(keep).set_end;
@@ -137,7 +146,7 @@ function applyManual(fromDate){let n=0;for(const d of new Set(MANUAL.map(m=>m.da
   if(other){db.prepare('DELETE FROM sets WHERE id=? AND id NOT IN (SELECT DISTINCT set_id FROM ratings WHERE set_id IS NOT NULL)').run(mid);const setEnd=chosenEnd(end,other.set_end);if(setEnd!==other.set_end)db.prepare('UPDATE sets SET set_end=? WHERE id=?').run(setEnd,other.id);continue;}
   const g=db.prepare('SELECT band_id,source,set_end FROM sets WHERE id=?').get(gid);
   if(g&&g.band_id===TBA_ID&&g.source!=='owner'){n+=db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,stage=NULL,source='manual',source_url=NULL WHERE id=?").run(bid,m.start,chosenEnd(end,g.set_end),gid).changes;continue;}
-  n+=db.prepare("INSERT OR IGNORE INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url) VALUES(?,?,?,?,?,?,?,'manual',NULL)").run(mid,m.bar,bid,m.date,m.start,chosenEnd(end,null),`${m.date}-slot${si}`).changes;}})();applyClosures(fromDate);collapseManualDupes(fromDate);stampManualNotes(fromDate);return n;}
+  n+=db.prepare("INSERT OR IGNORE INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url) VALUES(?,?,?,?,?,?,?,'manual',NULL)").run(mid,m.bar,bid,m.date,m.start,chosenEnd(end,null),`${m.date}-slot${si}`).changes;}})();applyClosures(fromDate);collapseManualDupes(fromDate);dropRemovedManual(fromDate);stampManualNotes(fromDate);return n;}
 // Pull listings for one or more nights; owner-edited sets are never overwritten.
 let running=null,last=null;
 async function refresh(dates){if(running)return running;running=(async()=>{const res={at:new Date().toISOString(),dates,bars:{},errors:[]};
