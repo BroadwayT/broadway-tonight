@@ -959,7 +959,7 @@ function onNowBlock(set,nextNamed){
   const tba=isTba(set);
   const pill=set.engaged&&!tba?onNowPill():'';
   const kicker=pill?'':`<div class="on-now-kicker">Playing right now</div>`;
-  const who=tba?'Live music on now, band not listed yet':bandName(set);
+  const who=tba?'Live bands all day':bandName(set);
   const next=tba&&nextNamed?`<div class="next">Next listed: <b>${esc(nextNamed.band)}</b> · ${withStage(esc(showRange(nextNamed.set_start,nextNamed.set_end)),nextNamed.stage)}</div>`:'';
   const sched=!tba&&set.engaged?'<div class="next">On the schedule right now</div>':'';
   const stageNote=stageOf(set)?`<span class="on-now-stage"> · ${esc(stageOf(set))}</span>`:'';
