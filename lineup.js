@@ -79,6 +79,29 @@ function upsertExtraStage(m,bid){const stage=manualStage(m),si=slotFor(+m.start.
  const setEnd=chosenEnd(end,cur&&cur.set_end);
  if(cur){db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,stage=?,source='manual',source_url=NULL WHERE id=?").run(bid,m.start,setEnd,stage,sid);return 0;}
  return db.prepare("INSERT INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url,stage) VALUES(?,?,?,?,?,?,?,'manual',NULL,?)").run(sid,m.bar,bid,m.date,m.start,setEnd,`${m.date}-slot${si}`,stage).changes;}
+// Same bar/date/band/start: keep the bar's own source over aggregator copies (nashvillelineup, NMC).
+function hostOf(s){const m=String(s||'').match(/https?:\/\/(?:www\.)?([^\/\s]+)/i);return m?m[1].toLowerCase():'';}
+function barHost(bar){const row=require('./bars').BARS.find(b=>b[0]===bar);return hostOf(row&&row[3]);}
+function isAggregatorSource(src){const s=String(src||'').toLowerCase(),h=hostOf(src);
+ return h==='nashvillelineup.com'||h==='nashvillemusiccalendar.com'||/\bnashville ?lineup(?:\.com)?\b/.test(s)||s.includes('nashvillemusiccalendar.com')||s.includes('nashville music calendar');}
+function isBarOwnSource(m){const h=hostOf(m&&m.source),bh=barHost(m&&m.bar);return!!(h&&bh&&(h===bh||h.endsWith('.'+bh)||bh.endsWith('.'+h)));}
+function manualRank(m){return isBarOwnSource(m)?2:isAggregatorSource(m&&m.source)?0:1;}
+function preferManual(a,b){if(!a)return b;if(!b)return a;const ra=manualRank(a),rb=manualRank(b);return ra===rb?b:ra>rb?a:b;}
+function manualKey(m){return m.bar+'|'+m.date+'|'+normName(m.band)+'|'+m.start;}
+function dedupeManual(list){const map=new Map();for(const m of list||[]){const k=manualKey(m);if(!map.has(k)||preferManual(map.get(k),m)===m)map.set(k,m);}return[...map.values()];}
+MANUAL=dedupeManual(MANUAL);
+// Collapse leftover DB copies of the same manual set (e.g. a renamed stage left an old -st- row).
+function collapseManualDupes(fromDate){const rows=db.prepare("SELECT id,bar_id,band_id,date,set_start,set_end,stage,source FROM sets WHERE date>=? AND band_id<>? AND COALESCE(source,'')<>'owner'").all(fromDate,TBA_ID);
+ const groups=new Map();for(const r of rows){const k=r.bar_id+'\t'+r.date+'\t'+r.band_id+'\t'+r.set_start;if(!groups.has(k))groups.set(k,[]);groups.get(k).push(r);}
+ let n=0;for(const group of groups.values()){if(group.length<2)continue;const s=group[0];
+  const man=MANUAL.find(m=>m.bar===s.bar_id&&m.date===s.date&&m.start===s.set_start&&bandIdsFor(m.band,bandIdFor(m.band)).includes(s.band_id));
+  if(!man)continue;const stage=manualStage(man)||'',gid=`${man.date}-${man.bar}-${slotFor(+man.start.slice(0,2))}`;
+  const keep=group.find(r=>rated(r.id))||(!isExtraStage(man)&&group.find(r=>r.id===gid))||group.find(r=>(r.stage||'')===stage)||group[0];
+  const setEnd=chosenEnd(manualEnd(man),keep.set_end);
+  db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,stage=?,source='manual',source_url=NULL WHERE id=?").run(bandIdFor(man.band),man.start,setEnd,manualStage(man),keep.id);n++;
+  for(const r of group){if(r.id===keep.id||rated(r.id))continue;const gm=r.id.match(new RegExp('^'+man.date+'-'+man.bar+'-([0-3])$'));
+   if(gm){const sl=SLOTS[+gm[1]];db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,stage=NULL,source='grid',source_url=NULL WHERE id=?").run(TBA_ID,sl[0],sl[1],r.id);}
+   else db.prepare('DELETE FROM sets WHERE id=?').run(r.id);}}return n;}
 function applyManual(fromDate){let n=0;for(const d of new Set(MANUAL.map(m=>m.date)))if(d>=fromDate)ensureDay(d);const bars=new Set(db.prepare('SELECT id FROM bars').all().map(b=>b.id));
  db.transaction(()=>{for(const m of MANUAL){if(m.date<fromDate||!bars.has(m.bar))continue;const bid=bandIdFor(m.band),si=slotFor(+m.start.slice(0,2)),end=manualEnd(m),stage=manualStage(m);
   if(isExtraStage(m)){n+=upsertExtraStage(m,bid);continue;}
@@ -114,7 +137,7 @@ function applyManual(fromDate){let n=0;for(const d of new Set(MANUAL.map(m=>m.da
   if(other){db.prepare('DELETE FROM sets WHERE id=? AND id NOT IN (SELECT DISTINCT set_id FROM ratings WHERE set_id IS NOT NULL)').run(mid);const setEnd=chosenEnd(end,other.set_end);if(setEnd!==other.set_end)db.prepare('UPDATE sets SET set_end=? WHERE id=?').run(setEnd,other.id);continue;}
   const g=db.prepare('SELECT band_id,source,set_end FROM sets WHERE id=?').get(gid);
   if(g&&g.band_id===TBA_ID&&g.source!=='owner'){n+=db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,stage=NULL,source='manual',source_url=NULL WHERE id=?").run(bid,m.start,chosenEnd(end,g.set_end),gid).changes;continue;}
-  n+=db.prepare("INSERT OR IGNORE INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url) VALUES(?,?,?,?,?,?,?,'manual',NULL)").run(mid,m.bar,bid,m.date,m.start,chosenEnd(end,null),`${m.date}-slot${si}`).changes;}})();applyClosures(fromDate);stampManualNotes(fromDate);return n;}
+  n+=db.prepare("INSERT OR IGNORE INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url) VALUES(?,?,?,?,?,?,?,'manual',NULL)").run(mid,m.bar,bid,m.date,m.start,chosenEnd(end,null),`${m.date}-slot${si}`).changes;}})();applyClosures(fromDate);collapseManualDupes(fromDate);stampManualNotes(fromDate);return n;}
 // Pull listings for one or more nights; owner-edited sets are never overwritten.
 let running=null,last=null;
 async function refresh(dates){if(running)return running;running=(async()=>{const res={at:new Date().toISOString(),dates,bars:{},errors:[]};
@@ -152,4 +175,4 @@ function start(){const tick=()=>{try{const n=S.ctNight();ensureDay(n);ensureDay(
  tick();setInterval(tick,5*60e3); // night flip at 3 AM CT: grid for the new night appears within 5 min (and a day ahead)
  const run=()=>{const n=S.ctNight();refresh([n,nextNight(n)]).catch(e=>console.error('[lineup] refresh',e));};
  setTimeout(run,15e3);setInterval(run,H);} // hourly while awake; also runs ~15s after every boot/wake
-module.exports={applyManual,applyClosures,isClosed,ensureDay,refresh,start,clearSampleBands,nextNight,status:()=>last,VENUES,SOURCE_NAME};
+module.exports={applyManual,applyClosures,collapseManualDupes,dedupeManual,preferManual,isBarOwnSource,isAggregatorSource,isClosed,ensureDay,refresh,start,clearSampleBands,nextNight,status:()=>last,VENUES,SOURCE_NAME};
