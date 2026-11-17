@@ -7006,16 +7006,6 @@
   {
    "date": "2026-11-18",
    "bar": "chiefs",
-   "band": "Cody Adkins",
-   "start": "02:00",
-   "end": "17:00",
-   "stage": "Friendly Shadows – 2nd Floor",
-   "source": "https://www.chiefsonbroadway.com/house-artists",
-   "note": "Subject to change"
-  },
-  {
-   "date": "2026-11-18",
-   "bar": "chiefs",
    "band": "Shelby Lee Lowe",
    "start": "10:30",
    "end": "14:30",
@@ -7108,16 +7098,6 @@
    "start": "22:30",
    "end": "02:00",
    "stage": "Chief’s Tavern – 1st Floor",
-   "source": "https://www.chiefsonbroadway.com/house-artists",
-   "note": "Subject to change"
-  },
-  {
-   "date": "2026-11-18",
-   "bar": "chiefs",
-   "band": "Kevin Mac",
-   "start": "23:30",
-   "end": "14:30",
-   "stage": "Redemption Bar – 5th Floor",
    "source": "https://www.chiefsonbroadway.com/house-artists",
    "note": "Subject to change"
   },
@@ -7424,16 +7404,6 @@
   {
    "date": "2026-11-22",
    "bar": "chiefs",
-   "band": "Jake Neuman",
-   "start": "05:30",
-   "end": "20:30",
-   "stage": "Redemption Bar – 5th Floor",
-   "source": "https://www.chiefsonbroadway.com/house-artists",
-   "note": "Subject to change"
-  },
-  {
-   "date": "2026-11-22",
-   "bar": "chiefs",
    "band": "Cort Carpenter",
    "start": "10:30",
    "end": "14:30",
@@ -7608,6 +7578,38 @@
    "stage": "Chief’s Tavern – 1st Floor",
    "source": "https://www.chiefsonbroadway.com/house-artists",
    "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-17",
+   "bar": "nudies",
+   "band": "Jabe Burgess",
+   "start": "10:00",
+   "end": "14:30",
+   "source": "https://www.nudieshonkytonk.com homepage This Week's Band Schedule, Tuesday 1st Floor (read Nov 17 2026)"
+  },
+  {
+   "date": "2026-11-17",
+   "bar": "nudies",
+   "band": "Mike Riley",
+   "start": "14:30",
+   "end": "18:30",
+   "source": "https://www.nudieshonkytonk.com homepage This Week's Band Schedule, Tuesday 1st Floor (read Nov 17 2026)"
+  },
+  {
+   "date": "2026-11-17",
+   "bar": "nudies",
+   "band": "Scotty Chapman",
+   "start": "18:30",
+   "end": "22:30",
+   "source": "https://www.nudieshonkytonk.com homepage This Week's Band Schedule, Tuesday 1st Floor (read Nov 17 2026)"
+  },
+  {
+   "date": "2026-11-17",
+   "bar": "nudies",
+   "band": "Stoney T",
+   "start": "22:30",
+   "end": "02:00",
+   "source": "https://www.nudieshonkytonk.com homepage This Week's Band Schedule, Tuesday 1st Floor (read Nov 17 2026)"
   }
  ],
  "closures": [
