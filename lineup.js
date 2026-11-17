@@ -11,6 +11,7 @@ const VENUES={tootsies:'tootsies-orchid-lounge',roberts:'roberts-western-world',
 const UA='BroadwayTonight/0.2 (+https://broadwaytonightnash.com; lineup listings, low rate)';
 try{db.exec('ALTER TABLE sets ADD COLUMN source TEXT')}catch(e){}
 try{db.exec('ALTER TABLE sets ADD COLUMN source_url TEXT')}catch(e){}
+try{db.exec('ALTER TABLE sets ADD COLUMN note TEXT')}catch(e){}
 db.prepare('INSERT OR IGNORE INTO bands(id,name) VALUES(?,?)').run(TBA_ID,TBA_NAME);
 const H=3600e3;
 function nextNight(d){const t=Date.parse(d+'T12:00:00Z')+24*H;return new Date(t).toISOString().slice(0,10);}
@@ -59,6 +60,12 @@ function stageSlug(s){return String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').
 // undefined = "end" omitted (keep the grid slot's end). null = published with no end time.
 function manualEnd(m){if(!m||!Object.prototype.hasOwnProperty.call(m,'end'))return undefined;return /^\d\d:\d\d$/.test(m.end)?m.end:null;}
 function chosenEnd(specified,fallback){const v=specified===undefined?fallback:specified;return v==null?null:v;}
+function manualNote(m){if(!m||typeof m.note!=='string')return null;const n=m.note.trim().slice(0,160);return n||null;}
+// Stamp only when a manual set has a note. Rows without one are left unchanged.
+function stampManualNotes(fromDate){const rows=MANUAL.filter(m=>manualNote(m)&&m.date>=fromDate);if(!rows.length)return;
+ const bars=new Set(db.prepare('SELECT id FROM bars').all().map(b=>b.id));
+ const upd=db.prepare("UPDATE sets SET note=? WHERE bar_id=? AND date=? AND band_id=? AND set_start=? AND COALESCE(stage,'')=?");
+ db.transaction(()=>{for(const m of rows){if(!bars.has(m.bar))continue;upd.run(manualNote(m),m.bar,m.date,bandIdFor(m.band),m.start,manualStage(m)||'');}})();}
 // Add the stage row, and leave TBA / main-floor rows alone, when a stage-less manual
 // set already occupies this slot. Otherwise the set fills the open grid slot (so the
 // night does not grow a TBA hole) and keeps its stage name.
@@ -105,7 +112,7 @@ function applyManual(fromDate){let n=0;for(const d of new Set(MANUAL.map(m=>m.da
   if(other){db.prepare('DELETE FROM sets WHERE id=? AND id NOT IN (SELECT DISTINCT set_id FROM ratings WHERE set_id IS NOT NULL)').run(mid);const setEnd=chosenEnd(end,other.set_end);if(setEnd!==other.set_end)db.prepare('UPDATE sets SET set_end=? WHERE id=?').run(setEnd,other.id);continue;}
   const g=db.prepare('SELECT band_id,source,set_end FROM sets WHERE id=?').get(gid);
   if(g&&g.band_id===TBA_ID&&g.source!=='owner'){n+=db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,stage=NULL,source='manual',source_url=NULL WHERE id=?").run(bid,m.start,chosenEnd(end,g.set_end),gid).changes;continue;}
-  n+=db.prepare("INSERT OR IGNORE INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url) VALUES(?,?,?,?,?,?,?,'manual',NULL)").run(mid,m.bar,bid,m.date,m.start,chosenEnd(end,null),`${m.date}-slot${si}`).changes;}})();applyClosures(fromDate);return n;}
+  n+=db.prepare("INSERT OR IGNORE INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url) VALUES(?,?,?,?,?,?,?,'manual',NULL)").run(mid,m.bar,bid,m.date,m.start,chosenEnd(end,null),`${m.date}-slot${si}`).changes;}})();applyClosures(fromDate);stampManualNotes(fromDate);return n;}
 // Pull listings for one or more nights; owner-edited sets are never overwritten.
 let running=null,last=null;
 async function refresh(dates){if(running)return running;running=(async()=>{const res={at:new Date().toISOString(),dates,bars:{},errors:[]};
