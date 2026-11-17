@@ -1,4 +1,4 @@
-// Lineup sources: each bar's OWN public schedule page (preferred), Nashville Music Calendar as fallback.
+// Lineup sources: each bar's own public schedule page.
 // robots.txt checked per host; identified UA; no challenge/captcha bypass (a challenge page = "blocked").
 const UA='BroadwayTonight/0.3 (+https://broadwaytonightnash.com; lineup listings, low rate)';
 const MON=['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -6,15 +6,11 @@ const SOURCES={
  acme:[{type:'sqsphtml',url:'https://www.acmefeedandseed.com/calendar'}],
  redneckriviera:[{type:'redneck',url:'https://redneckrivieranashville.com/events/'}],
  olered:[{type:'olered',url:'https://olered.com/nashville/calendar/'}],
- luke32:[{type:'lukes',url:'https://lukes32bridge.com/live-music/'},{type:'nmc',url:'https://nashvillemusiccalendar.com/venue/lukes-32-bridge-food-drink/'}],
+ luke32:[{type:'lukes',url:'https://lukes32bridge.com/live-music/'}],
  casarosa:[{type:'casarosa',url:'https://casarosanashville.com/music/'}],
  bellbottomsup:[{type:'bellb',url:'https://bellbottomsupbar.com/music/'}],
  margaritaville:[{type:'jsonld',url:'https://www.margaritavillenashville.com/calendar'}],
- roberts:[{type:'nmc',url:'https://nashvillemusiccalendar.com/venue/roberts-western-world/'}],
- legends:[{type:'nmc',url:'https://nashvillemusiccalendar.com/venue/legends-corner/'}],
- bootbarn:[{type:'nmc',url:'https://nashvillemusiccalendar.com/venue/the-stage-on-broadway/'}],
  // Same TC Restaurant Group schedule layout as Bell Bottoms Up (MM/DD/YYYY | "Act, Stage" | time).
- // Aldean's Nashville Music Calendar page is empty; the lineup is on the bar's own music page.
  aldeans:[{type:'bellb',url:'https://jasonaldeansbar.com/nashville/music/'}],
  thisbar:[{type:'bellb',url:'https://mwthisbar.com/music/'}],
  postys:[{type:'bellb',url:'https://postysbar.com/music/'}],
@@ -72,7 +68,6 @@ const P={
   .map(e=>e.start?e:({start:ctParts(Date.parse(e.startDate)).time,end:e.endDate?ctParts(Date.parse(e.endDate)).time:null,name:ent(String(e.performer&&e.performer.name||e.name)).replace(/\s+at\s+.*$/,'').trim(),url:e.url}));},
  jsonld_old(h,d){return ldEvents(h).filter(e=>nightOfMs(Date.parse(e.startDate))===d).map(e=>({start:ctParts(Date.parse(e.startDate)).time,end:e.endDate?ctParts(Date.parse(e.endDate)).time:null,
    name:ent(String(e.performer&&e.performer.name||e.name)).replace(/^[\d:apm\s.\u2013-]+:\s*/i,'').replace(/\s+at\s+.*$/,'').trim(),url:e.url}));},
- nmc(h,d){return P.jsonld(h,d);},
  squarespace(h,d){let j;try{j=JSON.parse(h)}catch(e){return []}return (j.upcoming||j.items||[]).filter(e=>nightOfMs(e.startDate)===d).map(e=>({start:ctParts(e.startDate).time,end:e.endDate?ctParts(e.endDate).time:null,name:ent(e.title).replace(/^.*?\bft\.?\s+|^.*?\bfeat\.?\s+/i,'').trim(),url:e.fullUrl?'https://www.acmefeedandseed.com'+e.fullUrl:null,raw:ent(e.title)}));},
  sqsphtml(h,d){const [y,mo,da]=d.split('-').map(Number);const out=[];
    for(const m of h.matchAll(/<h1[^>]*>\s*<a href="([^"]+)"[^>]*>([^<]+)<\/a>\s*<\/h1>[\s\S]{0,200}?(\w+), (\w+) (\d{1,2}), (\d{4}),? (\d{1,2}:\d{2}\s?[AP]M)\s*(?:&ndash;|\u2013|-)\s*(\d{1,2}:\d{2}\s?[AP]M)/g)){
