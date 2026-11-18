@@ -23,10 +23,12 @@ function applyClosures(fromDate){let n=0;for(const c of CLOSED){if(c.date<fromDa
 function ensureDay(date){db.prepare('INSERT OR IGNORE INTO bands(id,name) VALUES(?,?)').run(TBA_ID,TBA_NAME);
 db.prepare('UPDATE bands SET name=? WHERE id=? AND name<>?').run(TBA_NAME,TBA_ID,TBA_NAME);const bars=db.prepare('SELECT id FROM bars').all();
  const ins=db.prepare('INSERT OR IGNORE INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source) VALUES(?,?,?,?,?,?,?,?)');let n=0;
- db.transaction(()=>{for(const b of bars)SLOTS.forEach((s,i)=>{if(isClosed(b.id,date,s[0]))return;n+=ins.run(`${date}-${b.id}-${i}`,b.id,TBA_ID,date,s[0],s[1],`${date}-slot${i}`,'grid').changes;});})();return n;}
+ db.transaction(()=>{for(const b of bars)SLOTS.forEach((s,i)=>{if(isClosed(b.id,date,s[0])||slotTaken(b.id,date,i))return;n+=ins.run(`${date}-${b.id}-${i}`,b.id,TBA_ID,date,s[0],s[1],`${date}-slot${i}`,'grid').changes;});})();return n;}
 // Replace seed sample band names (band0..band19) on today/future nights with TBA.
 function clearSampleBands(fromDate){return db.prepare("UPDATE sets SET band_id=?,source='grid' WHERE date>=? AND band_id GLOB 'band[0-9]*' AND COALESCE(source,'') NOT IN ('owner')").run(TBA_ID,fromDate).changes;}
 const slotFor=h=>h<3?3:h<14?0:h<18?1:h<22?2:3;
+// Named main-floor set (blank stage) whose start falls in this grid slot already occupies it.
+function slotTaken(bar,date,si,exceptId){return db.prepare("SELECT set_start FROM sets WHERE bar_id=? AND date=? AND band_id<>? AND COALESCE(stage,'')='' AND id<>?").all(bar,date,TBA_ID,exceptId||'').some(r=>slotFor(+String(r.set_start).slice(0,2))===si);}
 function bandIdFor(name){const ex=db.prepare('SELECT id FROM bands WHERE lower(name)=lower(?)').get(name);if(ex)return ex.id;
  const id='act_'+(name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,40)||'band');db.prepare('INSERT OR IGNORE INTO bands(id,name) VALUES(?,?)').run(id,name);return id;}
 // Manual sets (manual-sets.json): artist/Jules-provided dates the scrapers miss. Kept as source='manual', never overwritten.
@@ -97,6 +99,8 @@ function dropRemovedManual(fromDate){const rows=db.prepare("SELECT id,bar_id,ban
   if(gm){const sl=SLOTS[+gm[1]];n+=db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,stage=NULL,source='grid',source_url=NULL WHERE id=?").run(TBA_ID,sl[0],sl[1],r.id).changes;}
   else n+=db.prepare('DELETE FROM sets WHERE id=?').run(r.id).changes;}
  return n;}
+// Leftover TBA grid rows when a named set already fills that slot (e.g. a moved manual row kept its old slot id). Rated rows stay.
+function dropCoveredTba(fromDate){let n=0;for(const r of db.prepare("SELECT id,bar_id,date FROM sets WHERE date>=? AND band_id=? AND COALESCE(source,'grid')='grid' AND id NOT IN (SELECT DISTINCT set_id FROM ratings WHERE set_id IS NOT NULL)").all(fromDate,TBA_ID)){const gm=String(r.id).match(new RegExp('^'+r.date+'-'+r.bar_id+'-([0-3])$'));if(gm&&slotTaken(r.bar_id,r.date,+gm[1],r.id))n+=db.prepare('DELETE FROM sets WHERE id=?').run(r.id).changes;}return n;}
 // Retired scraped rows (source nmc) for today and later: grid slots return to the placeholder, extras are deleted.
 // Manual, owner, and rated rows stay, and so do dates before fromDate.
 function purgeRetiredListings(fromDate){const rows=db.prepare("SELECT id,bar_id,date FROM sets WHERE date>=? AND source='nmc' AND id NOT IN (SELECT DISTINCT set_id FROM ratings WHERE set_id IS NOT NULL)").all(fromDate);let n=0;
@@ -142,7 +146,7 @@ function applyManual(fromDate){let n=0;for(const d of new Set(MANUAL.map(m=>m.da
   if(other){db.prepare('DELETE FROM sets WHERE id=? AND id NOT IN (SELECT DISTINCT set_id FROM ratings WHERE set_id IS NOT NULL)').run(mid);const setEnd=chosenEnd(end,other.set_end);if(setEnd!==other.set_end)db.prepare('UPDATE sets SET set_end=? WHERE id=?').run(setEnd,other.id);continue;}
   const g=db.prepare('SELECT band_id,source,set_end FROM sets WHERE id=?').get(gid);
   if(g&&g.band_id===TBA_ID&&g.source!=='owner'){n+=db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,stage=NULL,source='manual',source_url=NULL WHERE id=?").run(bid,m.start,chosenEnd(end,g.set_end),gid).changes;continue;}
-  n+=db.prepare("INSERT OR IGNORE INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url) VALUES(?,?,?,?,?,?,?,'manual',NULL)").run(mid,m.bar,bid,m.date,m.start,chosenEnd(end,null),`${m.date}-slot${si}`).changes;}})();applyClosures(fromDate);collapseManualDupes(fromDate);dropRemovedManual(fromDate);stampManualNotes(fromDate);return n;}
+  n+=db.prepare("INSERT OR IGNORE INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url) VALUES(?,?,?,?,?,?,?,'manual',NULL)").run(mid,m.bar,bid,m.date,m.start,chosenEnd(end,null),`${m.date}-slot${si}`).changes;}})();applyClosures(fromDate);collapseManualDupes(fromDate);dropRemovedManual(fromDate);dropCoveredTba(fromDate);stampManualNotes(fromDate);return n;}
 // Pull listings for one or more nights; owner-edited sets are never overwritten.
 let running=null,last=null;
 async function refresh(dates){if(running)return running;running=(async()=>{const res={at:new Date().toISOString(),dates,bars:{},errors:[]};
@@ -181,4 +185,4 @@ function start(){const tick=()=>{try{const n=S.ctNight();purgeRetiredListings(n)
  tick();setInterval(tick,5*60e3); // night flip at 3 AM CT: grid for the new night appears within 5 min (and a day ahead)
  const run=()=>{const n=S.ctNight();refresh([n,nextNight(n)]).catch(e=>console.error('[lineup] refresh',e));};
  setTimeout(run,15e3);setInterval(run,H);} // hourly while awake; also runs ~15s after every boot/wake
-module.exports={applyManual,applyClosures,collapseManualDupes,dropRemovedManual,purgeRetiredListings,dedupeManual,preferManual,isBarOwnSource,isAggregatorSource,isClosed,ensureDay,refresh,start,clearSampleBands,nextNight,status:()=>last,BAR_SOURCE};
+module.exports={applyManual,applyClosures,collapseManualDupes,dropRemovedManual,dropCoveredTba,purgeRetiredListings,dedupeManual,preferManual,isBarOwnSource,isAggregatorSource,isClosed,ensureDay,refresh,start,clearSampleBands,nextNight,status:()=>last,BAR_SOURCE};
