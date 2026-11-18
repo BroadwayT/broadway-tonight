@@ -252,9 +252,9 @@
    "date": "2026-11-18",
    "bar": "flp",
    "band": "Mac Watts",
-   "start": "18:30",
-   "end": "21:30",
-   "source": "Artist-provided schedule (Mac Watts's November 2026 flyer from @macwattsmusic, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+   "start": "18:00",
+   "end": "22:00",
+   "source": "Friends in Low Places own Instagram story (@friendsbarnash), seen Nov 18 2026"
   },
   {
    "date": "2026-11-18",
@@ -913,18 +913,18 @@
   {
    "date": "2026-11-18",
    "bar": "roberts",
-   "band": "Paul Kramer",
+   "band": "Kelley's Heroes",
    "start": "14:30",
-   "end": "18:30",
-   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+   "end": "18:00",
+   "source": "@kelleysheroes Instagram story, seen Nov 18 2026"
   },
   {
    "date": "2026-11-18",
    "bar": "roberts",
-   "band": "Kelley's Heroes",
+   "band": "Wendy Newcomer & the Nashville Cats",
    "start": "18:30",
-   "end": "22:30",
-   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+   "end": "22:00",
+   "source": "@wendynewcomer Instagram post, seen Nov 18 2026"
   },
   {
    "date": "2026-11-18",
@@ -937,10 +937,10 @@
   {
    "date": "2026-11-19",
    "bar": "roberts",
-   "band": "Wendy Newcomer",
+   "band": "Wendy Newcomer & the Nashville Cats",
    "start": "10:00",
-   "end": "14:30",
-   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+   "end": "14:00",
+   "source": "@wendynewcomer Instagram post, seen Nov 18 2026"
   },
   {
    "date": "2026-11-19",
@@ -977,10 +977,10 @@
   {
    "date": "2026-11-20",
    "bar": "roberts",
-   "band": "Wendy Newcomer",
+   "band": "Wendy Newcomer & the Nashville Cats",
    "start": "14:30",
-   "end": "18:30",
-   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+   "end": "18:00",
+   "source": "@wendynewcomer Instagram post, seen Nov 18 2026"
   },
   {
    "date": "2026-11-20",
@@ -1009,10 +1009,10 @@
   {
    "date": "2026-11-21",
    "bar": "roberts",
-   "band": "Wendy Newcomer",
+   "band": "Wendy Newcomer & the Nashville Cats",
    "start": "14:30",
-   "end": "18:30",
-   "source": "Robert's official schedule (Robert's Western World November 2026 band schedule, robertswesternworld.com/band-schedule and @robertswesternworld IG post, sent by Jules Nov 3 2026); end = next set's start"
+   "end": "18:00",
+   "source": "@wendynewcomer Instagram post, seen Nov 18 2026"
   },
   {
    "date": "2026-11-21",
@@ -11225,6 +11225,13 @@
    "closed_from": "22:00",
    "closed_to": "03:00",
    "source": "Lucky Bastard Saloon's own Instagram story (@luckybastardsaloon, Nov 17 2026): Main Stage listings end at midnight (Ricky Rooker 8 PM-12 AM); no later Main Stage act was posted, so the empty 10 PM grid slot is omitted"
+  },
+  {
+   "bar": "legends",
+   "date": "2026-11-18",
+   "closed_from": "20:00",
+   "closed_to": "03:00",
+   "source": "Legends Corner own Instagram story (@legendscorner), seen Nov 18 2026: closed for a private event 8 PM-3 AM"
   }
  ]
 }
