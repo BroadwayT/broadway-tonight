@@ -36,7 +36,7 @@ function seed() {
   ins.run('2026-11-18-luke32-2', 'luke32', 'nmc_the-beasley-brothers', '2026-11-18', '18:00', '21:00', '2026-11-18-slot2', 'bar', 'https://lukes32bridge.com/live-music/', null, null);
   ins.run('2026-11-18-luke32-3', 'luke32', 'nmc_nathan-wilson', '2026-11-18', '22:00', '01:00', '2026-11-18-slot3', 'bar', 'https://lukes32bridge.com/live-music/', null, null);
 
-  // Open TBA grids for the other nights (plus Joe Barron already on This Bar's rooftop Nov 22).
+  // Open TBA grids for the other nights (plus Joe Barron's flyer row already on This Bar's rooftop Nov 22).
   const tba = (bar, date) => {
     const slots = [['10:00', '14:00'], ['14:00', '18:00'], ['18:00', '22:00'], ['22:00', '02:00']];
     slots.forEach((s, i) => ins.run(`${date}-${bar}-${i}`, bar, 'tba', date, s[0], s[1], `${date}-slot${i}`, 'grid', null, null, null));
@@ -94,7 +94,7 @@ test('applyManual adds Bobby McClendon\'s Nov 18-22 sets from his own Instagram 
   assert.equal(joe.length, 1, JSON.stringify(nov22));
   assert.deepEqual(
     [joe[0].set_start, joe[0].set_end, joe[0].stage, joe[0].source, joe[0].id],
-    ['18:00', '22:00', 'Rooftop Stage', 'manual', '2026-11-22-thisbar-2']
+    ['16:00', '20:00', 'Rooftop', 'manual', '2026-11-22-thisbar-2']
   );
   assert.equal(bobby22.length, 1, JSON.stringify(nov22));
   assert.deepEqual(
