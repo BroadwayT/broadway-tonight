@@ -243,9 +243,10 @@
    "date": "2026-11-18",
    "bar": "bootbarn",
    "band": "Mac Watts",
-   "start": "14:30",
-   "end": "17:30",
-   "source": "Artist-provided schedule (Mac Watts's November 2026 flyer from @macwattsmusic, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+   "start": "14:45",
+   "end": "18:15",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026 (time corrected from earlier artist-provided entry)",
+   "stage": null
   },
   {
    "date": "2026-11-18",
@@ -284,18 +285,19 @@
    "date": "2026-11-20",
    "bar": "bootbarn",
    "band": "Kristine Kabbes and the Skallywags",
-   "start": "19:00",
-   "end": "22:00",
+   "start": "18:45",
+   "end": "22:15",
    "stage": "Rooftop",
-   "source": "Kristine Kabbes' own Instagram post (@kristinekabbes, This Week schedule change, seen by Jules Nov 17 2026); matches earlier November schedule"
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026 (time corrected from earlier artist-provided entry)"
   },
   {
    "date": "2026-11-21",
    "bar": "bootbarn",
    "band": "Mac Watts",
-   "start": "10:30",
-   "end": "13:30",
-   "source": "Artist-provided schedule (Mac Watts's November 2026 flyer from @macwattsmusic, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+   "start": "10:00",
+   "end": "14:15",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026 (time corrected from earlier artist-provided entry)",
+   "stage": null
   },
   {
    "date": "2026-11-21",
@@ -309,10 +311,10 @@
    "date": "2026-11-21",
    "bar": "bootbarn",
    "band": "Kristine Kabbes and the Skallywags",
-   "start": "15:00",
-   "end": "18:00",
-   "stage": "First floor",
-   "source": "Kristine Kabbes' own Instagram post (@kristinekabbes, This Week schedule change, seen by Jules Nov 17 2026); matches earlier November schedule"
+   "start": "14:45",
+   "end": "18:15",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026 (time corrected from earlier artist-provided entry)"
   },
   {
    "date": "2026-11-21",
@@ -353,10 +355,10 @@
    "date": "2026-11-24",
    "bar": "bootbarn",
    "band": "Kristine Kabbes and the Skallywags",
-   "start": "19:00",
-   "end": "22:00",
+   "start": "18:45",
+   "end": "22:15",
    "stage": "Rooftop",
-   "source": "Artist-provided weekly schedule (Kristine Kabbes, November 2026, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026 (time corrected from earlier artist-provided entry)"
   },
   {
    "date": "2026-11-24",
@@ -7773,6 +7775,3426 @@
    "end": "02:00",
    "stage": null,
    "source": "https://www.nudieshonkytonk.com (This Week's Band Schedule, Wednesday 1st Floor)"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "bootbarn",
+   "band": "Easton Hamlin",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "bootbarn",
+   "band": "Chris Weaver",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "bootbarn",
+   "band": "Zach Westcott",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "bootbarn",
+   "band": "Krystal Steel",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "bootbarn",
+   "band": "Matthew Barringer",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "bootbarn",
+   "band": "Jered Ames",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "bootbarn",
+   "band": "Mike Coll",
+   "start": "22:45",
+   "end": "02:06",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "bootbarn",
+   "band": "Samantha Stroh",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "bootbarn",
+   "band": "Chad Caprio",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "bootbarn",
+   "band": "Conner Sweet Band",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "bootbarn",
+   "band": "Matthew Davidson",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "bootbarn",
+   "band": "Conner Sweet Band",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "bootbarn",
+   "band": "Troy Woods",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "bootbarn",
+   "band": "Mark Hatt",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "bootbarn",
+   "band": "Conner Sweet Band",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "bootbarn",
+   "band": "Robert Abernathy",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "bootbarn",
+   "band": "Aaron Patrick",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "bootbarn",
+   "band": "Shane Chisholm",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "bootbarn",
+   "band": "Kenny P",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "bootbarn",
+   "band": "Three Lane",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "bootbarn",
+   "band": "Rachael Blount",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "bootbarn",
+   "band": "Easton Hamlin",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "bootbarn",
+   "band": "Sarah Montgomery",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "bootbarn",
+   "band": "Luke Maurer",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "bootbarn",
+   "band": "Cory Farley",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": null,
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "bootbarn",
+   "band": "Ben Law",
+   "start": "17:45",
+   "end": "21:15",
+   "stage": "Second Floor",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Second Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "bootbarn",
+   "band": "Sam Paul Hayes",
+   "start": "21:45",
+   "end": "01:30",
+   "stage": "Second Floor",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Second Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "bootbarn",
+   "band": "Annie Gavin",
+   "start": "17:45",
+   "end": "21:15",
+   "stage": "Second Floor",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Second Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "bootbarn",
+   "band": "Aaron Patrick",
+   "start": "21:45",
+   "end": "01:30",
+   "stage": "Second Floor",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Second Floor), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "bootbarn",
+   "band": "Andrew Mack",
+   "start": "14:30",
+   "end": "18:15",
+   "stage": "Rooftop",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "bootbarn",
+   "band": "Reckless Sidemen",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": "Rooftop",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "bootbarn",
+   "band": "Cory Farley",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": "Rooftop",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "bootbarn",
+   "band": "Michael Simeon",
+   "start": "10:30",
+   "end": "14:15",
+   "stage": "Rooftop",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "bootbarn",
+   "band": "Jake Taylor",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": "Rooftop",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "bootbarn",
+   "band": "Mike Kindel",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": "Rooftop",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "bootbarn",
+   "band": "Tanglewood",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": "Rooftop",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "bootbarn",
+   "band": "The John Tocco Band",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": "Rooftop",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "bootbarn",
+   "band": "Mo Rose",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": "Rooftop",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "bootbarn",
+   "band": "Aaron Patrick",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": "Rooftop",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "bootbarn",
+   "band": "The John Tocco Band",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": "Rooftop",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "bootbarn",
+   "band": "Rachael Turner",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": "Rooftop",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "bootbarn",
+   "band": "Jason McPhail",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": "Rooftop",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "bootbarn",
+   "band": "Mike Coll",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": "Rooftop",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "bootbarn",
+   "band": "Michael Simeon",
+   "start": "10:30",
+   "end": "14:15",
+   "stage": "Rooftop",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "bootbarn",
+   "band": "Sam Doyle",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": "Rooftop",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "bootbarn",
+   "band": "Partners In Crime",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": "Rooftop",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "bootbarn",
+   "band": "Mike Kindel",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": "Rooftop",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "bootbarn",
+   "band": "Blake Dixon",
+   "start": "14:30",
+   "end": "18:15",
+   "stage": "Rooftop",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "bootbarn",
+   "band": "Hype Creek Band",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": "Rooftop",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "bootbarn",
+   "band": "Mariel Mae",
+   "start": "14:30",
+   "end": "18:15",
+   "stage": "Rooftop",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "bootbarn",
+   "band": "Blake Dixon",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": "Rooftop",
+   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "legends",
+   "band": "Noah Tellish",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": null,
+   "source": "Legend's Corner own calendar (legendscorner.com/whos-playing and /calendar), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "legends",
+   "band": "Kenny P",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": null,
+   "source": "Legend's Corner own calendar (legendscorner.com/whos-playing and /calendar), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "legends",
+   "band": "CJ Monaghan",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": null,
+   "source": "Legend's Corner own calendar (legendscorner.com/whos-playing and /calendar), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "legends",
+   "band": "Garrett Browning",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": null,
+   "source": "Legend's Corner own calendar (legendscorner.com/whos-playing and /calendar), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "legends",
+   "band": "Luke Maurer",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": null,
+   "source": "Legend's Corner own calendar (legendscorner.com/whos-playing and /calendar), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "legends",
+   "band": "Zach Zurcher",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": null,
+   "source": "Legend's Corner own calendar (legendscorner.com/whos-playing and /calendar), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "legends",
+   "band": "The Taylors",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": null,
+   "source": "Legend's Corner own calendar (legendscorner.com/whos-playing and /calendar), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "legends",
+   "band": "Kelly & Sarah",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": null,
+   "source": "Legend's Corner own calendar (legendscorner.com/whos-playing and /calendar), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "legends",
+   "band": "Jered Ames",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": null,
+   "source": "Legend's Corner own calendar (legendscorner.com/whos-playing and /calendar), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "legends",
+   "band": "Mike Coll",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": null,
+   "source": "Legend's Corner own calendar (legendscorner.com/whos-playing and /calendar), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "legends",
+   "band": "Mark Hatt",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": null,
+   "source": "Legend's Corner own calendar (legendscorner.com/whos-playing and /calendar), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "legends",
+   "band": "Garrett Browning",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": null,
+   "source": "Legend's Corner own calendar (legendscorner.com/whos-playing and /calendar), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "legends",
+   "band": "Matthew Davidson",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": null,
+   "source": "Legend's Corner own calendar (legendscorner.com/whos-playing and /calendar), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "legends",
+   "band": "Charlie McNeal",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": null,
+   "source": "Legend's Corner own calendar (legendscorner.com/whos-playing and /calendar), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "legends",
+   "band": "Los Honky Tonkers",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": null,
+   "source": "Legend's Corner own calendar (legendscorner.com/whos-playing and /calendar), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "legends",
+   "band": "Blaine Bunting",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": null,
+   "source": "Legend's Corner own calendar (legendscorner.com/whos-playing and /calendar), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "legends",
+   "band": "Jered Ames",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": null,
+   "source": "Legend's Corner own calendar (legendscorner.com/whos-playing and /calendar), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "legends",
+   "band": "Nate Murphy",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": null,
+   "source": "Legend's Corner own calendar (legendscorner.com/whos-playing and /calendar), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "legends",
+   "band": "Noah Tellish",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": null,
+   "source": "Legend's Corner own calendar (legendscorner.com/whos-playing and /calendar), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "legends",
+   "band": "Katie Marie",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": null,
+   "source": "Legend's Corner own calendar (legendscorner.com/whos-playing and /calendar), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "legends",
+   "band": "Rachael Turner",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": null,
+   "source": "Legend's Corner own calendar (legendscorner.com/whos-playing and /calendar), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "legends",
+   "band": "Aaron Patrick",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": null,
+   "source": "Legend's Corner own calendar (legendscorner.com/whos-playing and /calendar), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "legends",
+   "band": "Chad Caprio",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": null,
+   "source": "Legend's Corner own calendar (legendscorner.com/whos-playing and /calendar), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "legends",
+   "band": "Zach Zurcher",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": null,
+   "source": "Legend's Corner own calendar (legendscorner.com/whos-playing and /calendar), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "legends",
+   "band": "Bad Ember",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": null,
+   "source": "Legend's Corner own calendar (legendscorner.com/whos-playing and /calendar), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "jbjs",
+   "band": "Patrick Sharrow",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "jbjs",
+   "band": "Chris Rains",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": "Rooftop",
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Roof Top stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "jbjs",
+   "band": "Nick Smith",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "jbjs",
+   "band": "The Future Legends",
+   "start": "16:00",
+   "end": "20:00",
+   "stage": "Rooftop",
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Roof Top stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "jbjs",
+   "band": "Pete’s Diary",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "jbjs",
+   "band": "Lovedrive",
+   "start": "22:00",
+   "end": "02:30",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "jbjs",
+   "band": "Sara Avalos",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "jbjs",
+   "band": "John Keathley",
+   "start": "13:00",
+   "end": "17:00",
+   "stage": "Rooftop",
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Roof Top stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "jbjs",
+   "band": "Millie",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "jbjs",
+   "band": "Ashton Smith",
+   "start": "17:00",
+   "end": "21:00",
+   "stage": "Rooftop",
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Roof Top stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "jbjs",
+   "band": "Tesla Dawn",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "jbjs",
+   "band": "Hand Over Face",
+   "start": "22:00",
+   "end": "02:30",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "jbjs",
+   "band": "Brandon Roberts",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "jbjs",
+   "band": "Paul Juneau",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": "Rooftop",
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Roof Top stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "jbjs",
+   "band": "The Other'd (Colby Deitz)",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "jbjs",
+   "band": "Hailey Dawn",
+   "start": "16:00",
+   "end": "20:00",
+   "stage": "Rooftop",
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Roof Top stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "jbjs",
+   "band": "The Future Legends",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "jbjs",
+   "band": "Hand Over Face",
+   "start": "22:00",
+   "end": "02:30",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "jbjs",
+   "band": "Samantha Stroh",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "jbjs",
+   "band": "Chris Rains",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "Rooftop",
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Roof Top stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "jbjs",
+   "band": "The Other'd (Colby Deitz)",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "jbjs",
+   "band": "Donny Lee",
+   "start": "14:30",
+   "end": "18:00",
+   "stage": "Rooftop",
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Roof Top stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "jbjs",
+   "band": "The Future Legends",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "jbjs",
+   "band": "Lovedrive",
+   "start": "18:30",
+   "end": "21:00",
+   "stage": "Rooftop",
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Roof Top stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "jbjs",
+   "band": "Hand Over Face",
+   "start": "22:00",
+   "end": "02:30",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "jbjs",
+   "band": "Sara Spicer",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "jbjs",
+   "band": "Ashton Smith",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "jbjs",
+   "band": "Kelsey Hickman",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "jbjs",
+   "band": "Hand Over Face",
+   "start": "22:00",
+   "end": "02:30",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "jbjs",
+   "band": "Nick Smith",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "jbjs",
+   "band": "Paul Juneau",
+   "start": "13:00",
+   "end": "16:00",
+   "stage": "Rooftop",
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Roof Top stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "jbjs",
+   "band": "Peter Buonaiuto",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "jbjs",
+   "band": "Johnny Fera",
+   "start": "17:00",
+   "end": "21:00",
+   "stage": "Rooftop",
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Roof Top stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "jbjs",
+   "band": "The Future Legends",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "jbjs",
+   "band": "Hand Over Face",
+   "start": "22:00",
+   "end": "02:30",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "jbjs",
+   "band": "Hunter West",
+   "start": "17:00",
+   "end": "21:00",
+   "stage": "Rooftop",
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Roof Top stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "jbjs",
+   "band": "The Future Legends",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "jbjs",
+   "band": "Tesla Dawn",
+   "start": "22:00",
+   "end": "02:30",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "bootleggers",
+   "band": "Bill Roemer",
+   "start": "15:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "Bootleggers Inn own events list (bootleggersnashville.com/event-list), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "bootleggers",
+   "band": "Justin Lee Band",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "Bootleggers Inn own events list (bootleggersnashville.com/event-list), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "bootleggers",
+   "band": "John Hibbard and the Haybirds",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "Bootleggers Inn own events list (bootleggersnashville.com/event-list), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "bootleggers",
+   "band": "Rocky Bottom",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "Bootleggers Inn own events list (bootleggersnashville.com/event-list), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "bootleggers",
+   "band": "Cullen Greer",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "Bootleggers Inn own events list (bootleggersnashville.com/event-list), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "bootleggers",
+   "band": "Nick Smith",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Bootleggers Inn own events list (bootleggersnashville.com/event-list), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "whiskeybent",
+   "band": "Bill Roemer",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site (whiskeybentnash.com/live-music, published schedule), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "whiskeybent",
+   "band": "Isaac Mathews",
+   "start": "15:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site (whiskeybentnash.com/live-music, published schedule), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "whiskeybent",
+   "band": "The Garrett Browning band",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site (whiskeybentnash.com/live-music, published schedule), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "whiskeybent",
+   "band": "Redneck Rodeo Band",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site (whiskeybentnash.com/live-music, published schedule), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "whiskeybent",
+   "band": "Jon Sachar Band",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site (whiskeybentnash.com/live-music, published schedule), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "whiskeybent",
+   "band": "Tyler Stokes",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site (whiskeybentnash.com/live-music, published schedule), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "whiskeybent",
+   "band": "Jessie Cain Band",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site (whiskeybentnash.com/live-music, published schedule), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "whiskeybent",
+   "band": "Bill Roemer",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site (whiskeybentnash.com/live-music, published schedule), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "whiskeybent",
+   "band": "Tyler Stokes",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site (whiskeybentnash.com/live-music, published schedule), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "whiskeybent",
+   "band": "The Garrett Browning band",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site (whiskeybentnash.com/live-music, published schedule), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "whiskeybent",
+   "band": "Jessie Cain Band",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site (whiskeybentnash.com/live-music, published schedule), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "whiskeybent",
+   "band": "Jake Bleau",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site (whiskeybentnash.com/live-music, published schedule), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "whiskeybent",
+   "band": "Tyler Stokes",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site (whiskeybentnash.com/live-music, published schedule), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "whiskeybent",
+   "band": "Tyler Stokes",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site (whiskeybentnash.com/live-music, published schedule), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "whiskeybent",
+   "band": "Bill Roemer",
+   "start": "15:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site (whiskeybentnash.com/live-music, published schedule), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "whiskeybent",
+   "band": "Ballistic",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site (whiskeybentnash.com/live-music, published schedule), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "whiskeybent",
+   "band": "Bodacious Band",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site (whiskeybentnash.com/live-music, published schedule), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "whiskeybent",
+   "band": "Mike Leatherman",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site (whiskeybentnash.com/live-music, published schedule), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "whiskeybent",
+   "band": "Bill Roemer",
+   "start": "15:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site (whiskeybentnash.com/live-music, published schedule), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "whiskeybent",
+   "band": "Dave Baker Band",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site (whiskeybentnash.com/live-music, published schedule), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "whiskeybent",
+   "band": "The Snake Farmers",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site (whiskeybentnash.com/live-music, published schedule), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "whiskeybent",
+   "band": "Jake Bleau",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site (whiskeybentnash.com/live-music, published schedule), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "whiskeybent",
+   "band": "The Randy Nations Band",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site (whiskeybentnash.com/live-music, published schedule), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "whiskeybent",
+   "band": "The Lou Molich Band",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site (whiskeybentnash.com/live-music, published schedule), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "nudies",
+   "band": "John Caldwell",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": null,
+   "source": "Nudie's Honky Tonk own site (nudieshonkytonk.com, This Week's Band Schedule, 1st Floor), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "nudies",
+   "band": "Mike Riley",
+   "start": "14:30",
+   "end": "17:30",
+   "stage": null,
+   "source": "Nudie's Honky Tonk own site (nudieshonkytonk.com, This Week's Band Schedule, 1st Floor), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "nudies",
+   "band": "Carson Bull",
+   "start": "18:30",
+   "end": "21:30",
+   "stage": null,
+   "source": "Nudie's Honky Tonk own site (nudieshonkytonk.com, This Week's Band Schedule, 1st Floor), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "nudies",
+   "band": "Stoney T",
+   "start": "22:30",
+   "end": "01:30",
+   "stage": null,
+   "source": "Nudie's Honky Tonk own site (nudieshonkytonk.com, This Week's Band Schedule, 1st Floor), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "nudies",
+   "band": "Blaine Holcomb",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": "Rooftop",
+   "source": "Nudie's Honky Tonk own site (nudieshonkytonk.com, This Week's Band Schedule, Rooftop), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "nudies",
+   "band": "Dixon Darling",
+   "start": "16:00",
+   "end": "19:00",
+   "stage": "Rooftop",
+   "source": "Nudie's Honky Tonk own site (nudieshonkytonk.com, This Week's Band Schedule, Rooftop), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "nudies",
+   "band": "John Caldwell",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": null,
+   "source": "Nudie's Honky Tonk own site (nudieshonkytonk.com, This Week's Band Schedule, 1st Floor), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "nudies",
+   "band": "Brandon Jackson",
+   "start": "14:30",
+   "end": "17:30",
+   "stage": null,
+   "source": "Nudie's Honky Tonk own site (nudieshonkytonk.com, This Week's Band Schedule, 1st Floor), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "nudies",
+   "band": "Amanda Rowland",
+   "start": "18:30",
+   "end": "21:30",
+   "stage": null,
+   "source": "Nudie's Honky Tonk own site (nudieshonkytonk.com, This Week's Band Schedule, 1st Floor), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "nudies",
+   "band": "Multi Ultra",
+   "start": "22:30",
+   "end": "01:30",
+   "stage": null,
+   "source": "Nudie's Honky Tonk own site (nudieshonkytonk.com, This Week's Band Schedule, 1st Floor), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "nudies",
+   "band": "Mike Godwin",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "Rooftop",
+   "source": "Nudie's Honky Tonk own site (nudieshonkytonk.com, This Week's Band Schedule, Rooftop), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "nudies",
+   "band": "Blaine Holcomb",
+   "start": "15:00",
+   "end": "18:00",
+   "stage": "Rooftop",
+   "source": "Nudie's Honky Tonk own site (nudieshonkytonk.com, This Week's Band Schedule, Rooftop), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "nudies",
+   "band": "John Caldwell",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": null,
+   "source": "Nudie's Honky Tonk own site (nudieshonkytonk.com, This Week's Band Schedule, 1st Floor), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "nudies",
+   "band": "Ivey Andrews",
+   "start": "14:30",
+   "end": "17:30",
+   "stage": null,
+   "source": "Nudie's Honky Tonk own site (nudieshonkytonk.com, This Week's Band Schedule, 1st Floor), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "nudies",
+   "band": "Amanda Rowland",
+   "start": "18:30",
+   "end": "21:30",
+   "stage": null,
+   "source": "Nudie's Honky Tonk own site (nudieshonkytonk.com, This Week's Band Schedule, 1st Floor), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "nudies",
+   "band": "Jerry Jacobs",
+   "start": "22:30",
+   "end": "01:30",
+   "stage": null,
+   "source": "Nudie's Honky Tonk own site (nudieshonkytonk.com, This Week's Band Schedule, 1st Floor), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "nudies",
+   "band": "Jabe Burgess",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "Rooftop",
+   "source": "Nudie's Honky Tonk own site (nudieshonkytonk.com, This Week's Band Schedule, Rooftop), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "nudies",
+   "band": "Dixon Darling",
+   "start": "15:00",
+   "end": "18:00",
+   "stage": "Rooftop",
+   "source": "Nudie's Honky Tonk own site (nudieshonkytonk.com, This Week's Band Schedule, Rooftop), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "nudies",
+   "band": "John Caldwell",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": null,
+   "source": "Nudie's Honky Tonk own site (nudieshonkytonk.com, This Week's Band Schedule, 1st Floor), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "nudies",
+   "band": "Mike Riley",
+   "start": "14:30",
+   "end": "17:30",
+   "stage": null,
+   "source": "Nudie's Honky Tonk own site (nudieshonkytonk.com, This Week's Band Schedule, 1st Floor), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "nudies",
+   "band": "Troy Woods",
+   "start": "18:30",
+   "end": "21:30",
+   "stage": null,
+   "source": "Nudie's Honky Tonk own site (nudieshonkytonk.com, This Week's Band Schedule, 1st Floor), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "nudies",
+   "band": "Stoney T",
+   "start": "22:30",
+   "end": "01:30",
+   "stage": null,
+   "source": "Nudie's Honky Tonk own site (nudieshonkytonk.com, This Week's Band Schedule, 1st Floor), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "nudies",
+   "band": "Colin Patrick",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": "Rooftop",
+   "source": "Nudie's Honky Tonk own site (nudieshonkytonk.com, This Week's Band Schedule, Rooftop), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "nudies",
+   "band": "Dixon Darling",
+   "start": "16:00",
+   "end": "19:00",
+   "stage": "Rooftop",
+   "source": "Nudie's Honky Tonk own site (nudieshonkytonk.com, This Week's Band Schedule, Rooftop), seen Nov 18, 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "luckybastard",
+   "band": "Andy Gibbons",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": "Main Stage",
+   "source": "Lucky Bastard Saloon's own Instagram story (@luckybastardsaloon, Nov 18 2026, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "luckybastard",
+   "band": "Josh Gallagher",
+   "start": "16:00",
+   "end": "20:00",
+   "stage": "Main Stage",
+   "source": "Lucky Bastard Saloon's own Instagram story (@luckybastardsaloon, Nov 18 2026, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "luckybastard",
+   "band": "Trent Ingram",
+   "start": "20:00",
+   "end": "00:00",
+   "stage": "Main Stage",
+   "source": "Lucky Bastard Saloon's own Instagram story (@luckybastardsaloon, Nov 18 2026, Main Stage), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "tootsies",
+   "band": "Ken Taylor + Chace / Julia / Bam",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "tootsies",
+   "band": "Beth Garner",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "tootsies",
+   "band": "Thomas Scott band",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "tootsies",
+   "band": "Thomas Scott band",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "tootsies",
+   "band": "Marie Wise-Hawkins",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "tootsies",
+   "band": "Chad Hamm",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "tootsies",
+   "band": "Stix / Chad",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "tootsies",
+   "band": "Stix",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "tootsies",
+   "band": "Darren T",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "tootsies",
+   "band": "Rod Jansen",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "tootsies",
+   "band": "Patrick Kenny",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "tootsies",
+   "band": "David Ray",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "tootsies",
+   "band": "Nate / Keira",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "tootsies",
+   "band": "David Ray",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "tootsies",
+   "band": "Chris Essex",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "tootsies",
+   "band": "Derek Allen",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "tootsies",
+   "band": "Noah Johnson",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "tootsies",
+   "band": "Noah Johnson",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "tootsies",
+   "band": "Noah Johnson",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "tootsies",
+   "band": "James / Kieran / Cole Terry",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "tootsies",
+   "band": "Garrett / Kyle / Alexis",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "tootsies",
+   "band": "Lucas / / Baylee / Cody Lee",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "tootsies",
+   "band": "Lukas / James / Zac",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "tootsies",
+   "band": "Zac / Lukas / / Alex",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "tootsies",
+   "band": "Patrick / Isabell",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "tootsies",
+   "band": "Dexter",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "tootsies",
+   "band": "Darren Therauilt",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "tootsies",
+   "band": "Rod Janzen + Alexis",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "tootsies",
+   "band": "Bobby Jo",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "tootsies",
+   "band": "Vinne / Karl / Sydney",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "tootsies",
+   "band": "Ricky Roux",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "tootsies",
+   "band": "Maria Wis Hawkins",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "tootsies",
+   "band": "Avery Franks",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "tootsies",
+   "band": "Jennie Wynn",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "tootsies",
+   "band": "Bud",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "tootsies",
+   "band": "Marco / Olivia",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "tootsies",
+   "band": "Joey Falcone",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "tootsies",
+   "band": "Chris Essex",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "tootsies",
+   "band": "Joey Falcone",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "tootsies",
+   "band": "Emi Pellegrino band",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "tootsies",
+   "band": "Patrick band",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "tootsies",
+   "band": "Bud band",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "tootsies",
+   "band": "Dale band",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "tootsies",
+   "band": "Macy Tabor",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "tootsies",
+   "band": "Rob F / Justin / Maddie + Cari",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "tootsies",
+   "band": "Anita Hill",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "tootsies",
+   "band": "Anita Hill",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "tootsies",
+   "band": "Anita",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "tootsies",
+   "band": "Micheal Pope",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "tootsies",
+   "band": "David Ray",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "tootsies",
+   "band": "Orio",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "tootsies",
+   "band": "Jackson Capps",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "tootsies",
+   "band": "Jackson Capps",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "tootsies",
+   "band": "Derek Allen",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "tootsies",
+   "band": "Michael Pope",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "tootsies",
+   "band": "Clay / Molli",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "tootsies",
+   "band": "Morgan Ray",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "tootsies",
+   "band": "Jacob Martin",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "tootsies",
+   "band": "Jacob Martin",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Tootsie's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "honkytonkcentral",
+   "band": "Sydney / Miguel + Marie's band",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "honkytonkcentral",
+   "band": "Julia / Chace + Julia / Chace",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "honkytonkcentral",
+   "band": "Rod / Ryan + Neely",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "honkytonkcentral",
+   "band": "Rod / Ryan / Neely",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "honkytonkcentral",
+   "band": "Josh Sampson band + Neely( keep her on it)",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "honkytonkcentral",
+   "band": "Anita Hill",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "honkytonkcentral",
+   "band": "Landon Lingerfelt band",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "honkytonkcentral",
+   "band": "Landon L",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "honkytonkcentral",
+   "band": "Lanndon L",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "honkytonkcentral",
+   "band": "Lanndon",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "honkytonkcentral",
+   "band": "Jay Marlar",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "honkytonkcentral",
+   "band": "Marie Wise Hawkins",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "honkytonkcentral",
+   "band": "Erik F / Sam Rife",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "honkytonkcentral",
+   "band": "Morgan Frazier",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "honkytonkcentral",
+   "band": "Chris Essex",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "honkytonkcentral",
+   "band": "Clay / Molli",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "honkytonkcentral",
+   "band": "Jonny Grey",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "honkytonkcentral",
+   "band": "Jacob Martin",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "honkytonkcentral",
+   "band": "Pj",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "honkytonkcentral",
+   "band": "Pj",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "honkytonkcentral",
+   "band": "Vince Band",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "honkytonkcentral",
+   "band": "Cameron band",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "honkytonkcentral",
+   "band": "Vince Band",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "honkytonkcentral",
+   "band": "Benny",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "honkytonkcentral",
+   "band": "Rod Janzen",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "honkytonkcentral",
+   "band": "Stix / Justin / Maddie",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "honkytonkcentral",
+   "band": "Smitty",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "honkytonkcentral",
+   "band": "Donnavan",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "honkytonkcentral",
+   "band": "Jennie Wynn",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "honkytonkcentral",
+   "band": "Matt Drum tec",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "honkytonkcentral",
+   "band": "Brandon Pretty",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "honkytonkcentral",
+   "band": "Aiden Moore band",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "honkytonkcentral",
+   "band": "Smitty",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "honkytonkcentral",
+   "band": "Matt Drum tec",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "honkytonkcentral",
+   "band": "Brandon Pretty",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "honkytonkcentral",
+   "band": "Daniel Winfree",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "honkytonkcentral",
+   "band": "John Matthew",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "honkytonkcentral",
+   "band": "Dale band",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "honkytonkcentral",
+   "band": "Garret Band",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "honkytonkcentral",
+   "band": "Nate / Keria",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "honkytonkcentral",
+   "band": "Dalton Black",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "honkytonkcentral",
+   "band": "Kiai",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "honkytonkcentral",
+   "band": "Smitty",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Honky Tonk Central (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "kidrock",
+   "band": "Pierce White",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "kidrock",
+   "band": "Pierce W",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "kidrock",
+   "band": "Pierce White",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "kidrock",
+   "band": "Pierce White",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "kidrock",
+   "band": "Darren T",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "kidrock",
+   "band": "Scott Collier",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "kidrock",
+   "band": "Scott Collier",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "kidrock",
+   "band": "Stone",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "kidrock",
+   "band": "John Stone",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "kidrock",
+   "band": "Jackson Capps",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "kidrock",
+   "band": "John Stone",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "kidrock",
+   "band": "John Stone",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "kidrock",
+   "band": "Dean James",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "kidrock",
+   "band": "Dean James",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "kidrock",
+   "band": "Dean James",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "kidrock",
+   "band": "Arron Sparling",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "kidrock",
+   "band": "Mantz",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "kidrock",
+   "band": "Mantz",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "kidrock",
+   "band": "Mantz",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "kidrock",
+   "band": "Mantz",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Main floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "kidrock",
+   "band": "Jennie Wynn",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "kidrock",
+   "band": "Rob Fercenz",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "kidrock",
+   "band": "Cameron Band",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "kidrock",
+   "band": "Vinnie / Macy band",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "kidrock",
+   "band": "Thomas Deschamps",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "kidrock",
+   "band": "Maria Wis-Hawkins",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "kidrock",
+   "band": "Matt Drum Tek",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "kidrock",
+   "band": "Brennan Hansen",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "kidrock",
+   "band": "Olivia / Marco",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "kidrock",
+   "band": "Derek Allen",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, 2nd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "kidrock",
+   "band": "Thomas Deschamps",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "kidrock",
+   "band": "Matt Drum tec",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, 3rd Floor floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "kidrock",
+   "band": "Bridget Miozzi band",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "Rooftop",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Rooftop floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "kidrock",
+   "band": "Melanie Murray",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "Rooftop",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Rooftop floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "kidrock",
+   "band": "Joyful Noise",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "Rooftop",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Rooftop floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "kidrock",
+   "band": "Smitty",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "Rooftop",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Rooftop floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "kidrock",
+   "band": "Orio",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "Rooftop",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Rooftop floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "kidrock",
+   "band": "Abby K",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "Rooftop",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Rooftop floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "kidrock",
+   "band": "Erik F",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "Rooftop",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Rooftop floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "kidrock",
+   "band": "Erik F",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Rooftop",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Rooftop floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "kidrock",
+   "band": "Rod Jansen",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Rooftop",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Rooftop floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "kidrock",
+   "band": "Abby K",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Rooftop",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Rooftop floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "kidrock",
+   "band": "Orio",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Rooftop",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Rooftop floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "kidrock",
+   "band": "Yankee Drawl",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Rooftop",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Rooftop floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "kidrock",
+   "band": "Yankee Drawl",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "Rooftop",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Rooftop floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "kidrock",
+   "band": "Jinx",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "Rooftop",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Rooftop floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "kidrock",
+   "band": "Lilly Ohearn / Jeff Duke",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "Rooftop",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Rooftop floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "kidrock",
+   "band": "Lilly Ohearn / Jeff Duke",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "Rooftop",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Rooftop floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "kidrock",
+   "band": "Olivia / Marco",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "Rooftop",
+   "source": "Honky Tonk School public schedule sheet for Kid Rock's (honkytonkschool.org/schedules, Sheet1 schedule, Rooftop floor), seen Nov 18, 2026; sheet has no week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "rippys",
+   "band": "Morgan / Brennan / John",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "rippys",
+   "band": "Morgan / Zach / John",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "rippys",
+   "band": "Zach / Ahren / John",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "rippys",
+   "band": "Zach / John / Ahren",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "rippys",
+   "band": "Lucas / John / Lily + Zach / John / Ahren",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "rippys",
+   "band": "Bud / Cody Lee / Calico",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "rippys",
+   "band": "Piper / Ahren / Gaven",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "rippys",
+   "band": "Miguel / / / Maggie / Jax",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "rippys",
+   "band": "Miguel / Averi / Kieran",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "rippys",
+   "band": "Zach / AhrenJohn",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "rippys",
+   "band": "Rod Janzen",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "rippys",
+   "band": "David Ray",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "rippys",
+   "band": "Vinnie / Alexandria Thomas",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "rippys",
+   "band": "Vinnie / band",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "rippys",
+   "band": "John Mathew's band + Tim Andrews",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "rippys",
+   "band": "Daniel Winfree",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "rippys",
+   "band": "Brandon Pretty",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "rippys",
+   "band": "Damell Winfree",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "rippys",
+   "band": "Micheal Pope",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "rippys",
+   "band": "Lilly OHearn",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, Main floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "rippys",
+   "band": "Jordan / Alexis / Kyle",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "rippys",
+   "band": "Lucas / / Jax / Jordan",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "rippys",
+   "band": "Jordan / Kyle / Averi",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "rippys",
+   "band": "Will / Jax / Jacob",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "rippys",
+   "band": "Eric + Jody / Will / James",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "rippys",
+   "band": "Paula Joe band",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "rippys",
+   "band": "Bud",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "rippys",
+   "band": "Melanie Murray",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "rippys",
+   "band": "Jinx",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "rippys",
+   "band": "Jay Marlar",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "rippys",
+   "band": "Justin Corley",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "rippys",
+   "band": "Justin Corley",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "rippys",
+   "band": "Camron band",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "rippys",
+   "band": "Kaia band",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "rippys",
+   "band": "Dalton Black",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "rippys",
+   "band": "Patrick Kenny",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "rippys",
+   "band": "Marco / Olivia",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "rippys",
+   "band": "Benny and the Jets",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 2nd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "rippys",
+   "band": "Lucas / Sam / Rigo",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "rippys",
+   "band": "Jordan / Lucas / Eric + Dusty / Diego",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "rippys",
+   "band": "Gwynn Sisters + Gwynn Sisters",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "rippys",
+   "band": "Lucas / Rigo / Kyle",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "rippys",
+   "band": "Ken / Milo / Cameron L + layla / Milo / Alex",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "rippys",
+   "band": "Anthony / Cody Wick / Jax",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "rippys",
+   "band": "Motown / Beth G",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "rippys",
+   "band": "Beth + Motown / Beth G",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "rippys",
+   "band": "Eric / Cameron O / Gaven",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "rippys",
+   "band": "Eric / Anthony / Cameron",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "rippys",
+   "band": "Jacob band",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "rippys",
+   "band": "Jacob band",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "rippys",
+   "band": "Tim Andrews",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "rippys",
+   "band": "Tim Andrews",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "rippys",
+   "band": "Donavin",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-18",
+   "bar": "rippys",
+   "band": "Freebird",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "rippys",
+   "band": "John Mathew's",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "rippys",
+   "band": "Dalton black",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "rippys",
+   "band": "John Mathew'",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "rippys",
+   "band": "Dexter",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "3rd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
   }
  ],
  "closures": [
