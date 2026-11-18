@@ -111,7 +111,10 @@ function applyManual(fromDate){let n=0;for(const d of new Set(MANUAL.map(m=>m.da
   const gid=`${m.date}-${m.bar}-${si}`;
   // Same artist at this bar/night starting within 90 min (scraped, or an earlier manual row on the same stage): merge into one row with the manual times. Owner rows stay.
   const ids=bandIdsFor(m.band,bid);
-  const dupes=db.prepare(`SELECT id,set_start,set_end,source,stage FROM sets WHERE bar_id=? AND date=? AND band_id IN (${ids.map(()=>'?').join(',')}) AND id<>? AND COALESCE(source,'')<>'owner'`).all(m.bar,m.date,...ids,mid).filter(r=>near(r.set_start,m.start)&&(r.source!=='manual'||String(r.stage||'').trim()===(stage||'')));
+  const existing=db.prepare(`SELECT id,set_start,set_end,source,stage FROM sets WHERE bar_id=? AND date=? AND band_id IN (${ids.map(()=>'?').join(',')}) AND id<>? AND COALESCE(source,'')<>'owner'`).all(m.bar,m.date,...ids,mid);
+  let dupes=existing.filter(r=>near(r.set_start,m.start)&&(r.source!=='manual'||String(r.stage||'').trim()===(stage||'')));
+  // Only one set for this artist at this bar/night, and the start moved more than 90 min: still that row (stage may also have been renamed).
+  if(!dupes.length&&existing.length&&existing.every(r=>!near(r.set_start,m.start))&&MANUAL.filter(o=>o.bar===m.bar&&o.date===m.date&&normName(o.band)===normName(m.band)).length===1)dupes=existing;
   if(dupes.length){const hasMid=!!db.prepare('SELECT 1 FROM sets WHERE id=?').get(mid);
    const keep=(dupes.find(r=>rated(r.id))||{}).id||(hasMid?mid:dupes[0].id);
    const ke=db.prepare('SELECT set_end FROM sets WHERE id=?').get(keep).set_end;
