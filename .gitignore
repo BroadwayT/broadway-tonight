@@ -4,7 +4,11 @@ data/*.db*
 *.png
 !public/icon-192.png
 !public/icon-512.png
+!public/icon-maskable-192.png
+!public/icon-maskable-512.png
 !public/apple-touch-icon.png
+!public/splash/
+!public/splash/*.png
 data/*
 !data/.gitkeep
 !data/featured.json

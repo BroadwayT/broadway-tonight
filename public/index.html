@@ -4,13 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Broadway Tonight">
 <meta name="theme-color" content="#07060a">
 <meta name="description" content="Who's playing tonight on Lower Broadway.">
 <link rel="manifest" href="/manifest.webmanifest">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="apple-touch-startup-image" href="/splash/1170x2532.png" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="/splash/1179x2556.png" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="/splash/1206x2622.png" media="(device-width: 402px) and (device-height: 874px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="/splash/1284x2778.png" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="/splash/1290x2796.png" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="/splash/1320x2868.png" media="(device-width: 440px) and (device-height: 956px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="/splash/1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="/splash/1242x2688.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="/splash/828x1792.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="/splash/750x1334.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
 <title>Broadway Tonight</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +31,7 @@
   --bg:#07060a;--bg2:#12101a;--card:#1a1624;--card2:#221c30;
   --text:#f7f2ea;--muted:#9a91a8;--neon:#ff2d95;--neon2:#ffd60a;--lime:#b8ff3c;
   --line:rgba(255,255,255,.08);--safe-b:env(safe-area-inset-bottom,0px);
-  --nav-h:64px;--tap:48px;
+  --safe-t:env(safe-area-inset-top,0px);--nav-h:64px;--tap:48px;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;padding:0;height:100%}
@@ -34,7 +45,7 @@ body{
   padding-bottom:calc(var(--nav-h) + var(--safe-b) + 72px);overflow-x:hidden;
 }
 header{
-  padding:16px 16px 12px;border-bottom:1px solid var(--line);
+  padding:calc(16px + var(--safe-t)) 16px 12px;border-bottom:1px solid var(--line);
   position:sticky;top:0;z-index:5;background:rgba(7,6,10,.92);
   backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
 }
@@ -247,8 +258,10 @@ details.earlier[open] summary:before{content:"▾ "}
 .plan-chip button{border:0;background:transparent;color:var(--muted);font-size:16px;line-height:1;padding:0 0 0 2px}
 .install-wrap{margin:8px 12px}
 .install-wrap .btn{width:100%}
+.install-dismiss{display:block;width:100%;margin-top:6px;border:0;background:transparent;color:var(--muted);font:inherit;font-weight:600;font-size:13px;min-height:40px;cursor:pointer}
 .install-steps{margin:0 0 12px;padding:0 0 0 18px;color:var(--text);font-size:14px;line-height:1.45}
 .install-steps li{margin:0 0 8px}
+.offline-note{margin:-2px 16px 10px;color:var(--muted);font-size:12px}
 @media (display-mode: standalone){
   .install-wrap{display:none !important}
 }
@@ -271,7 +284,7 @@ details.earlier[open] summary:before{content:"▾ "}
 .band-link{color:inherit;text-decoration:none;border-bottom:1px dashed rgba(255,255,255,.25)}
 .tip-opts{display:grid;gap:10px;margin-top:12px}.tip-opts a{justify-content:center;min-height:52px;font-size:17px}
 .ig-link{color:var(--muted);font-size:13px;text-decoration:none}
-.social-head{position:absolute;top:14px;right:12px;display:flex;gap:6px}
+.social-head{position:absolute;top:calc(14px + var(--safe-t));right:12px;display:flex;gap:6px}
 .social-head a{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:12px;color:var(--text);background:rgba(255,255,255,.06);border:1px solid var(--line);text-decoration:none}
 .social-head a:active,.social-row a:active{transform:scale(.96)}
 .follow-us{margin:28px 16px 0;text-align:center}
@@ -329,6 +342,7 @@ details.earlier[open] summary:before{content:"▾ "}
   <div id="ticker" class="ticker" hidden><span class="dot"></span><span id="tickerText"></span></div>
   <div id="installWrap" class="install-wrap" hidden>
     <button type="button" class="btn" id="installBtn">Add to Home Screen</button>
+    <button type="button" class="install-dismiss" id="installDismiss">Not now</button>
   </div>
   <div id="barOfWeek"></div>
   <div id="bandSpotlight"></div>
@@ -382,9 +396,11 @@ details.earlier[open] summary:before{content:"▾ "}
   <div class="sheet">
     <h3 id="installTitle">Add to Home Screen</h3>
     <ol class="install-steps">
-      <li>Tap the Share icon at the bottom of Safari, then Add to Home Screen.</li>
-      <li>In Chrome on iPhone, the Share icon is in the address bar.</li>
+      <li>Tap the Share icon at the bottom of Safari. It looks like a square with an arrow pointing up.</li>
+      <li>Scroll the list and tap Add to Home Screen.</li>
+      <li>Tap Add.</li>
     </ol>
+    <p class="hint">In Chrome on iPhone, the Share icon is in the address bar.</p>
     <button type="button" class="skip" id="installSheetClose">Close</button>
   </div>
 </div>
@@ -851,7 +867,27 @@ document.addEventListener('submit',e=>{
   sendSignup(form);
 });
 async function lineup(){
-  const d=await j('/api/lineup?date=today');
+  let d,fromCache=false;
+  try{
+    const r=await fetch('/api/lineup?date=today');
+    if(!r.ok)throw new Error('lineup '+r.status);
+    fromCache=r.headers.get('X-BT-From-Cache')==='1';
+    d=await r.json();
+  }catch(e){
+    const note=$('#lineupOffline');
+    if(note)note.remove();
+    $('#lineup').innerHTML='<div class="card muted">The lineup is unavailable offline until this page has loaded once with a connection.</div>';
+    return;
+  }
+  const note=$('#lineupOffline');
+  if(note)note.remove();
+  if(fromCache){
+    const p=document.createElement('p');
+    p.id='lineupOffline';p.className='offline-note';
+    p.textContent='Showing the last lineup saved on this phone.';
+    const anchor=$('#lineupAnchor');
+    if(anchor)anchor.insertAdjacentElement('afterend',p);
+  }
   const card=mountHomeSignup();
   showNight(d.date);
   const bars=[];
@@ -1008,8 +1044,30 @@ function goHome(push=true){
   showPanel('home');$('#nav-home').classList.add('on');window.scrollTo(0,0);
   trackView('/');
 }
+function markNav(id){
+  document.querySelectorAll('.bottom-nav button').forEach(x=>x.classList.remove('on'));
+  const b=$(id);if(b)b.classList.add('on');
+}
+function scrollToSection(el,instant){
+  if(!el)return;
+  const header=document.querySelector('header');
+  const offset=(header?header.offsetHeight:0)+8;
+  const top=el.getBoundingClientRect().top+window.scrollY-offset;
+  window.scrollTo({top:Math.max(0,top),behavior:instant?'auto':'smooth'});
+}
+function openLineupView(instant,push){
+  curBar=null;showPanel('home');markNav('#nav-lineup');
+  if(push)history.pushState({},'','/#lineup');
+  const go=()=>scrollToSection($('#lineupAnchor'),instant);
+  requestAnimationFrame(()=>requestAnimationFrame(go));
+  trackView('/lineup');
+}
+const landOnLineup=location.pathname==='/'&&(location.hash==='#lineup'||((window.matchMedia('(display-mode: standalone)').matches||navigator.standalone===true)&&!location.hash));
+let firstRoute=true;
 function route(){const bm=location.pathname.match(/^\/band\/([^/]+)/);if(bm)return openBand(decodeURIComponent(bm[1]),false);const m=location.pathname.match(/^\/bar\/([^/]+)/);if(m)return openBar(decodeURIComponent(m[1]),false);
-  if(location.hash==='#lineup'){curBar=null;showPanel('home');$('#nav-home').classList.add('on');window.scrollTo(0,0);trackView('/lineup');return;}
+  const openLineup=location.hash==='#lineup'||(firstRoute&&landOnLineup&&location.pathname==='/'&&!location.hash);
+  firstRoute=false;
+  if(openLineup){openLineupView(true,false);return;}
   goHome(false);}
 window.addEventListener('popstate',route);
 
@@ -1047,23 +1105,19 @@ document.querySelectorAll('#ratingsSection .tabs button').forEach(b=>b.onclick=(
 document.querySelectorAll('.bottom-nav button').forEach(b=>b.onclick=()=>{
   document.querySelectorAll('.bottom-nav button').forEach(x=>x.classList.remove('on'));
   b.classList.add('on');
-  if(location.pathname!=='/'){history.pushState({},'','/');curBar=null;}
+  if(b.dataset.scroll==='lineup'){
+    openLineupView(false,location.pathname!=='/'||location.hash!=='#lineup');
+    return;
+  }
+  if(location.pathname!=='/'||location.hash){history.pushState({},'','/');curBar=null;}
   const panel=b.dataset.panel;
   showPanel(panel);
   if(b.dataset.scroll==='street'){
     showPanel('home');
     trackView('/');
-    requestAnimationFrame(()=>{
-      const el=$('#street');
-      if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
-    });
+    requestAnimationFrame(()=>requestAnimationFrame(()=>scrollToSection($('#street'),false)));
   } else if(b.dataset.scroll==='lineup'){
-    showPanel('home');
-    trackView('/lineup');
-    requestAnimationFrame(()=>{
-      const el=$('#lineupAnchor');
-      if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
-    });
+    openLineupView(false,true);
   } else if(b.dataset.scroll==='featured'){
     showPanel('home');
     trackView('/');
@@ -1087,9 +1141,25 @@ function isIosDevice(){
   return /iPhone|iPad|iPod/.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
 }
 let deferredInstall=null;
+const INSTALL_HIDE_KEY='bt_install_hide';
+const INSTALL_HIDE_MS=30*24*60*60*1000;
+function installHidden(){
+  try{
+    const raw=localStorage.getItem(INSTALL_HIDE_KEY);
+    if(!raw)return false;
+    const at=Number(raw);
+    if(!Number.isFinite(at))return true;
+    return Date.now()-at<INSTALL_HIDE_MS;
+  }catch(e){return false;}
+}
+function dismissInstall(){
+  try{localStorage.setItem(INSTALL_HIDE_KEY,String(Date.now()));}catch(e){}
+  hideInstallBtn();
+  closeInstallSheet();
+}
 function showInstallBtn(){
   const wrap=$('#installWrap');
-  if(!wrap||isStandaloneApp())return;
+  if(!wrap||isStandaloneApp()||installHidden())return;
   wrap.hidden=false;
 }
 function hideInstallBtn(){
@@ -1116,17 +1186,22 @@ async function startInstall(){
   }
 }
 function maybeInstall(){
-  if(isStandaloneApp()){hideInstallBtn();return;}
+  if(isStandaloneApp()||installHidden()){hideInstallBtn();return;}
   if(isIosDevice())showInstallBtn();
-  const btn=$('#installBtn'),sheet=$('#installSheet'),closeBtn=$('#installSheetClose');
+  const btn=$('#installBtn'),sheet=$('#installSheet'),closeBtn=$('#installSheetClose'),dismissBtn=$('#installDismiss');
   if(btn)btn.onclick=startInstall;
   if(closeBtn)closeBtn.onclick=closeInstallSheet;
+  if(dismissBtn)dismissBtn.onclick=dismissInstall;
   window.addEventListener('beforeinstallprompt',e=>{
     e.preventDefault();
     deferredInstall=e;
-    if(!isStandaloneApp())showInstallBtn();
+    if(!isStandaloneApp()&&!installHidden())showInstallBtn();
   });
   window.addEventListener('appinstalled',()=>{deferredInstall=null;hideInstallBtn();closeInstallSheet();});
+}
+function registerSw(){
+  if(!('serviceWorker' in navigator))return;
+  navigator.serviceWorker.register('/sw.js').catch(()=>{});
 }
 
 async function initRatings(){
@@ -1141,7 +1216,7 @@ async function initRatings(){
   }
   $('#ratingsSection').hidden=true;
 }
-picks();featured();initRatings();lineup();pulse();nowPlaying();street();renderPlan();maybeInstall();route();
+picks();featured();initRatings();lineup();pulse();nowPlaying();street();renderPlan();maybeInstall();registerSw();route();
 setInterval(()=>{picks();board();pulse();nowPlaying();streetCache=null;street();},60000);
 </script>
 </body>

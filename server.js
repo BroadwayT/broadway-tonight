@@ -192,7 +192,7 @@ app.use((req,res,next)=>{
  if(req.path==='/api/collect'||req.path==='/api/stats'||req.path==='/stats'||req.path==='/api/subscribers.csv'||req.path==='/unsubscribe'||req.path==='/privacy')return next();
  let d=req.cookies.device_id;if(!d){d=crypto.randomUUID();res.cookie('device_id',d,{maxAge:365*864e5,httpOnly:true,sameSite:'lax'});}req.deviceId=d;
  req.ipHash=crypto.createHash('sha256').update(String(req.ip)).digest('hex');next();}); // raw IP never stored
-app.use(express.static(path.join(__dirname,'public')));
+app.use(express.static(path.join(__dirname,'public'),{setHeaders(res,filePath){if(path.basename(filePath)==='sw.js'){res.set('Cache-Control','no-cache');res.set('Service-Worker-Allowed','/');}}}));
 app.get('/api/lineup',(req,res)=>{const date=(!req.query.date||req.query.date==='today')?nightNow():req.query.date;
  const rows=orderLineup(db.prepare(`SELECT s.*,b.name bar,bd.name band FROM sets s JOIN bars b ON b.id=s.bar_id JOIN bands bd ON bd.id=s.band_id WHERE s.date=? ORDER BY b.name,s.set_start`).all(date));
  const mine=new Set(db.prepare('SELECT set_id FROM ratings WHERE device_id=?').all(req.deviceId).map(r=>r.set_id));
