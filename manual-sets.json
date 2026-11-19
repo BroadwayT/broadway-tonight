@@ -11195,6 +11195,107 @@
    "end": "01:00",
    "stage": "3rd Floor",
    "source": "Honky Tonk School public schedule sheet for Rippy's (honkytonkschool.org/schedules, Daily schedule tab, 3rd Floor floor), seen Nov 18, 2026; sheet header shows an old 2020 week date; written OK from John Taylor Nov 17 2026; no end time posted, so start+3h"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "olered",
+   "band": "Charity Bowden",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v4gh5j8snw09z8zwgy14by/, seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "olered",
+   "band": "Gracia",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v61v9cbt3ka5tnw30bnrdp/, seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "olered",
+   "band": "Alex Graham",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v4h47ag4ka3vw48njryetc/, seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "olered",
+   "band": "Peedy Chavis",
+   "start": "16:30",
+   "end": "20:30",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m5hy3cme2aqxbvrw08kv7a3g/, seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "olered",
+   "band": "On the Rise - Awards Edition",
+   "start": "19:30",
+   "end": "21:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus event page https://olered.com/nashville/event/on-the-rise-awards-edition/, seen Nov 18, 2026",
+   "note": "Showcase"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "olered",
+   "band": "Scotty Mac Band",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m5zj9yhgmd4pdbznty6mk6nt/, seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "wildhorse",
+   "band": "Ginn",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "The Honky-Tonk",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "wildhorse",
+   "band": "Matt Burke",
+   "start": "11:00",
+   "end": "14:30",
+   "stage": "The Eye",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "wildhorse",
+   "band": "Matt Rogers",
+   "start": "15:00",
+   "end": "18:15",
+   "stage": null,
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "wildhorse",
+   "band": "Lydia Simonds",
+   "start": "18:45",
+   "end": "22:00",
+   "stage": "The Eye",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/), seen Nov 18, 2026"
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "wildhorse",
+   "band": "AJ McLean Presents: Alexander James",
+   "start": "20:00",
+   "end": "23:00",
+   "stage": "Hurricane Hall",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus event page https://www.category10.com/nashville/event/aj-mcclean-presents-alexander-james/, seen Nov 18, 2026",
+   "note": "Ticketed"
   }
  ],
  "closures": [
