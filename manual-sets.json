@@ -11226,15 +11226,6 @@
   {
    "date": "2026-11-19",
    "bar": "olered",
-   "band": "Peedy Chavis",
-   "start": "16:30",
-   "end": "20:30",
-   "stage": null,
-   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m5hy3cme2aqxbvrw08kv7a3g/, seen Nov 18, 2026"
-  },
-  {
-   "date": "2026-11-19",
-   "bar": "olered",
    "band": "On the Rise - Awards Edition",
    "start": "19:30",
    "end": "21:00",
@@ -11938,6 +11929,564 @@
    "start": "22:30",
    "end": "02:30",
    "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (live music calendar widget, Nov 20 2026)"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "olered",
+   "band": "Makenzie Schriner",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4rkj3fq8whx546p46pjxe9g/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "olered",
+   "band": "MC3",
+   "start": "11:00",
+   "end": "14:30",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v3wkacvz0evgrk692r9d79/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "olered",
+   "band": "Mathew Barringer",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m6m0ew3wx91fm8j37am1x9en/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "olered",
+   "band": "Mitch Clark",
+   "start": "14:30",
+   "end": "17:30",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v4mw2gpj65pybxmq9xctj0/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "olered",
+   "band": "Magnolia Trace",
+   "start": "17:30",
+   "end": "20:30",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m5hw8bq95nkf1tm4fkpd694e/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "olered",
+   "band": "Hudson Valley",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v4hvssm8z4s5tyr27yyt5f/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "olered",
+   "band": "Scotty Mac Band",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v4jg77a2pn2ne3dnjrd504/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "wildhorse",
+   "band": "The Messy Boyz",
+   "start": "11:00",
+   "end": "14:15",
+   "stage": "Hurricane Hall",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m4vhpwtxcmxn5nfajsgyzq6b/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "wildhorse",
+   "band": "Alyssa Scott",
+   "start": "11:00",
+   "end": "15:00",
+   "stage": "The Eye",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m6a1j0g87pw66m629g668g81/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "wildhorse",
+   "band": "Mike Riley",
+   "start": "14:45",
+   "end": "18:30",
+   "stage": "Hurricane Hall",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m7p9q4emfsg88bcabxqd47tg/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "wildhorse",
+   "band": "Whiskey Cash and Roses",
+   "start": "19:00",
+   "end": "22:00",
+   "stage": "Hurricane Hall",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m4vhhxvxjaxyk3sqyg07w9dx/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "wildhorse",
+   "band": "Jason Cross",
+   "start": "22:30",
+   "end": "01:00",
+   "stage": "Hurricane Hall",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m5w8ebpv2v5r7qd9we3cxrs0/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "olered",
+   "band": "Krystal Steel",
+   "start": "11:00",
+   "end": "14:30",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v4se58f7cndafb514yeqkm/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "olered",
+   "band": "Matt Ferranti",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v4rj6mrpt1vk69747ah81r/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "olered",
+   "band": "Alex Smith & The Mobile Homeboys",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v4qntx8s8q2fnqbp7et13x/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "olered",
+   "band": "The Gray's",
+   "start": "14:30",
+   "end": "17:30",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v4szpwa9vks5k0ndydb66d/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "olered",
+   "band": "Magnolia Trace",
+   "start": "17:30",
+   "end": "20:30",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v4ttb32yrh6ysjx9p2222m/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "olered",
+   "band": "Todd Cameron",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v4q4tmebpfsna0wkhr9yhx/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "wildhorse",
+   "band": "Alex Graham",
+   "start": "11:00",
+   "end": "14:15",
+   "stage": "Hurricane Hall",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m4ekza5q078ravcgmhb2hccc/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "wildhorse",
+   "band": "J.P. Burr",
+   "start": "11:00",
+   "end": "13:45",
+   "stage": "The Eye",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m50sdkqd1vn5bbr80846v7gy/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "wildhorse",
+   "band": "Kelly & Sarah",
+   "start": "14:15",
+   "end": "17:45",
+   "stage": "The Eye",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m4gmz7y3cz8qr3ab1ws70xy9/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "wildhorse",
+   "band": "Landon Wall",
+   "start": "14:45",
+   "end": "18:30",
+   "stage": "Hurricane Hall",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m4ekajesa3gw8mvwm3x2j1ns/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "wildhorse",
+   "band": "Three Lane",
+   "start": "18:15",
+   "end": "21:45",
+   "stage": "The Eye",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m4gmpdpqb0k92em9jkczaz04/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "wildhorse",
+   "band": "Ben Chase",
+   "start": "19:00",
+   "end": "22:00",
+   "stage": "Hurricane Hall",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m4vk7mwhkbjqj4sy4xy434j7/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "wildhorse",
+   "band": "Brandon Whitley",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "The Eye",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m4gmvpvbz0nz2wkvmdmm1me2/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "bar": "wildhorse",
+   "band": "Alannah McCready",
+   "start": "22:30",
+   "end": "01:00",
+   "stage": "Hurricane Hall",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m4ek7m98fwxm1cx650srf78e/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "olered",
+   "band": "Lana Scott Beck",
+   "start": "11:00",
+   "end": "15:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4rksd4jv8rrewe5a53ex1xg/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "olered",
+   "band": "Alex Brown",
+   "start": "11:00",
+   "end": "15:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v52peqqs0515rwmq6e41w3/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "olered",
+   "band": "Alex Lomartire",
+   "start": "15:00",
+   "end": "19:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v552a9s28kgq5r4805eh46/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "olered",
+   "band": "Makenzie Schriner",
+   "start": "15:30",
+   "end": "19:30",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4rkjm1m6rjcxsck9v649bv6/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "olered",
+   "band": "Matt Ferranti",
+   "start": "19:00",
+   "end": "23:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v54b4nzvxmdbchj5yrhsdk/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "olered",
+   "band": "Scotty Mac Band",
+   "start": "20:00",
+   "end": "00:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v53mcy35b4wckrct5fba1n/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "wildhorse",
+   "band": "Tawna Goforth",
+   "start": "11:00",
+   "end": "13:00",
+   "stage": "The Honky-Tonk",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m4gtkp5sgpceq265x3wngr0e/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "wildhorse",
+   "band": "Reckless Bound",
+   "start": "11:00",
+   "end": "15:00",
+   "stage": "The Eye",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m6hkx1q4avs1mxe503jat0wr/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "olered",
+   "band": "Morgan Alexander",
+   "start": "11:00",
+   "end": "15:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v55x3jn24x5c88pg5fwcv6/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "olered",
+   "band": "Stacey Kelleher",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v575shm341q2ktszsky65x/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "olered",
+   "band": "Andrew Marshall",
+   "start": "15:30",
+   "end": "19:30",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v56k3y2z9fg3wh51ykzcsv/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "olered",
+   "band": "Ross Livermore",
+   "start": "16:30",
+   "end": "20:30",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v57pds2kbscnkcvcdqm24h/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "olered",
+   "band": "Brandon Jackson",
+   "start": "20:00",
+   "end": "00:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v487y091hvwmp2hebvjd6z/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "wildhorse",
+   "band": "Timothy James",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": "The Honky-Tonk",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m4ep745cacjp197rmvphng8y/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "wildhorse",
+   "band": "Ben Chase",
+   "start": "15:30",
+   "end": "18:30",
+   "stage": "The Honky-Tonk",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m4gjbw8sfg3nhx7nvt0d5hpv/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "wildhorse",
+   "band": "Ty Gregory",
+   "start": "17:00",
+   "end": "21:00",
+   "stage": "The Eye",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m4epqmyr3k96dq5237zrvhkc/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "wildhorse",
+   "band": "Johnny Widner",
+   "start": "19:00",
+   "end": "22:00",
+   "stage": "The Honky-Tonk",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m4eexb2syvtf3pqpq4bhxc7y/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "olered",
+   "band": "Matt Rogers",
+   "start": "11:00",
+   "end": "15:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v59d374ck4vke8dsnpzfdd/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "olered",
+   "band": "Dennis Drummond",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v586tm4adtnjwv2d6c5df6/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "olered",
+   "band": "Isaac Cole",
+   "start": "15:30",
+   "end": "19:30",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v5e9qrehsta68xn5qwx67j/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "olered",
+   "band": "Sammy Arriaga",
+   "start": "16:30",
+   "end": "20:30",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v60mpzw34d3w8atfsf09kc/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "olered",
+   "band": "Walker Wilson",
+   "start": "20:00",
+   "end": "00:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v5b7d0185ttgm3h9dfh794/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "wildhorse",
+   "band": "Kelly & Sarah",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": "The Honky-Tonk",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m4gnvk8amvehjbaahq4sm22t/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "wildhorse",
+   "band": "Lydia Simonds",
+   "start": "15:30",
+   "end": "18:30",
+   "stage": "The Honky-Tonk",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m4gntjt2cj5p531jsvga0xts/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "wildhorse",
+   "band": "Nick Smith",
+   "start": "17:00",
+   "end": "21:00",
+   "stage": "The Eye",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m4ejrs4r0qhcc8c5dt8h3je0/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "wildhorse",
+   "band": "Morgan Alexander",
+   "start": "19:00",
+   "end": "22:00",
+   "stage": "The Honky-Tonk",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m4eezwt2spzkfjjnc6k6d54m/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "olered",
+   "band": "Emily Brooke",
+   "start": "11:00",
+   "end": "15:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v5bps1xmcycja36qk8pckk/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "olered",
+   "band": "Grace West",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v5zeqvq64xww4zbp014fjj/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "olered",
+   "band": "Mathew Barringer",
+   "start": "15:30",
+   "end": "19:30",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v5d0tk3z0fqfsb5ckaxdtq/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "olered",
+   "band": "Paige Rose",
+   "start": "16:30",
+   "end": "20:30",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v5zz1wvd7kg67akx8579vs/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "olered",
+   "band": "Matt Rogers",
+   "start": "20:00",
+   "end": "00:00",
+   "stage": null,
+   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v58wbg6d2yx3nypg970bnv/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "wildhorse",
+   "band": "Alyssa Scott",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": "The Honky-Tonk",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m64hnqdfa7ev2364wnppyb68/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "wildhorse",
+   "band": "Trent Ingram",
+   "start": "15:30",
+   "end": "18:30",
+   "stage": "The Honky-Tonk",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m4gpjwg18c79xw6h5qtz1h63/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "wildhorse",
+   "band": "Byrdie Wilson",
+   "start": "17:00",
+   "end": "21:00",
+   "stage": "The Eye",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m4vkcrv3c8w6jvxkx77arpj7/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "wildhorse",
+   "band": "Bus Call",
+   "start": "19:00",
+   "end": "22:00",
+   "stage": "The Honky-Tonk",
+   "source": "Category 10 Nashville calendar (https://www.category10.com/nashville/calendar/) plus booking page https://www.category10.com/nashville/events/booking_01m64g1y22mzn5b5vseadnr3d6/, seen Nov 19, 2026"
+  },
+  {
+   "date": "2026-11-22",
+   "bar": "wildhorse",
+   "band": "Imminence",
+   "start": "19:00",
+   "end": "23:00",
+   "stage": "Hurricane Hall",
+   "source": "Category 10 Nashville shows page (https://www.category10.com/nashville/shows/): Imminence - Axis Mundi Tour: North America 2026, Sunday Nov 22, 7:00 PM-11:00 PM, Hurricane Hall, seen Nov 19, 2026"
   }
  ],
  "closures": [
