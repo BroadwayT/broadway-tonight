@@ -3,7 +3,7 @@
  * behind an old cached page. Lineup responses live in a separate cache so
  * the last loaded lineup can still be used offline after a shell bump.
  */
-const SHELL_VERSION = 'v1';
+const SHELL_VERSION = 'v2';
 const SHELL_CACHE = 'bt-shell-' + SHELL_VERSION;
 const DATA_CACHE = 'bt-data';
 const CACHE_HEADER = 'X-BT-From-Cache';

@@ -20,7 +20,7 @@ function pngSize(rel) {
 test('manifest names the app, opens standalone on tonight lineup, and lists any plus maskable icons', () => {
   const manifest = JSON.parse(read('manifest.webmanifest'));
   assert.equal(manifest.name, 'Broadway Tonight');
-  assert.equal(manifest.short_name, 'Broadway');
+  assert.equal(manifest.short_name, 'Broadway Tonight');
   assert.equal(manifest.display, 'standalone');
   assert.equal(manifest.start_url, '/#lineup');
   assert.equal(manifest.scope, '/');
@@ -50,6 +50,7 @@ test('apple-touch-icon is 180px and the head has iOS web-app and splash tags', (
   assert.match(html, /apple-mobile-web-app-capable" content="yes"/);
   assert.match(html, /name="mobile-web-app-capable" content="yes"/);
   assert.match(html, /apple-mobile-web-app-title" content="Broadway Tonight"/);
+  assert.match(html, /<title>Broadway Tonight<\/title>/);
   assert.match(html, /apple-mobile-web-app-status-bar-style" content="black-translucent"/);
   assert.match(html, /viewport-fit=cover/);
   assert.match(html, /apple-touch-icon" sizes="180x180" href="\/apple-touch-icon\.png"/);

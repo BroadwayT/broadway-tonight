@@ -7,6 +7,7 @@ data/*.db*
 !public/icon-maskable-192.png
 !public/icon-maskable-512.png
 !public/apple-touch-icon.png
+!scripts/broadway-tonight-logo.png
 !public/splash/
 !public/splash/*.png
 data/*

@@ -1,6 +1,6 @@
 {
   "name": "Broadway Tonight",
-  "short_name": "Broadway",
+  "short_name": "Broadway Tonight",
   "description": "Who's playing tonight on Lower Broadway.",
   "start_url": "/#lineup",
   "scope": "/",
