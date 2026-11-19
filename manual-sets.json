@@ -8832,6 +8832,15 @@
   {
    "date": "2026-11-19",
    "bar": "bootleggers",
+   "band": "Mark Hatt",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Bootleggers Inn own site event list https://bootleggersnashville.com/event-list (Nov 19, 2026, 10:00 AM - 2:00 PM Mark Hatt / Bootleggers Inn), checked Nov 19 2026."
+  },
+  {
+   "date": "2026-11-19",
+   "bar": "bootleggers",
    "band": "Rocky Bottom",
    "start": "14:00",
    "end": "18:00",
