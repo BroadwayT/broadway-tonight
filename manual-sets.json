@@ -6260,15 +6260,6 @@
    "source": "Bar's own THIS WEEK AT FRIENDS Instagram post (@friendsbarnash, screenshots from Jules Nov 16 2026)"
   },
   {
-   "date": "2026-11-20",
-   "bar": "flp",
-   "band": "Rod Youree",
-   "start": "22:00",
-   "end": "02:00",
-   "stage": "Oasis Rooftop",
-   "source": "Bar's own THIS WEEK AT FRIENDS Instagram post (@friendsbarnash, screenshots from Jules Nov 16 2026)"
-  },
-  {
    "date": "2026-11-21",
    "bar": "flp",
    "band": "Tanner Olsen",
@@ -14107,6 +14098,42 @@
    "end": "14:00",
    "stage": null,
    "source": "Bar own website: https://www.bootleggersnashville.com/event-list (Wix Events listing, seen Nov 20 2026)"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "luckybastard",
+   "band": "Los Honky Tonkers",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": "Main Stage",
+   "source": "Lucky Bastard own Instagram story (@luckybastardsaloon) Main Stage November 20, seen Nov 20 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "luckybastard",
+   "band": "Honky Tonk Heroes",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": "Main Stage",
+   "source": "Lucky Bastard own Instagram story (@luckybastardsaloon) Main Stage November 20, seen Nov 20 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "luckybastard",
+   "band": "Tyson Hanes",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "Main Stage",
+   "source": "Lucky Bastard own Instagram story (@luckybastardsaloon) Main Stage November 20, seen Nov 20 2026"
+  },
+  {
+   "date": "2026-11-20",
+   "bar": "luckybastard",
+   "band": "Eddie Bustamante",
+   "start": "22:00",
+   "end": "02:45",
+   "stage": "Main Stage",
+   "source": "Lucky Bastard own Instagram story (@luckybastardsaloon) Main Stage November 20, seen Nov 20 2026"
   }
  ],
  "closures": [
