@@ -33,8 +33,8 @@ function seedFeaturedIfMissing(){
   }catch(e){console.error('featured seed',e.message);}
 }
 seedFeaturedIfMissing();
-const BAR_ENGAGE_NOTE='We spotlight bands that engage with us — reply to our messages, like or comment on our posts, or send us a DM.';
-const SPOT_ENGAGE_NOTE="We feature bands that engage with us — reply to our messages, like or comment on our posts, or send us a DM. That's how you get on this page.";
+const BAR_ENGAGE_NOTE='Bands that follow us, comment or send us a DM get spotlighted sooner.';
+const SPOT_ENGAGE_NOTE="Want to be featured? Follow us, like or comment on our posts, or send us a DM, and we'll feature you sooner.";
 const blankFeatured=()=>({_note:'',barOfTheWeek:{barId:'',blurb:'',history:'',offers:[],website:'',sourceUrl:'',image:'',imageCredit:'',handle:'',weekOf:'',bands:[],engageNote:BAR_ENGAGE_NOTE},bandSpotlight:{name:'',photo:'',photoCredit:'',story:'',nextBroadwaySets:[],instagram:'',tiktok:'',website:'',video:null,engageNote:SPOT_ENGAGE_NOTE},hotRightNow:{barId:'',band:'',line:''}});
 function readFeatured(){
   let raw={};try{raw=JSON.parse(fs.readFileSync(FEATURED_PATH,'utf8'));}catch(e){}
