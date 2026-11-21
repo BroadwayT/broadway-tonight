@@ -6,3 +6,14 @@
 - Layla's Honky Tonk: https://www.laylasnashville.com/livemusic says "see our LIVE MUSIC SCHEDULE below" but the schedule widget is empty without JavaScript. Nothing readable there for Nov 20-26.
 - Margaritaville Nashville: https://www.margaritavillenashville.com/calendar still says "Check back soon! There are no events at this time." (Nov 20).
 - Lucky Bastard Saloon: https://luckybastardsaloon.com/ returns a Cloudflare challenge (403) to non-browser fetches.
+
+## Morning lineup check, Saturday November 21, 2026 (added pages)
+
+- The Stage on Broadway: https://thestageonbroadway.com/calendar embeds a BeatGig (dusk.fm) calendar. Its public venue page https://dusk.fm/venues/thestageonbroadway carries the full list as JSON-LD (`bookingsJsonLdString` in `__NEXT_DATA__`): named sets with start and end for all three floors, with no floor label, and the "Z" times are really Central. Instagram: @stageonbroadway (rooftop schedule slide, undated, posted the morning of Nov 21).
+- Friends in Low Places: @friendsbarnash story slides "TODAY AT FLIP" (main stage) and "ON THE ROOFTOP" (Oasis) list that day's sets. Oasis DJs (BMAC, DJ Tanner, Rod Youree) are not listed on the site.
+- Ole Red: @olered (no schedule in stories Nov 21). Per-day Nashville rows via the olered_get_calendar call (rows labeled "Ole Red Nashville" only).
+- Category 10: @officialcategory10 (no Nashville schedule in stories Nov 21). Per-day rows via cat_10_get_calendar.
+- Bootleggers Inn: @bootleggersinn (holiday party promo only). The event-list page lists named sets for Nov 21-23.
+- Kane Brown's On Broadway: @kanebrownsonbroadway. Tootsie's: @tootsiesvip. Neither posted sets in stories Nov 21.
+- Acme: https://www.acmefeedandseed.com/calendar?format=json returns the full event list (Squarespace). Its Nov 21 8 PM slot, previously Wild Bill & The Bruisers, now reads TBA.
+- Luke's 32 Bridge: https://lukes32bridge.com/live-music/ returned a bot-check page to the box on Nov 21.
