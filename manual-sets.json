@@ -14158,9 +14158,9 @@
    "bar": "bootleggers",
    "band": "Scott Dorman",
    "start": "15:00",
-   "end": "19:00",
+   "end": "18:00",
    "stage": null,
-   "source": "Bootleggers Inn own event list (https://www.bootleggersnashville.com/event-list), seen Nov 21 2026"
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
   },
   {
    "date": "2026-11-23",
@@ -14169,7 +14169,7 @@
    "start": "18:00",
    "end": "22:00",
    "stage": null,
-   "source": "Bootleggers Inn own event list (https://www.bootleggersnashville.com/event-list), seen Nov 21 2026"
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
   },
   {
    "date": "2026-11-27",
@@ -14503,8 +14503,9 @@
    "bar": "bootleggers",
    "band": "Mark Hatt",
    "start": "12:00",
-   "end": "16:00",
-   "source": "Bootleggers Inn own website event list https://www.bootleggersnashville.com/event-list, event page https://www.bootleggersnashville.com/event-details/mark-hatt-2026-11-24-12-00 (checked Nov 22 2026)"
+   "end": "15:00",
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
   },
   {
    "date": "2026-11-24",
@@ -14512,15 +14513,8 @@
    "band": "Christen Ball Band",
    "start": "18:00",
    "end": "22:00",
-   "source": "Bootleggers Inn own website event list https://www.bootleggersnashville.com/event-list, event page https://www.bootleggersnashville.com/event-details/christen-ball-band-2026-11-24-18-00 (checked Nov 22 2026)"
-  },
-  {
-   "date": "2026-11-24",
-   "bar": "bootleggers",
-   "band": "Jake Holder Duo",
-   "start": "22:00",
-   "end": "02:00",
-   "source": "Bootleggers Inn own website event list https://www.bootleggersnashville.com/event-list, event page https://www.bootleggersnashville.com/event-details/jake-holder-duo-2026-11-24-22-00 (checked Nov 22 2026)"
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
   },
   {
    "date": "2026-11-24",
@@ -15232,6 +15226,240 @@
    "end": "21:00",
    "stage": null,
    "source": "Acme Feed & Seed's own Instagram story (@acmenashville), seen Nov 23 2026"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "bootleggers",
+   "band": "Zack Neal",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+  },
+  {
+   "date": "2026-11-23",
+   "bar": "bootleggers",
+   "band": "John Hibbard & The Haybirds",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "bootleggers",
+   "band": "Scott Dorman",
+   "start": "15:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+  },
+  {
+   "date": "2026-11-24",
+   "bar": "bootleggers",
+   "band": "Tyler Cannon Duo",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "bootleggers",
+   "band": "Scott Dorman",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "bootleggers",
+   "band": "Bill Roemer",
+   "start": "15:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "bootleggers",
+   "band": "Trevor Finlay",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "bootleggers",
+   "band": "John Hibbard & The Haybirds",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "bootleggers",
+   "band": "Mark Hatt",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "bootleggers",
+   "band": "Rocky Bottom",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "bootleggers",
+   "band": "Jenesis",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "bootleggers",
+   "band": "Chilli Dawg",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "bootleggers",
+   "band": "Nick Smith",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "bootleggers",
+   "band": "Rocky Bottom",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "bootleggers",
+   "band": "Jesse Cain",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "bootleggers",
+   "band": "Chilli Dawg",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "bootleggers",
+   "band": "Rexton Lee",
+   "start": "18:30",
+   "end": null,
+   "stage": "Upstairs",
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "bootleggers",
+   "band": "Michawl Simeon Duo",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "bootleggers",
+   "band": "Rocky Bottom",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "bootleggers",
+   "band": "Rexton Lee",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "bootleggers",
+   "band": "Jesse Cain",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "bootleggers",
+   "band": "Justin Lee",
+   "start": "18:30",
+   "end": null,
+   "stage": "Upstairs",
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "bootleggers",
+   "band": "Zack Neal",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "bootleggers",
+   "band": "Rocky Bottom",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "bootleggers",
+   "band": "Justin Lee",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "bootleggers",
+   "band": "Chilli Dawg",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
   }
  ],
  "closures": [
