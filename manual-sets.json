@@ -15187,6 +15187,51 @@
    "end": "02:00",
    "stage": null,
    "source": "Honky Tonk School public Honky Tonk Central schedule sheet https://docs.google.com/spreadsheets/d/16S6tlF0UXGmKHI3MY3VcpGAxsSX18MQj7D-upDu_WSE (Monday column, Main; week-of field blank; checked Nov 23 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "acme",
+   "band": "Soul Brunch feat. Charles \"Wigg\" Walker",
+   "start": "12:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Acme Feed & Seed's own Instagram story (@acmenashville), seen Nov 23 2026"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "acme",
+   "band": "Amanda Accardi",
+   "start": "17:00",
+   "end": "19:00",
+   "stage": null,
+   "source": "Acme Feed & Seed's own Instagram story (@acmenashville), seen Nov 23 2026"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "acme",
+   "band": "Wild Bill & the Bruisers",
+   "start": "20:00",
+   "end": "23:00",
+   "stage": null,
+   "source": "Acme Feed & Seed's own Instagram story (@acmenashville), seen Nov 23 2026"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "acme",
+   "band": "Bluegrass Brunch feat. The Bankshafts",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": null,
+   "source": "Acme Feed & Seed's own Instagram story (@acmenashville), seen Nov 23 2026"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "acme",
+   "band": "Les Tonky: A Night of Backbeat Twang",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Acme Feed & Seed's own Instagram story (@acmenashville), seen Nov 23 2026"
   }
  ],
  "closures": [
