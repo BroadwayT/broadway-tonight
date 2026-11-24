@@ -355,10 +355,10 @@
    "date": "2026-11-24",
    "bar": "bootbarn",
    "band": "Kristine Kabbes and the Skallywags",
-   "start": "18:45",
+   "start": "18:15",
    "end": "22:15",
    "stage": "Rooftop",
-   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026 (time corrected from earlier artist-provided entry)"
+   "source": "The Stage on Broadway Instagram story (@stageonbroadway, 'TUESDAY LINE UP / THE STAGE ROOFTOP' slide), seen Nov 24 2026 (times corrected from the bar's calendar)"
   },
   {
    "date": "2026-11-24",
@@ -8203,19 +8203,19 @@
    "date": "2026-11-24",
    "bar": "bootbarn",
    "band": "Mariel Mae",
-   "start": "14:30",
+   "start": "14:15",
    "end": "18:15",
    "stage": "Rooftop",
-   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026"
+   "source": "The Stage on Broadway Instagram story (@stageonbroadway, 'TUESDAY LINE UP / THE STAGE ROOFTOP' slide), seen Nov 24 2026 (times corrected from the bar's calendar)"
   },
   {
    "date": "2026-11-24",
    "bar": "bootbarn",
    "band": "Blake Dixon",
-   "start": "22:45",
+   "start": "22:15",
    "end": "02:30",
    "stage": "Rooftop",
-   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop), seen Nov 18, 2026"
+   "source": "The Stage on Broadway Instagram story (@stageonbroadway, 'TUESDAY LINE UP / THE STAGE ROOFTOP' slide), seen Nov 24 2026 (times corrected from the bar's calendar)"
   },
   {
    "date": "2026-11-18",
@@ -12346,15 +12346,6 @@
   },
   {
    "date": "2026-11-24",
-   "bar": "olered",
-   "band": "Walker Wilson",
-   "start": "20:00",
-   "end": "00:00",
-   "stage": null,
-   "source": "Ole Red Nashville live music page (https://olered.com/nashville/live-music/) plus booking page https://olered.com/nashville/events/booking_01m4v5b7d0185ttgm3h9dfh794/, seen Nov 19, 2026"
-  },
-  {
-   "date": "2026-11-24",
    "bar": "wildhorse",
    "band": "Kelly & Sarah",
    "start": "12:00",
@@ -14201,15 +14192,6 @@
   {
    "date": "2026-11-27",
    "bar": "olered",
-   "band": "MC3",
-   "start": "11:00",
-   "end": "14:30",
-   "stage": null,
-   "source": "Ole Red Nashville own calendar (https://olered.com/nashville/calendar/, Friday Nov 27 2026 day view), seen Nov 21 2026"
-  },
-  {
-   "date": "2026-11-27",
-   "bar": "olered",
    "band": "Ben Law",
    "start": "11:00",
    "end": "14:00",
@@ -14704,15 +14686,6 @@
    "end": "19:30",
    "stage": null,
    "source": "Category 10 Nashville own calendar (https://www.category10.com/nashville/calendar/, Sunday Nov. 29, 2026 day view; event page https://www.category10.com/nashville/events/booking_01m4gkdjxfgce7vfvekpvm5s3r/), seen Nov 23 2026"
-  },
-  {
-   "date": "2026-11-29",
-   "bar": "wildhorse",
-   "band": "Skyelor Anderson",
-   "start": "18:45",
-   "end": "22:00",
-   "stage": null,
-   "source": "Category 10 Nashville own calendar (https://www.category10.com/nashville/calendar/, Sunday Nov. 29, 2026 day view; event page https://www.category10.com/nashville/events/booking_01m50sw22j3stcjnj4bth1tdcx/), seen Nov 23 2026"
   },
   {
    "date": "2026-11-29",
@@ -17731,6 +17704,2357 @@
    "stage": "2nd",
    "source": "Honky Tonk School public schedule sheet https://docs.google.com/spreadsheets/d/16S6tlF0UXGmKHI3MY3VcpGAxsSX18MQj7D-upDu_WSE/edit#gid=0 (week-of date not printed; seen Nov 23, 2026)",
    "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "acme",
+   "band": "The Stolen Faces",
+   "start": "19:00",
+   "end": "22:00",
+   "source": "Bar own website: https://www.acmefeedandseed.com/calendar/klg2s3aptf5d8t2-xhssl-attxm-zm238-jnp8s-p6pdb-pj2nk-2xl7x-wcgtc-w7kbf-ddatx-wlteh-3gwff-9jygy-7yael-2445a-8cwrf (listing for 11/30, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "redneckriviera",
+   "band": "Buck McCoy",
+   "start": "10:00",
+   "end": "13:00",
+   "source": "Bar own website: https://redneckrivieranashville.com/events/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "redneckriviera",
+   "band": "Megan Golden",
+   "start": "12:00",
+   "end": "15:00",
+   "source": "Bar own website: https://redneckrivieranashville.com/events/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "redneckriviera",
+   "band": "Kaitlin Walker",
+   "start": "14:00",
+   "end": "17:00",
+   "source": "Bar own website: https://redneckrivieranashville.com/events/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "redneckriviera",
+   "band": "Rachel Hall",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://redneckrivieranashville.com/events/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "redneckriviera",
+   "band": "Francelle",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://redneckrivieranashville.com/events/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "redneckriviera",
+   "band": "Mo Hoffmeyer",
+   "start": "20:00",
+   "end": "23:00",
+   "source": "Bar own website: https://redneckrivieranashville.com/events/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "redneckriviera",
+   "band": "Shannon Willis",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://redneckrivieranashville.com/events/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "redneckriviera",
+   "band": "Noah Ferrell",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://redneckrivieranashville.com/events/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "redneckriviera",
+   "band": "Buck McCoy",
+   "start": "10:00",
+   "end": "13:00",
+   "source": "Bar own website: https://redneckrivieranashville.com/events/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "redneckriviera",
+   "band": "Megan Golden",
+   "start": "12:00",
+   "end": "15:00",
+   "source": "Bar own website: https://redneckrivieranashville.com/events/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "redneckriviera",
+   "band": "Kaitlin Walker",
+   "start": "14:00",
+   "end": "17:00",
+   "source": "Bar own website: https://redneckrivieranashville.com/events/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "redneckriviera",
+   "band": "Francelle",
+   "start": "16:00",
+   "end": "19:00",
+   "source": "Bar own website: https://redneckrivieranashville.com/events/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "redneckriviera",
+   "band": "Ricky Rooker",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://redneckrivieranashville.com/events/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "redneckriviera",
+   "band": "Jenna Jane",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://redneckrivieranashville.com/events/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "redneckriviera",
+   "band": "Mo Hoffmeyer",
+   "start": "20:00",
+   "end": "23:00",
+   "source": "Bar own website: https://redneckrivieranashville.com/events/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "redneckriviera",
+   "band": "Shannon Willis",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://redneckrivieranashville.com/events/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "redneckriviera",
+   "band": "Rachel Hall",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://redneckrivieranashville.com/events/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "redneckriviera",
+   "band": "Mo Hoffmeyer",
+   "start": "11:00",
+   "end": "14:00",
+   "source": "Bar own website: https://redneckrivieranashville.com/events/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "redneckriviera",
+   "band": "Andrew Mack",
+   "start": "14:00",
+   "end": "17:00",
+   "source": "Bar own website: https://redneckrivieranashville.com/events/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "redneckriviera",
+   "band": "Megan Golden",
+   "start": "15:00",
+   "end": "18:00",
+   "source": "Bar own website: https://redneckrivieranashville.com/events/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "redneckriviera",
+   "band": "Christopher Griffiths",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://redneckrivieranashville.com/events/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "redneckriviera",
+   "band": "Shannon Willis",
+   "start": "19:00",
+   "end": "22:00",
+   "source": "Bar own website: https://redneckrivieranashville.com/events/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "redneckriviera",
+   "band": "Lauren Rose Thayer",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://redneckrivieranashville.com/events/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "luke32",
+   "band": "Ryan Jacobs",
+   "start": "11:00",
+   "end": "14:00",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "luke32",
+   "band": "Melissa Livingstone",
+   "start": "14:00",
+   "end": "17:00",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "luke32",
+   "band": "Cameron Merrell",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "luke32",
+   "band": "Rylan Fowler",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "luke32",
+   "band": "Aly Cutter",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "luke32",
+   "band": "Rob Riser",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "luke32",
+   "band": "Matt Poling",
+   "start": "10:00",
+   "end": "13:00",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "luke32",
+   "band": "Dominique Hutchinson",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "luke32",
+   "band": "Justin Bryan",
+   "start": "14:00",
+   "end": "17:00",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "luke32",
+   "band": "Jessie Wilson",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "luke32",
+   "band": "Bobby McClendon",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "luke32",
+   "band": "Henry Martin",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "luke32",
+   "band": "TJ Watson",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "luke32",
+   "band": "Justin Bryan",
+   "start": "10:00",
+   "end": "13:00",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "luke32",
+   "band": "Mitch Carter",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "luke32",
+   "band": "Rylan Fowler",
+   "start": "14:00",
+   "end": "17:00",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "luke32",
+   "band": "Kaley & Co.",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "luke32",
+   "band": "Brian Thomas",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "luke32",
+   "band": "Nicole Sumerlyn",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "luke32",
+   "band": "Tyler Barron",
+   "start": "10:00",
+   "end": "13:00",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "luke32",
+   "band": "Nick West",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "luke32",
+   "band": "Johnny Cochran",
+   "start": "14:00",
+   "end": "17:00",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "luke32",
+   "band": "Bobby McClendon",
+   "start": "16:00",
+   "end": "19:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "luke32",
+   "band": "Josh Paige",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "luke32",
+   "band": "Mike Beach",
+   "start": "20:00",
+   "end": "23:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "luke32",
+   "band": "J. Hartley",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://lukes32bridge.com/live-music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "casarosa",
+   "band": "Devan Sanders",
+   "start": "11:00",
+   "end": "14:00",
+   "source": "Bar own website: https://casarosanashville.com/music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "casarosa",
+   "band": "I Love You Goodbye",
+   "start": "14:00",
+   "end": "17:00",
+   "source": "Bar own website: https://casarosanashville.com/music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "casarosa",
+   "band": "Rob Riser",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://casarosanashville.com/music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "casarosa",
+   "band": "Josh Paige",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://casarosanashville.com/music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "casarosa",
+   "band": "Tyler Barron",
+   "start": "10:00",
+   "end": "13:00",
+   "source": "Bar own website: https://casarosanashville.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "casarosa",
+   "band": "Jara Ward",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://casarosanashville.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "casarosa",
+   "band": "Rob Riser",
+   "start": "14:00",
+   "end": "17:00",
+   "source": "Bar own website: https://casarosanashville.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "casarosa",
+   "band": "Lexie Laplante",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://casarosanashville.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "casarosa",
+   "band": "No Good Deed Band",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://casarosanashville.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "casarosa",
+   "band": "Kaley & Co.",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://casarosanashville.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "casarosa",
+   "band": "Tanner Olsen",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://casarosanashville.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "casarosa",
+   "band": "Ashley Chapman",
+   "start": "10:00",
+   "end": "13:00",
+   "source": "Bar own website: https://casarosanashville.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "casarosa",
+   "band": "Ryan Jacobs",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://casarosanashville.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "casarosa",
+   "band": "Dominique Hutchinson",
+   "start": "14:00",
+   "end": "17:00",
+   "source": "Bar own website: https://casarosanashville.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "casarosa",
+   "band": "Amber DeLaCruz",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://casarosanashville.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "casarosa",
+   "band": "Adam Bruno",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://casarosanashville.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "casarosa",
+   "band": "Aly Cutter",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://casarosanashville.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "casarosa",
+   "band": "Josh Paige",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://casarosanashville.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "casarosa",
+   "band": "Ashley Chapman",
+   "start": "10:00",
+   "end": "13:00",
+   "source": "Bar own website: https://casarosanashville.com/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "casarosa",
+   "band": "Riane Cates",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://casarosanashville.com/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "casarosa",
+   "band": "Alex Graham",
+   "start": "14:00",
+   "end": "17:00",
+   "source": "Bar own website: https://casarosanashville.com/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "casarosa",
+   "band": "Jessie Rose & The Blue Collar Boys",
+   "start": "16:00",
+   "end": "19:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://casarosanashville.com/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "casarosa",
+   "band": "Jara Ward",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://casarosanashville.com/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "casarosa",
+   "band": "Liz Labelle",
+   "start": "20:00",
+   "end": "23:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://casarosanashville.com/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "casarosa",
+   "band": "Rob Riser",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://casarosanashville.com/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "bellbottomsup",
+   "band": "Zach Westcott",
+   "start": "12:00",
+   "end": "15:00",
+   "source": "Bar own website: https://bellbottomsupbar.com/music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "bellbottomsup",
+   "band": "Warren Garret",
+   "start": "16:00",
+   "end": "19:00",
+   "source": "Bar own website: https://bellbottomsupbar.com/music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "bellbottomsup",
+   "band": "Brad Redlich",
+   "start": "20:00",
+   "end": "23:00",
+   "source": "Bar own website: https://bellbottomsupbar.com/music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "bellbottomsup",
+   "band": "Ashley Christensen",
+   "start": "10:00",
+   "end": "13:00",
+   "source": "Bar own website: https://bellbottomsupbar.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "bellbottomsup",
+   "band": "Riane Cates",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://bellbottomsupbar.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "bellbottomsup",
+   "band": "Zach Westcott",
+   "start": "14:00",
+   "end": "17:00",
+   "source": "Bar own website: https://bellbottomsupbar.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "bellbottomsup",
+   "band": "Amber DeLaCruz",
+   "start": "16:00",
+   "end": "19:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://bellbottomsupbar.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "bellbottomsup",
+   "band": "I Love You Goodbye",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://bellbottomsupbar.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "bellbottomsup",
+   "band": "Aly Cutter",
+   "start": "20:00",
+   "end": "23:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://bellbottomsupbar.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "bellbottomsup",
+   "band": "The Beasley Brothers",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://bellbottomsupbar.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "bellbottomsup",
+   "band": "Chloe Lawson",
+   "start": "10:00",
+   "end": "13:00",
+   "source": "Bar own website: https://bellbottomsupbar.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "bellbottomsup",
+   "band": "Jara Ward",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://bellbottomsupbar.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "bellbottomsup",
+   "band": "Kyle Elliott",
+   "start": "14:00",
+   "end": "17:00",
+   "source": "Bar own website: https://bellbottomsupbar.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "bellbottomsup",
+   "band": "Jessie Wilson",
+   "start": "16:00",
+   "end": "19:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://bellbottomsupbar.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "bellbottomsup",
+   "band": "Ariel McReynolds",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://bellbottomsupbar.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "bellbottomsup",
+   "band": "No Good Deed Band",
+   "start": "20:00",
+   "end": "23:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://bellbottomsupbar.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "bellbottomsup",
+   "band": "Rob Riser",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://bellbottomsupbar.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "bellbottomsup",
+   "band": "Ashley Christensen",
+   "start": "12:00",
+   "end": "15:00",
+   "source": "Bar own website: https://bellbottomsupbar.com/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "bellbottomsup",
+   "band": "I Love You Goodbye",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://bellbottomsupbar.com/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "bellbottomsup",
+   "band": "Rachel Schumacher",
+   "start": "16:00",
+   "end": "19:00",
+   "source": "Bar own website: https://bellbottomsupbar.com/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "bellbottomsup",
+   "band": "Jessica Rose",
+   "start": "16:00",
+   "end": "19:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://bellbottomsupbar.com/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "bellbottomsup",
+   "band": "Dominique Hutchinson",
+   "start": "20:00",
+   "end": "23:00",
+   "source": "Bar own website: https://bellbottomsupbar.com/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "bellbottomsup",
+   "band": "Amber DeLaCruz",
+   "start": "20:00",
+   "end": "23:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://bellbottomsupbar.com/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "aldeans",
+   "band": "Nalani Rothrock",
+   "start": "11:00",
+   "end": "14:00",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "aldeans",
+   "band": "Sam Paul Hayes",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "aldeans",
+   "band": "Lexie Laplante",
+   "start": "14:00",
+   "end": "17:00",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "aldeans",
+   "band": "Papa Bear & The Love Den",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "aldeans",
+   "band": "Ariel McReynolds",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "aldeans",
+   "band": "Bobby McClendon",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "aldeans",
+   "band": "Kaley & Co.",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "aldeans",
+   "band": "Bryan Schaffer",
+   "start": "10:00",
+   "end": "13:00",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "aldeans",
+   "band": "Sam Paul Hayes",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "aldeans",
+   "band": "Melissa Livingstone",
+   "start": "14:00",
+   "end": "17:00",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "aldeans",
+   "band": "Papa Bear & The Love Den",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "aldeans",
+   "band": "Rylan Fowler",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "aldeans",
+   "band": "Casey Jamerson",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "aldeans",
+   "band": "Nicole Sumerlyn",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "aldeans",
+   "band": "Zach Westcott",
+   "start": "10:00",
+   "end": "13:00",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "aldeans",
+   "band": "Tyler Barron",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "aldeans",
+   "band": "Ryan Ernest",
+   "start": "14:00",
+   "end": "17:00",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "aldeans",
+   "band": "Griffin Sinclair",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "aldeans",
+   "band": "The Beasley Brothers",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "aldeans",
+   "band": "Casey Jamerson",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "aldeans",
+   "band": "Mark Burke",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "aldeans",
+   "band": "Ryan Jacobs",
+   "start": "10:00",
+   "end": "13:00",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "aldeans",
+   "band": "Ryan Ernest",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "aldeans",
+   "band": "Ariel McReynolds",
+   "start": "14:00",
+   "end": "17:00",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "aldeans",
+   "band": "Angie Rey",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "aldeans",
+   "band": "Chloe Lawson",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "aldeans",
+   "band": "Kaley & Co.",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "aldeans",
+   "band": "Nick Walker",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://jasonaldeansbar.com/nashville/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "thisbar",
+   "band": "Tyler Barron",
+   "start": "11:00",
+   "end": "14:00",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "thisbar",
+   "band": "Heath Bennett",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "thisbar",
+   "band": "Mark Burke",
+   "start": "14:00",
+   "end": "17:00",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "thisbar",
+   "band": "Matt Poling",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "thisbar",
+   "band": "Nicole Sumerlyn",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "thisbar",
+   "band": "Tanner Olsen",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "thisbar",
+   "band": "Henry Martin",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "thisbar",
+   "band": "Jessie Rose & The Blue Collar Boys",
+   "start": "10:00",
+   "end": "13:00",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "thisbar",
+   "band": "Shelton & HWY TENN",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "thisbar",
+   "band": "Reagan Woodside",
+   "start": "14:00",
+   "end": "17:00",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "thisbar",
+   "band": "Rob Carter",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "Club Stage",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "thisbar",
+   "band": "Ryan Ernest",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "thisbar",
+   "band": "Brian Thomas",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "thisbar",
+   "band": "Liz Labelle",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Club Stage",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "thisbar",
+   "band": "Nathan Wilson",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "thisbar",
+   "band": "Chase Ryan",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "thisbar",
+   "band": "Angie Rey",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "thisbar",
+   "band": "Phillips Family Electric",
+   "start": "10:00",
+   "end": "13:00",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "thisbar",
+   "band": "Cameron Merrell",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "thisbar",
+   "band": "Sheyna Gee",
+   "start": "14:00",
+   "end": "17:00",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "thisbar",
+   "band": "Melissa Livingstone",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "Club Stage",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "thisbar",
+   "band": "Henry Martin",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "thisbar",
+   "band": "Lazer & Levi",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "thisbar",
+   "band": "Nathan Wilson",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Club Stage",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "thisbar",
+   "band": "J. Hartley",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "thisbar",
+   "band": "Angie Rey",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "thisbar",
+   "band": "Bobby McClendon",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "thisbar",
+   "band": "Sheyna Gee",
+   "start": "10:00",
+   "end": "13:00",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "thisbar",
+   "band": "Shelton & HWY TENN",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "thisbar",
+   "band": "Rylan Fowler",
+   "start": "14:00",
+   "end": "17:00",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "thisbar",
+   "band": "Ivey Andrews",
+   "start": "16:00",
+   "end": "19:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "thisbar",
+   "band": "Bear Redell",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "thisbar",
+   "band": "TJ Watson",
+   "start": "20:00",
+   "end": "23:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "thisbar",
+   "band": "Griffin Sinclair",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://mwthisbar.com/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "postys",
+   "band": "Jara Ward",
+   "start": "11:00",
+   "end": "14:00",
+   "source": "Bar own website: https://postysbar.com/music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "postys",
+   "band": "Brian Thomas",
+   "start": "14:00",
+   "end": "17:00",
+   "source": "Bar own website: https://postysbar.com/music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "postys",
+   "band": "Shane Rivers Band",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://postysbar.com/music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "postys",
+   "band": "TJ Watson",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://postysbar.com/music/ (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "postys",
+   "band": "Cameron Merrell",
+   "start": "10:00",
+   "end": "13:00",
+   "source": "Bar own website: https://postysbar.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "postys",
+   "band": "Mark Burke",
+   "start": "14:00",
+   "end": "17:00",
+   "source": "Bar own website: https://postysbar.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "postys",
+   "band": "Lazer & Levi",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://postysbar.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "postys",
+   "band": "J. Hartley",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://postysbar.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "postys",
+   "band": "Nick Walker",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "Bar and Grill Stage",
+   "source": "Bar own website: https://postysbar.com/music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "postys",
+   "band": "Rob Carter",
+   "start": "10:00",
+   "end": "13:00",
+   "source": "Bar own website: https://postysbar.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "postys",
+   "band": "Reagan Woodside",
+   "start": "14:00",
+   "end": "17:00",
+   "source": "Bar own website: https://postysbar.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "postys",
+   "band": "Bear Redell",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://postysbar.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "postys",
+   "band": "Erath Old",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Bar and Grill Stage",
+   "source": "Bar own website: https://postysbar.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "postys",
+   "band": "Chase Ryan",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://postysbar.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "postys",
+   "band": "Tanner Olsen",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": "Bar and Grill Stage",
+   "source": "Bar own website: https://postysbar.com/music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "postys",
+   "band": "Mitch Carter",
+   "start": "10:00",
+   "end": "13:00",
+   "source": "Bar own website: https://postysbar.com/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "postys",
+   "band": "Phillips Family Electric",
+   "start": "14:00",
+   "end": "17:00",
+   "source": "Bar own website: https://postysbar.com/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "postys",
+   "band": "Joe Barron",
+   "start": "18:00",
+   "end": "21:00",
+   "source": "Bar own website: https://postysbar.com/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "postys",
+   "band": "No Good Deed Band",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://postysbar.com/music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "kanebrown",
+   "band": "Tyler Cannon Band",
+   "start": "10:00",
+   "end": "14:00",
+   "source": "Bar own website: https://kanebrownsonbroadway.com/live-music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "kanebrown",
+   "band": "Tyler Cannon Band",
+   "start": "14:00",
+   "end": "18:00",
+   "source": "Bar own website: https://kanebrownsonbroadway.com/live-music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "kanebrown",
+   "band": "Logan Layman",
+   "start": "18:00",
+   "end": "22:00",
+   "source": "Bar own website: https://kanebrownsonbroadway.com/live-music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "kanebrown",
+   "band": "Ryan Lee",
+   "start": "21:00",
+   "end": "02:30",
+   "source": "Bar own website: https://kanebrownsonbroadway.com/live-music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "kanebrown",
+   "band": "Carli Loo",
+   "start": "22:00",
+   "end": "02:30",
+   "source": "Bar own website: https://kanebrownsonbroadway.com/live-music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "kanebrown",
+   "band": "Ray Cache",
+   "start": "22:00",
+   "end": "01:00",
+   "source": "Bar own website: https://kanebrownsonbroadway.com/live-music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "kanebrown",
+   "band": "Gina Owens",
+   "start": "10:00",
+   "end": "14:00",
+   "source": "Bar own website: https://kanebrownsonbroadway.com/live-music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "kanebrown",
+   "band": "Isaac Harris",
+   "start": "14:00",
+   "end": "18:00",
+   "source": "Bar own website: https://kanebrownsonbroadway.com/live-music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "kanebrown",
+   "band": "Logan Layman",
+   "start": "18:00",
+   "end": "22:00",
+   "source": "Bar own website: https://kanebrownsonbroadway.com/live-music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "kanebrown",
+   "band": "Mister Diesel",
+   "start": "21:00",
+   "end": "02:30",
+   "source": "Bar own website: https://kanebrownsonbroadway.com/live-music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "kanebrown",
+   "band": "Carli Loo",
+   "start": "22:00",
+   "end": "02:30",
+   "source": "Bar own website: https://kanebrownsonbroadway.com/live-music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "kanebrown",
+   "band": "Cami Nyx",
+   "start": "12:00",
+   "end": "16:00",
+   "source": "Bar own website: https://kanebrownsonbroadway.com/live-music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "kanebrown",
+   "band": "Rob Riser",
+   "start": "16:00",
+   "end": "20:00",
+   "source": "Bar own website: https://kanebrownsonbroadway.com/live-music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "kanebrown",
+   "band": "Andrew Vendelis",
+   "start": "20:00",
+   "end": "00:00",
+   "source": "Bar own website: https://kanebrownsonbroadway.com/live-music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "kanebrown",
+   "band": "Tyler Cannon Band",
+   "start": "12:00",
+   "end": "16:00",
+   "source": "Bar own website: https://kanebrownsonbroadway.com/live-music/ (listing for 11/30, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "kanebrown",
+   "band": "Tyler Cannon Band",
+   "start": "16:00",
+   "end": "20:00",
+   "source": "Bar own website: https://kanebrownsonbroadway.com/live-music/ (listing for 11/30, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "kanebrown",
+   "band": "Selena Brills",
+   "start": "20:00",
+   "end": "00:00",
+   "source": "Bar own website: https://kanebrownsonbroadway.com/live-music/ (listing for 11/30, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "tinroof",
+   "band": "Justin Bouldin",
+   "start": "10:00",
+   "end": "14:00",
+   "source": "Bar own website: https://tinroofbroadway.com/live-music-events/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "tinroof",
+   "band": "Jordan Barry",
+   "start": "14:30",
+   "end": "18:00",
+   "source": "Bar own website: https://tinroofbroadway.com/live-music-events/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "tinroof",
+   "band": "Naughty Input",
+   "start": "18:30",
+   "end": "22:00",
+   "source": "Bar own website: https://tinroofbroadway.com/live-music-events/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "tinroof",
+   "band": "Vikki Nova",
+   "start": "22:30",
+   "end": "02:30",
+   "source": "Bar own website: https://tinroofbroadway.com/live-music-events/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "tinroof",
+   "band": "Troy White",
+   "start": "10:00",
+   "end": "14:00",
+   "source": "Bar own website: https://tinroofbroadway.com/live-music-events/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "tinroof",
+   "band": "The Tyson Hanes Band",
+   "start": "14:30",
+   "end": "18:00",
+   "source": "Bar own website: https://tinroofbroadway.com/live-music-events/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "tinroof",
+   "band": "Hype Creek",
+   "start": "18:30",
+   "end": "22:00",
+   "source": "Bar own website: https://tinroofbroadway.com/live-music-events/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "tinroof",
+   "band": "Jason Saitta",
+   "start": "22:30",
+   "end": "02:30",
+   "source": "Bar own website: https://tinroofbroadway.com/live-music-events/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "tinroof",
+   "band": "Sarah Jade",
+   "start": "14:30",
+   "end": "18:00",
+   "source": "Bar own website: https://tinroofbroadway.com/live-music-events/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "tinroof",
+   "band": "Radio Fever",
+   "start": "18:30",
+   "end": "22:00",
+   "source": "Bar own website: https://tinroofbroadway.com/live-music-events/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "tinroof",
+   "band": "Trey Lewis",
+   "start": "22:30",
+   "end": "02:30",
+   "source": "Bar own website: https://tinroofbroadway.com/live-music-events/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "tinroof",
+   "band": "Sam Rife",
+   "start": "11:00",
+   "end": "14:00",
+   "source": "Bar own website: https://tinroofbroadway.com/live-music-events/ (listing for 11/30, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "tinroof",
+   "band": "Millie Martin",
+   "start": "14:30",
+   "end": "18:00",
+   "source": "Bar own website: https://tinroofbroadway.com/live-music-events/ (listing for 11/30, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "tinroof",
+   "band": "Goose Gossett",
+   "start": "18:30",
+   "end": "22:00",
+   "source": "Bar own website: https://tinroofbroadway.com/live-music-events/ (listing for 11/30, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "tinroof",
+   "band": "Jabe Burgess",
+   "start": "22:30",
+   "end": "02:30",
+   "source": "Bar own website: https://tinroofbroadway.com/live-music-events/ (listing for 11/30, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "whiskeyrow",
+   "band": "Tanner Burch",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "1st Floor",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "whiskeyrow",
+   "band": "The Tyson Hanes Band",
+   "start": "14:30",
+   "end": "18:30",
+   "stage": "1st Floor",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "whiskeyrow",
+   "band": "MOJO",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "whiskeyrow",
+   "band": "Macy Krew",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Club Level",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "whiskeyrow",
+   "band": "Jason Saitta",
+   "start": "19:00",
+   "end": "22:00",
+   "stage": "1st Floor",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "whiskeyrow",
+   "band": "3eachhouse",
+   "start": "21:00",
+   "end": "02:30",
+   "stage": "Club Level",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "whiskeyrow",
+   "band": "D-Wake",
+   "start": "22:00",
+   "end": "02:30",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "whiskeyrow",
+   "band": "Logan Layman",
+   "start": "22:30",
+   "end": "02:30",
+   "stage": "1st Floor",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "whiskeyrow",
+   "band": "Noah Garner",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "1st Floor",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "whiskeyrow",
+   "band": "Tanner Burch",
+   "start": "13:30",
+   "end": "17:30",
+   "stage": "Club Level",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "whiskeyrow",
+   "band": "Mister Diesel",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "whiskeyrow",
+   "band": "Nick Walker",
+   "start": "14:30",
+   "end": "18:30",
+   "stage": "1st Floor",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "whiskeyrow",
+   "band": "Meg Rilley / Meg & The Boys",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Club Level",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "whiskeyrow",
+   "band": "The Tyson Hanes Band",
+   "start": "19:00",
+   "end": "22:00",
+   "stage": "1st Floor",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "whiskeyrow",
+   "band": "3eachhouse",
+   "start": "21:00",
+   "end": "02:30",
+   "stage": "Club Level",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "whiskeyrow",
+   "band": "MOJO",
+   "start": "22:00",
+   "end": "02:30",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "whiskeyrow",
+   "band": "Amanda Gene Rowland",
+   "start": "22:30",
+   "end": "02:30",
+   "stage": "1st Floor",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "whiskeyrow",
+   "band": "Noah Garner",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "1st Floor",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "whiskeyrow",
+   "band": "CJ Fiandra",
+   "start": "14:30",
+   "end": "18:30",
+   "stage": "1st Floor",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "whiskeyrow",
+   "band": "Ryan Lee",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "whiskeyrow",
+   "band": "Christian Stolz",
+   "start": "19:00",
+   "end": "22:00",
+   "stage": "1st Floor",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "whiskeyrow",
+   "band": "3eachhouse",
+   "start": "22:00",
+   "end": "02:30",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "whiskeyrow",
+   "band": "Liam Slater",
+   "start": "11:00",
+   "end": "14:30",
+   "stage": "1st Floor",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/30, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "whiskeyrow",
+   "band": "Hunter Chastain",
+   "start": "15:00",
+   "end": "18:30",
+   "stage": "1st Floor",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/30, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "whiskeyrow",
+   "band": "Landon Parker",
+   "start": "19:00",
+   "end": "22:00",
+   "stage": "1st Floor",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/30, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "whiskeyrow",
+   "band": "D-Wake",
+   "start": "21:00",
+   "end": "01:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/30, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "whiskeyrow",
+   "band": "Ryan Spencer",
+   "start": "22:30",
+   "end": "02:30",
+   "stage": "1st Floor",
+   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/30, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "goodnight",
+   "band": "Andrew Mack",
+   "start": "10:00",
+   "end": "14:00",
+   "source": "Bar own website: https://goodnightnashville.com/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "goodnight",
+   "band": "Way Up South",
+   "start": "14:30",
+   "end": "18:00",
+   "source": "Bar own website: https://goodnightnashville.com/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "goodnight",
+   "band": "Maniac",
+   "start": "22:30",
+   "end": "03:00",
+   "source": "Bar own website: https://goodnightnashville.com/ (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "goodnight",
+   "band": "Sara Avalos / The Handsome Hangovers",
+   "start": "10:00",
+   "end": "14:00",
+   "source": "Bar own website: https://goodnightnashville.com/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "goodnight",
+   "band": "NO GOOD DEED",
+   "start": "14:30",
+   "end": "18:00",
+   "source": "Bar own website: https://goodnightnashville.com/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "goodnight",
+   "band": "Way Up South",
+   "start": "18:30",
+   "end": "22:00",
+   "source": "Bar own website: https://goodnightnashville.com/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "goodnight",
+   "band": "Maniac",
+   "start": "22:30",
+   "end": "03:00",
+   "source": "Bar own website: https://goodnightnashville.com/ (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "goodnight",
+   "band": "Jabe Burgess",
+   "start": "10:00",
+   "end": "14:00",
+   "source": "Bar own website: https://goodnightnashville.com/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "goodnight",
+   "band": "Sara Avalos / The Handsome Hangovers",
+   "start": "14:30",
+   "end": "18:00",
+   "source": "Bar own website: https://goodnightnashville.com/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "goodnight",
+   "band": "Matthew Davidson",
+   "start": "18:30",
+   "end": "22:00",
+   "source": "Bar own website: https://goodnightnashville.com/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "goodnight",
+   "band": "Brooks Herring",
+   "start": "22:30",
+   "end": "03:00",
+   "source": "Bar own website: https://goodnightnashville.com/ (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "goodnight",
+   "band": "Andrew Mack",
+   "start": "12:00",
+   "end": "16:00",
+   "source": "Bar own website: https://goodnightnashville.com/ (listing for 11/30, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "goodnight",
+   "band": "Brian Russell Collins/Kenzi Whittington and The Boyz",
+   "start": "16:30",
+   "end": "20:30",
+   "source": "Bar own website: https://goodnightnashville.com/ (listing for 11/30, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "goodnight",
+   "band": "Layken Urie",
+   "start": "21:00",
+   "end": "01:00",
+   "source": "Bar own website: https://goodnightnashville.com/ (listing for 11/30, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "boogiebar",
+   "band": "Dylan Cornell Project",
+   "start": "15:00",
+   "end": "19:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://www.hanksnash.com/live-music (listing for 11/26, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "boogiebar",
+   "band": "Hailey Dawn",
+   "start": "10:00",
+   "end": "14:00",
+   "source": "Bar own website: https://www.hanksnash.com/live-music (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "boogiebar",
+   "band": "Hunt Pearson",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://www.hanksnash.com/live-music (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "boogiebar",
+   "band": "4 Dudes 1 Fiddle",
+   "start": "14:30",
+   "end": "18:00",
+   "source": "Bar own website: https://www.hanksnash.com/live-music (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "boogiebar",
+   "band": "Donny Lee",
+   "start": "18:00",
+   "end": "22:00",
+   "source": "Bar own website: https://www.hanksnash.com/live-music (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "boogiebar",
+   "band": "Donnie",
+   "start": "20:00",
+   "end": "02:30",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://www.hanksnash.com/live-music (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "boogiebar",
+   "band": "Dan Burnell Band",
+   "start": "22:00",
+   "end": "02:30",
+   "source": "Bar own website: https://www.hanksnash.com/live-music (listing for 11/27, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "boogiebar",
+   "band": "Donny Lee",
+   "start": "10:00",
+   "end": "14:00",
+   "source": "Bar own website: https://www.hanksnash.com/live-music (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "boogiebar",
+   "band": "Paul Juneau",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://www.hanksnash.com/live-music (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "boogiebar",
+   "band": "4 Dudes 1 Fiddle",
+   "start": "14:00",
+   "end": "18:00",
+   "source": "Bar own website: https://www.hanksnash.com/live-music (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "boogiebar",
+   "band": "Dan Burnell Band",
+   "start": "18:00",
+   "end": "22:00",
+   "source": "Bar own website: https://www.hanksnash.com/live-music (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "boogiebar",
+   "band": "Donnie",
+   "start": "20:00",
+   "end": "02:30",
+   "stage": "Rooftop",
+   "source": "Bar own website: https://www.hanksnash.com/live-music (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "boogiebar",
+   "band": "Millie",
+   "start": "22:00",
+   "end": "02:30",
+   "source": "Bar own website: https://www.hanksnash.com/live-music (listing for 11/28, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "boogiebar",
+   "band": "Paul Juneau",
+   "start": "10:00",
+   "end": "14:00",
+   "source": "Bar own website: https://www.hanksnash.com/live-music (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "boogiebar",
+   "band": "Tori Allen",
+   "start": "13:00",
+   "end": "17:00",
+   "stage": "3rd Floor",
+   "source": "Bar own website: https://www.hanksnash.com/live-music (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "boogiebar",
+   "band": "4 Dudes 1 Fiddle",
+   "start": "14:00",
+   "end": "18:00",
+   "source": "Bar own website: https://www.hanksnash.com/live-music (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "boogiebar",
+   "band": "Peter Buonaiuto",
+   "start": "18:00",
+   "end": "22:00",
+   "source": "Bar own website: https://www.hanksnash.com/live-music (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "boogiebar",
+   "band": "Millie",
+   "start": "22:00",
+   "end": "02:30",
+   "source": "Bar own website: https://www.hanksnash.com/live-music (listing for 11/29, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "boogiebar",
+   "band": "Hailey Dawn",
+   "start": "12:00",
+   "end": "16:00",
+   "source": "Bar own website: https://www.hanksnash.com/live-music (listing for 11/30, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "boogiebar",
+   "band": "Donny Lee",
+   "start": "20:00",
+   "end": "00:00",
+   "source": "Bar own website: https://www.hanksnash.com/live-music (listing for 11/30, seen Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "olered",
+   "band": "Morgan Alexander",
+   "start": "11:00",
+   "end": "15:00",
+   "source": "Ole Red Nashville own calendar (https://olered.com/nashville/calendar/, Monday Nov 30 2026 day view), seen Nov 24 2026"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "olered",
+   "band": "Stacey Kelleher",
+   "start": "12:00",
+   "end": "16:00",
+   "source": "Ole Red Nashville own calendar (https://olered.com/nashville/calendar/, Monday Nov 30 2026 day view), seen Nov 24 2026"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "olered",
+   "band": "Andrew Marshall",
+   "start": "15:30",
+   "end": "19:30",
+   "source": "Ole Red Nashville own calendar (https://olered.com/nashville/calendar/, Monday Nov 30 2026 day view), seen Nov 24 2026"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "olered",
+   "band": "Ross Livermore",
+   "start": "16:30",
+   "end": "20:30",
+   "source": "Ole Red Nashville own calendar (https://olered.com/nashville/calendar/, Monday Nov 30 2026 day view), seen Nov 24 2026"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "olered",
+   "band": "Brandon Jackson",
+   "start": "20:00",
+   "end": "00:00",
+   "source": "Ole Red Nashville own calendar (https://olered.com/nashville/calendar/, Monday Nov 30 2026 day view), seen Nov 24 2026"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "wildhorse",
+   "band": "The Nashville Mixtape",
+   "start": "12:00",
+   "end": "15:00",
+   "source": "Category 10 Nashville own calendar (https://www.category10.com/nashville/calendar/, Monday Nov. 30 2026 day view), seen Nov 24 2026"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "wildhorse",
+   "band": "Ben Chase",
+   "start": "15:30",
+   "end": "18:30",
+   "source": "Category 10 Nashville own calendar (https://www.category10.com/nashville/calendar/, Monday Nov. 30 2026 day view), seen Nov 24 2026"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "wildhorse",
+   "band": "Byrdie Wilson",
+   "start": "17:00",
+   "end": "21:00",
+   "source": "Category 10 Nashville own calendar (https://www.category10.com/nashville/calendar/, Monday Nov. 30 2026 day view), seen Nov 24 2026"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "wildhorse",
+   "band": "Johnny Widner",
+   "start": "19:00",
+   "end": "22:00",
+   "source": "Category 10 Nashville own calendar (https://www.category10.com/nashville/calendar/, Monday Nov. 30 2026 day view), seen Nov 24 2026"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "wildhorse",
+   "band": "Timothy James",
+   "start": "18:45",
+   "end": "22:00",
+   "source": "Category 10 Nashville own calendar (https://www.category10.com/nashville/calendar/, Sunday Nov. 29 2026 day view), seen Nov 24 2026"
   }
  ],
  "closures": [
@@ -17789,6 +20113,13 @@
    "closed_from": "10:00",
    "closed_to": "03:00",
    "source": "Friends in Low Places Instagram (@friendsbarnash) feed post 'This week at Friends, Nov 23-29': closed Thanksgiving Day, seen Nov 23 2026"
+  },
+  {
+   "bar": "olered",
+   "date": "2026-11-26",
+   "closed_from": "10:00",
+   "closed_to": "03:00",
+   "source": "Ole Red Nashville own calendar (https://olered.com/nashville/calendar/, Thursday Nov 26 2026 day view): 'CLOSED / THANKSGIVING 11:00 AM - 2:00 AM', seen Nov 24 2026"
   }
  ]
 }
