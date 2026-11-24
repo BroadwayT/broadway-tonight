@@ -91,10 +91,11 @@ function collapseManualDupes(fromDate){const rows=db.prepare("SELECT id,bar_id,b
    if(gm){const sl=SLOTS[+gm[1]];db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,stage=NULL,source='grid',source_url=NULL WHERE id=?").run(TBA_ID,sl[0],sl[1],r.id);}
    else db.prepare('DELETE FROM sets WHERE id=?').run(r.id);}}return n;}
 // Manual rows for today or later that left manual-sets.json: grid slots go back to TBA, extras are deleted. Owner and rated rows stay.
+// The start has to match. A nearby replacement time for the same act does not keep the old row.
 function dropRemovedManual(fromDate){const rows=db.prepare("SELECT id,bar_id,band_id,date,set_start,stage FROM sets WHERE date>=? AND source='manual' AND band_id<>?").all(fromDate,TBA_ID);let n=0;
  for(const r of rows){if(rated(r.id))continue;const b=db.prepare('SELECT name FROM bands WHERE id=?').get(r.band_id);
   const name=normName(b&&b.name),st=String(r.stage||'').trim();
-  if(MANUAL.some(m=>m.bar===r.bar_id&&m.date===r.date&&normName(m.band)===name&&near(m.start,r.set_start)&&(manualStage(m)||'')===st))continue;
+  if(MANUAL.some(m=>m.bar===r.bar_id&&m.date===r.date&&normName(m.band)===name&&m.start===String(r.set_start).slice(0,5)&&(manualStage(m)||'')===st))continue;
   const gm=String(r.id).match(new RegExp('^'+r.date+'-'+r.bar_id+'-([0-3])$'));
   if(gm){const sl=SLOTS[+gm[1]];n+=db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,stage=NULL,source='grid',source_url=NULL WHERE id=?").run(TBA_ID,sl[0],sl[1],r.id).changes;}
   else n+=db.prepare('DELETE FROM sets WHERE id=?').run(r.id).changes;}
@@ -110,7 +111,19 @@ function purgeRetiredListings(fromDate){const rows=db.prepare("SELECT id,bar_id,
  return n;}
 function applyManual(fromDate){let n=0;for(const d of new Set(MANUAL.map(m=>m.date)))if(d>=fromDate)ensureDay(d);const bars=new Set(db.prepare('SELECT id FROM bars').all().map(b=>b.id));
  db.transaction(()=>{for(const m of MANUAL){if(m.date<fromDate||!bars.has(m.bar))continue;const bid=bandIdFor(m.band),si=slotFor(+m.start.slice(0,2)),end=manualEnd(m),stage=manualStage(m);
-  if(isExtraStage(m)){n+=upsertExtraStage(m,bid);continue;}
+  // A stage beside the main floor is stored under an id that includes the start. Move a same-stage row
+  // whose start is within 90 min onto the manual time and delete the other unrated copies, including a
+  // rooftop set that was left on the grid-slot id. Reverting that id to TBA here would let the main-floor
+  // set claim it and leave a second copy of the main-floor act.
+  if(isExtraStage(m)){
+   const ids=bandIdsFor(m.band,bid),sid=`${m.date}-${m.bar}-st-${stageSlug(stage)}-${m.start.replace(':','')}-${bid}`;
+   const nearRows=db.prepare(`SELECT id,set_start,set_end,stage FROM sets WHERE bar_id=? AND date=? AND band_id IN (${ids.map(()=>'?').join(',')}) AND COALESCE(source,'')<>'owner'`).all(m.bar,m.date,...ids).filter(r=>near(r.set_start,m.start)&&String(r.stage||'').trim()===(stage||''));
+   if(nearRows.length){const keep=(nearRows.find(r=>rated(r.id))||nearRows.find(r=>r.id===sid)||nearRows.find(r=>String(r.set_start).slice(0,5)===m.start)||nearRows[0]).id;
+    const ke=db.prepare('SELECT set_end FROM sets WHERE id=?').get(keep).set_end;
+    db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,stage=?,source='manual',source_url=NULL WHERE id=?").run(bid,m.start,chosenEnd(end,ke),stage,keep);
+    for(const r of nearRows)if(r.id!==keep&&!rated(r.id))db.prepare('DELETE FROM sets WHERE id=?').run(r.id);
+    continue;}
+   n+=upsertExtraStage(m,bid);continue;}
   const mid=`${m.date}-${m.bar}-${si}-m-${bid}-${m.start.replace(':','')}`;
   const gid=`${m.date}-${m.bar}-${si}`;
   // Same artist at this bar/night starting within 90 min (scraped, or an earlier manual row on the same stage): merge into one row with the manual times. Owner rows stay.
