@@ -159,6 +159,9 @@ function applyManual(fromDate){let n=0;for(const d of new Set(MANUAL.map(m=>m.da
   if(other){db.prepare('DELETE FROM sets WHERE id=? AND id NOT IN (SELECT DISTINCT set_id FROM ratings WHERE set_id IS NOT NULL)').run(mid);const setEnd=chosenEnd(end,other.set_end);if(setEnd!==other.set_end)db.prepare('UPDATE sets SET set_end=? WHERE id=?').run(setEnd,other.id);continue;}
   const g=db.prepare('SELECT band_id,source,set_end FROM sets WHERE id=?').get(gid);
   if(g&&g.band_id===TBA_ID&&g.source!=='owner'){n+=db.prepare("UPDATE sets SET band_id=?,set_start=?,set_end=?,stage=NULL,source='manual',source_url=NULL WHERE id=?").run(bid,m.start,chosenEnd(end,g.set_end),gid).changes;continue;}
+  // A second main-floor set in a filled slot is already stored under mid. INSERT OR IGNORE would leave its old end.
+  const held=db.prepare('SELECT set_end,source FROM sets WHERE id=?').get(mid);
+  if(held){if(held.source!=='owner'){const setEnd=chosenEnd(end,held.set_end);if(setEnd!==held.set_end)db.prepare('UPDATE sets SET set_end=? WHERE id=?').run(setEnd,mid);}continue;}
   n+=db.prepare("INSERT OR IGNORE INTO sets(id,bar_id,band_id,date,set_start,set_end,set_window_id,source,source_url) VALUES(?,?,?,?,?,?,?,'manual',NULL)").run(mid,m.bar,bid,m.date,m.start,chosenEnd(end,null),`${m.date}-slot${si}`).changes;}})();applyClosures(fromDate);collapseManualDupes(fromDate);dropRemovedManual(fromDate);dropCoveredTba(fromDate);stampManualNotes(fromDate);return n;}
 // Pull listings for one or more nights; owner-edited sets are never overwritten.
 let running=null,last=null;
