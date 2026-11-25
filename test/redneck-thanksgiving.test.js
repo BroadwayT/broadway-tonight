@@ -43,7 +43,7 @@ function seedLiveGrid() {
   }
 }
 
-test('manual-sets.json keeps Nov 25 Redneck sets open and closes only Thanksgiving Day', () => {
+test('manual-sets.json closes Redneck from 2pm Nov 25 and all of Thanksgiving Day', () => {
   const wed = (MANUAL.sets || []).filter(m => m.bar === BAR && m.date === WED);
   assert.deepEqual(wed.map(m => [m.band, m.start, m.end]), [
     ['Megan Golden', '12:00', '15:00'],
@@ -51,8 +51,8 @@ test('manual-sets.json keeps Nov 25 Redneck sets open and closes only Thanksgivi
   ]);
   assert.equal((MANUAL.sets || []).filter(m => m.bar === BAR && m.date === THU).length, 0);
   const closures = (MANUAL.closures || []).filter(c => c.bar === BAR);
-  assert.equal(closures.some(c => c.date === WED), false, JSON.stringify(closures));
   assert.deepEqual(closures.map(c => [c.date, c.closed_from, c.closed_to]), [
+    [WED, '14:00', '03:00'],
     [THU, '10:00', '03:00']
   ]);
   const buck = (MANUAL.sets || []).find(m => m.bar === BAR && m.date === FRI && m.band === 'Buck McCoy');
@@ -61,10 +61,13 @@ test('manual-sets.json keeps Nov 25 Redneck sets open and closes only Thanksgivi
   assert.equal(buck.end, '13:00');
 });
 
-test('Redneck is closed all of Thanksgiving and open on Nov 25, and a stored second-set end is corrected', () => {
+test('Redneck is closed from 2pm Nov 25 and all of Thanksgiving, and a stored second-set end is corrected', () => {
   seedLiveGrid();
+  assert.equal(L.isClosed(BAR, WED, '10:00'), false, WED + ' 10:00');
+  for (const start of ['14:00', '18:00', '22:00']) {
+    assert.equal(L.isClosed(BAR, WED, start), true, WED + ' ' + start);
+  }
   for (const start of THU_STARTS) {
-    assert.equal(L.isClosed(BAR, WED, start), false, WED + ' ' + start);
     assert.equal(L.isClosed(BAR, THU, start), true, THU + ' ' + start);
     assert.equal(L.isClosed(BAR, FRI, start), false, FRI + ' ' + start);
   }
@@ -83,11 +86,7 @@ test('Redneck is closed all of Thanksgiving and open on Nov 25, and a stored sec
     ['Jenna Jane', '13:00', '16:00', 'manual']
   ], JSON.stringify(wed));
   assert.equal(named.find(r => r.band === 'Jenna Jane').id, WED + '-' + BAR + '-0-m-act_jenna-jane-1300');
-  assert.deepEqual(wed.filter(isPlaceholder).map(r => [r.set_start, r.set_end]), [
-    ['14:00', '18:00'],
-    ['18:00', '22:00'],
-    ['22:00', '02:00']
-  ], JSON.stringify(wed));
+  assert.deepEqual(wed.filter(isPlaceholder).map(r => [r.set_start, r.set_end]), [], JSON.stringify(wed));
 
   const thu = rows(THU);
   assert.equal(thu.length, 0, JSON.stringify(thu));
@@ -103,7 +102,9 @@ test('Redneck is closed all of Thanksgiving and open on Nov 25, and a stored sec
   db.prepare('DELETE FROM sets WHERE bar_id=? AND date=?').run(BAR, WED);
   L.ensureDay(WED);
   L.ensureDay(THU);
-  assert.deepEqual(rows(WED).map(r => [r.band, r.set_start, r.set_end, r.source]), SLOTS.map(s => ['Live bands all day', s[0], s[1], 'grid']), JSON.stringify(rows(WED)));
+  assert.deepEqual(rows(WED).map(r => [r.band, r.set_start, r.set_end, r.source]), [
+    ['Live bands all day', '10:00', '14:00', 'grid']
+  ], JSON.stringify(rows(WED)));
   assert.equal(rows(THU).length, 0, JSON.stringify(rows(THU)));
 });
 
