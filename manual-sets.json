@@ -20192,6 +20192,304 @@
    "end": "02:00",
    "stage": "3rd Floor",
    "source": "Honky Tonk School public schedule sheet for Rippy's (https://docs.google.com/spreadsheets/d/1hLEsiicZSi3fwjvRPxb5FEN0X1P2yNcojRgT-_eh-60, linked from honkytonkschool.org/schedules, Tuesday column), seen Nov 24 2026; sheet header still shows an old 2020 week date but Tuesday names changed since Nov 17; written OK from John Taylor Nov 17 2026"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "whiskeybent",
+   "band": "Bill Roemer – Solo Artist",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own website live-music page https://whiskeybentnash.com/live-music (the page's own schedule backend, Wednesday Nov 25); end time not published, so start+3h per site convention; checked Nov 24 2026"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "whiskeybent",
+   "band": "Isaac Mathews – Solo Artist",
+   "start": "15:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own website live-music page https://whiskeybentnash.com/live-music (the page's own schedule backend, Wednesday Nov 25); end time not published, so start+3h per site convention; checked Nov 24 2026"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "whiskeybent",
+   "band": "The Garrett Browning band",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own website live-music page https://whiskeybentnash.com/live-music (the page's own schedule backend, Wednesday Nov 25); end time not published, so start+3h per site convention; checked Nov 24 2026"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "whiskeybent",
+   "band": "Redneck Rodeo Band",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own website live-music page https://whiskeybentnash.com/live-music (the page's own schedule backend, Wednesday Nov 25); end time not published, so start+3h per site convention; checked Nov 24 2026"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "whiskeybent",
+   "band": "Jon Sachar Band – Trio",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own website live-music page https://whiskeybentnash.com/live-music (the page's own schedule backend, Thursday Nov 26); end time not published, so start+3h per site convention; checked Nov 24 2026"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "whiskeybent",
+   "band": "Tyler Stokes – Duo",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own website live-music page https://whiskeybentnash.com/live-music (the page's own schedule backend, Thursday Nov 26); end time not published, so start+3h per site convention; checked Nov 24 2026"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "whiskeybent",
+   "band": "Jessie Cain Band",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own website live-music page https://whiskeybentnash.com/live-music (the page's own schedule backend, Thursday Nov 26); end time not published, so start+3h per site convention; checked Nov 24 2026"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "chiefs",
+   "band": "Shelby Lee Lowe",
+   "start": "10:30",
+   "end": "14:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "Chief's on Broadway own website House Artists page https://www.chiefsonbroadway.com/house-artists (Thursdays; page notes lineup subject to change; checked Nov 24 2026)",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "chiefs",
+   "band": "Timothy James",
+   "start": "14:30",
+   "end": "18:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "Chief's on Broadway own website House Artists page https://www.chiefsonbroadway.com/house-artists (Thursdays; page notes lineup subject to change; checked Nov 24 2026)",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "chiefs",
+   "band": "Skyelor Anderson",
+   "start": "18:30",
+   "end": "22:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "Chief's on Broadway own website House Artists page https://www.chiefsonbroadway.com/house-artists (Thursdays; page notes lineup subject to change; checked Nov 24 2026)",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "chiefs",
+   "band": "Chili Dawg",
+   "start": "22:30",
+   "end": "02:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "Chief's on Broadway own website House Artists page https://www.chiefsonbroadway.com/house-artists (Thursdays; page notes lineup subject to change; checked Nov 24 2026)",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "chiefs",
+   "band": "Zachariah Malachi",
+   "start": "11:30",
+   "end": "15:00",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "Chief's on Broadway own website House Artists page https://www.chiefsonbroadway.com/house-artists (Thursdays; page notes lineup subject to change; checked Nov 24 2026)",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "chiefs",
+   "band": "George Shingleton",
+   "start": "15:00",
+   "end": "18:30",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "Chief's on Broadway own website House Artists page https://www.chiefsonbroadway.com/house-artists (Thursdays; page notes lineup subject to change; checked Nov 24 2026)",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "chiefs",
+   "band": "Kiely Connell",
+   "start": "18:30",
+   "end": "21:30",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "Chief's on Broadway own website House Artists page https://www.chiefsonbroadway.com/house-artists (Thursdays; page notes lineup subject to change; checked Nov 24 2026)",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "chiefs",
+   "band": "Kevin Mac",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "Friendly Shadows – 2nd Floor",
+   "source": "Chief's on Broadway own website House Artists page https://www.chiefsonbroadway.com/house-artists (Thursdays; page notes lineup subject to change; checked Nov 24 2026)",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "chiefs",
+   "band": "Michael Leatherman",
+   "start": "17:00",
+   "end": "20:00",
+   "stage": "Friendly Shadows – 2nd Floor",
+   "source": "Chief's on Broadway own website House Artists page https://www.chiefsonbroadway.com/house-artists (Thursdays; page notes lineup subject to change; checked Nov 24 2026)",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "chiefs",
+   "band": "Cort Carpenter",
+   "start": "20:00",
+   "end": "23:00",
+   "stage": "Friendly Shadows – 2nd Floor",
+   "source": "Chief's on Broadway own website House Artists page https://www.chiefsonbroadway.com/house-artists (Thursdays; page notes lineup subject to change; checked Nov 24 2026)",
+   "note": "Subject to change"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "nudies",
+   "band": "John Caldwell",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": "1st Floor",
+   "source": "Nudie's Honky Tonk own website homepage This Week's Band Schedule https://www.nudieshonkytonk.com (Thursday column, 1st Floor; checked Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "nudies",
+   "band": "Mike Riley",
+   "start": "14:30",
+   "end": "18:30",
+   "stage": "1st Floor",
+   "source": "Nudie's Honky Tonk own website homepage This Week's Band Schedule https://www.nudieshonkytonk.com (Thursday column, 1st Floor; checked Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "nudies",
+   "band": "Carson Bull",
+   "start": "18:30",
+   "end": "22:30",
+   "stage": "1st Floor",
+   "source": "Nudie's Honky Tonk own website homepage This Week's Band Schedule https://www.nudieshonkytonk.com (Thursday column, 1st Floor; checked Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "nudies",
+   "band": "Stoney T",
+   "start": "22:30",
+   "end": "02:30",
+   "stage": "1st Floor",
+   "source": "Nudie's Honky Tonk own website homepage This Week's Band Schedule https://www.nudieshonkytonk.com (Thursday column, 1st Floor; checked Nov 24 2026)"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "jbjs",
+   "band": "Millie",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 24, 2026"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "jbjs",
+   "band": "Hunter West",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 24, 2026"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "jbjs",
+   "band": "Pete’s Diary",
+   "start": "22:00",
+   "end": "02:30",
+   "stage": null,
+   "source": "JBJ's Nashville own site (jbjsnash.com/events, embedded JamJuice calendar, Main Stage), seen Nov 24, 2026"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "legends",
+   "band": "CJ Monaghan",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": null,
+   "source": "Legends Corner own website calendar (legendscorner.com/calendar and /whos-playing, Broadway Entertainment Booking widget feed), Thursday Nov 26, seen Nov 24 2026"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "legends",
+   "band": "Blake Dixon",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": null,
+   "source": "Legends Corner own website calendar (legendscorner.com/calendar and /whos-playing, Broadway Entertainment Booking widget feed), Thursday Nov 26, seen Nov 24 2026"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "legends",
+   "band": "Luke Maurer",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": null,
+   "source": "Legends Corner own website calendar (legendscorner.com/calendar and /whos-playing, Broadway Entertainment Booking widget feed), Thursday Nov 26, seen Nov 24 2026"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "legends",
+   "band": "Zach Zurcher",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": null,
+   "source": "Legends Corner own website calendar (legendscorner.com/calendar and /whos-playing, Broadway Entertainment Booking widget feed), Thursday Nov 26, seen Nov 24 2026"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "bootbarn",
+   "band": "T.J. Powers",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": null,
+   "source": "The Stage on Broadway own website calendar (thestageonbroadway.com/calendar, Main Floor, Broadway Entertainment Booking widget feed), Thursday Nov 26, seen Nov 24 2026"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "bootbarn",
+   "band": "Kelly & Sarah",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": null,
+   "source": "The Stage on Broadway own website calendar (thestageonbroadway.com/calendar, Main Floor, Broadway Entertainment Booking widget feed), Thursday Nov 26, seen Nov 24 2026"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "bootbarn",
+   "band": "Jered Ames",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": null,
+   "source": "The Stage on Broadway own website calendar (thestageonbroadway.com/calendar, Main Floor, Broadway Entertainment Booking widget feed), Thursday Nov 26, seen Nov 24 2026"
+  },
+  {
+   "date": "2026-11-26",
+   "bar": "bootbarn",
+   "band": "Mike Kindel",
+   "start": "22:45",
+   "end": "02:06",
+   "stage": null,
+   "source": "The Stage on Broadway own website calendar (thestageonbroadway.com/calendar, Main Floor, Broadway Entertainment Booking widget feed), Thursday Nov 26, seen Nov 24 2026"
   }
  ],
  "closures": [
