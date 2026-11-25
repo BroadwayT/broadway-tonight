@@ -13762,7 +13762,7 @@
    "bar": "redneckriviera",
    "band": "Megan Golden",
    "start": "12:00",
-   "end": "15:00",
+   "end": "14:00",
    "stage": null,
    "source": "Bar own website: https://redneckrivieranashville.com/events/ (listing for 11/25, seen Nov 20 2026)"
   },
@@ -13771,7 +13771,7 @@
    "bar": "redneckriviera",
    "band": "Jenna Jane",
    "start": "13:00",
-   "end": "16:00",
+   "end": "14:00",
    "stage": null,
    "source": "Bar own website: https://redneckrivieranashville.com/events/ (listing for 11/25, seen Nov 20 2026)"
   },
@@ -20555,6 +20555,20 @@
    "closed_from": "10:00",
    "closed_to": "03:00",
    "source": "Ole Red Nashville own calendar (https://olered.com/nashville/calendar/, Thursday Nov 26 2026 day view): 'CLOSED / THANKSGIVING 11:00 AM - 2:00 AM', seen Nov 24 2026"
+  },
+  {
+   "bar": "redneckriviera",
+   "date": "2026-11-25",
+   "closed_from": "14:00",
+   "closed_to": "03:00",
+   "source": "Redneck Riviera own events page (https://redneckrivieranashville.com/events/): 'CLOSED FOR THANKSGIVING' Wednesday Nov 25 from 2pm, seen Nov 25 2026"
+  },
+  {
+   "bar": "redneckriviera",
+   "date": "2026-11-26",
+   "closed_from": "10:00",
+   "closed_to": "03:00",
+   "source": "Redneck Riviera own events page (https://redneckrivieranashville.com/events/): 'ALL DAY CLOSED FOR THANKSGIVING' Thursday Nov 26, seen Nov 25 2026"
   }
  ]
 }
