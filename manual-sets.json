@@ -21471,6 +21471,105 @@
    "end": "02:30",
    "stage": "Rooftop",
    "source": "@stageonbroadway Instagram story 'Wednesday Line Up', seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "luckybastard",
+   "band": "Lonestar Magnolia",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": "First Floor Main Stage",
+   "source": "Lucky Bastard Saloon own website (https://www.luckybastardsaloon.com/live-bands, Live Bands > Upcoming Events Calendar, Wed Nov 25), seen Nov 25 2026"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "luckybastard",
+   "band": "Trent Ingram",
+   "start": "20:00",
+   "end": "00:00",
+   "stage": "First Floor Main Stage",
+   "source": "Lucky Bastard Saloon own website (https://www.luckybastardsaloon.com/live-bands, Live Bands > Upcoming Events Calendar, Wed Nov 25), seen Nov 25 2026"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "legends",
+   "band": "Cory Farley",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": null,
+   "source": "https://www.instagram.com/stories/legendscorner/4038092868226833708/"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "rippys",
+   "band": "Rod Janzen",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Rippy's (https://docs.google.com/spreadsheets/d/1hLEsiicZSi3fwjvRPxb5FEN0X1P2yNcojRgT-_eh-60, linked from honkytonkschool.org/schedules, Wednesday column), seen Nov 25 2026; sheet header still shows an old 2020 week date"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "rippys",
+   "band": "Daniel Winfree",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "Honky Tonk School public schedule sheet for Rippy's (https://docs.google.com/spreadsheets/d/1hLEsiicZSi3fwjvRPxb5FEN0X1P2yNcojRgT-_eh-60, linked from honkytonkschool.org/schedules, Wednesday column), seen Nov 25 2026; sheet header still shows an old 2020 week date"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "rippys",
+   "band": "Donavin",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (https://docs.google.com/spreadsheets/d/1hLEsiicZSi3fwjvRPxb5FEN0X1P2yNcojRgT-_eh-60, linked from honkytonkschool.org/schedules, Wednesday column), seen Nov 25 2026; sheet header still shows an old 2020 week date"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "rippys",
+   "band": "Kaia Band",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": "2nd Floor",
+   "source": "Honky Tonk School public schedule sheet for Rippy's (https://docs.google.com/spreadsheets/d/1hLEsiicZSi3fwjvRPxb5FEN0X1P2yNcojRgT-_eh-60, linked from honkytonkschool.org/schedules, Wednesday column), seen Nov 25 2026; sheet header still shows an old 2020 week date"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "layla",
+   "band": "Zachariah Malachi",
+   "start": "10:30",
+   "end": "14:00",
+   "stage": null,
+   "source": "https://www.instagram.com/stories/laylasnashville/"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "layla",
+   "band": "Hunter West",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "https://www.instagram.com/stories/laylasnashville/"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "layla",
+   "band": "Kyler Sullivan",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "https://www.instagram.com/stories/laylasnashville/"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "layla",
+   "band": "Addison Simmons",
+   "start": "22:00",
+   "end": "02:30",
+   "stage": null,
+   "source": "https://www.instagram.com/stories/laylasnashville/"
   }
  ],
  "closures": [
@@ -21536,6 +21635,13 @@
    "closed_from": "10:00",
    "closed_to": "03:00",
    "source": "Ole Red Nashville own calendar (https://olered.com/nashville/calendar/, Thursday Nov 26 2026 day view): 'CLOSED / THANKSGIVING 11:00 AM - 2:00 AM', seen Nov 24 2026"
+  },
+  {
+   "bar": "redneckriviera",
+   "date": "2026-11-25",
+   "closed_from": "14:00",
+   "closed_to": "03:00",
+   "source": "Redneck Riviera own events page (https://redneckrivieranashville.com/events/): 'CLOSED FOR THANKSGIVING' Wednesday Nov 25 from 2pm, seen Nov 25 2026"
   },
   {
    "bar": "redneckriviera",
