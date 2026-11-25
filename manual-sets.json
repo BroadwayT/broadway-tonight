@@ -13885,15 +13885,6 @@
   },
   {
    "date": "2026-11-25",
-   "bar": "whiskeyrow",
-   "band": "Christian Stolz",
-   "start": "22:30",
-   "end": "02:30",
-   "stage": "1st Floor",
-   "source": "Bar own website: https://dierkswhiskeyrow.com/nashville-tn/live-music/ (listing for 11/25, seen Nov 20 2026)"
-  },
-  {
-   "date": "2026-11-25",
    "bar": "goodnight",
    "band": "Timothy James",
    "start": "12:00",
@@ -13907,15 +13898,6 @@
    "band": "Natalie Brady",
    "start": "16:30",
    "end": "20:30",
-   "stage": null,
-   "source": "Bar own website: https://goodnightnashville.com/ (listing for 11/25, seen Nov 20 2026)"
-  },
-  {
-   "date": "2026-11-25",
-   "bar": "goodnight",
-   "band": "Logan Layman",
-   "start": "21:00",
-   "end": "01:00",
    "stage": null,
    "source": "Bar own website: https://goodnightnashville.com/ (listing for 11/25, seen Nov 20 2026)"
   },
@@ -14025,15 +14007,6 @@
    "start": "14:00",
    "end": "18:00",
    "stage": "main stage",
-   "source": "Bar own website: https://www.hanksnash.com/live-music (listing for 11/26, seen Nov 20 2026)"
-  },
-  {
-   "date": "2026-11-26",
-   "bar": "boogiebar",
-   "band": "Local Honey",
-   "start": "15:00",
-   "end": "19:00",
-   "stage": "Rooftop Stage",
    "source": "Bar own website: https://www.hanksnash.com/live-music (listing for 11/26, seen Nov 20 2026)"
   },
   {
@@ -15916,9 +15889,9 @@
    "bar": "bootbarn",
    "band": "Brandon Bates",
    "start": "14:45",
-   "end": "18:15",
+   "end": "19:00",
    "stage": null,
-   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Main Floor, venue calendar feed), seen Nov 23 2026"
+   "source": "@stageonbroadway Instagram story 'Wednesday Line Up', seen 2026-11-25"
   },
   {
    "date": "2026-11-25",
@@ -15942,19 +15915,19 @@
    "date": "2026-11-25",
    "bar": "bootbarn",
    "band": "Andrew Mack",
-   "start": "14:30",
+   "start": "14:15",
    "end": "18:15",
    "stage": "Rooftop",
-   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop, venue calendar feed), seen Nov 23 2026"
+   "source": "@stageonbroadway Instagram story 'Wednesday Line Up', seen 2026-11-25"
   },
   {
    "date": "2026-11-25",
    "bar": "bootbarn",
    "band": "Reckless Sidemen",
-   "start": "18:45",
+   "start": "18:15",
    "end": "22:15",
    "stage": "Rooftop",
-   "source": "The Stage on Broadway own calendar (thestageonbroadway.com/calendar, Rooftop, venue calendar feed), seen Nov 23 2026"
+   "source": "@stageonbroadway Instagram story 'Wednesday Line Up', seen 2026-11-25"
   },
   {
    "date": "2026-11-24",
@@ -20490,6 +20463,1014 @@
    "end": "02:06",
    "stage": null,
    "source": "The Stage on Broadway own website calendar (thestageonbroadway.com/calendar, Main Floor, Broadway Entertainment Booking widget feed), Thursday Nov 26, seen Nov 24 2026"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "jbjs",
+   "band": "Brandon Roberts",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "https://www.jbjsnash.com/events (official JamJuice schedule embed, jamjuice.com/api/embed/organizations/69d54190c06349ba162ae753/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "jbjs",
+   "band": "Paul Juneau",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": "Roof Top stage",
+   "source": "https://www.jbjsnash.com/events (official JamJuice schedule embed, jamjuice.com/api/embed/organizations/69d54190c06349ba162ae753/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "jbjs",
+   "band": "Lovedrive",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "https://www.jbjsnash.com/events (official JamJuice schedule embed, jamjuice.com/api/embed/organizations/69d54190c06349ba162ae753/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "jbjs",
+   "band": "Hailey Dawn",
+   "start": "16:00",
+   "end": "20:00",
+   "stage": "Roof Top stage",
+   "source": "https://www.jbjsnash.com/events (official JamJuice schedule embed, jamjuice.com/api/embed/organizations/69d54190c06349ba162ae753/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "jbjs",
+   "band": "Jordan Grace",
+   "start": "17:00",
+   "end": "21:00",
+   "stage": "4th Floor",
+   "source": "https://www.jbjsnash.com/events (official JamJuice schedule embed, jamjuice.com/api/embed/organizations/69d54190c06349ba162ae753/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "jbjs",
+   "band": "The Future Legends",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "https://www.jbjsnash.com/events (official JamJuice schedule embed, jamjuice.com/api/embed/organizations/69d54190c06349ba162ae753/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "jbjs",
+   "band": "Gladwyn Graham",
+   "start": "20:00",
+   "end": "02:30",
+   "stage": "Roof Top stage",
+   "source": "https://www.jbjsnash.com/events (official JamJuice schedule embed, jamjuice.com/api/embed/organizations/69d54190c06349ba162ae753/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "jbjs",
+   "band": "Hand Over Face",
+   "start": "22:00",
+   "end": "02:30",
+   "stage": null,
+   "source": "https://www.jbjsnash.com/events (official JamJuice schedule embed, jamjuice.com/api/embed/organizations/69d54190c06349ba162ae753/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "jbjs",
+   "band": "Brandon Roberts",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "https://www.jbjsnash.com/events (official JamJuice schedule embed, jamjuice.com/api/embed/organizations/69d54190c06349ba162ae753/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "jbjs",
+   "band": "Chris Rains",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": "Roof Top stage",
+   "source": "https://www.jbjsnash.com/events (official JamJuice schedule embed, jamjuice.com/api/embed/organizations/69d54190c06349ba162ae753/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "jbjs",
+   "band": "Jordan Grace",
+   "start": "11:00",
+   "end": "15:00",
+   "stage": "4th Floor",
+   "source": "https://www.jbjsnash.com/events (official JamJuice schedule embed, jamjuice.com/api/embed/organizations/69d54190c06349ba162ae753/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "jbjs",
+   "band": "Lovedrive",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "https://www.jbjsnash.com/events (official JamJuice schedule embed, jamjuice.com/api/embed/organizations/69d54190c06349ba162ae753/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "jbjs",
+   "band": "Donny Lee",
+   "start": "14:30",
+   "end": "18:00",
+   "stage": "Roof Top stage",
+   "source": "https://www.jbjsnash.com/events (official JamJuice schedule embed, jamjuice.com/api/embed/organizations/69d54190c06349ba162ae753/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "jbjs",
+   "band": "The Future Legends",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "https://www.jbjsnash.com/events (official JamJuice schedule embed, jamjuice.com/api/embed/organizations/69d54190c06349ba162ae753/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "jbjs",
+   "band": "Lovedrive",
+   "start": "18:30",
+   "end": "21:00",
+   "stage": "Roof Top stage",
+   "source": "https://www.jbjsnash.com/events (official JamJuice schedule embed, jamjuice.com/api/embed/organizations/69d54190c06349ba162ae753/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "jbjs",
+   "band": "HISH",
+   "start": "21:00",
+   "end": "02:30",
+   "stage": "Roof Top stage",
+   "source": "https://www.jbjsnash.com/events (official JamJuice schedule embed, jamjuice.com/api/embed/organizations/69d54190c06349ba162ae753/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "jbjs",
+   "band": "Hand Over Face",
+   "start": "22:00",
+   "end": "02:30",
+   "stage": null,
+   "source": "https://www.jbjsnash.com/events (official JamJuice schedule embed, jamjuice.com/api/embed/organizations/69d54190c06349ba162ae753/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "jbjs",
+   "band": "Aj Kang",
+   "start": "12:00",
+   "end": "18:00",
+   "stage": "Roof Top stage",
+   "source": "https://www.jbjsnash.com/events (official JamJuice schedule embed, jamjuice.com/api/embed/organizations/69d54190c06349ba162ae753/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "jbjs",
+   "band": "Ashton Smith",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "https://www.jbjsnash.com/events (official JamJuice schedule embed, jamjuice.com/api/embed/organizations/69d54190c06349ba162ae753/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "jbjs",
+   "band": "Gladwyn Graham",
+   "start": "17:30",
+   "end": "23:30",
+   "stage": "Roof Top stage",
+   "source": "https://www.jbjsnash.com/events (official JamJuice schedule embed, jamjuice.com/api/embed/organizations/69d54190c06349ba162ae753/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "jbjs",
+   "band": "Kelsey Hickman",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "https://www.jbjsnash.com/events (official JamJuice schedule embed, jamjuice.com/api/embed/organizations/69d54190c06349ba162ae753/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "jbjs",
+   "band": "Hand Over Face",
+   "start": "22:00",
+   "end": "02:30",
+   "stage": null,
+   "source": "https://www.jbjsnash.com/events (official JamJuice schedule embed, jamjuice.com/api/embed/organizations/69d54190c06349ba162ae753/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "jbjs",
+   "band": "Nick Smith",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": null,
+   "source": "https://www.jbjsnash.com/events (official JamJuice schedule embed, jamjuice.com/api/embed/organizations/69d54190c06349ba162ae753/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "jbjs",
+   "band": "The Future Legends",
+   "start": "16:00",
+   "end": "20:00",
+   "stage": null,
+   "source": "https://www.jbjsnash.com/events (official JamJuice schedule embed, jamjuice.com/api/embed/organizations/69d54190c06349ba162ae753/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "jbjs",
+   "band": "Hand Over Face",
+   "start": "20:00",
+   "end": "00:00",
+   "stage": null,
+   "source": "https://www.jbjsnash.com/events (official JamJuice schedule embed, jamjuice.com/api/embed/organizations/69d54190c06349ba162ae753/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "bootbarn",
+   "band": "T.J. Powers",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/main-floor-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "bootbarn",
+   "band": "The John Tocco Band",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": "Rooftop",
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/rooftop-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "legends",
+   "band": "The Taylors",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "bootbarn",
+   "band": "Chad Caprio",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/main-floor-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "bootbarn",
+   "band": "Mo Rose",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": "Rooftop",
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/rooftop-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "legends",
+   "band": "Blaine Bunting",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "bootbarn",
+   "band": "Ben Law",
+   "start": "17:45",
+   "end": "21:15",
+   "stage": "Second Floor",
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/2nd-floor-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "bootbarn",
+   "band": "Conner Sweet Band",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/main-floor-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "legends",
+   "band": "Jered Ames",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "bootbarn",
+   "band": "Sam Paul Hayes",
+   "start": "21:45",
+   "end": "01:30",
+   "stage": "Second Floor",
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/2nd-floor-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "bootbarn",
+   "band": "Matthew Davidson",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/main-floor-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "bootbarn",
+   "band": "Aaron Patrick",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": "Rooftop",
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/rooftop-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "legends",
+   "band": "Mike Coll",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "bootbarn",
+   "band": "The John Tocco Band",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": "Rooftop",
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/rooftop-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "legends",
+   "band": "Mark Hatt",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "bootbarn",
+   "band": "Tanglewood",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": "Rooftop",
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/rooftop-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "legends",
+   "band": "Garrett Browning",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "bootbarn",
+   "band": "Annie Gavin",
+   "start": "17:45",
+   "end": "21:15",
+   "stage": "Second Floor",
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/2nd-floor-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "bootbarn",
+   "band": "Conner Sweet Band",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/main-floor-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "bootbarn",
+   "band": "Jason McPhail",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": "Rooftop",
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/rooftop-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "legends",
+   "band": "Mo Rose",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "bootbarn",
+   "band": "Aaron Patrick",
+   "start": "21:45",
+   "end": "01:30",
+   "stage": "Second Floor",
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/2nd-floor-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "bootbarn",
+   "band": "Troy Woods",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/main-floor-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "bootbarn",
+   "band": "Mike Coll",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": "Rooftop",
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/rooftop-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "legends",
+   "band": "Charlie McNeal",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "bootbarn",
+   "band": "Mark Hatt",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/main-floor-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "legends",
+   "band": "Los Honky Tonkers",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "bootbarn",
+   "band": "Michael Simeon",
+   "start": "10:30",
+   "end": "14:15",
+   "stage": "Rooftop",
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/rooftop-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "bootbarn",
+   "band": "Conner Sweet Band",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/main-floor-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "bootbarn",
+   "band": "Sam Doyle",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": "Rooftop",
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/rooftop-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "legends",
+   "band": "Blaine Bunting",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "bootbarn",
+   "band": "Robert Abernathy",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/main-floor-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "bootbarn",
+   "band": "Partners In Crime",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": "Rooftop",
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/rooftop-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "legends",
+   "band": "Jered Ames",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "bootbarn",
+   "band": "Aaron Patrick",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/main-floor-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "bootbarn",
+   "band": "Mike Kindel",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": "Rooftop",
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/rooftop-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "legends",
+   "band": "Nate Murphy",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "bootbarn",
+   "band": "Shane Chisholm",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/main-floor-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "legends",
+   "band": "Noah Tellish",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "bootbarn",
+   "band": "Blake Dixon",
+   "start": "14:30",
+   "end": "18:15",
+   "stage": "Rooftop",
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/rooftop-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "legends",
+   "band": "Katie Marie",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "bootbarn",
+   "band": "Three Lane",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/main-floor-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "bootbarn",
+   "band": "Hype Creek Band",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": "Rooftop",
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/rooftop-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "legends",
+   "band": "Rachael Turner",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "bootbarn",
+   "band": "Rachael Blount",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com/main-floor-calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "legends",
+   "band": "Aaron Patrick",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": null,
+   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "chiefs",
+   "band": "Cay Aliese",
+   "start": "21:00",
+   "end": "00:00",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "chiefs",
+   "band": "Cort Carpenter",
+   "start": "14:30",
+   "end": "18:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "chiefs",
+   "band": "Griffin Winton",
+   "start": "22:30",
+   "end": "02:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "chiefs",
+   "band": "Kiely Connell",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "chiefs",
+   "band": "Lauren Rose",
+   "start": "14:30",
+   "end": "18:00",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "chiefs",
+   "band": "Michael Leatherman",
+   "start": "16:00",
+   "end": "18:30",
+   "stage": "Friendly Shadows – 2nd Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "chiefs",
+   "band": "Shelby Lee Lowe",
+   "start": "10:30",
+   "end": "14:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "chiefs",
+   "band": "Skyelor Anderson",
+   "start": "18:30",
+   "end": "22:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "chiefs",
+   "band": "Zachariah Malachi",
+   "start": "11:30",
+   "end": "14:30",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "chiefs",
+   "band": "Aliyah Good",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "chiefs",
+   "band": "Cay Aliese",
+   "start": "21:00",
+   "end": "00:00",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "chiefs",
+   "band": "Cian Pedersen",
+   "start": "16:00",
+   "end": "18:30",
+   "stage": "Friendly Shadows – 2nd Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "chiefs",
+   "band": "Griffin Winton",
+   "start": "18:30",
+   "end": "22:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "chiefs",
+   "band": "Jake Neuman",
+   "start": "14:30",
+   "end": "18:00",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "chiefs",
+   "band": "Jim McGuinn",
+   "start": "10:30",
+   "end": "14:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "chiefs",
+   "band": "Skyelor Anderson",
+   "start": "14:30",
+   "end": "18:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "chiefs",
+   "band": "Sofia Nargentino",
+   "start": "11:30",
+   "end": "14:30",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "chiefs",
+   "band": "Timothy James",
+   "start": "22:30",
+   "end": "02:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "chiefs",
+   "band": "Beth Garner",
+   "start": "14:30",
+   "end": "18:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "chiefs",
+   "band": "Cay Aliese",
+   "start": "17:00",
+   "end": "20:00",
+   "stage": "Friendly Shadows – 2nd Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "chiefs",
+   "band": "Cian Pedersen",
+   "start": "22:30",
+   "end": "02:00",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "chiefs",
+   "band": "Cort Carpenter",
+   "start": "10:30",
+   "end": "14:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "chiefs",
+   "band": "Dean Harlem",
+   "start": "14:00",
+   "end": "17:00",
+   "stage": "Friendly Shadows – 2nd Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "chiefs",
+   "band": "Kiely Connell",
+   "start": "14:30",
+   "end": "17:30",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "chiefs",
+   "band": "Michael Leatherman",
+   "start": "20:00",
+   "end": "23:00",
+   "stage": "Friendly Shadows – 2nd Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "chiefs",
+   "band": "Timbo",
+   "start": "20:30",
+   "end": "23:00",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "chiefs",
+   "band": "Zachariah Malachi",
+   "start": "18:30",
+   "end": "22:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "chiefs",
+   "band": "Boo Ray",
+   "start": "14:30",
+   "end": "18:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "chiefs",
+   "band": "Chili Dawg",
+   "start": "22:30",
+   "end": "02:00",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "chiefs",
+   "band": "Jake Neuman",
+   "start": "11:30",
+   "end": "14:30",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "chiefs",
+   "band": "Kiely Connell",
+   "start": "17:30",
+   "end": "20:30",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "chiefs",
+   "band": "Kevin Mac",
+   "start": "14:30",
+   "end": "17:30",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "chiefs",
+   "band": "King Corduroy",
+   "start": "20:30",
+   "end": "23:00",
+   "stage": "Redemption Bar – 5th Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "chiefs",
+   "band": "Shelby Lee Lowe",
+   "start": "10:30",
+   "end": "14:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "chiefs",
+   "band": "Zachariah Malachi",
+   "start": "18:30",
+   "end": "22:30",
+   "stage": "Chief’s Tavern – 1st Floor",
+   "source": "https://www.chiefsonbroadway.com/house-artists (weekly House Artist schedule, \"subject to change\") seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "olered",
+   "band": "Ava Paige",
+   "start": "11:00",
+   "end": "14:30",
+   "stage": null,
+   "source": "https://olered.com/nashville/live-music/ (Nashville daily calendar, day-nav feed) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "whiskeyrow",
+   "band": "Paxton Peay",
+   "start": "22:30",
+   "end": "02:30",
+   "stage": "1st Floor",
+   "source": "https://dierkswhiskeyrow.com/nashville-tn/live-music/ (official Strumn schedule widget) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "boogiebar",
+   "band": "Megan golden",
+   "start": "17:00",
+   "end": "21:00",
+   "stage": "3rd Floor",
+   "source": "https://www.hanksnash.com/live-music (official JamJuice embed, jamjuice.com/api/embed/organizations/69c2cfb8c12fc93411dfbda9/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "boogiebar",
+   "band": "Megan golden",
+   "start": "17:00",
+   "end": "21:00",
+   "stage": "3rd Floor",
+   "source": "https://www.hanksnash.com/live-music (official JamJuice embed, jamjuice.com/api/embed/organizations/69c2cfb8c12fc93411dfbda9/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-28",
+   "bar": "boogiebar",
+   "band": "Dalton Black",
+   "start": "16:00",
+   "end": "20:00",
+   "stage": "Rooftop Stage",
+   "source": "https://www.hanksnash.com/live-music (official JamJuice embed, jamjuice.com/api/embed/organizations/69c2cfb8c12fc93411dfbda9/bookings) seen 2026-11-25"
+  },
+  {
+   "date": "2026-11-25",
+   "bar": "bootbarn",
+   "band": "Tanglewood",
+   "start": "22:15",
+   "end": "02:30",
+   "stage": "Rooftop",
+   "source": "@stageonbroadway Instagram story 'Wednesday Line Up', seen 2026-11-25"
   }
  ],
  "closures": [
