@@ -381,9 +381,9 @@
    "date": "2026-11-27",
    "bar": "goodnight",
    "band": "The Huffer Brothers",
-   "start": "18:00",
+   "start": "18:30",
    "end": "22:00",
-   "source": "Artist-provided schedule (The Huffer Brothers' November 2026 flyer, sent by Jules Nov 3 2026); 'close' recorded as 2 AM"
+   "source": "Goodnight Nashville own website https://goodnightnashville.com (Strumn API feed) lists 6:30-10 PM, seen Nov 27 2026; replaces artist-provided 6 PM start"
   },
   {
    "date": "2026-11-27",
@@ -398,19 +398,19 @@
    "date": "2026-11-27",
    "bar": "bootbarn",
    "band": "Kristine Kabbes and the Skallywags",
-   "start": "19:00",
-   "end": "22:00",
+   "start": "18:45",
+   "end": "22:15",
    "stage": "Rooftop",
-   "source": "Artist-provided weekly schedule (Kristine Kabbes, November 2026, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+   "source": "The Stage on Broadway own Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com), seen Nov 27 2026; replaces artist-provided time"
   },
   {
    "date": "2026-11-28",
    "bar": "bootbarn",
    "band": "Kristine Kabbes and the Skallywags",
-   "start": "15:00",
-   "end": "18:00",
+   "start": "14:45",
+   "end": "18:15",
    "stage": "First floor",
-   "source": "Artist-provided weekly schedule (Kristine Kabbes, November 2026, sent by Jules Nov 3 2026); end time not given, so start+3h per site convention"
+   "source": "The Stage on Broadway own Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://thestageonbroadway.com), seen Nov 27 2026; replaces artist-provided time"
   },
   {
    "date": "2026-11-28",
@@ -15338,11 +15338,11 @@
   {
    "date": "2026-11-28",
    "bar": "bootleggers",
-   "band": "Michawl Simeon Duo",
+   "band": "Michael Simeon Duo",
    "start": "10:00",
    "end": "14:00",
    "stage": null,
-   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published)"
+   "source": "Bootleggers Inn own Instagram post (https://www.instagram.com/bootleggersinn/p/DgF_YLVl_yQ/), seen Nov 23 2026; start times only, end is the next set's start on the same stage (22:00 ends 02:00; Upstairs end not published); spelling corrected to Michael Simeon Duo per https://www.bootleggersnashville.com page and @bootleggersinn story, seen Nov 27 2026"
   },
   {
    "date": "2026-11-28",
@@ -20710,11 +20710,11 @@
   {
    "date": "2026-11-27",
    "bar": "legends",
-   "band": "The Taylors",
+   "band": "Kelly & Sarah",
    "start": "10:00",
    "end": "14:15",
    "stage": null,
-   "source": "Bar-own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/) seen 2026-11-25"
+   "source": "Legends Corner own Instagram story @legendscorner 'Friday Live Music Lineup' slide (replaces The Taylors from the Broadway Entertainment Booking feed seen 2026-11-25), seen Nov 27 2026"
   },
   {
    "date": "2026-11-27",
@@ -21930,6 +21930,1041 @@
    "end": "17:00",
    "stage": null,
    "source": "https://whiskeybentnash.com/live-music (Saturday Nov 28 tab, seen Nov 26 2026 10 PM PT)"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "luckybastard",
+   "band": "Los Honky Tonkers",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Lucky Bastard Saloon own Instagram story @luckybastardsaloon 'MAIN STAGE, NOVEMBER 27', seen Nov 27 2026"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "luckybastard",
+   "band": "Joyful Noise",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "Lucky Bastard Saloon own Instagram story @luckybastardsaloon 'MAIN STAGE, NOVEMBER 27', seen Nov 27 2026"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "luckybastard",
+   "band": "Trent Ingram",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "Lucky Bastard Saloon own Instagram story @luckybastardsaloon 'MAIN STAGE, NOVEMBER 27', seen Nov 27 2026"
+  },
+  {
+   "date": "2026-11-27",
+   "bar": "luckybastard",
+   "band": "Too Hot For Leather",
+   "start": "22:00",
+   "end": "02:45",
+   "stage": null,
+   "source": "Lucky Bastard Saloon own Instagram story @luckybastardsaloon 'MAIN STAGE, NOVEMBER 27', seen Nov 27 2026"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "tinroof",
+   "band": "John Pate",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Tin Roof Broadway own live music calendar https://tinroofbroadway.com/live-music-events/ (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "nudies",
+   "band": "John Caldwell",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": "1st Floor",
+   "source": "Nudie's Honky Tonk own site https://www.nudieshonkytonk.com (This Week's Band Schedule, undated weekly grid), seen Nov 27 2026; grid lists start times only, so end is start+3h"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "nudies",
+   "band": "Mike Riley",
+   "start": "14:30",
+   "end": "17:30",
+   "stage": "1st Floor",
+   "source": "Nudie's Honky Tonk own site https://www.nudieshonkytonk.com (This Week's Band Schedule, undated weekly grid), seen Nov 27 2026; grid lists start times only, so end is start+3h"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "nudies",
+   "band": "Troy Woods",
+   "start": "18:30",
+   "end": "21:30",
+   "stage": "1st Floor",
+   "source": "Nudie's Honky Tonk own site https://www.nudieshonkytonk.com (This Week's Band Schedule, undated weekly grid), seen Nov 27 2026; grid lists start times only, so end is start+3h"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "nudies",
+   "band": "Stoney T",
+   "start": "22:30",
+   "end": "01:30",
+   "stage": "1st Floor",
+   "source": "Nudie's Honky Tonk own site https://www.nudieshonkytonk.com (This Week's Band Schedule, undated weekly grid), seen Nov 27 2026; grid lists start times only, so end is start+3h"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "nudies",
+   "band": "Colin Patrick",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": "Rooftop",
+   "source": "Nudie's Honky Tonk own site https://www.nudieshonkytonk.com (This Week's Band Schedule, undated weekly grid), seen Nov 27 2026; grid lists start times only, so end is start+3h"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "nudies",
+   "band": "Dixon Darling",
+   "start": "16:00",
+   "end": "19:00",
+   "stage": "Rooftop",
+   "source": "Nudie's Honky Tonk own site https://www.nudieshonkytonk.com (This Week's Band Schedule, undated weekly grid), seen Nov 27 2026; grid lists start times only, so end is start+3h"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "whiskeybent",
+   "band": "Tyler Stokes - Duo",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site https://whiskeybentnash.com/live-music (Sunday Nov 29 tab), seen Nov 27 2026; page lists start times only, so end is start+3h"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "whiskeybent",
+   "band": "Bill Roemer - Solo Artist",
+   "start": "15:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site https://whiskeybentnash.com/live-music (Sunday Nov 29 tab), seen Nov 27 2026; page lists start times only, so end is start+3h"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "whiskeybent",
+   "band": "Ballistic - Rock Country Band",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site https://whiskeybentnash.com/live-music (Sunday Nov 29 tab), seen Nov 27 2026; page lists start times only, so end is start+3h"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "whiskeybent",
+   "band": "Bodacious Band",
+   "start": "22:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Whiskey Bent Saloon own site https://whiskeybentnash.com/live-music (Sunday Nov 29 tab), seen Nov 27 2026; page lists start times only, so end is start+3h"
+  },
+  {
+   "date": "2026-11-29",
+   "bar": "jbjs",
+   "band": "Sara Spicer",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "JBJ's Nashville own events page https://www.jbjsnash.com/events (JamJuice feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "nudies",
+   "band": "John Caldwell",
+   "start": "10:00",
+   "end": "13:00",
+   "stage": "1st Floor",
+   "source": "Nudie's Honky Tonk own site https://www.nudieshonkytonk.com (This Week's Band Schedule, undated weekly grid), seen Nov 27 2026; grid lists start times only, so end is start+3h"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "nudies",
+   "band": "Ivey Andrews",
+   "start": "14:30",
+   "end": "17:30",
+   "stage": "1st Floor",
+   "source": "Nudie's Honky Tonk own site https://www.nudieshonkytonk.com (This Week's Band Schedule, undated weekly grid), seen Nov 27 2026; grid lists start times only, so end is start+3h"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "nudies",
+   "band": "Scotty Chapman",
+   "start": "18:30",
+   "end": "21:30",
+   "stage": "1st Floor",
+   "source": "Nudie's Honky Tonk own site https://www.nudieshonkytonk.com (This Week's Band Schedule, undated weekly grid), seen Nov 27 2026; grid lists start times only, so end is start+3h"
+  },
+  {
+   "date": "2026-11-30",
+   "bar": "nudies",
+   "band": "Stoney T",
+   "start": "22:30",
+   "end": "01:30",
+   "stage": "1st Floor",
+   "source": "Nudie's Honky Tonk own site https://www.nudieshonkytonk.com (This Week's Band Schedule, undated weekly grid), seen Nov 27 2026; grid lists start times only, so end is start+3h"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "olered",
+   "band": "Rachel Horter",
+   "start": "11:00",
+   "end": "15:00",
+   "stage": null,
+   "source": "Ole Red Nashville own calendar https://olered.com/nashville/ (olered_get_calendar feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "olered",
+   "band": "Anna McElroy",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": null,
+   "source": "Ole Red Nashville own calendar https://olered.com/nashville/ (olered_get_calendar feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "olered",
+   "band": "Magnolia Trace",
+   "start": "18:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Ole Red Nashville own calendar https://olered.com/nashville/ (olered_get_calendar feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "olered",
+   "band": "Walker Wilson",
+   "start": "21:00",
+   "end": "00:00",
+   "stage": null,
+   "source": "Ole Red Nashville own calendar https://olered.com/nashville/ (olered_get_calendar feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "wildhorse",
+   "band": "Ivey Andrews",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": null,
+   "source": "Luke Combs' Category 10 own calendar https://www.category10.com (cat_10_get_calendar feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "wildhorse",
+   "band": "Nick Smith",
+   "start": "17:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Luke Combs' Category 10 own calendar https://www.category10.com (cat_10_get_calendar feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "kanebrown",
+   "band": "Adia Clark Lay",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": null,
+   "source": "Kane Brown's On Broadway own calendar https://kanebrownsonbroadway.com (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "kanebrown",
+   "band": "Cami Nyx",
+   "start": "16:00",
+   "end": "20:00",
+   "stage": null,
+   "source": "Kane Brown's On Broadway own calendar https://kanebrownsonbroadway.com (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "kanebrown",
+   "band": "Andrew Vendelis",
+   "start": "20:00",
+   "end": "00:00",
+   "stage": null,
+   "source": "Kane Brown's On Broadway own calendar https://kanebrownsonbroadway.com (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "tinroof",
+   "band": "John Pate",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Tin Roof Broadway own live music calendar https://tinroofbroadway.com/live-music-events/ (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "tinroof",
+   "band": "Josh Gallagher",
+   "start": "14:30",
+   "end": "18:00",
+   "stage": null,
+   "source": "Tin Roof Broadway own live music calendar https://tinroofbroadway.com/live-music-events/ (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "tinroof",
+   "band": "Naughty Input",
+   "start": "18:30",
+   "end": "22:00",
+   "stage": null,
+   "source": "Tin Roof Broadway own live music calendar https://tinroofbroadway.com/live-music-events/ (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "tinroof",
+   "band": "Shot By Cheney",
+   "start": "22:30",
+   "end": "02:30",
+   "stage": null,
+   "source": "Tin Roof Broadway own live music calendar https://tinroofbroadway.com/live-music-events/ (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "whiskeyrow",
+   "band": "Jason Craig",
+   "start": "11:00",
+   "end": "14:30",
+   "stage": "1st Floor",
+   "source": "Whiskey Row own live music calendar https://dierkswhiskeyrow.com/nashville-tn/live-music/ (Strumn feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "whiskeyrow",
+   "band": "Selena Brills",
+   "start": "15:00",
+   "end": "18:30",
+   "stage": "1st Floor",
+   "source": "Whiskey Row own live music calendar https://dierkswhiskeyrow.com/nashville-tn/live-music/ (Strumn feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "whiskeyrow",
+   "band": "Landon Parker",
+   "start": "19:00",
+   "end": "22:00",
+   "stage": "1st Floor",
+   "source": "Whiskey Row own live music calendar https://dierkswhiskeyrow.com/nashville-tn/live-music/ (Strumn feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "whiskeyrow",
+   "band": "Logan Layman",
+   "start": "22:30",
+   "end": "02:30",
+   "stage": "1st Floor",
+   "source": "Whiskey Row own live music calendar https://dierkswhiskeyrow.com/nashville-tn/live-music/ (Strumn feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "goodnight",
+   "band": "Thomas Larson",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": null,
+   "source": "Goodnight Nashville own website https://goodnightnashville.com (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "goodnight",
+   "band": "Brooks Herring",
+   "start": "16:30",
+   "end": "20:30",
+   "stage": null,
+   "source": "Goodnight Nashville own website https://goodnightnashville.com (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "goodnight",
+   "band": "Revelry",
+   "start": "21:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Goodnight Nashville own website https://goodnightnashville.com (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "boogiebar",
+   "band": "Hailey Dawn",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": null,
+   "source": "Hank Williams Jr.'s Boogie Bar own website https://www.hanksnash.com (JamJuice feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "boogiebar",
+   "band": "Mark Hatt",
+   "start": "20:00",
+   "end": "00:00",
+   "stage": null,
+   "source": "Hank Williams Jr.'s Boogie Bar own website https://www.hanksnash.com (JamJuice feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "jbjs",
+   "band": "Patrick Sharrow",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": null,
+   "source": "JBJ's Nashville own events page https://www.jbjsnash.com/events (JamJuice feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "jbjs",
+   "band": "The Future Legends",
+   "start": "16:00",
+   "end": "20:00",
+   "stage": null,
+   "source": "JBJ's Nashville own events page https://www.jbjsnash.com/events (JamJuice feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "jbjs",
+   "band": "Tesla Dawn",
+   "start": "20:00",
+   "end": "00:00",
+   "stage": null,
+   "source": "JBJ's Nashville own events page https://www.jbjsnash.com/events (JamJuice feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "legends",
+   "band": "Mark Box",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": null,
+   "source": "Legends Corner own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "legends",
+   "band": "Chad Caprio",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": null,
+   "source": "Legends Corner own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "bar": "legends",
+   "band": "Bad Ember",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": null,
+   "source": "Legends Corner own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "olered",
+   "band": "Emily Brooke",
+   "start": "11:00",
+   "end": "15:00",
+   "stage": null,
+   "source": "Ole Red Nashville own calendar https://olered.com/nashville/ (olered_get_calendar feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "olered",
+   "band": "Mark Box",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": null,
+   "source": "Ole Red Nashville own calendar https://olered.com/nashville/ (olered_get_calendar feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "olered",
+   "band": "Makenzie Schriner",
+   "start": "15:30",
+   "end": "19:30",
+   "stage": null,
+   "source": "Ole Red Nashville own calendar https://olered.com/nashville/ (olered_get_calendar feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "olered",
+   "band": "Matt Rogers",
+   "start": "20:00",
+   "end": "00:00",
+   "stage": null,
+   "source": "Ole Red Nashville own calendar https://olered.com/nashville/ (olered_get_calendar feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "wildhorse",
+   "band": "Lauren Gottshall",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": null,
+   "source": "Luke Combs' Category 10 own calendar https://www.category10.com (cat_10_get_calendar feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "wildhorse",
+   "band": "Skyelor Anderson",
+   "start": "17:00",
+   "end": "21:00",
+   "stage": null,
+   "source": "Luke Combs' Category 10 own calendar https://www.category10.com (cat_10_get_calendar feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "kanebrown",
+   "band": "Bryce Reeg",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": null,
+   "source": "Kane Brown's On Broadway own calendar https://kanebrownsonbroadway.com (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "kanebrown",
+   "band": "Matthew Davidson",
+   "start": "20:00",
+   "end": "00:00",
+   "stage": null,
+   "source": "Kane Brown's On Broadway own calendar https://kanebrownsonbroadway.com (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "tinroof",
+   "band": "Troy White",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Tin Roof Broadway own live music calendar https://tinroofbroadway.com/live-music-events/ (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "tinroof",
+   "band": "Justin Bouldin",
+   "start": "14:30",
+   "end": "18:00",
+   "stage": null,
+   "source": "Tin Roof Broadway own live music calendar https://tinroofbroadway.com/live-music-events/ (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "tinroof",
+   "band": "kaitlin walker",
+   "start": "18:30",
+   "end": "22:00",
+   "stage": null,
+   "source": "Tin Roof Broadway own live music calendar https://tinroofbroadway.com/live-music-events/ (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "tinroof",
+   "band": "Wrestle with Jimmy",
+   "start": "22:30",
+   "end": "02:30",
+   "stage": null,
+   "source": "Tin Roof Broadway own live music calendar https://tinroofbroadway.com/live-music-events/ (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "whiskeyrow",
+   "band": "Jason Craig",
+   "start": "11:00",
+   "end": "14:30",
+   "stage": "1st Floor",
+   "source": "Whiskey Row own live music calendar https://dierkswhiskeyrow.com/nashville-tn/live-music/ (Strumn feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "whiskeyrow",
+   "band": "Trey Miller",
+   "start": "15:00",
+   "end": "18:30",
+   "stage": "1st Floor",
+   "source": "Whiskey Row own live music calendar https://dierkswhiskeyrow.com/nashville-tn/live-music/ (Strumn feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "whiskeyrow",
+   "band": "CJ Fiandra",
+   "start": "19:00",
+   "end": "22:00",
+   "stage": "1st Floor",
+   "source": "Whiskey Row own live music calendar https://dierkswhiskeyrow.com/nashville-tn/live-music/ (Strumn feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "whiskeyrow",
+   "band": "Hype Creek",
+   "start": "22:30",
+   "end": "02:30",
+   "stage": "1st Floor",
+   "source": "Whiskey Row own live music calendar https://dierkswhiskeyrow.com/nashville-tn/live-music/ (Strumn feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "goodnight",
+   "band": "Timothy James",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": null,
+   "source": "Goodnight Nashville own website https://goodnightnashville.com (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "goodnight",
+   "band": "Natalie Brady",
+   "start": "16:30",
+   "end": "20:30",
+   "stage": null,
+   "source": "Goodnight Nashville own website https://goodnightnashville.com (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "goodnight",
+   "band": "Mike Kindel",
+   "start": "21:00",
+   "end": "01:00",
+   "stage": null,
+   "source": "Goodnight Nashville own website https://goodnightnashville.com (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "boogiebar",
+   "band": "Sara Avalos",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": null,
+   "source": "Hank Williams Jr.'s Boogie Bar own website https://www.hanksnash.com (JamJuice feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "boogiebar",
+   "band": "Mark Hatt",
+   "start": "20:00",
+   "end": "00:00",
+   "stage": null,
+   "source": "Hank Williams Jr.'s Boogie Bar own website https://www.hanksnash.com (JamJuice feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "jbjs",
+   "band": "Patrick Sharrow",
+   "start": "12:00",
+   "end": "15:00",
+   "stage": null,
+   "source": "JBJ's Nashville own events page https://www.jbjsnash.com/events (JamJuice feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "jbjs",
+   "band": "Nick Smith",
+   "start": "15:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "JBJ's Nashville own events page https://www.jbjsnash.com/events (JamJuice feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "jbjs",
+   "band": "Pete's Diary",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "JBJ's Nashville own events page https://www.jbjsnash.com/events (JamJuice feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "jbjs",
+   "band": "Lovedrive",
+   "start": "22:00",
+   "end": "02:30",
+   "stage": null,
+   "source": "JBJ's Nashville own events page https://www.jbjsnash.com/events (JamJuice feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "legends",
+   "band": "Noah Tellish",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": null,
+   "source": "Legends Corner own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "legends",
+   "band": "Kenny P",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": null,
+   "source": "Legends Corner own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "legends",
+   "band": "Kristine Kabbes and the Skallywags",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": null,
+   "source": "Legends Corner own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-02",
+   "bar": "legends",
+   "band": "Charlie McNeal",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": null,
+   "source": "Legends Corner own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "olered",
+   "band": "Charity Bowden",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Ole Red Nashville own calendar https://olered.com/nashville/ (olered_get_calendar feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "olered",
+   "band": "Andy Austin",
+   "start": "12:00",
+   "end": "16:00",
+   "stage": null,
+   "source": "Ole Red Nashville own calendar https://olered.com/nashville/ (olered_get_calendar feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "olered",
+   "band": "Alex Graham",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "Ole Red Nashville own calendar https://olered.com/nashville/ (olered_get_calendar feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "olered",
+   "band": "Sammy Arriaga",
+   "start": "16:30",
+   "end": "20:30",
+   "stage": null,
+   "source": "Ole Red Nashville own calendar https://olered.com/nashville/ (olered_get_calendar feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "olered",
+   "band": "Randy Nations",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "Ole Red Nashville own calendar https://olered.com/nashville/ (olered_get_calendar feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "olered",
+   "band": "Scotty Mac Band",
+   "start": "22:00",
+   "end": "02:00",
+   "stage": null,
+   "source": "Ole Red Nashville own calendar https://olered.com/nashville/ (olered_get_calendar feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "wildhorse",
+   "band": "Brandon Whitley",
+   "start": "11:00",
+   "end": "15:00",
+   "stage": null,
+   "source": "Luke Combs' Category 10 own calendar https://www.category10.com (cat_10_get_calendar feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "wildhorse",
+   "band": "Byrdie Wilson",
+   "start": "11:00",
+   "end": "14:30",
+   "stage": null,
+   "source": "Luke Combs' Category 10 own calendar https://www.category10.com (cat_10_get_calendar feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "wildhorse",
+   "band": "Matt Rogers",
+   "start": "15:00",
+   "end": "18:15",
+   "stage": null,
+   "source": "Luke Combs' Category 10 own calendar https://www.category10.com (cat_10_get_calendar feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "wildhorse",
+   "band": "Lydia Simonds",
+   "start": "18:45",
+   "end": "22:00",
+   "stage": null,
+   "source": "Luke Combs' Category 10 own calendar https://www.category10.com (cat_10_get_calendar feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "kanebrown",
+   "band": "Jake Holder and The Misfits",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "Kane Brown's On Broadway own calendar https://kanebrownsonbroadway.com (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "kanebrown",
+   "band": "Carli Loo",
+   "start": "22:00",
+   "end": "02:30",
+   "stage": null,
+   "source": "Kane Brown's On Broadway own calendar https://kanebrownsonbroadway.com (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "tinroof",
+   "band": "Colby Deitz (The OTHER'd)",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Tin Roof Broadway own live music calendar https://tinroofbroadway.com/live-music-events/ (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "tinroof",
+   "band": "Ivey Andrews",
+   "start": "14:30",
+   "end": "18:00",
+   "stage": null,
+   "source": "Tin Roof Broadway own live music calendar https://tinroofbroadway.com/live-music-events/ (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "tinroof",
+   "band": "Jake Holder and The Misfits",
+   "start": "18:30",
+   "end": "22:00",
+   "stage": null,
+   "source": "Tin Roof Broadway own live music calendar https://tinroofbroadway.com/live-music-events/ (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "tinroof",
+   "band": "Vikki Nova",
+   "start": "22:30",
+   "end": "02:30",
+   "stage": null,
+   "source": "Tin Roof Broadway own live music calendar https://tinroofbroadway.com/live-music-events/ (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "whiskeyrow",
+   "band": "Noah Garner",
+   "start": "11:00",
+   "end": "14:30",
+   "stage": "1st Floor",
+   "source": "Whiskey Row own live music calendar https://dierkswhiskeyrow.com/nashville-tn/live-music/ (Strumn feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "whiskeyrow",
+   "band": "Selena Brills",
+   "start": "15:00",
+   "end": "18:30",
+   "stage": "1st Floor",
+   "source": "Whiskey Row own live music calendar https://dierkswhiskeyrow.com/nashville-tn/live-music/ (Strumn feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "whiskeyrow",
+   "band": "Eva Maxine",
+   "start": "19:00",
+   "end": "22:00",
+   "stage": "1st Floor",
+   "source": "Whiskey Row own live music calendar https://dierkswhiskeyrow.com/nashville-tn/live-music/ (Strumn feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "whiskeyrow",
+   "band": "Revelry",
+   "start": "22:30",
+   "end": "02:30",
+   "stage": "1st Floor",
+   "source": "Whiskey Row own live music calendar https://dierkswhiskeyrow.com/nashville-tn/live-music/ (Strumn feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "whiskeyrow",
+   "band": "Mister Diesel",
+   "start": "21:00",
+   "end": "02:30",
+   "stage": "Rooftop",
+   "source": "Whiskey Row own live music calendar https://dierkswhiskeyrow.com/nashville-tn/live-music/ (Strumn feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "goodnight",
+   "band": "Macy Krew",
+   "start": "11:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Goodnight Nashville own website https://goodnightnashville.com (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "goodnight",
+   "band": "Jabe Burgess",
+   "start": "14:30",
+   "end": "18:00",
+   "stage": null,
+   "source": "Goodnight Nashville own website https://goodnightnashville.com (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "goodnight",
+   "band": "FOXHOLE FRIENDS",
+   "start": "18:30",
+   "end": "22:00",
+   "stage": null,
+   "source": "Goodnight Nashville own website https://goodnightnashville.com (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "goodnight",
+   "band": "Maniac",
+   "start": "22:30",
+   "end": "03:00",
+   "stage": null,
+   "source": "Goodnight Nashville own website https://goodnightnashville.com (Strumn API feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "boogiebar",
+   "band": "Scotty Casteel",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "Hank Williams Jr.'s Boogie Bar own website https://www.hanksnash.com (JamJuice feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "boogiebar",
+   "band": "Kayla Kroh",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "Hank Williams Jr.'s Boogie Bar own website https://www.hanksnash.com (JamJuice feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "boogiebar",
+   "band": "Donny Lee",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "Hank Williams Jr.'s Boogie Bar own website https://www.hanksnash.com (JamJuice feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "boogiebar",
+   "band": "Dan Burnell Band",
+   "start": "22:00",
+   "end": "02:30",
+   "stage": null,
+   "source": "Hank Williams Jr.'s Boogie Bar own website https://www.hanksnash.com (JamJuice feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "boogiebar",
+   "band": "Donnie",
+   "start": "20:00",
+   "end": "02:30",
+   "stage": "Rooftop",
+   "source": "Hank Williams Jr.'s Boogie Bar own website https://www.hanksnash.com (JamJuice feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "jbjs",
+   "band": "Sara Avalos",
+   "start": "10:00",
+   "end": "14:00",
+   "stage": null,
+   "source": "JBJ's Nashville own events page https://www.jbjsnash.com/events (JamJuice feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "jbjs",
+   "band": "Millie",
+   "start": "14:00",
+   "end": "18:00",
+   "stage": null,
+   "source": "JBJ's Nashville own events page https://www.jbjsnash.com/events (JamJuice feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "jbjs",
+   "band": "Tesla Dawn",
+   "start": "18:00",
+   "end": "22:00",
+   "stage": null,
+   "source": "JBJ's Nashville own events page https://www.jbjsnash.com/events (JamJuice feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "jbjs",
+   "band": "Hand Over Face",
+   "start": "22:00",
+   "end": "02:30",
+   "stage": null,
+   "source": "JBJ's Nashville own events page https://www.jbjsnash.com/events (JamJuice feed), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "legends",
+   "band": "CJ Monaghan",
+   "start": "10:00",
+   "end": "14:15",
+   "stage": null,
+   "source": "Legends Corner own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "legends",
+   "band": "Garrett Browning",
+   "start": "14:45",
+   "end": "18:15",
+   "stage": null,
+   "source": "Legends Corner own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "legends",
+   "band": "Luke Maurer",
+   "start": "18:45",
+   "end": "22:15",
+   "stage": null,
+   "source": "Legends Corner own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/), seen Nov 27 2026"
+  },
+  {
+   "date": "2026-12-03",
+   "bar": "legends",
+   "band": "Zach Zurcher",
+   "start": "22:45",
+   "end": "02:30",
+   "stage": null,
+   "source": "Legends Corner own calendar widget data: Broadway Entertainment Booking feed https://broadwayentertainmentbooking.com/wp-json/wst-events/v1/get (the feed embedded on https://legendscorner.com/calendar/), seen Nov 27 2026"
   }
  ],
  "closures": [
